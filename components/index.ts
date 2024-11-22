@@ -1,4 +1,6 @@
 export { default as Navbar } from './navbar';
+export { default as TextMask } from './text-mask';
+export { default as AnimatedText } from './animated-text';
 export { default as Footer } from './footer';
 export { default as Marquee } from './marquee';
 export { default as Appointment } from './appointment';

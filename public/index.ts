@@ -25,3 +25,15 @@ export { default as aboutCrownR } from './aboutCrownR.png';
 export { default as aboutCrownL } from './aboutCrownL.png';
 export { default as drackula } from './drackula.png';
 export { default as punch } from './punch.png';
+
+export { default as m } from './m.png';
+export { default as o } from './o.png';
+export { default as u } from './u.png';
+export { default as n } from './n.png';
+export { default as t } from './t.png';
+export { default as i } from './i.png';
+export { default as nn } from './n.png';
+export { default as g } from './g.png';
+export { default as bracket } from './bracket.png';
+export { default as tree } from './tree.png';
+export { default as gorillaHanging } from './gorillaHanging.png';

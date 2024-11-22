@@ -1,9 +1,10 @@
-import { HomeHero } from "@/container";
+import { HomeHero, HomeServices } from "@/container";
 
 export default function App() {
 	return (
 		<>
 			<HomeHero />
+			<HomeServices />
 		</>
 	);
 }

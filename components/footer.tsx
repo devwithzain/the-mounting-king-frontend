@@ -17,7 +17,7 @@ import { FaFacebook, FaLinkedin, FaTiktok, FaYoutube } from "react-icons/fa";
 
 export default function Footer() {
 	return (
-		<div className="w-full min-h-screen bg-[url('/footerBackground.png')] bg-cover bg-center bg-no-repeat py-10 relative">
+		<div className="w-full min-h-screen bg-[url('/footerBackground.png')] bg-cover bg-center bg-no-repeat py-10 relative pt-80">
 			<div className="absolute -top-60">
 				<Image
 					alt="heroCloudImg"
