@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body::-webkit-scrollbar {
+	width: 0%;
+}
+
+body {
+	overflow-x: hidden;
+}
+
+@font-face {
+	src: url("../fonts/hyperspacerace-regular.otf");
+	font-family: hyperspacerace;
+}
+@font-face {
+	src: url("../fonts/Montserrat-Regular.ttf");
+	font-family: montserrat;
+}

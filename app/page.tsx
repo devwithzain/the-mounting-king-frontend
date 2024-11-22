@@ -1,3 +1,9 @@
+import { HomeHero } from "@/container";
+
 export default function App() {
-	return <div>App</div>;
+	return (
+		<>
+			<HomeHero />
+		</>
+	);
 }

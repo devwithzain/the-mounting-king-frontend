@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 import type { Metadata } from "next";
+import { Footer, Navbar } from "@/components";
 
 export const metadata: Metadata = {
 	title: "The Mounting King",
@@ -13,7 +14,11 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body>{children}</body>
+			<body>
+				<Navbar />
+				{children}
+				<Footer />
+			</body>
 		</html>
 	);
 }
