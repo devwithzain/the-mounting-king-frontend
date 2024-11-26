@@ -14,3 +14,14 @@ export type TselectedItem = {
    price: number;
    time: number;
 };
+
+export type TButtonProps = {
+   title: string;
+   href: string;
+};
+
+export type TRoundedProps = {
+   children: React.ReactNode;
+   className?: string;
+   backgroundColor: string;
+};

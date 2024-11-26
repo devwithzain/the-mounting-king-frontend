@@ -18,3 +18,24 @@ body {
 	src: url("../fonts/Montserrat-Regular.ttf");
 	font-family: montserrat;
 }
+
+@layer utilities {
+	.padding-x {
+		@apply px-[100px] lg:px-[40px] md:px-[30px] sm:px-[20px] xm:px-[20px];
+	}
+	.padding-y {
+		@apply py-[100px] lg:py-[40px] md:py-[30px] sm:py-[20px] xm:py-[20px];
+	}
+	.heading {
+		@apply text-[100px] lg:text-[70px] md:text-[50px] sm:text-[30px] xm:text-[25px];
+	}
+	.subHeading {
+		@apply text-[px] lg:text-[px] md:text-[px] sm:text-[px] xm:text-[px];
+	}
+	.paragraph {
+		@apply text-[18px] lg:text-[16px] md:text-[15px] sm:text-[14px] xm:text-[14px];
+	}
+	.subParagraph {
+		@apply text-[px] lg:text-[px] md:text-[px] sm:text-[px] xm:text-[px];
+	}
+}

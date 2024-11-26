@@ -1,29 +1,53 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { GoClock } from "react-icons/go";
 import { formFourItems } from "@/constants";
 import { CiCircleMinus, CiCirclePlus } from "react-icons/ci";
+import { TselectedItem } from "@/types";
 
 export default function FormFour({
 	onSubmits4,
+	backBtn,
 }: {
 	onSubmits4: (event: React.FormEvent<HTMLFormElement>) => void;
+	backBtn: () => void;
 }) {
+	// Initialize selected items from session storage
 	const [selectedItems, setSelectedItems] = useState<
 		Record<string, { quantity: number; price: number; time: number }>
-	>({});
+	>(() => {
+		const storedItems = sessionStorage.getItem("selectedItems");
+		return storedItems ? JSON.parse(storedItems) : {};
+	});
+
+	// Fetch selected values from sessionStorage
+	useEffect(() => {
+		const storedValues = sessionStorage.getItem("selectedItems");
+		if (storedValues) {
+			const parsedValues: Record<string, TselectedItem> =
+				JSON.parse(storedValues);
+			setSelectedItems(parsedValues);
+		}
+	}, []);
 
 	const handleAdd = (size: string, price: number, time: number) => {
-		setSelectedItems((prev) => ({
-			...prev,
-			[size]: prev[size]
-				? {
-						quantity: prev[size].quantity + 1,
-						price: prev[size].price + price,
-						time: prev[size].time + time,
-				  }
-				: { quantity: 1, price, time },
-		}));
+		setSelectedItems((prev) => {
+			const updatedItems = {
+				...prev,
+				[size]: prev[size]
+					? {
+							quantity: prev[size].quantity + 1,
+							price: prev[size].price + price,
+							time: prev[size].time + time,
+					  }
+					: { quantity: 1, price, time },
+			};
+
+			// Save to session storage
+			sessionStorage.setItem("selectedItems", JSON.stringify(updatedItems));
+
+			return updatedItems;
+		});
 	};
 
 	const handleRemove = (size: string, price: number, time: number) => {
@@ -31,20 +55,26 @@ export default function FormFour({
 			if (!prev[size]) return prev; // No item to remove, return current state
 
 			const updatedQuantity = prev[size].quantity - 1;
+			let updatedItems;
 
 			if (updatedQuantity <= 0) {
+				// eslint-disable-next-line @typescript-eslint/no-unused-vars
 				const { [size]: _, ...rest } = prev;
-				return rest;
+				updatedItems = rest;
+			} else {
+				updatedItems = {
+					...prev,
+					[size]: {
+						quantity: updatedQuantity,
+						price: prev[size].price - price,
+						time: prev[size].time - time,
+					},
+				};
 			}
 
-			return {
-				...prev,
-				[size]: {
-					quantity: updatedQuantity,
-					price: prev[size].price - price,
-					time: prev[size].time - time,
-				},
-			};
+			sessionStorage.setItem("selectedItems", JSON.stringify(updatedItems));
+
+			return updatedItems;
 		});
 	};
 
@@ -109,7 +139,9 @@ export default function FormFour({
 					<form
 						onSubmit={onSubmits4}
 						className="flex items-center gap-4">
-						<button className="text-black border border-black px-6 py-4 rounded-lg text-[20px] font-Monstrate leading-tight tracking-tight">
+						<button
+							onClick={() => backBtn()}
+							className="text-black border border-black px-6 py-4 rounded-lg text-[20px] font-Monstrate leading-tight tracking-tight">
 							Back
 						</button>
 						<button className="bg-[#F99A03] text-white px-6 py-4 rounded-lg text-[20px] font-Monstrate leading-tight tracking-tight">

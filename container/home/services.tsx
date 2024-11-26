@@ -1,12 +1,9 @@
 "use client";
-import { motion } from "framer-motion";
-import Image from "next/image";
 import {
 	advantage,
 	heroCloud,
 	marketValue,
 	time,
-	arrowRight,
 	aboutOne,
 	aboutTwo,
 	aboutThree,
@@ -19,17 +16,19 @@ import {
 	tree,
 	gorillaHanging,
 } from "@/public";
-import { AnimatedText, TextMask } from "@/components";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { AnimatedText, Button, TextMask } from "@/components";
 
 export default function HomeServices() {
 	return (
 		<div
-			className="w-full py-80 relative"
+			className="w-full padding-y relative"
 			style={{
 				background:
 					"linear-gradient(0deg, rgba(106,155,190,1) 0%, rgba(0,73,124,1) 30%, rgba(0,73,124,1) 50%, rgba(0,73,124,1) 70%, rgba(106,155,190,1) 100%)",
 			}}>
-			<div className="absolute -top-80">
+			<div className="absolute -top-80 hidden xl:block">
 				<Image
 					alt="heroCloudImg"
 					src={heroCloud}
@@ -37,7 +36,7 @@ export default function HomeServices() {
 				/>
 			</div>
 			<div className="w-full flex flex-col gap-40">
-				<div className="w-full flex items-start gap-10 justify-center px-80">
+				<div className="w-full flex items-start gap-10 justify-center padding-x">
 					<div className="w-full flex gap-2 overflow-hidden">
 						<div className="flex flex-col gap-2 overflow-hidden">
 							{[aboutTwo, aboutFour, aboutSix].map((item, index) => (
@@ -55,8 +54,8 @@ export default function HomeServices() {
 									<Image
 										src={item}
 										alt="sda"
-										width={250}
-										height={250}
+										width={200}
+										height={200}
 										className="w-full object-cover"
 									/>
 								</motion.div>
@@ -89,7 +88,7 @@ export default function HomeServices() {
 						</div>
 					</div>
 					<div className="w-full flex flex-col gap-8 relative">
-						<div className="absolute -top-20 -right-60">
+						<div className="absolute -top-20 -right-60 hidden xl:block">
 							<Image
 								alt="aboutCrownR"
 								src={aboutCrownR}
@@ -104,51 +103,49 @@ export default function HomeServices() {
 							<h1>
 								<AnimatedText
 									text="The Mounting"
-									className="text-white font-HyperspaceRace text-[98px] font-black leading-none flex uppercase overflow-hidden"
+									className="text-white font-HyperspaceRace heading font-black leading-none flex uppercase overflow-hidden"
 								/>
 								<AnimatedText
 									text="King"
-									className="text-white font-HyperspaceRace text-[98px] font-black leading-none flex uppercase overflow-hidden"
+									className="text-white font-HyperspaceRace heading font-black leading-none flex uppercase overflow-hidden"
 								/>
 							</h1>
 						</div>
 						<div className="absolute top-12 -right-full h-[500px] blur-[120px] bg-gradient-to-b from-[#007DFE] via-[#2f84da] to-[#007DFE] rounded-full w-[500px]" />
 						<div className="flex flex-col gap-6 relative z-50">
-							<div className="text-white font-Monstrate text-[18px] leading-loose">
+							<div className="text-white font-Monstrate paragraph leading-loose">
 								<TextMask>
 									{[
 										"Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for lorem ipsum will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
 									]}
 								</TextMask>
 							</div>
-							<div className="w-fit flex gap-3 justify-center items-center bg-[#F99A03] px-10 py-3">
-								<button className="w-fit text-white font-Monstrate text-[20px] font-normal leading-tight tracking-tight">
-									Learn more
-								</button>
-								<Image
-									src={arrowRight}
-									alt="arrowRightImg"
-									width={30}
-									height={30}
+							<div className="w-fit flex items-center justify-between bg-[#F99A03] cursor-pointer rounded-full group">
+								<Button
+									bgcolor="#212121"
+									href="/about"
+									title="learn more"
+									className="bg-white text-black"
+									style={{ color: "#fff" }}
 								/>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div className="flex flex-col gap-20 relative">
+				<div className="w-full flex flex-col gap-20 relative padding-x">
 					<div className="w-full flex justify-center items-center flex-col">
 						<AnimatedText
 							text="Advantage of"
-							className="text-white text-center font-HyperspaceRace text-[98px] font-bold leading-tight capitalize"
+							className="text-white text-center font-HyperspaceRace heading font-bold leading-tight capitalize"
 						/>
 						<AnimatedText
 							text="Our Mounting King Service"
-							className="text-white text-center font-HyperspaceRace text-[98px] font-bold leading-tight capitalize -mt-6"
+							className="text-white text-center font-HyperspaceRace heading font-bold leading-tight capitalize -mt-6"
 						/>
 					</div>
 					<div className="w-full flex items-center justify-center flex-col gap-20 relative">
 						<div className="absolute -left-60 h-[500px] blur-[120px] bg-gradient-to-b from-[#007DFE] via-[#2f84da] to-[#007DFE] rounded-full w-[500px]" />
-						<div className="w-[80%] flex justify-between gap-10 z-50">
+						<div className="w-full flex justify-between gap-10 z-50">
 							<div className="group relative cursor-pointer overflow-hidden bg-white rounded-2xl px-6 py-10 shadow-2xl ring-1 ring-gray-900/5 transition-all duration-500 transform hover:scale-105 hover:shadow-3xl">
 								<span className="absolute -top-10 -left-10 z-0 h-20 w-20 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 opacity-75 transition-all duration-500 transform group-hover:scale-[20]" />
 								<div className="relative z-10 mx-auto max-w-md flex flex-col gap-4">
@@ -164,7 +161,7 @@ export default function HomeServices() {
 										<h1 className="text-black group-hover:text-white text-[30px] font-bold leading-tight capitalize">
 											High Market Value
 										</h1>
-										<p className="text-black font-Monstrate text-[18px] group-hover:text-white leading-tight capitalize">
+										<p className="text-black font-Monstrate paragraph group-hover:text-white leading-tight capitalize">
 											Lorem Ipsum is simply dummy text of the printing and
 											typesetting industry. Lorem Ipsum has been the industrys
 											standard dummy text ever
@@ -188,7 +185,7 @@ export default function HomeServices() {
 											Save Time <br />
 											and Resources
 										</h1>
-										<p className="text-black font-Monstrate text-[18px] group-hover:text-white leading-tight capitalize">
+										<p className="text-black font-Monstrate paragraph group-hover:text-white leading-tight capitalize">
 											Lorem Ipsum is simply dummy text of the printing and
 											typesetting industry. Lorem Ipsum has been the industrys
 											standard dummy text ever
@@ -211,7 +208,7 @@ export default function HomeServices() {
 										<h1 className="text-black group-hover:text-white text-[30px] font-bold leading-tight capitalize">
 											Gain Your <br /> Advantage
 										</h1>
-										<p className="text-black font-Monstrate text-[18px] group-hover:text-white leading-tight capitalize">
+										<p className="text-black font-Monstrate paragraph group-hover:text-white leading-tight capitalize">
 											Lorem Ipsum is simply dummy text of the printing and
 											typesetting industry. Lorem Ipsum has been the industrys
 											standard dummy text ever
@@ -222,34 +219,32 @@ export default function HomeServices() {
 						</div>
 					</div>
 				</div>
-				<div className="w-full flex justify-between gap-20 relative px-48">
+				<div className="w-full flex justify-between gap-20 relative padding-x">
 					<div className="flex-1 flex flex-col gap-10">
 						<div>
 							<AnimatedText
 								text="Bracket"
-								className="text-white text-center font-HyperspaceRace text-[98px] font-bold leading-tight capitalize"
+								className="text-white text-center font-HyperspaceRace heading font-bold leading-tight capitalize"
 							/>
 							<AnimatedText
 								text="Supplied"
-								className="text-white text-center font-HyperspaceRace text-[98px] font-bold leading-tight capitalize -mt-10"
+								className="text-white text-center font-HyperspaceRace heading font-bold leading-tight capitalize -mt-10"
 							/>
 						</div>
-						<div className="text-white font-Monstrate text-[18px] leading-loose">
+						<div className="text-white font-Monstrate paragraph leading-loose">
 							<TextMask>
 								{[
 									"Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for lorem ipsum will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
 								]}
 							</TextMask>
 						</div>
-						<div className="w-fit flex gap-3 justify-center items-center bg-[#F99A03] px-10 py-3">
-							<button className="w-fit text-white font-Monstrate text-[20px] font-normal leading-tight tracking-tight">
-								Learn more
-							</button>
-							<Image
-								src={arrowRight}
-								alt="arrowRightImg"
-								width={30}
-								height={30}
+						<div className="w-fit flex items-center justify-between bg-[#F99A03] cursor-pointer rounded-full group">
+							<Button
+								bgcolor="#212121"
+								href="/about"
+								title="learn more"
+								className="bg-white text-black"
+								style={{ color: "#fff" }}
 							/>
 						</div>
 					</div>
@@ -286,39 +281,37 @@ export default function HomeServices() {
 							className="w-full h-full object-cover"
 						/>
 					</motion.div>
-					<div className="w-full flex justify-between gap-10 px-48 mb-40">
-						<div className="flex-1 flex flex-col gap-6 -mt-60">
+					<div className="w-full flex justify-between gap-10 padding-x xl:mb-40">
+						<div className="w-1/2 flex flex-col gap-6 -mt-60 lg:-mt-40 md:-mt-32">
 							<div className="text-[#F99A03] font-HyperspaceRace text-[35px] font-black leading-tight capitalize">
 								<TextMask>{["About Us"]}</TextMask>
 							</div>
 							<AnimatedText
 								text="Tell us What"
-								className="text-white text-center font-HyperspaceRace text-[98px] font-bold leading-tight capitalize"
+								className="text-white text-center font-HyperspaceRace heading font-bold leading-tight capitalize"
 							/>
 							<AnimatedText
 								text="You are Looking For"
-								className="text-white text-center font-HyperspaceRace text-[98px] font-bold leading-tight -mt-14 capitalize"
+								className="text-white text-center font-HyperspaceRace heading font-bold leading-tight -mt-14 capitalize"
 							/>
-							<div className="text-white font-Monstrate text-[18px] leading-loose">
+							<div className="text-white font-Monstrate paragraph leading-loose">
 								<TextMask>
 									{[
 										"Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for lorem ipsum will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
 									]}
 								</TextMask>
 							</div>
-							<div className="w-fit flex gap-3 justify-center items-center bg-[#F99A03] px-10 py-3">
-								<button className="w-fit text-white font-Monstrate text-[20px] font-normal leading-tight tracking-tight">
-									Fill the form
-								</button>
-								<Image
-									src={arrowRight}
-									alt="arrowRightImg"
-									width={30}
-									height={30}
+							<div className="w-fit flex items-center justify-between bg-[#F99A03] cursor-pointer rounded-full group">
+								<Button
+									bgcolor="#212121"
+									href="/about"
+									title="Fill the form"
+									className="bg-white text-black"
+									style={{ color: "#fff" }}
 								/>
 							</div>
 						</div>
-						<div className="flex flex-1">
+						<div className="flex w-1/2">
 							<div className="absolute top-80">
 								<motion.div
 									initial={{ opacity: 0, scale: 0.5 }}
@@ -342,7 +335,7 @@ export default function HomeServices() {
 					</div>
 				</div>
 			</div>
-			<div className="absolute -bottom-60 z-50">
+			<div className="absolute -bottom-60 z-50 hidden xl:block">
 				<Image
 					alt="heroCloudImg"
 					src={heroCloud}

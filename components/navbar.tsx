@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { TpositionProps } from "@/types";
 import { useRef, useState } from "react";
 import { usePathname } from "next/navigation";
+import { navVarients } from "@/motion";
 
 export default function Navbar() {
 	const pathname = usePathname();
@@ -16,13 +17,18 @@ export default function Navbar() {
 	});
 
 	return (
-		<div className="w-full flex items-center justify-between gap-5 px-10 py-3 absolute top-0 z-[999]">
+		<motion.div
+			initial="initial"
+			whileInView="vissible"
+			viewport={{ once: true }}
+			variants={navVarients}
+			className="w-full flex items-center justify-between gap-5 px-10 py-3 absolute top-0 z-[999]">
 			<div>
 				<Image
 					src={navLogo}
 					alt="navLogo"
-					width={150}
-					height={150}
+					width={120}
+					height={120}
 				/>
 			</div>
 			<ul
@@ -57,14 +63,14 @@ export default function Navbar() {
 			</ul>
 			<div>
 				<Link
-					className={`bg-[#F99A03] text-white px-6 py-4 rounded-lg text-[20px] font-Monstrate leading-tight tracking-tight ${
+					className={`bg-[#F99A03] text-white px-6 py-3 rounded-lg text-[20px] font-Monstrate leading-tight tracking-tight ${
 						pathname === "/contact-us" ? "text-[#F99A03]" : "text-black"
 					}`}
 					href="/contact-us">
 					Contact Us
 				</Link>
 			</div>
-		</div>
+		</motion.div>
 	);
 }
 
@@ -95,7 +101,7 @@ const Tab = ({
 					opacity: 1,
 				});
 			}}
-			className="relative z-10 block cursor-pointer text-[20px] font-Monstrate uppercase leading-tight tracking-tight p-3 text-black group">
+			className="relative z-10 block cursor-pointer text-[18px] font-Monstrate leading-tight tracking-tight p-3 text-black group">
 			<Link
 				href={href}
 				className={`relative z-20 px-3 py-1 transition-all duration-300 ease-in-out ${

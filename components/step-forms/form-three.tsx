@@ -6,24 +6,37 @@ import { CiCircleMinus, CiCirclePlus } from "react-icons/ci";
 
 export default function FormThree({
 	onSubmits3,
+	backBtn,
 }: {
 	onSubmits3: (event: React.FormEvent<HTMLFormElement>) => void;
+	backBtn: () => void;
 }) {
+	// Initialize selected items from session storage
 	const [selectedItems, setSelectedItems] = useState<
 		Record<string, { quantity: number; price: number; time: number }>
-	>({});
+	>(() => {
+		const storedItems = sessionStorage.getItem("selectedItems");
+		return storedItems ? JSON.parse(storedItems) : {};
+	});
 
 	const handleAdd = (size: string, price: number, time: number) => {
-		setSelectedItems((prev) => ({
-			...prev,
-			[size]: prev[size]
-				? {
-						quantity: prev[size].quantity + 1,
-						price: prev[size].price + price,
-						time: prev[size].time + time,
-				  }
-				: { quantity: 1, price, time },
-		}));
+		setSelectedItems((prev) => {
+			const updatedItems = {
+				...prev,
+				[size]: prev[size]
+					? {
+							quantity: prev[size].quantity + 1,
+							price: prev[size].price + price,
+							time: prev[size].time + time,
+					  }
+					: { quantity: 1, price, time },
+			};
+
+			// Save to session storage
+			sessionStorage.setItem("selectedItems", JSON.stringify(updatedItems));
+
+			return updatedItems;
+		});
 	};
 
 	const handleRemove = (size: string, price: number, time: number) => {
@@ -31,20 +44,27 @@ export default function FormThree({
 			if (!prev[size]) return prev; // No item to remove, return current state
 
 			const updatedQuantity = prev[size].quantity - 1;
+			let updatedItems;
 
 			if (updatedQuantity <= 0) {
+				// eslint-disable-next-line @typescript-eslint/no-unused-vars
 				const { [size]: _, ...rest } = prev;
-				return rest;
+				updatedItems = rest;
+			} else {
+				updatedItems = {
+					...prev,
+					[size]: {
+						quantity: updatedQuantity,
+						price: prev[size].price - price,
+						time: prev[size].time - time,
+					},
+				};
 			}
 
-			return {
-				...prev,
-				[size]: {
-					quantity: updatedQuantity,
-					price: prev[size].price - price,
-					time: prev[size].time - time,
-				},
-			};
+			// Save to session storage
+			sessionStorage.setItem("selectedItems", JSON.stringify(updatedItems));
+
+			return updatedItems;
 		});
 	};
 
@@ -58,7 +78,7 @@ export default function FormThree({
 	);
 
 	return (
-		<div className="w-[70%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center bg-white p-10 rounded-lg z-50">
+		<div className="w-[70%] h-full bg-white p-10 rounded-lg z-50">
 			<div className="w-full flex gap-8 justify-between">
 				<div className="w-full flex flex-col gap-5">
 					<div className="flex flex-col gap-4">
@@ -84,6 +104,7 @@ export default function FormThree({
 							<div className="flex items-center gap-2">
 								{!selectedItems[size] ? (
 									<button
+										type="button"
 										onClick={() => handleAdd(size, price, time)}
 										className="text-[#0E0E30]">
 										<CiCirclePlus size={26} />
@@ -91,12 +112,14 @@ export default function FormThree({
 								) : (
 									<>
 										<button
+											type="button"
 											onClick={() => handleRemove(size, price, time)}
 											className="text-[#0E0E30]">
 											<CiCircleMinus size={26} />
 										</button>
 										<p>{selectedItems[size].quantity}</p>
 										<button
+											type="button"
 											onClick={() => handleAdd(size, price, time)}
 											className="text-[#0E0E30]">
 											<CiCirclePlus size={26} />
@@ -109,7 +132,9 @@ export default function FormThree({
 					<form
 						onSubmit={onSubmits3}
 						className="flex items-center gap-4">
-						<button className="text-black border border-black px-6 py-4 rounded-lg text-[20px] font-Monstrate leading-tight tracking-tight">
+						<button
+							onClick={() => backBtn()}
+							className="text-black border border-black px-6 py-4 rounded-lg text-[20px] font-Monstrate leading-tight tracking-tight">
 							Back
 						</button>
 						<button className="bg-[#F99A03] text-white px-6 py-4 rounded-lg text-[20px] font-Monstrate leading-tight tracking-tight">

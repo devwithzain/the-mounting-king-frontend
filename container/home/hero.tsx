@@ -15,13 +15,13 @@ import {
 	u,
 } from "@/public";
 
-export default function AboutHero() {
+export default function HomeHero() {
 	return (
 		<div className="w-full h-screen flex items-center relative justify-center bg-[url('/heroBackground.png')] bg-cover bg-center bg-no-repeat">
 			<div className="flex flex-col gap-5">
 				<div className="absolute right-24 top-28 h-[500px] blur-[150px] bg-gradient-to-b from-[#007DFE] via-[#c092df] to-[#007DFE] rounded-full w-[500px]" />
-				<div className="w-full px-10 py-5 z-50">
-					<div className="absolute left-10 top-40">
+				<div className="w-full padding-x py-5 z-50">
+					<div className="absolute left-10 top-40 hidden xl:block">
 						<motion.div
 							initial={{ scale: 0 }}
 							whileInView={{ scale: 1 }}
@@ -68,9 +68,9 @@ export default function AboutHero() {
 							</svg>
 						</motion.div>
 					</div>
-					<div className="flex flex-col absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 overflow-hidden">
+					<div className="flex flex-col absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 h-full">
 						<motion.div
-							initial={{ y: "-100%" }}
+							initial={{ y: "-90%" }}
 							whileInView={{ y: 0 }}
 							transition={{
 								duration: 1,
@@ -82,6 +82,7 @@ export default function AboutHero() {
 								src={drackula}
 								width={600}
 								height={600}
+								className="w-full object-cover lg:w-[500px]"
 							/>
 						</motion.div>
 						<motion.div
@@ -158,7 +159,7 @@ export default function AboutHero() {
 					</div>
 				</div>
 			</div>
-			<div className="absolute -bottom-60 z-50">
+			<div className="absolute -bottom-60 z-50 hidden xl:block">
 				<Image
 					alt="heroCloudImg"
 					src={heroCloud}

@@ -5,7 +5,7 @@ export { default as Footer } from './footer';
 export { default as Marquee } from './marquee';
 export { default as Appointment } from './appointment';
 export { default as Hero } from './hero';
-export { default as Testimonials } from './testimonials';
+export { default as Button } from './button';
 
 export { default as FormOne } from './step-forms/form-one';
 export { default as FormTwo } from './step-forms/form-two';

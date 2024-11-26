@@ -1,5 +1,5 @@
-import { heroCloud } from "@/public";
 import Image from "next/image";
+import { heroCloud } from "@/public";
 
 export default function Hero() {
 	return (
@@ -8,7 +8,7 @@ export default function Hero() {
 				<h1 className="text-[#1F1F3D] text-center font-HyperspaceRace text-[98px] font-black leading-normal capitalize">
 					Book Appointment
 				</h1>
-				<div className="absolute -bottom-60">
+				<div className="absolute -bottom-60 z-50 hidden xl:block">
 					<Image
 						alt="heroCloudImg"
 						src={heroCloud}

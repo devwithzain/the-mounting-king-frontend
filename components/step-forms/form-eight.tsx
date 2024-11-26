@@ -1,10 +1,71 @@
+"use client";
+import { useEffect, useState } from "react";
 import { GoClock } from "react-icons/go";
 
 export default function FormTwo({
 	onSubmits8,
+	backBtn,
 }: {
 	onSubmits8: (event: React.FormEvent<HTMLFormElement>) => void;
+	backBtn: () => void;
 }) {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	const [selectedItems, setSelectedItems] = useState<
+		Record<string, { quantity: number; price: number; time: number }>
+	>(() => {
+		const storedItems = sessionStorage.getItem("selectedItems");
+		return storedItems ? JSON.parse(storedItems) : {};
+	});
+
+	const [calendarDates, setCalendarDates] = useState<
+		{ day: string; date: string }[]
+	>([]);
+	const [selectedDate, setSelectedDate] = useState<{
+		day: string;
+		date: string;
+	} | null>(() => {
+		const storedDate = sessionStorage.getItem("selectedDate");
+		return storedDate ? JSON.parse(storedDate) : null;
+	});
+
+	// Generate dynamic week dates
+	useEffect(() => {
+		const today = new Date();
+		const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+		const dates = Array.from({ length: 7 }).map((_, i) => {
+			const day = new Date(
+				today.getFullYear(),
+				today.getMonth(),
+				today.getDate() + i,
+			);
+			return {
+				day: weekDays[day.getDay()],
+				date: day.toLocaleDateString("en-US", {
+					month: "short",
+					day: "numeric",
+				}),
+			};
+		});
+		setCalendarDates(dates);
+	}, []);
+
+	// Store selected date in sessionStorage
+	const handleDateSelection = (day: string, date: string) => {
+		const selected = { day, date };
+		setSelectedDate(selected);
+		sessionStorage.setItem("selectedDate", JSON.stringify(selected));
+	};
+
+	// Calculate total price and time
+	const totalPrice = Object.values(selectedItems).reduce(
+		(sum, item) => sum + item.price,
+		0,
+	);
+	const totalTime = Object.values(selectedItems).reduce(
+		(sum, item) => sum + item.time,
+		0,
+	);
+
 	return (
 		<div className="w-[70%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center bg-white p-10 rounded-lg z-50">
 			<div className="flex flex-col gap-8 items-center justify-center">
@@ -29,85 +90,55 @@ export default function FormTwo({
 						<h1 className="text-black font-HyperspaceRace text-[28px] font-black leading-tight capitalize">
 							Mount 1 Or More TVs Normal TV Onto Any Surface.
 						</h1>
-						<p className="text-black font-Monstrate text-[18px] leading-normal capitalize border-b border-black pb-2">
-							1x Under 50 Inches
-						</p>
-						<div className="flex items-center gap-2 border-b border-black pb-2">
-							<GoClock size={24} />
-							<p className="text-black font-Monstrate text-[18px] leading-normal capitalize">
-								30 min
-							</p>
-						</div>
-						<div className="flex justify-between items-center gap-5">
-							<p className="text-black font-Monstrate text-[18px] leading-normal capitalize">
-								Total
-							</p>
-							<p className="text-black font-Monstrate text-[18px] leading-normal capitalize">
-								$50
-							</p>
-						</div>
+						{Object.keys(selectedItems).length > 0 && (
+							<div className="flex flex-col">
+								{Object.entries(selectedItems).map(([size, item]) => (
+									<div
+										key={size}
+										className="flex justify-between py-2 border-b border-black">
+										<p className="text-black font-Monstrate text-[18px] leading-normal capitalize">
+											{item.quantity}x {size}
+										</p>
+									</div>
+								))}
+								<div className="flex items-center gap-2 border-b border-black py-2">
+									<GoClock size={24} />
+									<p className="text-black font-Monstrate text-[18px] leading-normal capitalize">
+										{Math.floor(totalTime / 60)} hr {totalTime % 60} min
+									</p>
+								</div>
+								<div className="flex justify-between items-center gap-5 pt-2">
+									<p className="text-black font-Monstrate text-[18px] leading-normal capitalize">
+										Total
+									</p>
+									<p className="text-black font-Monstrate text-[18px] leading-normal capitalize">
+										${totalPrice}
+									</p>
+								</div>
+							</div>
+						)}
 					</div>
 				</div>
 				<div className="w-full flex flex-col gap-5">
 					<div className="w-full rounded-lg border border-black">
 						<div className="w-full flex justify-between items-center border-b border-black p-5">
-							<div className="flex flex-col items-center">
-								<h1 className="text-black font-Monstrate text-[18px] leading-normal capitalize">
-									Sun
-								</h1>
-								<p className="text-black font-Monstrate text-[18px] leading-normal capitalize">
-									Nov 16
-								</p>
-							</div>
-							<div className="flex flex-col items-center">
-								<h1 className="text-black font-Monstrate text-[18px] leading-normal capitalize">
-									Mon
-								</h1>
-								<p className="text-black font-Monstrate text-[18px] leading-normal capitalize">
-									Nov 17
-								</p>
-							</div>
-							<div className="flex flex-col items-center">
-								<h1 className="text-black font-Monstrate text-[18px] leading-normal capitalize">
-									Tue
-								</h1>
-								<p className="text-black font-Monstrate text-[18px] leading-normal capitalize">
-									Nov 18
-								</p>
-							</div>
-							<div className="flex flex-col items-center">
-								<h1 className="text-black font-Monstrate text-[18px] leading-normal capitalize">
-									Wed
-								</h1>
-								<p className="text-black font-Monstrate text-[18px] leading-normal capitalize">
-									Nov 19
-								</p>
-							</div>
-
-							<div className="flex flex-col items-center">
-								<h1 className="text-black font-Monstrate text-[18px] leading-normal capitalize">
-									Thu
-								</h1>
-								<p className="text-black font-Monstrate text-[18px] leading-normal capitalize">
-									Nov 20
-								</p>
-							</div>
-							<div className="flex flex-col items-center">
-								<h1 className="text-black font-Monstrate text-[18px] leading-normal capitalize">
-									Fiday
-								</h1>
-								<p className="text-black font-Monstrate text-[18px] leading-normal capitalize">
-									Nov 21
-								</p>
-							</div>
-							<div className="flex flex-col items-center">
-								<h1 className="text-black font-Monstrate text-[18px] leading-normal capitalize">
-									Saturday
-								</h1>
-								<p className="text-black font-Monstrate text-[18px] leading-normal capitalize">
-									Nov 22
-								</p>
-							</div>
+							{calendarDates.map(({ day, date }) => (
+								<div
+									key={date}
+									className={`flex flex-col items-center cursor-pointer ${
+										selectedDate?.date === date
+											? "bg-[#F99A03] px-4 py-2 rounded-lg"
+											: ""
+									}`}
+									onClick={() => handleDateSelection(day, date)}>
+									<h1 className="text-black font-Monstrate text-[18px] capitalize">
+										{day}
+									</h1>
+									<p className="text-black font-Monstrate text-[18px] capitalize">
+										{date}
+									</p>
+								</div>
+							))}
 						</div>
 						<div className="w-full flex gap-5 justify-between items-center p-5">
 							<div className="w-full flex flex-col gap-3">
@@ -159,10 +190,14 @@ export default function FormTwo({
 					<form
 						onSubmit={onSubmits8}
 						className="flex items-center gap-4">
-						<button className="text-black border border-black px-6 py-4 rounded-lg text-[20px] font-Monstrate leading-tight tracking-tight">
-							back
+						<button
+							onClick={() => {
+								backBtn();
+							}}
+							className="text-black border border-black px-6 py-4 rounded-lg text-[20px] font-Monstrate">
+							Back
 						</button>
-						<button className="bg-[#F99A03] text-white px-6 py-4 rounded-lg text-[20px] font-Monstrate leading-tight tracking-tight">
+						<button className="bg-[#F99A03] text-white px-6 py-4 rounded-lg text-[20px] font-Monstrate">
 							Continue
 						</button>
 					</form>
