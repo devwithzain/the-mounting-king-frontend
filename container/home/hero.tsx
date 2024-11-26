@@ -1,27 +1,15 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import {
-	drackula,
-	footerCrown,
-	g,
-	heroCloud,
-	i,
-	m,
-	n,
-	o,
-	punch,
-	t,
-	u,
-} from "@/public";
+import { drackula, footerCrown, g, i, m, n, o, punch, t, u } from "@/public";
 
 export default function HomeHero() {
 	return (
 		<div className="w-full h-screen flex items-center relative justify-center bg-[url('/heroBackground.png')] bg-cover bg-center bg-no-repeat">
 			<div className="flex flex-col gap-5">
-				<div className="absolute right-24 top-28 h-[500px] blur-[150px] bg-gradient-to-b from-[#007DFE] via-[#c092df] to-[#007DFE] rounded-full w-[500px]" />
+				<div className="absolute right-24 top-28 h-[500px] blur-[150px] bg-gradient-to-b from-[#007DFE] via-[#c092df] to-[#007DFE] rounded-full w-[500px] overflow-hidden" />
 				<div className="w-full padding-x py-5 z-50">
-					<div className="absolute left-10 top-40 hidden xl:block">
+					<div className="absolute left-10 top-40 hidden xl:block z-[999]">
 						<motion.div
 							initial={{ scale: 0 }}
 							whileInView={{ scale: 1 }}
@@ -68,7 +56,7 @@ export default function HomeHero() {
 							</svg>
 						</motion.div>
 					</div>
-					<div className="flex flex-col absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 h-full">
+					<div className="w-fit flex flex-col justify-end items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 h-full pb-10">
 						<motion.div
 							initial={{ y: "-90%" }}
 							whileInView={{ y: 0 }}
@@ -80,9 +68,9 @@ export default function HomeHero() {
 							<Image
 								alt="drackula"
 								src={drackula}
-								width={600}
-								height={600}
-								className="w-full object-cover lg:w-[500px]"
+								width={500}
+								height={500}
+								className="w-full object-cover xl:h-[700px] lg:h-[550px]"
 							/>
 						</motion.div>
 						<motion.div
@@ -96,8 +84,9 @@ export default function HomeHero() {
 							<Image
 								alt="punch"
 								src={punch}
-								width={600}
-								height={600}
+								width={500}
+								height={500}
+								className="w-[500px] lg:w-[400px]"
 							/>
 						</motion.div>
 					</div>
@@ -158,13 +147,6 @@ export default function HomeHero() {
 						</motion.div>
 					</div>
 				</div>
-			</div>
-			<div className="absolute -bottom-60 z-50 hidden xl:block">
-				<Image
-					alt="heroCloudImg"
-					src={heroCloud}
-					className="w-full h-full object-cover"
-				/>
 			</div>
 		</div>
 	);

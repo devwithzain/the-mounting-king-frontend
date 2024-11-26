@@ -86,7 +86,7 @@ export default function Appointment() {
 
 	return (
 		<div
-			className="relative w-full min-h-screen py-20"
+			className="w-full min-h-screen py-80 padding-x flex items-center justify-center"
 			style={{
 				background:
 					"linear-gradient(0deg, rgba(106,155,190,1) 0%, rgba(0,73,124,1) 30%, rgba(0,73,124,1) 50%, rgba(0,73,124,1) 70%, rgba(106,155,190,1) 100%)",

@@ -1,7 +1,6 @@
 "use client";
 import {
 	advantage,
-	heroCloud,
 	marketValue,
 	time,
 	aboutOne,
@@ -15,6 +14,7 @@ import {
 	bracket,
 	tree,
 	gorillaHanging,
+	heroCloud,
 } from "@/public";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -23,21 +23,14 @@ import { AnimatedText, Button, TextMask } from "@/components";
 export default function HomeServices() {
 	return (
 		<div
-			className="w-full padding-y relative"
+			className="w-full padding-y relative xl:!pb-80"
 			style={{
 				background:
 					"linear-gradient(0deg, rgba(106,155,190,1) 0%, rgba(0,73,124,1) 30%, rgba(0,73,124,1) 50%, rgba(0,73,124,1) 70%, rgba(106,155,190,1) 100%)",
 			}}>
-			<div className="absolute -top-80 hidden xl:block">
-				<Image
-					alt="heroCloudImg"
-					src={heroCloud}
-					className="w-full h-full object-cover rotate-180"
-				/>
-			</div>
-			<div className="w-full flex flex-col gap-40">
-				<div className="w-full flex items-start gap-10 justify-center padding-x">
-					<div className="w-full flex gap-2 overflow-hidden">
+			<div className="w-full flex flex-col gap-40 mt-20">
+				<div className="w-full flex items-center gap-20 justify-center padding-x">
+					<div className="w-1/2 flex justify-end gap-2 overflow-hidden">
 						<div className="flex flex-col gap-2 overflow-hidden">
 							{[aboutTwo, aboutFour, aboutSix].map((item, index) => (
 								<motion.div
@@ -54,8 +47,8 @@ export default function HomeServices() {
 									<Image
 										src={item}
 										alt="sda"
-										width={200}
-										height={200}
+										width={250}
+										height={250}
 										className="w-full object-cover"
 									/>
 								</motion.div>
@@ -87,7 +80,7 @@ export default function HomeServices() {
 							)}
 						</div>
 					</div>
-					<div className="w-full flex flex-col gap-8 relative">
+					<div className="w-1/2 flex flex-col gap-8 relative">
 						<div className="absolute -top-20 -right-60 hidden xl:block">
 							<Image
 								alt="aboutCrownR"
@@ -111,7 +104,7 @@ export default function HomeServices() {
 								/>
 							</h1>
 						</div>
-						<div className="absolute top-12 -right-full h-[500px] blur-[120px] bg-gradient-to-b from-[#007DFE] via-[#2f84da] to-[#007DFE] rounded-full w-[500px]" />
+						<div className="absolute top-12 lg:right-0 md:right-0 hidden xl:-right-full h-[500px] blur-[120px] bg-gradient-to-b from-[#007DFE] via-[#2f84da] to-[#007DFE] rounded-full w-[500px] overflow-hidden" />
 						<div className="flex flex-col gap-6 relative z-50">
 							<div className="text-white font-Monstrate paragraph leading-loose">
 								<TextMask>
@@ -144,9 +137,17 @@ export default function HomeServices() {
 						/>
 					</div>
 					<div className="w-full flex items-center justify-center flex-col gap-20 relative">
-						<div className="absolute -left-60 h-[500px] blur-[120px] bg-gradient-to-b from-[#007DFE] via-[#2f84da] to-[#007DFE] rounded-full w-[500px]" />
+						<div className="absolute -left-60 h-[500px] blur-[120px] bg-gradient-to-b from-[#007DFE] via-[#2f84da] to-[#007DFE] rounded-full w-[500px] overflow-hidden" />
 						<div className="w-full flex justify-between gap-10 z-50">
-							<div className="group relative cursor-pointer overflow-hidden bg-white rounded-2xl px-6 py-10 shadow-2xl ring-1 ring-gray-900/5 transition-all duration-500 transform hover:scale-105 hover:shadow-3xl">
+							<motion.div
+								initial={{ scale: 0 }}
+								whileInView={{ scale: 1 }}
+								transition={{
+									duration: 0.5,
+									ease: "backInOut",
+								}}
+								viewport={{ once: true }}
+								className="w-full group relative cursor-pointer overflow-hidden bg-white rounded-2xl px-6 py-10 shadow-2xl ring-1 ring-gray-900/5 transition-all duration-500 transform hover:scale-105 hover:shadow-3xl">
 								<span className="absolute -top-10 -left-10 z-0 h-20 w-20 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 opacity-75 transition-all duration-500 transform group-hover:scale-[20]" />
 								<div className="relative z-10 mx-auto max-w-md flex flex-col gap-4">
 									<span className="grid h-20 w-20 place-items-center rounded-full bg-gradient-to-r from-purple-500 to-blue-500 transition-all duration-500 transform group-hover:bg-gradient-to-r group-hover:from-[#007DFE] group-hover:to-[#2f84da]">
@@ -168,8 +169,17 @@ export default function HomeServices() {
 										</p>
 									</div>
 								</div>
-							</div>
-							<div className="group relative cursor-pointer overflow-hidden bg-white rounded-2xl px-6 py-10 shadow-2xl ring-1 ring-gray-900/5 transition-all duration-500 transform hover:scale-105 hover:shadow-3xl">
+							</motion.div>
+							<motion.div
+								initial={{ scale: 0 }}
+								whileInView={{ scale: 1 }}
+								transition={{
+									delay: 0.05,
+									duration: 0.5,
+									ease: "backInOut",
+								}}
+								viewport={{ once: true }}
+								className="w-full group relative cursor-pointer overflow-hidden bg-white rounded-2xl px-6 py-10 shadow-2xl ring-1 ring-gray-900/5 transition-all duration-500 transform hover:scale-105 hover:shadow-3xl">
 								<span className="absolute -top-10 -left-10 z-0 h-20 w-20 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 opacity-75 transition-all duration-500 transform group-hover:scale-[20]" />
 								<div className="relative z-10 mx-auto max-w-md flex flex-col gap-4">
 									<span className="grid h-20 w-20 place-items-center rounded-full bg-gradient-to-r from-purple-500 to-blue-500 transition-all duration-500 transform group-hover:bg-gradient-to-r group-hover:from-[#007DFE] group-hover:to-[#2f84da]">
@@ -192,8 +202,17 @@ export default function HomeServices() {
 										</p>
 									</div>
 								</div>
-							</div>
-							<div className="group relative cursor-pointer overflow-hidden bg-white rounded-2xl px-6 py-10 shadow-2xl ring-1 ring-gray-900/5 transition-all duration-500 transform hover:scale-105 hover:shadow-3xl">
+							</motion.div>
+							<motion.div
+								initial={{ scale: 0 }}
+								whileInView={{ scale: 1 }}
+								transition={{
+									delay: 0.08,
+									duration: 0.5,
+									ease: "backInOut",
+								}}
+								viewport={{ once: true }}
+								className="w-full group relative cursor-pointer overflow-hidden bg-white rounded-2xl px-6 py-10 shadow-2xl ring-1 ring-gray-900/5 transition-all duration-500 transform hover:scale-105 hover:shadow-3xl">
 								<span className="absolute -top-10 -left-10 z-0 h-20 w-20 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 opacity-75 transition-all duration-500 transform group-hover:scale-[20]" />
 								<div className="relative z-10 mx-auto max-w-md flex flex-col gap-4">
 									<span className="grid h-20 w-20 place-items-center rounded-full bg-gradient-to-r from-purple-500 to-blue-500 transition-all duration-500 transform group-hover:bg-gradient-to-r group-hover:from-[#007DFE] group-hover:to-[#2f84da]">
@@ -215,7 +234,7 @@ export default function HomeServices() {
 										</p>
 									</div>
 								</div>
-							</div>
+							</motion.div>
 						</div>
 					</div>
 				</div>
@@ -264,7 +283,7 @@ export default function HomeServices() {
 						/>
 					</motion.div>
 				</div>
-				<div className="w-full relative">
+				<div className="w-full relative pb-40 xl:pb-0">
 					<motion.div
 						initial={{ opacity: 0, scale: 0.5 }}
 						whileInView={{ opacity: 1, scale: 1 }}
@@ -329,13 +348,13 @@ export default function HomeServices() {
 										className="w-full h-full object-cover"
 									/>
 								</motion.div>
-								<div className="w-[600px] h-[92px] absolute right-10 -bottom-10 rounded-[600px] opacity-40 bg-[radial-gradient(53.92%_67.81%_at_50%_50%,#414141_0%,rgba(255,255,255,0)_100%)] blur-[15px]" />
+								<div className="w-[600px] h-[92px] absolute right-10 -bottom-10 rounded-[600px] opacity-40 bg-[radial-gradient(53.92%_67.81%_at_50%_50%,#414141_0%,rgba(255,255,255,0)_100%)] blur-[15px] xl:block hidden" />
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div className="absolute -bottom-60 z-50 hidden xl:block">
+			<div className="absolute -bottom-60 hidden xl:block overflow-hidden h-fit z-50">
 				<Image
 					alt="heroCloudImg"
 					src={heroCloud}

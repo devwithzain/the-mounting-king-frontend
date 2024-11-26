@@ -88,7 +88,7 @@ export default function FormSix({
 	);
 
 	return (
-		<div className="w-[70%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center bg-white p-10 rounded-lg z-50">
+		<div className="w-full flex items-center justify-center bg-white padding-y padding-x rounded-lg z-[999]">
 			<div className="w-full flex gap-8 justify-between">
 				<div className="w-full flex flex-col gap-5">
 					<div className="flex flex-col gap-4">

@@ -14,20 +14,18 @@ export default function FormNine({
 	const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 
-		// Save input values to sessionStorage
-		sessionStorage.setItem(
+		localStorage.setItem(
 			"formAddress",
 			JSON.stringify({ address, aptUnitFloor }),
 		);
 
-		// Call the parent submit function if needed
 		onSubmits9(event);
 	};
 
 	return (
-		<div className="w-[70%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center bg-white p-10 rounded-lg z-50">
+		<div className="w-full flex items-center justify-center bg-white padding-y padding-x rounded-lg z-[999]">
 			<div className="flex flex-col gap-8 items-center justify-center">
-				<h1 className="text-black text-center font-HyperspaceRace text-[98px] font-black leading-tight capitalize">
+				<h1 className="text-black text-center font-HyperspaceRace heading leading-none font-black capitalize">
 					Enter Address Where <br /> Service Will Be Provided
 				</h1>
 				<div className="w-full flex items-center justify-center">
@@ -37,14 +35,14 @@ export default function FormNine({
 						<div className="w-full flex items-center justify-between gap-4">
 							<input
 								type="text"
-								className="rounded-lg px-6 py-3 text-[#0E0E30] font-Monstrate text-[20px] font-normal leading-tight tracking-tight placeholder:text-[#0E0E30] outline-none   border border-black"
+								className="rounded-lg px-6 py-3 text-[#0E0E30] font-Monstrate text-[18px] font-normal leading-tight tracking-tight placeholder:text-[#0E0E30] outline-none border border-black"
 								placeholder="Address"
 								value={address}
 								onChange={(e) => setAddress(e.target.value)}
 							/>
 							<input
 								type="text"
-								className="rounded-lg px-6 py-3 text-[#0E0E30] font-Monstrate text-[20px] font-normal leading-tight tracking-tight placeholder:text-[#0E0E30] outline-none   border border-black"
+								className="rounded-lg px-6 py-3 text-[#0E0E30] font-Monstrate text-[18px] font-normal leading-tight tracking-tight placeholder:text-[#0E0E30] outline-none border border-black"
 								placeholder="Apt, Unit, Floor"
 								value={aptUnitFloor}
 								onChange={(e) => setAptUnitFloor(e.target.value)}

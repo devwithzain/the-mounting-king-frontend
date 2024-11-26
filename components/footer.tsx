@@ -18,7 +18,7 @@ import { FaFacebook, FaLinkedin, FaTiktok, FaYoutube } from "react-icons/fa";
 export default function Footer() {
 	return (
 		<div className="w-full min-h-screen bg-[url('/footerBackground.png')] bg-cover bg-center bg-no-repeat py-10 relative xl:pt-80">
-			<div className="absolute -top-60 hidden xl:block">
+			<div className="absolute -top-60 z-50 hidden xl:block overflow-hidden h-fit">
 				<Image
 					alt="heroCloudImg"
 					src={heroCloud}
@@ -175,17 +175,17 @@ export default function Footer() {
 									Home
 								</Link>
 								<Link
-									href="/"
+									href="/services"
 									className="text-white text-[20px] font-Monstrate leading-tight tracking-tight">
 									Services
 								</Link>
 								<Link
-									href="/"
+									href="/about"
 									className="text-white text-[20px] font-Monstrate leading-tight tracking-tight">
 									About
 								</Link>
 								<Link
-									href="/"
+									href="/request-a-demo"
 									className="text-white text-[20px] font-Monstrate leading-tight tracking-tight">
 									Request A Demo
 								</Link>
@@ -270,17 +270,17 @@ export default function Footer() {
 									Home
 								</Link>
 								<Link
-									href="/"
+									href="/services"
 									className="text-white text-[20px] font-Monstrate leading-tight tracking-tight">
 									Services
 								</Link>
 								<Link
-									href="/"
+									href="/about"
 									className="text-white text-[20px] font-Monstrate leading-tight tracking-tight">
 									About
 								</Link>
 								<Link
-									href="/"
+									href="/request-a-demo"
 									className="text-white text-[20px] font-Monstrate leading-tight tracking-tight">
 									Request A Demo
 								</Link>

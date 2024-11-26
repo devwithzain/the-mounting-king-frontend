@@ -6,6 +6,7 @@ export { default as Marquee } from './marquee';
 export { default as Appointment } from './appointment';
 export { default as Hero } from './hero';
 export { default as Button } from './button';
+export { default as Cloud } from './cloud';
 
 export { default as FormOne } from './step-forms/form-one';
 export { default as FormTwo } from './step-forms/form-two';

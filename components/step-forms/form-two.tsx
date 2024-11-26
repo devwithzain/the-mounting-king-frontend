@@ -4,9 +4,9 @@ export default function FormTwo({
 	onSubmits2: (event: React.FormEvent<HTMLFormElement>) => void;
 }) {
 	return (
-		<div className="w-[70%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center bg-white p-10 rounded-lg z-50">
+		<div className="w-full flex items-center justify-center bg-white padding-y padding-x rounded-lg z-[999]">
 			<div className="flex flex-col gap-8 items-center justify-center h-full">
-				<h1 className="text-black text-center font-HyperspaceRace text-[98px] font-black leading-tight capitalize">
+				<h1 className="text-black text-center font-HyperspaceRace heading font-black leading-tight capitalize">
 					Select Main Service
 				</h1>
 				<p className="text-black text-center font-Monstrate text-[18px] leading-normal">
@@ -18,7 +18,7 @@ export default function FormTwo({
 				<div className="w-full flex gap-5 justify-between">
 					<form
 						onSubmit={onSubmits2}
-						className="w-[300px] bg-white gap-7 z-50 relative flex flex-col py-5 border border-black/20 shadow-xl rounded-lg p-5 justify-between">
+						className="w-full bg-white gap-7 z-50 relative flex flex-col py-10 border border-black/5 shadow-xl rounded-lg px-5 justify-between">
 						<div className="flex flex-col gap-3">
 							<h1 className="text-black font-HyperspaceRace text-[22px] font-black leading-tight capitalize">
 								Mount 1 Or More TVs Normal TVs Onto Any Surface.
@@ -34,7 +34,7 @@ export default function FormTwo({
 					</form>
 					<form
 						onSubmit={onSubmits2}
-						className="w-[300px] bg-white gap-7 z-50 relative flex flex-col py-5 border border-black/20 shadow-xl rounded-lg p-5 justify-between">
+						className="w-full bg-white gap-7 z-50 relative flex flex-col py-10 border border-black/5 shadow-xl rounded-lg px-5 justify-between">
 						<div className="flex flex-col gap-3">
 							<h1 className="text-black font-HyperspaceRace text-[22px] font-black leading-tight capitalize">
 								The Frame by Samsung Installation
@@ -52,7 +52,7 @@ export default function FormTwo({
 					</form>
 					<form
 						onSubmit={onSubmits2}
-						className="w-[300px] bg-white gap-7 z-50 relative flex flex-col py-5 border border-black/20 shadow-xl rounded-lg p-5 justify-between">
+						className="w-full bg-white gap-7 z-50 relative flex flex-col py-10 border border-black/5 shadow-xl rounded-lg px-5 justify-between">
 						<div className="flex flex-col gap-3">
 							<h1 className="text-black font-HyperspaceRace text-[22px] font-black leading-tight capitalize">
 								The Mantel Mount Installation
@@ -70,7 +70,7 @@ export default function FormTwo({
 					</form>
 					<form
 						onSubmit={onSubmits2}
-						className="w-[300px] bg-white gap-7 z-50 relative flex flex-col py-5 border border-black/20 shadow-xl rounded-lg p-5 justify-between">
+						className="w-full bg-white gap-7 z-50 relative flex flex-col py-10 border border-black/5 shadow-xl rounded-lg px-5 justify-between">
 						<div className="flex flex-col gap-3">
 							<h1 className="text-black font-HyperspaceRace text-[22px] font-black leading-tight capitalize">
 								Special TV Mounting Situation

@@ -1,9 +1,9 @@
 "use client";
-import { useEffect, useState } from "react";
+import { TselectedItem } from "@/types";
 import { GoClock } from "react-icons/go";
+import { useEffect, useState } from "react";
 import { formFiveItems } from "@/constants";
 import { CiCircleMinus, CiCirclePlus } from "react-icons/ci";
-import { TselectedItem } from "@/types";
 
 export default function FormFive({
 	onSubmits5,
@@ -19,7 +19,6 @@ export default function FormFive({
 		return storedItems ? JSON.parse(storedItems) : {};
 	});
 
-	// Fetch selected values from sessionStorage
 	useEffect(() => {
 		const storedValues = sessionStorage.getItem("selectedItems");
 		if (storedValues) {
@@ -42,7 +41,6 @@ export default function FormFive({
 					: { quantity: 1, price, time },
 			};
 
-			// Save to session storage
 			sessionStorage.setItem("selectedItems", JSON.stringify(updatedItems));
 
 			return updatedItems;
@@ -51,7 +49,7 @@ export default function FormFive({
 
 	const handleRemove = (size: string, price: number, time: number) => {
 		setSelectedItems((prev) => {
-			if (!prev[size]) return prev; // No item to remove, return current state
+			if (!prev[size]) return prev;
 
 			const updatedQuantity = prev[size].quantity - 1;
 			let updatedItems;
@@ -70,8 +68,6 @@ export default function FormFive({
 					},
 				};
 			}
-
-			// Save to session storage
 			sessionStorage.setItem("selectedItems", JSON.stringify(updatedItems));
 
 			return updatedItems;
@@ -88,13 +84,13 @@ export default function FormFive({
 	);
 
 	return (
-		<div className="w-[70%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center bg-white p-10 rounded-lg z-50">
+		<div className="w-full flex items-center justify-center bg-white padding-y padding-x rounded-lg z-[999]">
 			<div className="w-full flex gap-8 justify-between">
 				<div className="w-full flex flex-col gap-5">
 					<div className="flex flex-col gap-4">
 						<h1 className="text-black font-HyperspaceRace text-[45px] font-black leading-tight capitalize">
 							Do you need a
-							<br /> wall mount for your TV(s)?
+							<br /> wall mount for your TV?
 						</h1>
 						<p className="text-black font-Monstrate text-[22px]">
 							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque

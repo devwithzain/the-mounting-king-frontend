@@ -63,7 +63,7 @@ export default function Navbar() {
 			</ul>
 			<div>
 				<Link
-					className={`bg-[#F99A03] text-white px-6 py-3 rounded-lg text-[20px] font-Monstrate leading-tight tracking-tight ${
+					className={`bg-[#F99A03] btn transition-all duration-300 ease-in-out text-white px-6 py-3 rounded-lg text-[20px] font-Monstrate leading-tight tracking-tight ${
 						pathname === "/contact-us" ? "text-[#F99A03]" : "text-black"
 					}`}
 					href="/contact-us">
@@ -101,10 +101,10 @@ const Tab = ({
 					opacity: 1,
 				});
 			}}
-			className="relative z-10 block cursor-pointer text-[18px] font-Monstrate leading-tight tracking-tight p-3 text-black group">
+			className="relative z-10 block cursor-pointer text-[18px] font-Monstrate leading-tight tracking-tight p-2 text-black group">
 			<Link
 				href={href}
-				className={`relative z-20 px-3 py-1 transition-all duration-300 ease-in-out ${
+				className={`relative z-20 px-3 py-2 transition-all duration-300 ease-in-out ${
 					isActive ? "text-[#F99A03]" : "text-black"
 				} group-hover:text-white group-hover:bg-black rounded-full`}>
 				{children}
@@ -119,7 +119,7 @@ const Cursor = ({ position }: { position: TpositionProps }) => {
 			animate={{
 				...position,
 			}}
-			className="absolute z-0 h-7 rounded-full bg-black md:h-12"
+			className="absolute z-0 h-10 rounded-full bg-black"
 		/>
 	);
 };

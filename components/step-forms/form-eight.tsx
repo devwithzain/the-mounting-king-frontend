@@ -67,7 +67,7 @@ export default function FormTwo({
 	);
 
 	return (
-		<div className="w-[70%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center bg-white p-10 rounded-lg z-50">
+		<div className="w-full flex items-center justify-center bg-white padding-y padding-x rounded-lg z-[999]">
 			<div className="flex flex-col gap-8 items-center justify-center">
 				<div className="w-full flex justify-between gap-5">
 					<div className="flex-1 flex flex-col gap-5">
