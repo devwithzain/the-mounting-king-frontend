@@ -15,13 +15,13 @@ export default function FormSix({
 	const [selectedItems, setSelectedItems] = useState<
 		Record<string, { quantity: number; price: number; time: number }>
 	>(() => {
-		const storedItems = sessionStorage.getItem("selectedItems");
+		const storedItems = localStorage.getItem("selectedItems");
 		return storedItems ? JSON.parse(storedItems) : {};
 	});
 
-	// Fetch selected values from sessionStorage
+	// Fetch selected values from localStorage
 	useEffect(() => {
-		const storedValues = sessionStorage.getItem("selectedItems");
+		const storedValues = localStorage.getItem("selectedItems");
 		if (storedValues) {
 			const parsedValues: Record<string, TselectedItem> =
 				JSON.parse(storedValues);
@@ -43,7 +43,7 @@ export default function FormSix({
 			};
 
 			// Save to session storage
-			sessionStorage.setItem("selectedItems", JSON.stringify(updatedItems));
+			localStorage.setItem("selectedItems", JSON.stringify(updatedItems));
 
 			return updatedItems;
 		});
@@ -72,7 +72,7 @@ export default function FormSix({
 			}
 
 			// Save to session storage
-			sessionStorage.setItem("selectedItems", JSON.stringify(updatedItems));
+			localStorage.setItem("selectedItems", JSON.stringify(updatedItems));
 
 			return updatedItems;
 		});

@@ -3,10 +3,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { navLogo } from "@/public";
 import { motion } from "framer-motion";
+import { navVarients } from "@/motion";
 import { TpositionProps } from "@/types";
 import { useRef, useState } from "react";
 import { usePathname } from "next/navigation";
-import { navVarients } from "@/motion";
 
 export default function Navbar() {
 	const pathname = usePathname();
@@ -22,15 +22,16 @@ export default function Navbar() {
 			whileInView="vissible"
 			viewport={{ once: true }}
 			variants={navVarients}
-			className="w-full flex items-center justify-between gap-5 px-10 py-3 absolute top-0 z-[999]">
-			<div>
+			className="w-full flex items-center justify-between gap-5 padding-x py-3 absolute top-0 z-[999]">
+			<Link href="/">
 				<Image
 					src={navLogo}
 					alt="navLogo"
-					width={120}
-					height={120}
+					width={200}
+					height={200}
+					className="w-[150px] object-cover"
 				/>
-			</div>
+			</Link>
 			<ul
 				onMouseLeave={() => setPosition((prev) => ({ ...prev, opacity: 0 }))}
 				className="relative flex items-center gap-5 bg-white/60 backdrop-blur-[15px] rounded-lg p-2">

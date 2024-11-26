@@ -1,9 +1,9 @@
 "use client";
-import { useEffect, useState } from "react";
+import { TselectedItem } from "@/types";
 import { GoClock } from "react-icons/go";
+import { useEffect, useState } from "react";
 import { formSevenItems } from "@/constants";
 import { CiCircleMinus, CiCirclePlus } from "react-icons/ci";
-import { TselectedItem } from "@/types";
 
 export default function FormSeven({
 	onSubmits7,
@@ -15,13 +15,12 @@ export default function FormSeven({
 	const [selectedItems, setSelectedItems] = useState<
 		Record<string, { quantity: number; price: number; time: number }>
 	>(() => {
-		const storedItems = sessionStorage.getItem("selectedItems");
+		const storedItems = localStorage.getItem("selectedItems");
 		return storedItems ? JSON.parse(storedItems) : {};
 	});
 
-	// Fetch selected values from sessionStorage
 	useEffect(() => {
-		const storedValues = sessionStorage.getItem("selectedItems");
+		const storedValues = localStorage.getItem("selectedItems");
 		if (storedValues) {
 			const parsedValues: Record<string, TselectedItem> =
 				JSON.parse(storedValues);
@@ -43,7 +42,7 @@ export default function FormSeven({
 			};
 
 			// Save to session storage
-			sessionStorage.setItem("selectedItems", JSON.stringify(updatedItems));
+			localStorage.setItem("selectedItems", JSON.stringify(updatedItems));
 
 			return updatedItems;
 		});
@@ -71,8 +70,7 @@ export default function FormSeven({
 				};
 			}
 
-			// Save to session storage
-			sessionStorage.setItem("selectedItems", JSON.stringify(updatedItems));
+			localStorage.setItem("selectedItems", JSON.stringify(updatedItems));
 
 			return updatedItems;
 		});

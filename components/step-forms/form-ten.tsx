@@ -7,7 +7,7 @@ export default function FormTen() {
 	const [selectedItems, setSelectedItems] = useState<
 		Record<string, { quantity: number; price: number; time: number }>
 	>(() => {
-		const storedItems = sessionStorage.getItem("selectedItems");
+		const storedItems = localStorage.getItem("selectedItems");
 		return storedItems ? JSON.parse(storedItems) : {};
 	});
 
@@ -15,7 +15,7 @@ export default function FormTen() {
 		day: string;
 		date: string;
 	} | null>(() => {
-		const storedDate = sessionStorage.getItem("selectedDate");
+		const storedDate = localStorage.getItem("selectedDate");
 		return storedDate ? JSON.parse(storedDate) : null;
 	});
 
@@ -23,7 +23,7 @@ export default function FormTen() {
 		address: string;
 		aptUnitFloor: string;
 	} | null>(() => {
-		const storedAddress = sessionStorage.getItem("formAddress");
+		const storedAddress = localStorage.getItem("formAddress");
 		return storedAddress ? JSON.parse(storedAddress) : null;
 	});
 
@@ -32,9 +32,9 @@ export default function FormTen() {
 	const [email, setEmail] = useState<string>("");
 
 	useEffect(() => {
-		const storedItems = sessionStorage.getItem("selectedItems");
-		const storedDate = sessionStorage.getItem("selectedDate");
-		const storedAddress = sessionStorage.getItem("formAddress");
+		const storedItems = localStorage.getItem("selectedItems");
+		const storedDate = localStorage.getItem("selectedDate");
+		const storedAddress = localStorage.getItem("formAddress");
 
 		if (storedItems) {
 			setSelectedItems(JSON.parse(storedItems));

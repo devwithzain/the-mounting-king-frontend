@@ -40,7 +40,7 @@ export default function Rounded({
 
 	return (
 		<div
-			className={`rounded-full relative flex items-center justify-center overflow-hidden ${className}`}
+			className={`rounded-lg relative flex items-center justify-center overflow-hidden ${className}`}
 			onMouseEnter={() => {
 				manageMouseEnter();
 			}}

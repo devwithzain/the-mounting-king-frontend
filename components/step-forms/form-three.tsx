@@ -15,7 +15,7 @@ export default function FormThree({
 	const [selectedItems, setSelectedItems] = useState<
 		Record<string, { quantity: number; price: number; time: number }>
 	>(() => {
-		const storedItems = sessionStorage.getItem("selectedItems");
+		const storedItems = localStorage.getItem("selectedItems");
 		return storedItems ? JSON.parse(storedItems) : {};
 	});
 
@@ -33,7 +33,7 @@ export default function FormThree({
 			};
 
 			// Save to session storage
-			sessionStorage.setItem("selectedItems", JSON.stringify(updatedItems));
+			localStorage.setItem("selectedItems", JSON.stringify(updatedItems));
 
 			return updatedItems;
 		});
@@ -62,7 +62,7 @@ export default function FormThree({
 			}
 
 			// Save to session storage
-			sessionStorage.setItem("selectedItems", JSON.stringify(updatedItems));
+			localStorage.setItem("selectedItems", JSON.stringify(updatedItems));
 
 			return updatedItems;
 		});

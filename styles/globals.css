@@ -21,7 +21,7 @@ body {
 
 @layer utilities {
 	.padding-x {
-		@apply px-[100px] lg:px-[40px] md:px-[30px] sm:px-[20px] xm:px-[20px];
+		@apply px-[50px] lg:px-[40px] md:px-[30px] sm:px-[20px] xm:px-[20px];
 	}
 	.padding-y {
 		@apply py-[100px] lg:py-[40px] md:py-[30px] sm:py-[20px] xm:py-[20px];

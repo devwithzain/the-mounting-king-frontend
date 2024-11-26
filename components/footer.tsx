@@ -17,8 +17,8 @@ import { FaFacebook, FaLinkedin, FaTiktok, FaYoutube } from "react-icons/fa";
 
 export default function Footer() {
 	return (
-		<div className="w-full min-h-screen bg-[url('/footerBackground.png')] bg-cover bg-center bg-no-repeat py-10 relative xl:pt-80">
-			<div className="absolute -top-60 z-50 hidden xl:block overflow-hidden h-fit">
+		<div className="w-full min-h-screen bg-[url('/footerBackground.png')] bg-cover bg-center bg-no-repeat py-10 relative pt-80">
+			<div className="absolute -top-60 z-50 lg:-top-40 overflow-hidden h-fit">
 				<Image
 					alt="heroCloudImg"
 					src={heroCloud}
@@ -28,14 +28,14 @@ export default function Footer() {
 			<div className="w-full py-10 mb-40 mt-20 relative z-50">
 				<div className="w-full absolute top-0 left-0 rotate-6 bg-[#F99A03]">
 					<Marquee baseVelocity={2}>
-						<h1 className="text-white uppercase text-[70px] font-HyperspaceRace font-bold leading-[1.5] tracking-tight">
+						<h1 className="text-white uppercase text-[70px] font-HyperspaceRace font-bold leading-tight mb-3 tracking-tight">
 							THE MOUNTING KING
 						</h1>
 					</Marquee>
 				</div>
 				<div className="w-full absolute top-0 left-0 -rotate-6 bg-[#1F1F3D]">
 					<Marquee baseVelocity={-2}>
-						<h1 className="text-white uppercase text-[70px] font-HyperspaceRace font-bold leading-[1.5] tracking-tight">
+						<h1 className="text-white uppercase text-[70px] font-HyperspaceRace font-bold leading-tight mb-3 tracking-tight">
 							THE MOUNTING KING
 						</h1>
 					</Marquee>
@@ -74,7 +74,7 @@ export default function Footer() {
 				<Image
 					src={mountingText}
 					alt="mountingText"
-					className="w-full"
+					className="w-full object-cover h-full"
 				/>
 				<div className="w-full flex items-start justify-start">
 					<svg

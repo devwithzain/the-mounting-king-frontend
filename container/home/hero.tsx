@@ -1,14 +1,27 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { drackula, footerCrown, g, i, m, n, o, punch, t, u } from "@/public";
+import {
+	drackula,
+	footerCrown,
+	g,
+	heroCloud,
+	i,
+	m,
+	n,
+	o,
+	punch,
+	t,
+	u,
+} from "@/public";
+import Link from "next/link";
 
 export default function HomeHero() {
 	return (
-		<div className="w-full h-screen flex items-center relative justify-center bg-[url('/heroBackground.png')] bg-cover bg-center bg-no-repeat">
-			<div className="flex flex-col gap-5">
+		<div className="w-full h-[130vh] flex items-center relative justify-center bg-[url('/heroBackground.png')] bg-cover bg-center bg-no-repeat">
+			<div className="w-full h-screen mt-10 absolute top-0 left-0 flex items-center justify-center flex-col gap-5">
 				<div className="absolute right-24 top-28 h-[500px] blur-[150px] bg-gradient-to-b from-[#007DFE] via-[#c092df] to-[#007DFE] rounded-full w-[500px] overflow-hidden" />
-				<div className="w-full padding-x py-5 z-50">
+				<div className="w-full py-5 z-50 padding-x">
 					<div className="absolute left-10 top-40 hidden xl:block z-[999]">
 						<motion.div
 							initial={{ scale: 0 }}
@@ -58,8 +71,8 @@ export default function HomeHero() {
 					</div>
 					<div className="w-fit flex flex-col justify-end items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 h-full pb-10">
 						<motion.div
-							initial={{ y: "-90%" }}
-							whileInView={{ y: 0 }}
+							initial={{ y: "-100%" }}
+							animate={{ y: 0 }}
 							transition={{
 								duration: 1,
 								ease: [0.4, 0, 0.2, 1],
@@ -90,7 +103,7 @@ export default function HomeHero() {
 							/>
 						</motion.div>
 					</div>
-					<div className="w-full flex gap-4 relative z-10 h-[200px] overflow-hidden my-4">
+					<div className="w-full flex justify-between gap-4 relative z-10 h-[200px] lg:h-[150px] overflow-hidden my-4">
 						{[m, o, u, n, t, i, n, g].map((item, index) => (
 							<motion.div
 								initial={{ y: "100%" }}
@@ -104,15 +117,15 @@ export default function HomeHero() {
 								key={index}>
 								<Image
 									src={item}
-									alt={"item"}
-									width={100}
-									height={100}
-									className="w-full h-full"
+									alt="lettersImg"
+									width={2000}
+									height={2000}
+									className="w-full h-full object-cover"
 								/>
 							</motion.div>
 						))}
 					</div>
-					<div className="w-full flex items-start justify-start overflow-hidden">
+					<div className="w-full flex items-start justify-between overflow-hidden">
 						<motion.div
 							initial={{ y: "100%" }}
 							whileInView={{ y: 0 }}
@@ -120,6 +133,7 @@ export default function HomeHero() {
 								duration: 1,
 								ease: [0.4, 0, 0.2, 1],
 							}}
+							className="w-full"
 							viewport={{ once: true }}>
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -145,8 +159,44 @@ export default function HomeHero() {
 								/>
 							</svg>
 						</motion.div>
+						<div className="w-[65%] flex flex-col gap-3">
+							<p className="text-black font-Monstrate text-[22px]">
+								Lorem ipsum dolor sit amet consectetur. Arcu nec scelerisque
+								sagittis quis egestas sed consectetur.
+							</p>
+							<Link
+								href="/about"
+								className="text-[#F99A03] font-Monstrate text-[24px] font-normal leading-tight flex items-center gap-3">
+								Read More{" "}
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="43"
+									height="26"
+									viewBox="0 0 43 26"
+									fill="none">
+									<path
+										d="M28.3338 25.5209C28.03 25.5209 27.7385 25.4034 27.5237 25.1944C27.3088 24.9854 27.1881 24.7019 27.1881 24.4063C27.1881 23.1177 28.0904 21.4151 29.9449 19.1827C31.5757 17.1962 33.5374 15.4899 35.7483 14.1347L1.19434 14.1347C1.04032 14.1404 0.886696 14.1158 0.742673 14.0624C0.598649 14.009 0.467183 13.9279 0.356143 13.8239C0.245103 13.7199 0.156772 13.5952 0.0964375 13.4572C0.0361029 13.3192 0.00500488 13.1708 0.00500488 13.0209C0.00500488 12.8709 0.0361029 12.7225 0.0964375 12.5846C0.156772 12.4466 0.245103 12.3219 0.356143 12.2179C0.467183 12.1139 0.598649 12.0328 0.742673 11.9794C0.886696 11.926 1.04032 11.9014 1.19434 11.9071L35.7483 11.9071C33.5359 10.5525 31.5739 8.84481 29.9449 6.85584C28.0904 4.62822 27.1881 2.91924 27.1881 1.6355C27.1822 1.48567 27.2075 1.33623 27.2624 1.19612C27.3173 1.05601 27.4007 0.928123 27.5076 0.820103C27.6145 0.712083 27.7427 0.626155 27.8845 0.567461C28.0263 0.508768 28.1789 0.478516 28.333 0.478516C28.4872 0.478516 28.6397 0.508768 28.7815 0.567461C28.9234 0.626155 29.0516 0.712083 29.1585 0.820103C29.2654 0.928123 29.3488 1.05601 29.4037 1.19612C29.4586 1.33623 29.4838 1.48567 29.478 1.6355C29.478 1.89805 29.6435 2.94985 31.7248 5.45613C33.2497 7.32193 35.0991 8.91325 37.1888 10.1578C39.1426 11.3014 40.7702 11.9071 41.8978 11.9071C42.1939 11.918 42.4742 12.0402 42.6797 12.2478C42.8852 12.4555 43 12.7326 43 13.0209C43 13.3092 42.8852 13.5862 42.6797 13.7939C42.4742 14.0016 42.1939 14.1237 41.8978 14.1347C40.7686 14.1347 39.141 14.7387 37.1888 15.8839C35.1001 17.1286 33.251 18.7186 31.7248 20.5824C29.6386 23.0919 29.4763 24.1437 29.4763 24.4063C29.4765 24.5524 29.4472 24.6972 29.3899 24.8323C29.3326 24.9674 29.2485 25.0902 29.1424 25.1937C29.0363 25.2972 28.9103 25.3794 28.7716 25.4355C28.6328 25.4917 28.4841 25.5207 28.3338 25.5209Z"
+										fill="#F99A03"
+									/>
+								</svg>
+							</Link>
+						</div>
 					</div>
 				</div>
+			</div>
+			<div className="w-full absolute left-0 -bottom-80 z-50 lg:-bottom-60 overflow-hidden h-fit">
+				<Image
+					alt="heroCloudImg"
+					src={heroCloud}
+					className="w-full h-full object-cover rotate-180"
+				/>
+			</div>
+			<div className="w-full absolute right-0 -bottom-60 z-50 lg:-bottom-40 overflow-hidden h-fit">
+				<Image
+					alt="heroCloudImg"
+					src={heroCloud}
+					className="w-full h-full object-cover"
+				/>
 			</div>
 		</div>
 	);

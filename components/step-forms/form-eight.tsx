@@ -13,7 +13,7 @@ export default function FormTwo({
 	const [selectedItems, setSelectedItems] = useState<
 		Record<string, { quantity: number; price: number; time: number }>
 	>(() => {
-		const storedItems = sessionStorage.getItem("selectedItems");
+		const storedItems = localStorage.getItem("selectedItems");
 		return storedItems ? JSON.parse(storedItems) : {};
 	});
 
@@ -24,7 +24,7 @@ export default function FormTwo({
 		day: string;
 		date: string;
 	} | null>(() => {
-		const storedDate = sessionStorage.getItem("selectedDate");
+		const storedDate = localStorage.getItem("selectedDate");
 		return storedDate ? JSON.parse(storedDate) : null;
 	});
 
@@ -46,14 +46,17 @@ export default function FormTwo({
 				}),
 			};
 		});
+		const storedDate = localStorage.getItem("selectedDate");
+		if (storedDate) {
+			const parsedDate = JSON.parse(storedDate);
+			setSelectedDate(parsedDate);
+		}
 		setCalendarDates(dates);
 	}, []);
-
-	// Store selected date in sessionStorage
 	const handleDateSelection = (day: string, date: string) => {
 		const selected = { day, date };
 		setSelectedDate(selected);
-		sessionStorage.setItem("selectedDate", JSON.stringify(selected));
+		localStorage.setItem("selectedDate", JSON.stringify(selected));
 	};
 
 	// Calculate total price and time

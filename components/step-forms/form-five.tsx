@@ -15,12 +15,12 @@ export default function FormFive({
 	const [selectedItems, setSelectedItems] = useState<
 		Record<string, { quantity: number; price: number; time: number }>
 	>(() => {
-		const storedItems = sessionStorage.getItem("selectedItems");
+		const storedItems = localStorage.getItem("selectedItems");
 		return storedItems ? JSON.parse(storedItems) : {};
 	});
 
 	useEffect(() => {
-		const storedValues = sessionStorage.getItem("selectedItems");
+		const storedValues = localStorage.getItem("selectedItems");
 		if (storedValues) {
 			const parsedValues: Record<string, TselectedItem> =
 				JSON.parse(storedValues);
@@ -41,7 +41,7 @@ export default function FormFive({
 					: { quantity: 1, price, time },
 			};
 
-			sessionStorage.setItem("selectedItems", JSON.stringify(updatedItems));
+			localStorage.setItem("selectedItems", JSON.stringify(updatedItems));
 
 			return updatedItems;
 		});
@@ -68,7 +68,7 @@ export default function FormFive({
 					},
 				};
 			}
-			sessionStorage.setItem("selectedItems", JSON.stringify(updatedItems));
+			localStorage.setItem("selectedItems", JSON.stringify(updatedItems));
 
 			return updatedItems;
 		});

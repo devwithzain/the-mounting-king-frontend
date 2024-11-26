@@ -25,6 +25,11 @@ export { default as aboutCrownR } from './aboutCrownR.png';
 export { default as aboutCrownL } from './aboutCrownL.png';
 export { default as drackula } from './drackula.png';
 export { default as punch } from './punch.png';
+export { default as textRapper } from './textRapper.png';
+export { default as serviceImg1 } from './serviceImg1.png';
+export { default as serviceImg2 } from './serviceImg2.png';
+export { default as serviceImg3 } from './serviceImg3.png';
+export { default as coverLogo } from './coverLogo.png';
 
 export { default as m } from './m.png';
 export { default as o } from './o.png';
