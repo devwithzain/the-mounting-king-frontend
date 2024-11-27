@@ -34,13 +34,13 @@ export default function HomeServices() {
 					"linear-gradient(0deg, rgba(106,155,190,1) 0%, rgba(0,73,124,1) 30%, rgba(0,73,124,1) 50%, rgba(0,73,124,1) 70%, rgba(106,155,190,1) 100%)",
 			}}>
 			<div className="w-full flex flex-col gap-40 mt-20 pb-80">
-				<div className="w-full flex items-start justify-between padding-x my-80 relative">
+				<div className="w-full flex items-start justify-between padding-x mt-80 mb-10 relative">
 					<div className="absolute -top-80 -left-80 lg:-top-40 lg:-left-40">
 						<Image
 							src={"/serviceGorila.png"}
 							width={1000}
 							height={1000}
-							className="w-full lg:w-[500px] object-cover filter grayscale opacity-20"
+							className="w-full lg:w-[500px] object-cover filter grayscale opacity-10"
 							alt=""
 						/>
 					</div>
@@ -104,22 +104,22 @@ export default function HomeServices() {
 							alt="serviceImg"
 							width={1000}
 							height={1000}
-							className="w-[600px] object-cover absolute top-0 left-10"
+							className="w-[600px] lg:w-[400px] object-cover absolute top-0 right-10"
 						/>
 						<Image
 							src={serviceImg2}
 							alt="serviceImg"
 							width={1000}
 							height={1000}
-							className="w-[600px] object-cover absolute top-20 left-16"
+							className="w-[600px] lg:w-[400px] object-cover absolute top-20 -left-16"
 						/>
-						<div className="absolute top-32 left-24">
+						<div className="w-[600px] lg:w-[400px] absolute top-40 right-24 lg:right-0">
 							<Image
 								src={serviceImg3}
 								alt="serviceImg"
 								width={1000}
 								height={1000}
-								className="w-[600px] object-cover"
+								className="w-[600px] lg:w-[400px] object-cover"
 							/>
 							<div className="absolute top-0 left-0 z-50 w-full h-full flex items-center justify-center gap-4 p-5">
 								<div className="flex flex-col gap-3">
@@ -250,7 +250,7 @@ export default function HomeServices() {
 								</span>
 							</h1>
 						</div>
-						<div className="absolute top-12 -right-[70%] h-[500px] blur-[120px] bg-gradient-to-b from-[#007DFE] via-[#2f84da] to-[#007DFE] rounded-full w-[500px]" />
+						<div className="absolute top-12 -right-[70%] lg:right-0 h-[500px] blur-[120px] bg-gradient-to-b from-[#007DFE] via-[#2f84da] to-[#007DFE] rounded-full w-[500px] overflow-hidden" />
 						<div className="flex flex-col gap-6 relative z-50">
 							<div className="text-white font-Monstrate paragraph leading-loose">
 								<TextMask>
@@ -475,7 +475,7 @@ export default function HomeServices() {
 							<div className="w-fit flex items-center justify-between bg-[#F99A03] cursor-pointer rounded-lg group">
 								<Button
 									bgcolor="#212121"
-									href="/about"
+									href="/contact-us"
 									title="Fill the form"
 									className="bg-white text-black"
 									style={{ color: "#fff" }}
