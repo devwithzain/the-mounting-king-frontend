@@ -17,61 +17,63 @@ export default function Navbar() {
 	});
 
 	return (
-		<motion.div
-			initial="initial"
-			whileInView="vissible"
-			viewport={{ once: true }}
-			variants={navVarients}
-			className="w-full flex items-center justify-between gap-5 padding-x py-3 absolute top-0 z-[999]">
-			<Link href="/">
-				<Image
-					src={navLogo}
-					alt="navLogo"
-					width={200}
-					height={200}
-					className="w-[150px] object-cover"
-				/>
-			</Link>
-			<ul
-				onMouseLeave={() => setPosition((prev) => ({ ...prev, opacity: 0 }))}
-				className="relative flex items-center gap-5 bg-white/60 backdrop-blur-[15px] rounded-lg p-2">
-				<Tab
-					setPosition={setPosition}
-					href="/"
-					isActive={pathname === "/"}>
-					Home
-				</Tab>
-				<Tab
-					setPosition={setPosition}
-					href="/services"
-					isActive={pathname === "/services"}>
-					Services
-				</Tab>
-				<Tab
-					setPosition={setPosition}
-					href="/about"
-					isActive={pathname === "/about"}>
-					About
-				</Tab>
-				<Tab
-					setPosition={setPosition}
-					href="/request-a-demo"
-					isActive={pathname === "/request-a-demo"}>
-					Request A Demo
-				</Tab>
-
-				<Cursor position={position} />
-			</ul>
-			<div>
-				<Link
-					className={`bg-[#F99A03] btn transition-all duration-300 ease-in-out text-white px-6 py-3 rounded-lg text-[20px] font-Monstrate leading-tight tracking-tight ${
-						pathname === "/contact-us" ? "text-[#F99A03]" : "text-black"
-					}`}
-					href="/contact-us">
-					Contact Us
+		<>
+			<motion.div
+				initial="initial"
+				whileInView="vissible"
+				viewport={{ once: true }}
+				variants={navVarients}
+				className="w-full flex items-center justify-between gap-5 padding-x py-3 absolute top-0 z-[999]">
+				<Link href="/">
+					<Image
+						src={navLogo}
+						alt="navLogo"
+						width={200}
+						height={200}
+						className="w-[150px] object-cover"
+					/>
 				</Link>
-			</div>
-		</motion.div>
+				<ul
+					onMouseLeave={() => setPosition((prev) => ({ ...prev, opacity: 0 }))}
+					className="relative flex items-center gap-5 bg-white/60 backdrop-blur-[15px] rounded-lg p-2">
+					<Tab
+						setPosition={setPosition}
+						href="/"
+						isActive={pathname === "/"}>
+						Home
+					</Tab>
+					<Tab
+						setPosition={setPosition}
+						href="/services"
+						isActive={pathname === "/services"}>
+						Services
+					</Tab>
+					<Tab
+						setPosition={setPosition}
+						href="/about"
+						isActive={pathname === "/about"}>
+						About
+					</Tab>
+					<Tab
+						setPosition={setPosition}
+						href="/request-a-demo"
+						isActive={pathname === "/request-a-demo"}>
+						Request A Demo
+					</Tab>
+
+					<Cursor position={position} />
+				</ul>
+				<div>
+					<Link
+						className={`bg-[#F99A03] btn transition-all duration-300 ease-in-out text-white px-6 py-3 rounded-lg text-[20px] font-Monstrate leading-tight tracking-tight ${
+							pathname === "/contact-us" ? "text-[#F99A03]" : "text-black"
+						}`}
+						href="/contact-us">
+						Contact Us
+					</Link>
+				</div>
+			</motion.div>
+		</>
 	);
 }
 

@@ -103,7 +103,7 @@ export default function HomeHero() {
 							/>
 						</motion.div>
 					</div>
-					<div className="w-full flex justify-between gap-4 relative z-10 h-[200px] lg:h-[150px] overflow-hidden my-4">
+					<div className="w-full flex justify-between gap-4 relative z-10 h-[200px] lg:h-[130px] md:h-[100px] overflow-hidden my-4">
 						{[m, o, u, n, t, i, n, g].map((item, index) => (
 							<motion.div
 								initial={{ y: "100%" }}
@@ -184,14 +184,14 @@ export default function HomeHero() {
 					</div>
 				</div>
 			</div>
-			<div className="w-full absolute left-0 -bottom-80 z-50 lg:-bottom-60 overflow-hidden h-fit">
+			<div className="w-full absolute left-0 -bottom-80 z-50 lg:-bottom-60 md:-bottom-40 overflow-hidden h-fit">
 				<Image
 					alt="heroCloudImg"
 					src={heroCloud}
 					className="w-full h-full object-cover rotate-180"
 				/>
 			</div>
-			<div className="w-full absolute right-0 -bottom-60 z-50 lg:-bottom-40 overflow-hidden h-fit">
+			<div className="w-full absolute right-0 -bottom-60 z-50 lg:-bottom-40 md:-bottom-40 overflow-hidden h-fit">
 				<Image
 					alt="heroCloudImg"
 					src={heroCloud}

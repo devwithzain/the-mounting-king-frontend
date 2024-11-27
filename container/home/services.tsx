@@ -34,7 +34,7 @@ export default function HomeServices() {
 					"linear-gradient(0deg, rgba(106,155,190,1) 0%, rgba(0,73,124,1) 30%, rgba(0,73,124,1) 50%, rgba(0,73,124,1) 70%, rgba(106,155,190,1) 100%)",
 			}}>
 			<div className="w-full flex flex-col gap-40 mt-20 pb-80">
-				<div className="w-full flex items-start justify-between padding-x mt-80 mb-10 relative">
+				<div className="w-full flex items-start justify-between padding-x mt-80 mb-10 relative gap-10 md:mt-20">
 					<div className="absolute -top-80 -left-80 lg:-top-40 lg:-left-40">
 						<Image
 							src={"/serviceGorila.png"}
@@ -44,7 +44,7 @@ export default function HomeServices() {
 							alt=""
 						/>
 					</div>
-					<div className="w-[60%] flex flex-col gap-8 relative">
+					<div className="w-[60%] flex flex-col gap-8 relative sm:w-full xm:w-full md:w-full">
 						<div>
 							<h1 className="text-[#F99A03] font-HyperspaceRace text-[35px] font-black leading-tight capitalize">
 								<TextMask>{["Services We Offer"]}</TextMask>
@@ -78,7 +78,6 @@ export default function HomeServices() {
 								className="text-white font-HyperspaceRace heading font-black leading-tight flex overflow-hidden"
 							/>
 						</div>
-						<div className="absolute top-12 -right-[70%] h-[500px] blur-[120px] bg-gradient-to-b from-[#007DFE] via-[#2f84da] to-[#007DFE] rounded-full w-[500px]" />
 						<div className="flex flex-col gap-6 relative z-50">
 							<div className="w-[80%] text-white font-Monstrate paragraph leading-loose">
 								<TextMask>
@@ -98,22 +97,22 @@ export default function HomeServices() {
 							</div>
 						</div>
 					</div>
-					<div className="w-[40%] h-full relative">
+					<div className="w-[40%] h-full relative sm:w-full xm:w-full md:w-full md:flex md:justify-between md:gap-10">
 						<Image
 							src={serviceImg1}
 							alt="serviceImg"
 							width={1000}
 							height={1000}
-							className="w-[600px] lg:w-[400px] object-cover absolute top-0 right-10"
+							className="w-[600px] lg:w-[400px] md:w-[300px] object-cover absolute top-0 right-10"
 						/>
 						<Image
 							src={serviceImg2}
 							alt="serviceImg"
 							width={1000}
 							height={1000}
-							className="w-[600px] lg:w-[400px] object-cover absolute top-20 -left-16"
+							className="w-[600px] lg:w-[400px] md:w-[300px] object-cover absolute top-20 -left-16"
 						/>
-						<div className="w-[600px] lg:w-[400px] absolute top-40 right-24 lg:right-0">
+						<div className="w-[600px] lg:w-[400px] md:w-[300px] absolute top-40 right-24 lg:right-0">
 							<Image
 								src={serviceImg3}
 								alt="serviceImg"
@@ -142,8 +141,7 @@ export default function HomeServices() {
 						</div>
 					</div>
 				</div>
-				{/* asd */}
-				<div className="w-full flex items-center gap-20 justify-start padding-x mt-80">
+				<div className="w-full flex items-center gap-10 justify-start padding-x mt-80 lg:mt-40 md:mt-20">
 					<div className="flex gap-2 overflow-hidden">
 						<div className="flex flex-col gap-2 overflow-hidden">
 							{[aboutTwo, aboutFour, aboutSix].map((item, index) => (
@@ -212,7 +210,7 @@ export default function HomeServices() {
 							)}
 						</div>
 					</div>
-					<div className="w-1/2 flex flex-col gap-8 relative">
+					<div className="w-1/2 flex flex-col gap-8 relative z-50">
 						<div className="absolute -top-20 -right-60 hidden xl:block">
 							<Image
 								alt="aboutCrownR"
@@ -221,11 +219,11 @@ export default function HomeServices() {
 								height={400}
 							/>
 						</div>
-						<div>
+						<div className="relative z-50">
 							<h1 className="text-[#F99A03] font-HyperspaceRace text-[35px] font-black leading-tight capitalize">
 								<TextMask>{["About Us"]}</TextMask>
 							</h1>
-							<h1>
+							<h1 className="relative z-50">
 								<AnimatedText
 									text="The Mounting"
 									className="text-white font-HyperspaceRace heading font-black leading-none flex uppercase overflow-hidden"
@@ -250,7 +248,7 @@ export default function HomeServices() {
 								</span>
 							</h1>
 						</div>
-						<div className="absolute top-12 -right-[70%] lg:right-0 h-[500px] blur-[120px] bg-gradient-to-b from-[#007DFE] via-[#2f84da] to-[#007DFE] rounded-full w-[500px] overflow-hidden" />
+						<div className="absolute top-12 -right-[70%] lg:right-0 md:-right-1/2 md:-top-40 h-[500px] blur-[120px] bg-gradient-to-b from-[#007DFE] via-[#2f84da] to-[#007DFE] rounded-full w-[500px] overflow-hidden" />
 						<div className="flex flex-col gap-6 relative z-50">
 							<div className="text-white font-Monstrate paragraph leading-loose">
 								<TextMask>
@@ -463,7 +461,7 @@ export default function HomeServices() {
 							/>
 							<AnimatedText
 								text="Are Looking For"
-								className="text-white text-center font-HyperspaceRace heading font-bold leading-tight -mt-14 capitalize"
+								className="text-white text-center font-HyperspaceRace heading font-bold leading-tight -mt-10 capitalize"
 							/>
 							<div className="text-white font-Monstrate paragraph leading-loose">
 								<TextMask>
@@ -506,7 +504,7 @@ export default function HomeServices() {
 					</div>
 				</div>
 			</div>
-			<div className="absolute -bottom-60 lg:-bottom-40 overflow-hidden h-fit z-50">
+			<div className="w-full absolute -bottom-60 lg:-bottom-40 md:-bottom-28 overflow-hidden h-fit z-50">
 				<Image
 					alt="heroCloudImg"
 					src={heroCloud}

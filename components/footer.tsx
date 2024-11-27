@@ -17,8 +17,8 @@ import { FaFacebook, FaLinkedin, FaTiktok, FaYoutube } from "react-icons/fa";
 
 export default function Footer() {
 	return (
-		<div className="w-full min-h-screen bg-[url('/footerBackground.png')] bg-cover bg-center bg-no-repeat py-10 relative pt-80">
-			<div className="absolute -top-60 z-50 lg:-top-40 overflow-hidden h-fit">
+		<div className="w-full min-h-screen bg-[url('/footerBackground.png')] bg-cover bg-center bg-no-repeat padding-y relative pt-80">
+			<div className="w-full absolute -top-60 z-50 lg:-top-40 md:-top-28 overflow-hidden h-fit">
 				<Image
 					alt="heroCloudImg"
 					src={heroCloud}
@@ -41,7 +41,7 @@ export default function Footer() {
 					</Marquee>
 				</div>
 			</div>
-			<div className="w-full px-10 py-5 relative">
+			<div className="w-full padding-x py-5 relative">
 				<div className="absolute -left-10">
 					<Image
 						src={footerCrown}
@@ -102,14 +102,14 @@ export default function Footer() {
 					</svg>
 				</div>
 			</div>
-			<div className="px-10 relative">
-				<div className="w-full flex flex-col gap-20 rounded-[26px] bg-[radial-gradient(154.25%_82%_at_32.7%_40.44%,#2D2D51_0%,#00011A_57%,#0E0E30_100%)] py-10 px-20">
-					<div className="w-full flex items-center justify-between rounded-lg p-10 bg-white/15 backdrop-blur-[5px]">
+			<div className="padding-x relative">
+				<div className="w-full flex flex-col gap-20 rounded-[26px] bg-[radial-gradient(154.25%_82%_at_32.7%_40.44%,#2D2D51_0%,#00011A_57%,#0E0E30_100%)] padding-y padding-x">
+					<div className="w-full flex items-center justify-between gap-5 rounded-lg p-5 bg-white/15 backdrop-blur-[5px]">
 						<div className="flex flex-col gap-6">
 							<h1 className="text-white font-HyperspaceRace text-[35px] font-black leading-[42px] tracking-[2px]">
 								Subscribe
 							</h1>
-							<p className="text-white text-[20px] font-Monstrate">
+							<p className="text-white text-[18px] font-Monstrate">
 								Join our newsletter to stay up to date on features and releases.
 							</p>
 						</div>
@@ -171,47 +171,47 @@ export default function Footer() {
 							<div className="flex flex-col gap-4">
 								<Link
 									href="/"
-									className="text-white text-[20px] font-Monstrate leading-tight tracking-tight">
+									className="text-white text-[16px] font-Monstrate leading-tight tracking-tight">
 									Home
 								</Link>
 								<Link
 									href="/services"
-									className="text-white text-[20px] font-Monstrate leading-tight tracking-tight">
+									className="text-white text-[16px] font-Monstrate leading-tight tracking-tight">
 									Services
 								</Link>
 								<Link
 									href="/about"
-									className="text-white text-[20px] font-Monstrate leading-tight tracking-tight">
+									className="text-white text-[16px] font-Monstrate leading-tight tracking-tight">
 									About
 								</Link>
 								<Link
 									href="/request-a-demo"
-									className="text-white text-[20px] font-Monstrate leading-tight tracking-tight">
+									className="text-white text-[16px] font-Monstrate leading-tight tracking-tight">
 									Request A Demo
 								</Link>
 							</div>
 							<div className="flex flex-col gap-4">
 								<Link
 									href="/"
-									className="text-white text-[20px] font-Monstrate leading-tight tracking-tight">
+									className="text-white text-[16px] font-Monstrate leading-tight tracking-tight">
 									Privacy
 								</Link>
 								<Link
 									href="/"
-									className="text-white text-[20px] font-Monstrate leading-tight tracking-tight">
+									className="text-white text-[16px] font-Monstrate leading-tight tracking-tight">
 									Terms & <br /> Condition
 								</Link>
 							</div>
 							<div className="flex flex-col gap-4">
 								<Link
 									href="/"
-									className="text-white text-[20px] font-Monstrate leading-tight tracking-tight">
+									className="text-white text-[16px] font-Monstrate leading-tight tracking-tight">
 									Socials
 								</Link>
 								<div className="flex items-center gap-4">
 									<Link
 										href="/"
-										className="text-white text-[20px] font-Monstrate leading-tight tracking-tight">
+										className="text-white text-[16px] font-Monstrate leading-tight tracking-tight">
 										<FaFacebook
 											size={24}
 											className="text-white"
@@ -219,7 +219,7 @@ export default function Footer() {
 									</Link>
 									<Link
 										href="/"
-										className="text-white text-[20px] font-Monstrate leading-tight tracking-tight">
+										className="text-white text-[16px] font-Monstrate leading-tight tracking-tight">
 										<BsTwitterX
 											size={24}
 											className="text-white"
@@ -227,7 +227,7 @@ export default function Footer() {
 									</Link>
 									<Link
 										href="/"
-										className="text-white text-[20px] font-Monstrate leading-tight tracking-tight">
+										className="text-white text-[16px] font-Monstrate leading-tight tracking-tight">
 										<FaLinkedin
 											size={24}
 											className="text-white"
@@ -235,7 +235,7 @@ export default function Footer() {
 									</Link>
 									<Link
 										href="/"
-										className="text-white text-[20px] font-Monstrate leading-tight tracking-tight">
+										className="text-white text-[16px] font-Monstrate leading-tight tracking-tight">
 										<RiInstagramFill
 											size={24}
 											className="text-white"
@@ -243,7 +243,7 @@ export default function Footer() {
 									</Link>
 									<Link
 										href="/"
-										className="text-white text-[20px] font-Monstrate leading-tight tracking-tight">
+										className="text-white text-[16px] font-Monstrate leading-tight tracking-tight">
 										<FaYoutube
 											size={24}
 											className="text-white"
@@ -251,7 +251,7 @@ export default function Footer() {
 									</Link>
 									<Link
 										href="/"
-										className="text-white text-[20px] font-Monstrate leading-tight tracking-tight">
+										className="text-white text-[16px] font-Monstrate leading-tight tracking-tight">
 										<FaTiktok
 											size={24}
 											className="text-white"
@@ -266,27 +266,27 @@ export default function Footer() {
 							<div className="flex items-center gap-4">
 								<Link
 									href="/"
-									className="text-white text-[20px] font-Monstrate leading-tight tracking-tight">
+									className="text-white text-[16px] font-Monstrate leading-tight tracking-tight">
 									Home
 								</Link>
 								<Link
 									href="/services"
-									className="text-white text-[20px] font-Monstrate leading-tight tracking-tight">
+									className="text-white text-[16px] font-Monstrate leading-tight tracking-tight">
 									Services
 								</Link>
 								<Link
 									href="/about"
-									className="text-white text-[20px] font-Monstrate leading-tight tracking-tight">
+									className="text-white text-[16px] font-Monstrate leading-tight tracking-tight">
 									About
 								</Link>
 								<Link
 									href="/request-a-demo"
-									className="text-white text-[20px] font-Monstrate leading-tight tracking-tight">
+									className="text-white text-[16px] font-Monstrate leading-tight tracking-tight">
 									Request A Demo
 								</Link>
 							</div>
 							<div className="">
-								<p className="text-white text-[20px] font-Monstrate leading-tight tracking-tight">
+								<p className="text-white text-[16px] font-Monstrate leading-tight tracking-tight">
 									© 2024 All Rights Reserved
 								</p>
 							</div>
