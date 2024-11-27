@@ -1,3 +1,4 @@
+import { Footer } from "@/components";
 import { ServiceHero, Services } from "@/container";
 
 export default function ServicesPage() {
@@ -5,6 +6,7 @@ export default function ServicesPage() {
 		<>
 			<ServiceHero />
 			<Services />
+			<Footer />
 		</>
 	);
 }

@@ -159,8 +159,8 @@ export default function HomeHero() {
 								/>
 							</svg>
 						</motion.div>
-						<div className="w-[65%] flex flex-col gap-3">
-							<p className="text-black font-Monstrate text-[22px]">
+						<div className="w-[65%] flex flex-col gap-3 pl-4">
+							<p className="text-black font-Monstrate text-[20px]">
 								Lorem ipsum dolor sit amet consectetur. Arcu nec scelerisque
 								sagittis quis egestas sed consectetur.
 							</p>

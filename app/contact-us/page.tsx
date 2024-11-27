@@ -1,3 +1,4 @@
+import { Footer } from "@/components";
 import { ContactForm, ContactHero } from "@/container";
 
 export default function Contact() {
@@ -5,6 +6,7 @@ export default function Contact() {
 		<>
 			<ContactHero />
 			<ContactForm />
+			<Footer />
 		</>
 	);
 }

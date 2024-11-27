@@ -1,6 +1,6 @@
 import "@/styles/globals.css";
 import type { Metadata } from "next";
-import { Footer, Navbar } from "@/components";
+import { Navbar } from "@/components";
 
 export const metadata: Metadata = {
 	title: "The Mounting King",
@@ -17,7 +17,6 @@ export default function RootLayout({
 			<body suppressHydrationWarning>
 				<Navbar />
 				{children}
-				<Footer />
 			</body>
 		</html>
 	);

@@ -1,3 +1,4 @@
+import { HomeFooter } from "@/components";
 import { HomeHero, HomeServices } from "@/container";
 
 export default function App() {
@@ -5,6 +6,7 @@ export default function App() {
 		<>
 			<HomeHero />
 			<HomeServices />
+			<HomeFooter />
 		</>
 	);
 }
