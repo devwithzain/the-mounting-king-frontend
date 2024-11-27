@@ -24,8 +24,19 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { AnimatedText, Button, TextMask } from "@/components";
 import { GoArrowUpRight } from "react-icons/go";
+import { useRef, useState } from "react";
 
 export default function HomeServices() {
+	const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+	const videoRef = useRef(null);
+
+	const handleThumbnailClick = () => {
+		setIsVideoPlaying(true);
+	};
+
+	const handleVideoPause = () => {
+		setIsVideoPlaying(false);
+	};
 	return (
 		<div
 			className="w-full padding-y relative pb-14 home-serv"
@@ -427,10 +438,25 @@ export default function HomeServices() {
 							ease: "easeInOut",
 						}}
 						className="flex-1 flex items-center justify-center flex-col gap-20 relative">
-						<Image
-							src={bracket}
-							alt="bracket"
-						/>
+						{!isVideoPlaying ? (
+							<Image
+								src={bracket}
+								alt="bracket"
+								className="cursor-pointer"
+								onClick={handleThumbnailClick}
+							/>
+						) : (
+							<video
+								ref={videoRef}
+								src="/video.mp4"
+								autoPlay
+								muted
+								controls
+								className="w-full h-auto rounded-3xl"
+								onEnded={handleVideoPause} // Trigger when video ends
+								onPause={handleVideoPause} // Trigger when video is paused
+							/>
+						)}
 					</motion.div>
 				</div>
 				<div className="w-full relative pb-40 xl:pb-0">

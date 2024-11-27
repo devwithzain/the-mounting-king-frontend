@@ -23,14 +23,14 @@ export default function Navbar() {
 				whileInView="vissible"
 				viewport={{ once: true }}
 				variants={navVarients}
-				className="w-full flex items-center justify-between gap-5 padding-x py-3 absolute top-0 z-[999]">
+				className="w-full flex items-center justify-between gap-5 padding-x py-2 absolute top-0 z-[999]">
 				<Link href="/">
 					<Image
 						src={navLogo}
 						alt="navLogo"
 						width={200}
 						height={200}
-						className="w-[150px] object-cover"
+						className="w-[120px] object-cover"
 					/>
 				</Link>
 				<ul

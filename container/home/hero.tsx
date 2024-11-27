@@ -69,7 +69,7 @@ export default function HomeHero() {
 							</svg>
 						</motion.div>
 					</div>
-					<div className="w-fit flex flex-col justify-end items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 h-full pb-10">
+					<div className="w-fit flex flex-col justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 h-full pb-10">
 						<motion.div
 							initial={{ y: "-100%" }}
 							animate={{ y: 0 }}
@@ -83,7 +83,7 @@ export default function HomeHero() {
 								src={drackula}
 								width={500}
 								height={500}
-								className="w-full object-cover xl:h-[700px] lg:h-[550px]"
+								className="w-[400px] object-cover"
 							/>
 						</motion.div>
 						<motion.div
@@ -99,11 +99,11 @@ export default function HomeHero() {
 								src={punch}
 								width={500}
 								height={500}
-								className="w-[500px] lg:w-[400px]"
+								className="w-[330px]"
 							/>
 						</motion.div>
 					</div>
-					<div className="w-full flex justify-between gap-4 relative z-10 h-[200px] lg:h-[130px] md:h-[100px] overflow-hidden my-4">
+					<div className="w-full flex justify-between items-end gap-4 relative z-10 overflow-hidden my-4">
 						{[m, o, u, n, t, i, n, g].map((item, index) => (
 							<motion.div
 								initial={{ y: "100%" }}
@@ -120,7 +120,7 @@ export default function HomeHero() {
 									alt="lettersImg"
 									width={2000}
 									height={2000}
-									className="w-full h-full object-cover"
+									className="w-full object-cover"
 								/>
 							</motion.div>
 						))}
