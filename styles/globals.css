@@ -53,3 +53,17 @@ body {
 	box-shadow: 0 2px 0 -2px #f85959, 0 8px 0 -4px #39a2db,
 		0 12px 10px -3px #39a2db;
 }
+
+.home-serv {
+	position: relative;
+}
+
+.home-serv:before {
+	content: "";
+	background: linear-gradient(180deg, #ffffff 0%, transparent);
+	height: 3%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}

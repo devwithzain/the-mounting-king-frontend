@@ -28,13 +28,13 @@ import { GoArrowUpRight } from "react-icons/go";
 export default function HomeServices() {
 	return (
 		<div
-			className="w-full padding-y relative xl:!pb-80"
+			className="w-full padding-y relative pb-14 home-serv"
 			style={{
 				background:
 					"linear-gradient(0deg, rgba(106,155,190,1) 0%, rgba(0,73,124,1) 30%, rgba(0,73,124,1) 50%, rgba(0,73,124,1) 70%, rgba(106,155,190,1) 100%)",
 			}}>
-			<div className="w-full flex flex-col gap-40 mt-20 pb-80">
-				<div className="w-full flex items-start justify-between padding-x mt-80 mb-10 relative gap-10 md:mt-20">
+			<div className="w-full flex flex-col gap-20 mt-20 pb-40">
+				<div className="w-full flex items-start justify-between padding-x mt-28 lg:mt-20 md:mt-10 mb-10 relative gap-10">
 					<div className="absolute -top-80 -left-80 lg:-top-40 lg:-left-40">
 						<Image
 							src={"/serviceGorila.png"}
@@ -141,7 +141,7 @@ export default function HomeServices() {
 						</div>
 					</div>
 				</div>
-				<div className="w-full flex items-center gap-10 justify-start padding-x mt-80 lg:mt-40 md:mt-20">
+				<div className="w-full flex items-center gap-10 justify-start padding-x mt-28 lg:mt-20 md:mt-10">
 					<div className="flex gap-2 overflow-hidden">
 						<div className="flex flex-col gap-2 overflow-hidden">
 							{[aboutTwo, aboutFour, aboutSix].map((item, index) => (
