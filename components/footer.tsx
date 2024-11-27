@@ -17,7 +17,7 @@ import { FaFacebook, FaLinkedin, FaTiktok, FaYoutube } from "react-icons/fa";
 
 export default function Footer() {
 	return (
-		<div className="w-full min-h-screen bg-[url('/footerBackground.png')] bg-cover bg-center bg-no-repeat padding-y relative pt-80">
+		<div className="w-full min-h-screen bg-[url('/footerBackground.png')] bg-cover bg-center bg-no-repeat py-5 relative pt-80">
 			<div className="w-full absolute -top-60 z-50 lg:-top-40 md:-top-28 overflow-hidden h-fit">
 				<Image
 					alt="heroCloudImg"
@@ -103,7 +103,7 @@ export default function Footer() {
 				</div>
 			</div>
 			<div className="padding-x relative">
-				<div className="w-full flex flex-col gap-20 rounded-[26px] bg-[radial-gradient(154.25%_82%_at_32.7%_40.44%,#2D2D51_0%,#00011A_57%,#0E0E30_100%)] padding-y padding-x">
+				<div className="w-full flex flex-col gap-20 rounded-[26px] bg-[radial-gradient(154.25%_82%_at_32.7%_40.44%,#2D2D51_0%,#00011A_57%,#0E0E30_100%)] p-8">
 					<div className="w-full flex items-center justify-between gap-5 rounded-lg p-5 bg-white/15 backdrop-blur-[5px]">
 						<div className="flex flex-col gap-6">
 							<h1 className="text-white font-HyperspaceRace text-[35px] font-black leading-[42px] tracking-[2px]">
