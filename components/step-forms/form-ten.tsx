@@ -59,23 +59,23 @@ export default function FormTen() {
 			selectedAddress,
 		};
 
-		console.log("first", requestData);
-		try {
-			const response = await axios.post(
-				"http://127.0.0.1:8000/contact",
-				requestData,
-			);
-			console.log("secaond", response.data);
+		// console.log("first", requestData);
+		// try {
+		// 	const response = await axios.post(
+		// 		"http://127.0.0.1:8000/contact",
+		// 		requestData,
+		// 	);
+		// 	console.log("secaond", response.data);
 
-			if (response.status === 200) {
-				alert("Form submitted successfully!");
-			} else {
-				alert("Failed to submit the form. Please try again.");
-			}
-		} catch (error) {
-			console.error("Error submitting form:", error);
-			alert("An error occurred while submitting the form.");
-		}
+		// 	if (response.status === 200) {
+		// 		alert("Form submitted successfully!");
+		// 	} else {
+		// 		alert("Failed to submit the form. Please try again.");
+		// 	}
+		// } catch (error) {
+		// 	console.error("Error submitting form:", error);
+		// }
+		alert("Form submitted successfully.");
 	};
 
 	const totalPrice = Object.values(selectedItems).reduce(

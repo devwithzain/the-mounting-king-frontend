@@ -3,7 +3,6 @@ import {
 	emailIcon,
 	footerCrown,
 	footerLogo,
-	heroCloud,
 	mountingText,
 } from "@/public";
 import Link from "next/link";
@@ -17,12 +16,23 @@ import { FaFacebook, FaLinkedin, FaTiktok, FaYoutube } from "react-icons/fa";
 
 export default function Footer() {
 	return (
-		<div className="w-full min-h-screen bg-[url('/footerBackground.png')] bg-cover bg-center bg-no-repeat py-5 relative pt-80">
-			<div className="w-full absolute -top-60 z-50 lg:-top-40 md:-top-28 overflow-hidden h-fit">
+		<div className="w-full min-h-screen py-5 relative pt-80 bg-[url('/footerBackground.png')] bg-cover bg-center bg-no-repeat">
+			<div className="absolute w-full -top-40 z-50 -left-[20%]">
 				<Image
 					alt="heroCloudImg"
-					src={heroCloud}
-					className="w-full h-full object-cover rotate-180"
+					width={1000}
+					height={1000}
+					src={"/badal.png"}
+					className="w-full h-full"
+				/>
+			</div>
+			<div className="absolute w-full -top-40 z-50 -right-[20%]">
+				<Image
+					alt="heroCloudImg"
+					width={1000}
+					height={1000}
+					src={"/badal.png"}
+					className="w-full h-full"
 				/>
 			</div>
 			<div className="w-full py-10 mb-40 mt-20 relative z-50">

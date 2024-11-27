@@ -16,7 +16,7 @@ import { FaFacebook, FaLinkedin, FaTiktok, FaYoutube } from "react-icons/fa";
 
 export default function HomeFooter() {
 	return (
-		<div className="w-full min-h-screen bg-[url('/footerBackground.png')] bg-cover bg-center bg-no-repeat py-5 relative">
+		<div className="w-full min-h-screen py-5 relative">
 			<div className="w-full py-10 mb-40 mt-20 relative z-50">
 				<div className="w-full absolute top-0 left-0 rotate-6 bg-[#F99A03]">
 					<Marquee baseVelocity={2}>

@@ -56,7 +56,7 @@ export default function FormNine({
 								back
 							</button>
 							<button
-								type="button"
+								type="submit"
 								className="text-[#0E0E30] font-Monstrate text-[20px] font-normal leading-tight tracking-tight bg-[#F99A03] px-6 py-3 rounded-lg">
 								Continue
 							</button>

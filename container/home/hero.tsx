@@ -18,8 +18,8 @@ import Link from "next/link";
 
 export default function HomeHero() {
 	return (
-		<div className="w-full h-[130vh] flex items-center relative justify-center bg-[url('/heroBackground.png')] bg-cover bg-center bg-no-repeat">
-			<div className="w-full h-screen mt-10 absolute top-0 left-0 flex items-center justify-center flex-col gap-5">
+		<div className="w-full h-[130vh] flex items-center relative justify-center">
+			<div className="w-full h-screen mt-10 absolute top-0 left-0 flex items-center justify-center flex-col">
 				<div className="absolute right-24 top-28 h-[500px] blur-[150px] bg-gradient-to-b from-[#007DFE] via-[#c092df] to-[#007DFE] rounded-full w-[500px] overflow-hidden" />
 				<div className="w-full py-5 z-50 padding-x">
 					<div className="absolute left-10 top-40 hidden xl:block z-[999]">
@@ -83,7 +83,7 @@ export default function HomeHero() {
 								src={drackula}
 								width={500}
 								height={500}
-								className="w-[400px] object-cover"
+								className="w-[450px] object-cover md:w-[400px]"
 							/>
 						</motion.div>
 						<motion.div
@@ -99,7 +99,7 @@ export default function HomeHero() {
 								src={punch}
 								width={500}
 								height={500}
-								className="w-[330px]"
+								className="xl:w-full w-[350px]"
 							/>
 						</motion.div>
 					</div>
