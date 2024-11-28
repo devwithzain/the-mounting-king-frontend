@@ -27,15 +27,17 @@ export default function HomeServices() {
 		<div className="w-full padding-y relative -mt-10 mb-20">
 			<div className="w-full flex flex-col gap-20">
 				<div className="w-full flex flex-col gap-20 relative padding-x">
-					<div className="w-full flex justify-center items-center flex-col">
+					<div className="w-full flex justify-center items-center flex-col gap-3">
 						<AnimatedText
 							text="Advantage of"
 							className="text-white text-center font-HyperspaceRace heading font-bold leading-tight capitalize"
 						/>
-						<AnimatedText
-							text="Our Mounting King Service"
-							className="text-white text-center font-HyperspaceRace heading font-bold leading-tight capitalize -mt-6"
-						/>
+						<div className="w-fit bg-[url('/advantageRapper.png')] bg-center bg-no-repeat bg-cover">
+							<AnimatedText
+								text="Our Mounting King Service"
+								className="text-white text-center font-HyperspaceRace heading font-bold leading-tight capitalize"
+							/>
+						</div>
 					</div>
 					<div className="w-full flex items-center justify-center flex-col gap-20 relative">
 						<div className="absolute -left-60 h-[500px] blur-[120px] bg-gradient-to-b from-[#007DFE] via-[#2f84da] to-[#007DFE] rounded-full w-[500px] overflow-hidden" />

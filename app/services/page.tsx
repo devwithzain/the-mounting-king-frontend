@@ -4,9 +4,11 @@ import { ServiceHero, Services } from "@/container";
 export default function ServicesPage() {
 	return (
 		<>
-			<ServiceHero />
-			<Services />
-			<Footer />
+			<div className="w-full h-full bg-[url('/aboutBg.png')] bg-center bg-no-repeat bg-cover overflow-x-hidden">
+				<ServiceHero />
+				<Services />
+				<Footer />
+			</div>
 		</>
 	);
 }

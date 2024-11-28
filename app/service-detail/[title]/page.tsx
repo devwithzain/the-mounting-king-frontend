@@ -1,12 +1,12 @@
 import { Footer } from "@/components";
-import { ContactForm, ContactHero } from "@/container";
+import { ServiceDetailHero, ServiceDetailInfo } from "@/container";
 
-export default function Contact() {
+export default function ServiceDetailPage() {
 	return (
 		<>
 			<div className="w-full h-full bg-[url('/aboutBg.png')] bg-center bg-no-repeat bg-cover">
-				<ContactHero />
-				<ContactForm />
+				<ServiceDetailHero />
+				<ServiceDetailInfo />
 				<Footer />
 			</div>
 		</>

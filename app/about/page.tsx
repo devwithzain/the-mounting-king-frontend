@@ -4,9 +4,11 @@ import { AboutHero, AboutServices } from "@/container";
 export default function AboutPage() {
 	return (
 		<>
-			<AboutHero />
-			<AboutServices />
-			<Footer />
+			<div className="w-full h-full bg-[url('/aboutBg.png')] bg-center bg-no-repeat bg-cover">
+				<AboutHero />
+				<AboutServices />
+				<Footer />
+			</div>
 		</>
 	);
 }

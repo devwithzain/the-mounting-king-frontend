@@ -6,3 +6,5 @@ export { default as AboutHero } from './about/hero';
 export { default as HomeHero } from './home/hero';
 export { default as HomeServices } from './home/services';
 export { default as AboutServices } from './about/services';
+export { default as ServiceDetailHero } from './serviceDetail/hero';
+export { default as ServiceDetailInfo } from './serviceDetail/info';

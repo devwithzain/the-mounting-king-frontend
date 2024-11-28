@@ -30,6 +30,9 @@ export { default as serviceImg1 } from './serviceImg1.png';
 export { default as serviceImg2 } from './serviceImg2.png';
 export { default as serviceImg3 } from './serviceImg3.png';
 export { default as coverLogo } from './coverLogo.png';
+export { default as advantageRapper } from './advantageRapper.png';
+export { default as contactBanner } from './contactBanner.png';
+export { default as serviceDetail } from './serviceDetail.png';
 
 export { default as m } from './m.png';
 export { default as o } from './o.png';

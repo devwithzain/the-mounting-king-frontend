@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { arrowRight, heroCloud } from "@/public";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { stepsFormSchema, TstepsFormData } from "@/types";
+import { AnimatedText } from "@/components";
 
 export default function ContactForm() {
 	const router = useRouter();
@@ -41,7 +42,7 @@ export default function ContactForm() {
 	};
 
 	return (
-		<div className="w-full py-80 relative bg-gradient-to-b from-[#6A9BBE] via-[#00497C] to-[#6A9BBE]">
+		<div className="w-full py-80 relative padding-x">
 			<div className="absolute -top-60">
 				<Image
 					alt="heroCloudImg"
@@ -51,19 +52,33 @@ export default function ContactForm() {
 			</div>
 			<div className="w-full h-full flex items-center justify-center">
 				<div className="w-full">
-					<div className="w-full flex flex-col gap-5 px-40">
-						<h1 className="text-white flex-1 font-HyperspaceRace text-[98px] font-black leading-[100px] capitalize">
-							Contact Us <br /> For More Info
-						</h1>
-						<p className="text-white flex-1 font-Monstrate text-[20px] leading-normal">
-							It is a long established fact that a reader will be distracted by{" "}
-							<br />
-							the readable content of a page when looking at its layout.
+					<div className="w-full flex items-center justify-between gap-5">
+						<div className="w-1/2 flex flex-col gap-4">
+							<AnimatedText
+								className="text-white font-HyperspaceRace heading font-black leading-tight capitalize"
+								text="Contact Us For"
+							/>
+							<div className="w-fit bg-[url('/contactBanner.png')] bg-right bg-no-repeat bg-cover">
+								<AnimatedText
+									text="More Info"
+									className="text-white text-center font-HyperspaceRace heading font-bold leading-tight capitalize -mt-4"
+								/>
+							</div>
+						</div>
+						<p className="w-1/2 text-white font-Monstrate text-[24px] leading-tight">
+							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos
+							repellat provident cupiditate voluptatum vel incidunt odio,
+							numquam totam illo <br /> reprehenderit ex nostrum fugiat
+							inventore quae fuga doloremque tempore veritatis expedita quaerat,
+							eligendi ad consequuntur enim. Modi et tenetur amet aperiam vero
+							commodi. Laboriosam qui vel voluptatum odio incidunt doloremque
+							molestias!
 						</p>
 					</div>
 					<form
-						className="flex flex-col gap-8 mt-20 px-40"
+						className="flex flex-col gap-8 mt-20 relative z-50"
 						onSubmit={handleSubmit(onSubmits)}>
+						<div className="absolute top-40 -z-10 -right-60 lg:right-0 md:-right-1/2 md:w-[350px] md:-top-1/2 h-[400px] blur-[120px] bg-gradient-to-b from-[#007DFE] via-[#2f84da] to-[#007DFE] rounded-full w-[500px] overflow-hidden md:hidden" />
 						<input
 							{...register("name")}
 							type="name"
@@ -149,19 +164,10 @@ export default function ContactForm() {
 								alt="arrowRightImg"
 								width={30}
 								height={30}
-								className="group-hover:translate-x-2 ease-in-out transition-all duration-300"
+								className="group-hover:rotate-[-45deg] ease-in-out transition-all duration-300"
 							/>
 						</button>
 					</form>
-				</div>
-			</div>
-			<div className="flex flex-col gap-5">
-				<div className="absolute -bottom-60">
-					<Image
-						alt="heroCloudImg"
-						src={heroCloud}
-						className="w-full h-full object-cover"
-					/>
 				</div>
 			</div>
 		</div>
