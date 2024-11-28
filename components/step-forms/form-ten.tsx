@@ -1,9 +1,17 @@
 "use client";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 import { GoClock } from "react-icons/go";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function FormTen() {
+	const router = useRouter();
+	const [name, setName] = useState<string>("");
+	const [phone, setPhone] = useState<string>("");
+	const [email, setEmail] = useState<string>("");
+	const [isSubmitting, setIsSubmitting] = useState(false);
+
 	const [selectedItems, setSelectedItems] = useState<
 		Record<string, { quantity: number; price: number; time: number }>
 	>(() => {
@@ -27,10 +35,6 @@ export default function FormTen() {
 		return storedAddress ? JSON.parse(storedAddress) : null;
 	});
 
-	const [name, setName] = useState<string>("");
-	const [phone, setPhone] = useState<string>("");
-	const [email, setEmail] = useState<string>("");
-
 	useEffect(() => {
 		const storedItems = localStorage.getItem("selectedItems");
 		const storedDate = localStorage.getItem("selectedDate");
@@ -50,6 +54,13 @@ export default function FormTen() {
 	const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 
+		if (!name || !phone || !email) {
+			alert("Please fill in all required fields (Name, Phone, and Email).");
+			return;
+		}
+
+		setIsSubmitting(true);
+
 		const requestData = {
 			name,
 			phone,
@@ -58,18 +69,26 @@ export default function FormTen() {
 			selectedDate,
 			selectedAddress,
 		};
-
-		console.log("first", requestData);
 		try {
 			const response = await axios.post(
-				"http://127.0.0.1:8000/contact",
+				`${process.env.NEXT_PUBLIC_API_URL}/contact`,
 				requestData,
 			);
-			console.log("secaond", response.data);
-		} catch (error) {
-			console.error("Error submitting form:", error);
+
+			if (response.data.success) {
+				toast.success(response.data.success);
+				setName("");
+				setPhone("");
+				setEmail("");
+				localStorage.removeItem("selectedItems");
+				localStorage.removeItem("selectedDate");
+				localStorage.removeItem("formAddress");
+				router.push("/checkout");
+			}
+			setIsSubmitting(false);
+		} catch (err) {
+			toast.error(err.response.data.message);
 		}
-		alert("Form submitted successfully.");
 	};
 
 	const totalPrice = Object.values(selectedItems).reduce(
@@ -126,8 +145,13 @@ export default function FormTen() {
 								</button>
 								<button
 									type="submit"
-									className="w-full text-[#0E0E30] font-Monstrate text-[20px] font-normal leading-tight tracking-tight bg-[#F99A03] px-6 py-3 rounded-lg">
-									Submit
+									disabled={isSubmitting}
+									className={`w-full text-[#0E0E30] font-Monstrate text-[20px] font-normal leading-tight tracking-tight px-6 py-3 rounded-lg ${
+										isSubmitting
+											? "bg-gray-400 cursor-not-allowed"
+											: "bg-[#F99A03]"
+									}`}>
+									{isSubmitting ? "Submitting..." : "Submit"}
 								</button>
 							</div>
 						</form>

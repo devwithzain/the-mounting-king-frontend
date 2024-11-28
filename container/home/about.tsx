@@ -42,7 +42,7 @@ export default function AboutServices() {
 								className="text-white font-HyperspaceRace heading font-black leading-none flex overflow-hidden -mt-4"
 							/>
 							<span
-								className={`w-fit flex text-white font-HyperspaceRace heading font-black overflow-hidden leading-tight bg-[url('/textRapper.png')] bg-center bg-no-repeat`}>
+								className={`w-fit flex overflow-hidden text-white font-HyperspaceRace heading font-black leading-tight uppercase `}>
 								{"Opportunities".split(" ").map((word, index) => (
 									<motion.p
 										initial={{ y: "100%" }}
@@ -54,7 +54,7 @@ export default function AboutServices() {
 										}}
 										viewport={{ once: true }}
 										key={index}
-										className="inline-block whitespace-nowrap -mt-4">
+										className="inline-block whitespace-nowrap bg-[url('/textRapper.png')] bg-center bg-no-repeat w-full bg-cover">
 										{word}
 									</motion.p>
 								))}
@@ -144,6 +144,15 @@ export default function AboutServices() {
 								}}
 								viewport={{ once: true }}>
 								<div className="relative">
+									{index === 1 && (
+										<Image
+											src={coverLogo}
+											alt="sda"
+											width={250}
+											height={250}
+											className="w-full object-cover absolute top-0 left-0 z-50"
+										/>
+									)}
 									<Image
 										src={item}
 										alt="sda"
@@ -182,15 +191,19 @@ export default function AboutServices() {
 											alt="sda"
 											width={250}
 											height={250}
-											className="w-full object-cover group-hover:opacity-0 transition-all duration-200 ease-in-out"
+											className={`w-full object-cover ${
+												index === 0 || (index === 4 && "group-hover:opacity-0")
+											} transition-all duration-200 ease-in-out`}
 										/>
-										<Image
-											src={coverLogo}
-											alt="sda"
-											width={250}
-											height={250}
-											className="w-full object-cover absolute top-0 left-0 z-50 opacity-0 group-hover:opacity-100 transition-all duration-200 ease-in-out"
-										/>
+										{(index === 1 || index === 2) && (
+											<Image
+												src={coverLogo}
+												alt="sda"
+												width={250}
+												height={250}
+												className="w-full object-cover absolute top-0 left-0 z-50 opacity-0 group-hover:opacity-100 transition-all duration-200 ease-in-out"
+											/>
+										)}
 									</div>
 								</motion.div>
 							),
@@ -216,7 +229,7 @@ export default function AboutServices() {
 								className="text-white font-HyperspaceRace heading font-black leading-none flex uppercase overflow-hidden"
 							/>
 							<span
-								className={`w-fit flex overflow-hidden text-white font-HyperspaceRace heading font-black leading-tight uppercase bg-[url('/textRapper.png')] bg-no-repeat bg-center`}>
+								className={`w-fit flex overflow-hidden text-white font-HyperspaceRace heading font-black leading-tight uppercase `}>
 								{"king".split(" ").map((word, index) => (
 									<motion.p
 										initial={{ y: "100%" }}
@@ -228,7 +241,7 @@ export default function AboutServices() {
 										}}
 										viewport={{ once: true }}
 										key={index}
-										className="inline-block whitespace-nowrap -mt-4">
+										className="inline-block whitespace-nowrap bg-[url('/textRapper.png')] bg-center bg-no-repeat w-full bg-cover">
 										{word}
 									</motion.p>
 								))}

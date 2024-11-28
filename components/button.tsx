@@ -1,11 +1,11 @@
 import Link from "next/link";
+import Image from "next/image";
 import Rounded from "./rounded";
-import { GoArrowUpRight } from "react-icons/go";
+import { arrowRight } from "@/public";
 
 export default function Button({
 	href,
 	title,
-	className,
 	bgcolor,
 	style,
 }: {
@@ -27,12 +27,11 @@ export default function Button({
 					style={style}>
 					{title}
 				</p>
-				<div
-					className={`p-[10px] rounded-full scale-[0.3] mr-[10px] group-hover:scale-[0.9] transition-all z-10 transform duration-[0.3s] ease-[.215,.61,.355,1] ${className}`}>
-					<GoArrowUpRight
-						strokeWidth={1.5}
-						size={30}
-						className="scale-[0] group-hover:scale-[1]"
+				<div className={`p-[10px]`}>
+					<Image
+						src={arrowRight}
+						className="group-hover:rotate-[-45deg] w-8 h-8 font-bold transition-all duration-200 ease-linear text-white z-[999] relative"
+						alt="arrowRightImg"
 					/>
 				</div>
 			</Rounded>

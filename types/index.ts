@@ -1,3 +1,16 @@
+import { z } from "zod";
+
+export const stepsFormSchema = z.object({
+   name: z.string().min(1),
+   email: z.string().email(),
+   phone: z.any(),
+   postcode: z.string(),
+   tvsize: z.string(),
+   specialRequest: z.string(),
+});
+
+export type TstepsFormData = z.infer<typeof stepsFormSchema>;
+
 export type TlogoMarqueeProps = {
    children: React.ReactNode;
    baseVelocity: number;

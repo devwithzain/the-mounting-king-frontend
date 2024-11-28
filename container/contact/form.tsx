@@ -1,54 +1,38 @@
 "use client";
-import React, { useState } from "react";
+import axios from "axios";
 import Image from "next/image";
+import toast from "react-hot-toast";
+import { useForm } from "react-hook-form";
+import { useRouter } from "next/navigation";
 import { arrowRight, heroCloud } from "@/public";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { stepsFormSchema, TstepsFormData } from "@/types";
 
 export default function ContactForm() {
-	const [formData, setFormData] = useState({
-		name: "",
-		mobile_number: "",
-		postcode: "",
-		tv_size: "",
-		special_request: "",
+	const router = useRouter();
+
+	const form = useForm<TstepsFormData>({
+		resolver: zodResolver(stepsFormSchema),
 	});
 
-	const handleChange = (
-		e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-	) => {
-		const { name, value } = e.target;
-		setFormData((prevData) => ({
-			...prevData,
-			[name]: value,
-		}));
-	};
+	const {
+		handleSubmit,
+		register,
+		formState: { isSubmitting, errors },
+	} = form;
 
-	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-		e.preventDefault();
+	const onSubmits = async (data: TstepsFormData) => {
 		try {
-			const response = await fetch("http://127.0.0.1:8000/api/contact", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify(formData),
-			});
-			console.log("first", response);
-			if (!response.ok) {
-				throw new Error("Something went wrong!");
+			const response = await axios.post(
+				`${process.env.NEXT_PUBLIC_API_URL}/contact-us`,
+				data,
+			);
+			if (response.data.success) {
+				toast.success(response.data.success);
+				router.push("/checkout");
 			}
-
-			const result = await response.json();
-			alert(result.message);
-			setFormData({
-				name: "",
-				mobile_number: "",
-				postcode: "",
-				tv_size: "",
-				special_request: "",
-			});
-		} catch (error) {
-			alert("Failed to submit the form. Please try again.");
-			console.error(error);
+		} catch (err) {
+			toast.error(err.response.data.message);
 		}
 	};
 
@@ -75,54 +59,87 @@ export default function ContactForm() {
 					</div>
 					<form
 						className="flex flex-col gap-8 mt-20 px-40"
-						onSubmit={handleSubmit}>
+						onSubmit={handleSubmit(onSubmits)}>
 						<input
-							type="text"
-							name="name"
-							value={formData.name}
-							onChange={handleChange}
+							{...register("name")}
+							type="name"
 							placeholder="Name"
 							className="w-full p-5 rounded-lg bg-white/20 border border-white backdrop-blur-[5px] placeholder:text-white text-white outline-none"
 							required
 						/>
+						{errors.name && (
+							<span className="text-red-500 text-sm">
+								{errors.name.message}
+							</span>
+						)}
 						<input
-							type="number"
-							name="mobile_number"
-							value={formData.mobile_number}
-							onChange={handleChange}
-							placeholder="Mobile Number"
+							{...register("email")}
+							type="email"
+							placeholder="Email"
 							className="w-full p-5 rounded-lg bg-white/20 border border-white backdrop-blur-[5px] placeholder:text-white text-white outline-none"
 							required
 						/>
+						{errors.email && (
+							<span className="text-red-500 text-sm">
+								{errors.email.message}
+							</span>
+						)}
 						<input
-							type="number"
-							name="postcode"
-							value={formData.postcode}
-							onChange={handleChange}
-							placeholder="Postcode"
+							{...register("phone")}
+							type="text"
+							placeholder="Phone"
 							className="w-full p-5 rounded-lg bg-white/20 border border-white backdrop-blur-[5px] placeholder:text-white text-white outline-none"
+							required
 						/>
+						{errors.phone && (
+							<span className="text-red-500 text-sm">
+								{errors.phone.message}
+							</span>
+						)}
 						<input
-							type="number"
-							name="tv_size"
-							value={formData.tv_size}
-							onChange={handleChange}
-							placeholder="TV Size"
+							{...register("postcode")}
+							type="text"
+							placeholder="Post code"
 							className="w-full p-5 rounded-lg bg-white/20 border border-white backdrop-blur-[5px] placeholder:text-white text-white outline-none"
+							required
 						/>
+						{errors.postcode && (
+							<span className="text-red-500 text-sm">
+								{errors.postcode.message}
+							</span>
+						)}
+						<input
+							{...register("tvsize")}
+							type="text"
+							placeholder="Tv Size"
+							className="w-full p-5 rounded-lg bg-white/20 border border-white backdrop-blur-[5px] placeholder:text-white text-white outline-none"
+							required
+						/>
+						{errors.tvsize && (
+							<span className="text-red-500 text-sm">
+								{errors.tvsize.message}
+							</span>
+						)}
 						<textarea
+							{...register("specialRequest")}
 							rows={10}
-							name="special_request"
-							value={formData.special_request}
-							onChange={handleChange}
 							placeholder="Special Request"
 							className="w-full p-5 rounded-lg bg-white/20 border border-white backdrop-blur-[5px] placeholder:text-white text-white outline-none"
 						/>
+						{errors.specialRequest && (
+							<span className="text-red-500 text-sm">
+								{errors.specialRequest.message}
+							</span>
+						)}
 						<button
+							disabled={isSubmitting}
 							type="submit"
-							className="w-fit flex gap-3 justify-center items-center bg-[#F99A03] px-6 py-3 rounded-lg group">
+							value={isSubmitting ? "Submitting..." : "Submit"}
+							className={`w-fit group flex items-center gap-3 text-[#0E0E30] font-Monstrate text-[20px] font-normal leading-tight tracking-tight px-6 py-3 rounded-lg ${
+								isSubmitting ? "bg-gray-400 cursor-not-allowed" : "bg-[#F99A03]"
+							}`}>
 							<span className="w-fit text-white font-Monstrate text-[20px] font-normal leading-tight tracking-tight">
-								Submit
+								{isSubmitting ? "Submitting..." : "Submit"}
 							</span>
 							<Image
 								src={arrowRight}

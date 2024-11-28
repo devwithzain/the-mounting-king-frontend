@@ -139,7 +139,7 @@ export default function HomeServices() {
 								className="text-white text-center font-HyperspaceRace heading font-bold leading-tight capitalize"
 							/>
 							<span
-								className={`w-fit flex overflow-hidden text-white font-HyperspaceRace heading font-black leading-tight uppercase bg-[url('/textRapper.png')] bg-no-repeat bg-center`}>
+								className={`w-fit flex overflow-hidden text-white font-HyperspaceRace heading font-black leading-tight uppercase `}>
 								{"Supplied".split(" ").map((word, index) => (
 									<motion.p
 										initial={{ y: "100%" }}
@@ -151,7 +151,7 @@ export default function HomeServices() {
 										}}
 										viewport={{ once: true }}
 										key={index}
-										className="inline-block whitespace-nowrap -mt-4">
+										className="inline-block whitespace-nowrap bg-[url('/textRapper.png')] bg-center bg-no-repeat w-full bg-cover">
 										{word}
 									</motion.p>
 								))}
