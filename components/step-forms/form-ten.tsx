@@ -87,10 +87,13 @@ export default function FormTen() {
 			}
 			setIsSubmitting(false);
 		} catch (err) {
-			toast.error(err.response.data.message);
+			if (axios.isAxiosError(err) && err.response) {
+				toast.error(err.response.data.message);
+			} else {
+				toast.error("An error occurred");
+			}
 		}
 	};
-
 	const totalPrice = Object.values(selectedItems).reduce(
 		(sum, item) => sum + item.price,
 		0,
