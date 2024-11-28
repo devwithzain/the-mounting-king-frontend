@@ -32,7 +32,11 @@ export default function ContactForm() {
 				router.push("/checkout");
 			}
 		} catch (err) {
-			toast.error(err.response.data.message);
+			if (axios.isAxiosError(err) && err.response) {
+				toast.error(err.response.data.message);
+			} else {
+				toast.error("An error occurred");
+			}
 		}
 	};
 
@@ -69,7 +73,7 @@ export default function ContactForm() {
 						/>
 						{errors.name && (
 							<span className="text-red-500 text-sm">
-								{errors.name.message}
+								{errors.name.message?.toString()}
 							</span>
 						)}
 						<input
@@ -93,7 +97,7 @@ export default function ContactForm() {
 						/>
 						{errors.phone && (
 							<span className="text-red-500 text-sm">
-								{errors.phone.message}
+								{errors.phone.message?.toString()}
 							</span>
 						)}
 						<input
@@ -105,7 +109,7 @@ export default function ContactForm() {
 						/>
 						{errors.postcode && (
 							<span className="text-red-500 text-sm">
-								{errors.postcode.message}
+								{errors.postcode.message?.toString()}
 							</span>
 						)}
 						<input
@@ -117,7 +121,7 @@ export default function ContactForm() {
 						/>
 						{errors.tvsize && (
 							<span className="text-red-500 text-sm">
-								{errors.tvsize.message}
+								{errors.tvsize.message?.toString()}
 							</span>
 						)}
 						<textarea
@@ -128,13 +132,12 @@ export default function ContactForm() {
 						/>
 						{errors.specialRequest && (
 							<span className="text-red-500 text-sm">
-								{errors.specialRequest.message}
+								{errors.specialRequest.message?.toString()}
 							</span>
 						)}
 						<button
 							disabled={isSubmitting}
 							type="submit"
-							value={isSubmitting ? "Submitting..." : "Submit"}
 							className={`w-fit group flex items-center gap-3 text-[#0E0E30] font-Monstrate text-[20px] font-normal leading-tight tracking-tight px-6 py-3 rounded-lg ${
 								isSubmitting ? "bg-gray-400 cursor-not-allowed" : "bg-[#F99A03]"
 							}`}>
