@@ -190,7 +190,7 @@ export default function HomeServices() {
 							<Image
 								src={bracket}
 								alt="bracket"
-								className="cursor-pointer"
+								className="cursor-pointer w-full h-full object-cover"
 								onClick={handleThumbnailClick}
 							/>
 						) : (
@@ -200,9 +200,9 @@ export default function HomeServices() {
 								autoPlay
 								muted
 								controls
-								className="w-full h-auto rounded-3xl"
-								onEnded={handleVideoPause} // Trigger when video ends
-								onPause={handleVideoPause} // Trigger when video is paused
+								className="rounded-3xl"
+								onEnded={handleVideoPause}
+								onPause={handleVideoPause}
 							/>
 						)}
 					</motion.div>

@@ -41,7 +41,7 @@ export default function Card() {
 				<motion.div
 					className="w-full flex justify-between rounded-[30px] relative -top-[45%] h-fit items-center transform origin-top xm:flex-col sm:flex-col"
 					style={{
-						top: `calc(-5vh + ${2 * 25}px)`,
+						top: `calc(-5vh + ${1 * 25}px)`,
 					}}>
 					<div className="w-1/2 flex flex-col gap-8 relative sm:w-full xm:w-full md:w-full">
 						<div>
@@ -90,7 +90,7 @@ export default function Card() {
 									bgcolor="#212121"
 									href="/services"
 									title="all services"
-									className="bg-white text-black"
+									className="bg-white text-black absolute z-50"
 									style={{ color: "#fff" }}
 								/>
 							</div>
@@ -136,7 +136,8 @@ export default function Card() {
 				className="h-auto flex items-center justify-center sticky top-1/4 xm:top-[10%] sm:top-[10%] w-full">
 				<motion.div
 					style={{
-						top: `calc(-5vh + ${2 * 25}px)`,
+						top: `calc(2vh + ${2 * 25}px)`,
+						left: `calc(-20vh + ${2 * 25}px)`,
 					}}
 					className="w-full flex justify-between rounded-[30px] relative -top-[45%] h-fit items-center transform origin-top xm:flex-col sm:flex-col">
 					<div className="w-1/2" />
@@ -178,7 +179,8 @@ export default function Card() {
 				className="h-auto flex items-center justify-center sticky top-1/4 xm:top-[10%] sm:top-[10%] w-full">
 				<motion.div
 					style={{
-						top: `calc(-5vh + ${3 * 25}px)`,
+						top: `calc(8vh + ${3 * 25}px)`,
+						right: `calc(-10vh + ${3 * 25}px)`,
 					}}
 					className="w-full flex justify-between rounded-[30px] relative -top-[45%] h-fit items-center transform origin-top xm:flex-col sm:flex-col">
 					<div className="w-1/2" />
