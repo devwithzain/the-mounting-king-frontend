@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import Image from "next/image";
 import { useRef } from "react";
 import TextMask from "./text-mask";
@@ -38,7 +39,7 @@ export default function Card() {
 				ref={container1}
 				className="h-auto flex items-center justify-center sticky top-1/4 w-full xm:top-[10%] sm:top-[10%]">
 				<motion.div
-					className="w-full flex justify-between rounded-[30px] gap-10 relative -top-[45%] h-fit items-center transform origin-top xm:flex-col sm:flex-col"
+					className="w-full flex justify-between rounded-[30px] relative -top-[45%] h-fit items-center transform origin-top xm:flex-col sm:flex-col"
 					style={{
 						top: `calc(-5vh + ${2 * 25}px)`,
 					}}>
@@ -53,8 +54,8 @@ export default function Card() {
 									className="text-white font-HyperspaceRace heading font-black leading-none flex overflow-hidden -mt-4"
 								/>
 								<span
-									className={`w-fit flex overflow-hidden text-white font-HyperspaceRace heading font-black leading-tight uppercase `}>
-									{"Opportunities".split(" ").map((word, index) => (
+									className={`w-fit flex items-center text-white font-HyperspaceRace heading font-black leading-tight`}>
+									{"opportunities".split(" ").map((word, index) => (
 										<motion.p
 											initial={{ y: "100%" }}
 											whileInView={{ y: 0 }}
@@ -65,7 +66,7 @@ export default function Card() {
 											}}
 											viewport={{ once: true }}
 											key={index}
-											className="inline-block whitespace-nowrap bg-[url('/textRapper.png')] bg-center bg-no-repeat w-full bg-cover">
+											className="inline-block whitespace-nowrap bg-[url('/textRapper.png')] bg-center bg-no-repeat w-full bg-cover -mt-5">
 											{word}
 										</motion.p>
 									))}
@@ -96,7 +97,7 @@ export default function Card() {
 						</div>
 					</div>
 					<motion.div
-						className="w-1/2 xm:w-full sm:w-full h-full flex items-center justify-center"
+						className="w-1/2 xm:w-full sm:w-full h-full flex items-center justify-end"
 						style={{ scale: imageScale1 }}>
 						<div className="relative">
 							<Image
@@ -116,13 +117,15 @@ export default function Card() {
 										scelerisque sagittis quis egestas sed
 									</p>
 								</div>
-								<div className="absolute right-16 bottom-5 flex items-center justify-center w-20 h-20 p-4 bg-white/20 rounded-full">
+								<Link
+									href="/services"
+									className="absolute right-5 bottom-5 flex items-center justify-center w-20 h-20 p-4 bg-white/20 rounded-full hover:rotate-[-45deg] transition-all duration-300 ease-in-out ">
 									<GoArrowUpRight
 										size={30}
 										strokeWidth={1}
 										className="text-white rotate-45"
 									/>
-								</div>
+								</Link>
 							</div>
 						</div>
 					</motion.div>
@@ -135,10 +138,10 @@ export default function Card() {
 					style={{
 						top: `calc(-5vh + ${2 * 25}px)`,
 					}}
-					className="w-full flex justify-between rounded-[30px] gap-10 relative -top-[45%] h-fit items-center transform origin-top xm:flex-col sm:flex-col">
+					className="w-full flex justify-between rounded-[30px] relative -top-[45%] h-fit items-center transform origin-top xm:flex-col sm:flex-col">
 					<div className="w-1/2" />
 					<motion.div
-						className="w-1/2 xm:w-full sm:w-full h-full flex items-center justify-center"
+						className="w-1/2 xm:w-full sm:w-full h-full flex items-center justify-end"
 						style={{ scale: imageScale2 }}>
 						<div className="relative">
 							<Image
@@ -156,13 +159,15 @@ export default function Card() {
 										scelerisque sagittis quis egestas sed
 									</p>
 								</div>
-								<div className="absolute right-16 bottom-5 flex items-center justify-center w-20 h-20 p-4 bg-white/20 rounded-full">
+								<Link
+									href="/services"
+									className="absolute right-5 bottom-5 flex items-center justify-center w-20 h-20 p-4 bg-white/20 rounded-full hover:rotate-[-45deg] transition-all duration-300 ease-in-out ">
 									<GoArrowUpRight
 										size={30}
 										strokeWidth={1}
 										className="text-white rotate-45"
 									/>
-								</div>
+								</Link>
 							</div>
 						</div>
 					</motion.div>
@@ -175,10 +180,10 @@ export default function Card() {
 					style={{
 						top: `calc(-5vh + ${3 * 25}px)`,
 					}}
-					className="w-full flex justify-between rounded-[30px] gap-10 relative -top-[45%] h-fit items-center transform origin-top xm:flex-col sm:flex-col">
+					className="w-full flex justify-between rounded-[30px] relative -top-[45%] h-fit items-center transform origin-top xm:flex-col sm:flex-col">
 					<div className="w-1/2" />
 					<motion.div
-						className="w-1/2 xm:w-full sm:w-full h-full flex items-center justify-center"
+						className="w-1/2 xm:w-full sm:w-full h-full flex items-center justify-end"
 						style={{ scale: imageScale3 }}>
 						<div className="relative">
 							<Image
@@ -196,13 +201,15 @@ export default function Card() {
 										scelerisque sagittis quis egestas sed
 									</p>
 								</div>
-								<div className="absolute right-5 bottom-5 flex items-center justify-center w-20 h-20 p-4 bg-white/20 rounded-full">
+								<Link
+									href="/services"
+									className=" hover:rotate-[-45deg] transition-all duration-300 ease-in-out absolute right-5 bottom-5 flex items-center justify-center w-20 h-20 p-4 bg-white/20 rounded-full">
 									<GoArrowUpRight
 										size={30}
 										strokeWidth={1}
 										className="text-white rotate-45"
 									/>
-								</div>
+								</Link>
 							</div>
 						</div>
 					</motion.div>
