@@ -152,7 +152,7 @@ export default function Services() {
 							{servicesItems.map((item) => (
 								<div
 									key={item.id}
-									className="flex flex-col gap-10 justify-between rounded-[20px] bg-[#1F1F3D] p-10">
+									className="flex flex-col gap-10 justify-between p-10 btns">
 									<h1 className="text-white text-[35px] font-semibold leading-tight capitalize">
 										{item.tilte}
 									</h1>
