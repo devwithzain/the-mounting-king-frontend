@@ -16,7 +16,7 @@ export default function App() {
 		requestAnimationFrame(raf);
 	}, []);
 	return (
-		<div className="w-full h-full">
+		<div className="w-full h-full bg-[url('/bg.png')] bg-center bg-no-repeat bg-cover overflow-x-hidden">
 			<HomeHero />
 			<AboutServices />
 			<HomeServices />
