@@ -21,9 +21,9 @@ import { AnimatedText, Button } from "@/components";
 
 export default function AboutUs() {
 	return (
-		<div className="w-full py-80 relative">
+		<div className="w-full py-80 relative xm:py-10 sm:py-10 md:py-20">
 			<div className="w-full flex flex-col gap-40">
-				<div className="w-full flex items-start gap-10 justify-center px-80">
+				<div className="w-full flex items-start gap-10 justify-center padding-x padding-y sm:flex-col-reverse xm:flex-col-reverse">
 					<div className="flex gap-2 overflow-hidden">
 						<div className="flex flex-col gap-2 overflow-hidden">
 							{[aboutTwo, aboutFour, aboutSix].map((item, index) => (
@@ -107,7 +107,7 @@ export default function AboutUs() {
 						</div>
 					</div>
 					<div className="w-full flex flex-col gap-8 relative">
-						<div className="absolute -top-20 -right-60">
+						<div className="absolute -top-20 -right-60 xm:hidden sm:hidden md:hidden">
 							<Image
 								alt="aboutCrownR"
 								src={aboutCrownR}
@@ -119,12 +119,16 @@ export default function AboutUs() {
 							<h1 className="text-[#F99A03] font-HyperspaceRace text-[35px] font-black leading-tight capitalize">
 								About Us
 							</h1>
-							<h1 className="text-white font-HyperspaceRace text-[98px] font-black leading-none capitalize">
-								The Mounting <br />
-								King
-							</h1>
+							<AnimatedText
+								className="text-white font-HyperspaceRace heading font-black leading-tight uppercase"
+								text="The Mounting"
+							/>
+							<AnimatedText
+								className="text-white font-HyperspaceRace heading font-black leading-tight uppercase"
+								text="King"
+							/>
 						</div>
-						<div className="absolute top-12 -right-full h-[500px] blur-[120px] bg-gradient-to-b from-[#007DFE] via-[#2f84da] to-[#007DFE] rounded-full w-[500px]" />
+						<div className="absolute top-12 -right-full h-[500px] blur-[120px] bg-gradient-to-b from-[#007DFE] via-[#2f84da] to-[#007DFE] rounded-full w-[500px] xm:hidden sm:hidden md:hidden" />
 						<div className="flex flex-col gap-6 relative z-50">
 							<p className="text-white font-Monstrate text-[18px] leading-loose">
 								It is a long established fact that a reader will be distracted
@@ -146,8 +150,8 @@ export default function AboutUs() {
 					</div>
 				</div>
 			</div>
-			<div className="w-full flex flex-col gap-20 relative padding-x">
-				<div className="absolute -top-20 left-0">
+			<div className="w-full flex flex-col gap-20 relative padding-x xm:gap-10 sm:gap-10">
+				<div className="absolute -top-20 left-0 xm:hidden sm:hidden md:hidden">
 					<Image
 						alt="aboutCrownL"
 						src={aboutCrownL}
@@ -163,13 +167,13 @@ export default function AboutUs() {
 					<div className="w-fit bg-[url('/advantageRapper.png')] bg-center bg-no-repeat bg-cover">
 						<AnimatedText
 							text="Our Mounting King Service"
-							className="text-white text-center font-HyperspaceRace heading font-bold leading-tight capitalize"
+							className="text-white text-center font-HyperspaceRace text-[80px] lg:text-[70px] md:text-[50px] sm:text-[30px] xm:text-[28px] font-bold leading-tight capitalize sm:!mr-0"
 						/>
 					</div>
 				</div>
-				<div className="w-full flex items-center justify-center flex-col gap-20 relative">
-					<div className="absolute -left-60 h-[500px] blur-[120px] bg-gradient-to-b from-[#007DFE] via-[#2f84da] to-[#007DFE] rounded-full w-[500px] overflow-hidden" />
-					<div className="w-full flex justify-between gap-20 z-50">
+				<div className="w-full flex items-center justify-center flex-col gap-20 relative sm:gap-10 xm:gap-10">
+					<div className="absolute -left-60 h-[500px] blur-[120px] bg-gradient-to-b from-[#007DFE] via-[#2f84da] to-[#007DFE] rounded-full w-[500px] overflow-hidden xm:hidden sm:hidden md:hidden" />
+					<div className="w-full flex justify-between gap-20 z-50 sm:flex-col xm:flex-col xm:gap-10 sm:gap-10">
 						<motion.div
 							initial={{ scale: 0 }}
 							whileInView={{ scale: 1 }}

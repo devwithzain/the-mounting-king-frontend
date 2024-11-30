@@ -17,24 +17,24 @@ import { FaFacebook, FaLinkedin, FaTiktok, FaYoutube } from "react-icons/fa";
 export default function HomeFooter() {
 	return (
 		<div className="w-full min-h-screen py-5 relative">
-			<div className="w-full py-10 mb-40 mt-20 relative z-50">
+			<div className="w-full py-10 mb-40 mt-20 relative z-50 xm:mb-0 sm:mb-0 xm:mt-0 sm:mt-0">
 				<div className="w-full absolute top-0 left-0 rotate-6 bg-[#F99A03]">
 					<Marquee baseVelocity={2}>
-						<h1 className="text-white uppercase text-[70px] font-HyperspaceRace font-bold leading-tight mb-3 tracking-tight">
+						<h1 className="text-white uppercase heading font-HyperspaceRace font-bold leading-tight mb-3 xm:mb-1 sm:mb-1 tracking-tight">
 							THE MOUNTING KING
 						</h1>
 					</Marquee>
 				</div>
 				<div className="w-full absolute top-0 left-0 -rotate-6 bg-[#1F1F3D]">
 					<Marquee baseVelocity={-2}>
-						<h1 className="text-white uppercase text-[70px] font-HyperspaceRace font-bold leading-tight mb-3 tracking-tight">
+						<h1 className="text-white uppercase heading font-HyperspaceRace font-bold leading-tight mb-3 xm:mb-1 sm:mb-1 tracking-tight">
 							THE MOUNTING KING
 						</h1>
 					</Marquee>
 				</div>
 			</div>
 			<div className="w-full padding-x py-5 relative">
-				<div className="absolute -left-10">
+				<div className="absolute -left-10 xm:hidden sm:hidden">
 					<Image
 						src={footerCrown}
 						alt="footerCrown"
@@ -42,7 +42,7 @@ export default function HomeFooter() {
 						height={400}
 					/>
 				</div>
-				<div className="w-full flex items-end justify-end">
+				<div className="w-full flex items-end justify-end sm:justify-start xm:justify-start">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						width="221"
@@ -95,8 +95,8 @@ export default function HomeFooter() {
 				</div>
 			</div>
 			<div className="padding-x relative">
-				<div className="w-full flex flex-col gap-20 rounded-[26px] bg-[radial-gradient(154.25%_82%_at_32.7%_40.44%,#2D2D51_0%,#00011A_57%,#0E0E30_100%)] py-10 px-40">
-					<div className="w-full flex items-center justify-between gap-5 rounded-lg p-5 bg-white/15 backdrop-blur-[5px]">
+				<div className="w-full flex flex-col gap-20 rounded-[26px] bg-[radial-gradient(154.25%_82%_at_32.7%_40.44%,#2D2D51_0%,#00011A_57%,#0E0E30_100%)] py-10 px-40 sm:px-8 xm:px-8 xm:gap-10 sm:gap-10">
+					<div className="w-full flex items-center justify-between gap-5 rounded-lg p-5 bg-white/15 backdrop-blur-[5px] xm:flex-col sm:flex-col">
 						<div className="flex flex-col gap-6">
 							<h1 className="text-white font-HyperspaceRace text-[35px] font-black leading-[42px] tracking-[2px]">
 								Subscribe
@@ -105,30 +105,28 @@ export default function HomeFooter() {
 								Join our newsletter to stay up to date on features and releases.
 							</p>
 						</div>
-						<div>
-							<form
-								action=""
-								className="rounded-lg px-6 py-3 flex justify-between items-center bg-white gap-10">
+						<div className="w-full">
+							<form className="rounded-lg px-6 py-3 flex justify-between items-center xm:items-start sm:items-start bg-white gap-10 sm:px-2 xm:px-2 xm:py-1 sm:py-1 sm:flex-col xm:flex-col sm:gap-2 xm:gap-2">
 								<div className="flex items-center gap-3">
 									<Image
 										src={emailIcon}
 										alt="emailIcon"
-										width={30}
-										height={30}
+										width={25}
+										height={25}
 									/>
 									<input
 										type="text"
-										className="text-[#0E0E30] font-Monstrate text-[20px] font-normal leading-tight tracking-tight placeholder:text-[#0E0E30] outline-none border-none"
+										className="text-[#0E0E30] font-Monstrate text-[20px] font-normal leading-tight tracking-tight placeholder:text-[#0E0E30] outline-none border-none sm:text-sm xm:text-sm w-fit"
 										placeholder="Enter your email"
 									/>
 								</div>
-								<button className="text-[#0E0E30] font-Monstrate text-[20px] font-normal leading-tight tracking-tight">
+								<button className="text-[#0E0E30] font-Monstrate text-[20px] font-normal leading-tight tracking-tight sm:text-sm xm:text-sm sm:bg-[#F99A03] xm:bg-[#F99A03] xm:text-white sm:text-white sm:py-2 xm:py-2 sm:px-4 xm:px-4 rounded-lg">
 									Submit
 								</button>
 							</form>
 						</div>
 					</div>
-					<div className="w-full flex justify-between">
+					<div className="w-full flex justify-between xm:flex-col sm:flex-col gap-5">
 						<div className="flex-1 flex flex-col gap-8">
 							<div>
 								<Image
@@ -159,7 +157,7 @@ export default function HomeFooter() {
 								</div>
 							</div>
 						</div>
-						<div className="flex-1 flex justify-between gap-10">
+						<div className="flex-1 flex justify-between gap-10 xm:flex-col sm:flex-col">
 							<div className="flex flex-col gap-4">
 								<Link
 									href="/"
@@ -254,8 +252,8 @@ export default function HomeFooter() {
 						</div>
 					</div>
 					<div className="w-full border-t-[1px] border-[#D0D5DD] pt-3">
-						<div className="w-full flex items-center justify-between gap-5">
-							<div className="flex items-center gap-4">
+						<div className="w-full flex items-center justify-between gap-5 xm:flex-col sm:flex-col xm:items-start sm:items-start">
+							<div className="flex items-center gap-4 flex-wrap">
 								<Link
 									href="/"
 									className="text-white text-[16px] font-Monstrate leading-tight tracking-tight">
@@ -275,6 +273,11 @@ export default function HomeFooter() {
 									href="/request-a-demo"
 									className="text-white text-[16px] font-Monstrate leading-tight tracking-tight">
 									Request A Demo
+								</Link>
+								<Link
+									href="/contact-us"
+									className="text-white text-[16px] font-Monstrate leading-tight tracking-tight">
+									Contact Us
 								</Link>
 							</div>
 							<div className="">

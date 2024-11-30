@@ -10,14 +10,14 @@ export default function ServicesHero() {
 					Services
 				</h1>
 			</div>
-			<div className="w-full absolute left-0 -bottom-80 z-50 lg:-bottom-60 md:-bottom-40 overflow-hidden h-fit">
+			<div className="w-full absolute left-0 -bottom-80 z-50 lg:-bottom-60 md:-bottom-40 overflow-hidden xm:hidden sm:hidden h-fit">
 				<Image
 					alt="heroCloudImg"
 					src={heroCloud}
 					className="w-full h-full object-cover rotate-180"
 				/>
 			</div>
-			<div className="w-full absolute right-0 -bottom-60 z-50 lg:-bottom-40 md:-bottom-40 overflow-hidden h-fit">
+			<div className="w-full absolute right-0 -bottom-60 z-50 lg:-bottom-40 md:-bottom-40 overflow-hidden xm:hidden sm:hidden h-fit">
 				<Image
 					alt="heroCloudImg"
 					src={heroCloud}

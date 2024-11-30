@@ -14,10 +14,10 @@ export default function RequestADemo() {
 		requestAnimationFrame(raf);
 	}, []);
 	return (
-		<>
+		<div className="overflow-x-hidden">
 			<Hero />
 			<Appointment />
 			<Footer />
-		</>
+		</div>
 	);
 }

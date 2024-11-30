@@ -12,9 +12,9 @@ import { AnimatedText, Button, TextMask } from "@/components";
 
 export default function ServiceDetailInfo() {
 	return (
-		<div className="w-full padding-x relative padding-y flex flex-col gap-40 my-40">
-			<div className="w-full flex items-center justify-between gap-20 relative">
-				<div className="w-1/2">
+		<div className="w-full padding-x relative padding-y flex flex-col gap-40 my-40 xm:gap-10 sm:gap-10 xm:my-10 sm:my-10">
+			<div className="w-full flex items-center justify-between gap-20 relative xm:flex-col sm:flex-col">
+				<div className="w-1/2 xm:w-full sm:w-full">
 					<Image
 						src={serviceDetail}
 						alt="serviceDetail"
@@ -23,7 +23,7 @@ export default function ServiceDetailInfo() {
 						className="w-full object-cover"
 					/>
 				</div>
-				<div className="w-1/2 flex flex-col gap-8 relative z-50">
+				<div className="w-1/2 xm:w-full sm:w-full flex flex-col gap-8 relative z-50">
 					<div className="absolute -top-20 -right-60 hidden xl:block">
 						<Image
 							alt="aboutCrownR"
@@ -96,10 +96,21 @@ export default function ServiceDetailInfo() {
 					</div>
 				</div>
 			</div>
-			{/* asd */}
-			<div className="w-full flex items-center justify-center flex-col gap-20 relative">
-				<div className="absolute -right-60 h-[500px] blur-[120px] bg-gradient-to-b from-[#007DFE] via-[#2f84da] to-[#007DFE] rounded-full w-[500px] overflow-hidden" />
-				<div className="w-full flex justify-between gap-20 z-50">
+			<div className="w-full flex items-center justify-center flex-col gap-20 relative sm:gap-10 xm:gap-10">
+				<div className="absolute -left-60 h-[500px] blur-[120px] bg-gradient-to-b from-[#007DFE] via-[#2f84da] to-[#007DFE] rounded-full w-[500px] overflow-hidden xm:hidden sm:hidden md:hidden" />
+				<div className="w-full flex justify-center items-center flex-col">
+					<AnimatedText
+						text="Advantage of"
+						className="text-white text-center font-HyperspaceRace heading font-bold leading-tight capitalize"
+					/>
+					<div className="w-fit bg-[url('/advantageRapper.png')] bg-center bg-no-repeat bg-cover">
+						<AnimatedText
+							text="Our Mounting King Service"
+							className="text-white text-center font-HyperspaceRace text-[80px] lg:text-[70px] md:text-[50px] sm:text-[30px] xm:text-[28px] font-bold leading-tight capitalize sm:!mr-0"
+						/>
+					</div>
+				</div>
+				<div className="w-full flex justify-between gap-20 z-50 sm:flex-col xm:flex-col xm:gap-10 sm:gap-10">
 					<motion.div
 						initial={{ scale: 0 }}
 						whileInView={{ scale: 1 }}
@@ -188,6 +199,15 @@ export default function ServiceDetailInfo() {
 							</div>
 						</div>
 					</motion.div>
+				</div>
+				<div className="w-fit flex items-center justify-between bg-[#F99A03] cursor-pointer rounded-lg group">
+					<Button
+						bgcolor="#212121"
+						href="/contact"
+						title="book now"
+						className="bg-white text-black"
+						style={{ color: "#fff" }}
+					/>
 				</div>
 			</div>
 		</div>

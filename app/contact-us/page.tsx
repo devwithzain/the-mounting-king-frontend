@@ -15,7 +15,7 @@ export default function Contact() {
 		requestAnimationFrame(raf);
 	}, []);
 	return (
-		<div className="w-full h-full bg-[url('/aboutBg.png')] bg-center bg-no-repeat bg-cover">
+		<div className="w-full h-full bg-[url('/aboutBg.png')] bg-center bg-no-repeat bg-cover overflow-x-hidden">
 			<ContactHero />
 			<ContactForm />
 			<Footer />

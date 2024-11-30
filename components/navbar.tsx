@@ -7,6 +7,7 @@ import { navVarients } from "@/motion";
 import { TpositionProps } from "@/types";
 import { useRef, useState } from "react";
 import { usePathname } from "next/navigation";
+import LeftSideHome from "./left-side-menu/LeftSideHome";
 
 export default function Navbar() {
 	const pathname = usePathname();
@@ -23,14 +24,14 @@ export default function Navbar() {
 				whileInView="vissible"
 				viewport={{ once: true }}
 				variants={navVarients}
-				className="w-full flex items-center justify-between gap-5 padding-x py-2 absolute top-0 z-[999]">
+				className="w-full flex items-center justify-between gap-5 padding-x py-2 absolute top-0 z-[999] sm:hidden xm:hidden md:hidden">
 				<Link href="/">
 					<Image
 						src={navLogo}
 						alt="navLogo"
 						width={200}
 						height={200}
-						className="w-[120px] object-cover"
+						className="w-[150px] object-cover"
 					/>
 				</Link>
 				<ul
@@ -73,6 +74,9 @@ export default function Navbar() {
 					</Link>
 				</div>
 			</motion.div>
+			<div className="hidden sm:block xm:block md:block">
+				<LeftSideHome />
+			</div>
 		</>
 	);
 }

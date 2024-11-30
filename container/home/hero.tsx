@@ -166,7 +166,7 @@ export default function HomeHero() {
 							</p>
 							<Link
 								href="/about"
-								className="text-[#F99A03] font-Monstrate text-[24px] font-normal leading-tight flex items-center gap-3">
+								className="text-[#F99A03] font-Monstrate text-[24px] font-normal leading-tight flex items-center gap-3 cursor-pointer relative z-50">
 								Read More{" "}
 								<svg
 									xmlns="http://www.w3.org/2000/svg"

@@ -15,7 +15,7 @@ export default function AboutPage() {
 		requestAnimationFrame(raf);
 	}, []);
 	return (
-		<div className="w-full h-full bg-[url('/aboutBg.png')] bg-center bg-no-repeat bg-cover">
+		<div className="w-full h-full bg-[url('/aboutBg.png')] bg-center bg-no-repeat bg-cover overflow-x-hidden">
 			<AboutHero />
 			<AboutServices />
 			<Footer />

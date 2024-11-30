@@ -27,7 +27,7 @@ body {
 		@apply py-[100px] lg:py-[40px] md:py-[30px] sm:py-[20px] xm:py-[20px];
 	}
 	.heading {
-		@apply text-[80px] lg:text-[70px] md:text-[50px] sm:text-[30px] xm:text-[25px];
+		@apply text-[80px] lg:text-[70px] md:text-[50px] sm:text-[35px] xm:text-[35px];
 	}
 	.subHeading {
 		@apply text-[px] lg:text-[px] md:text-[px] sm:text-[px] xm:text-[px];

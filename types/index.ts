@@ -1,3 +1,4 @@
+import { Dispatch, SetStateAction } from "react";
 import { z } from "zod";
 
 export const stepsFormSchema = z.object({
@@ -37,4 +38,15 @@ export type TRoundedProps = {
    children: React.ReactNode;
    className?: string;
    backgroundColor: string;
+};
+
+export type TlinksProps = {
+   data: {
+      title: string,
+      index: number,
+      href: string;
+   };
+   className: string;
+   isActive: boolean,
+   setSelectedIndicator: Dispatch<SetStateAction<string>>;
 };
