@@ -62,7 +62,7 @@ export default function MobileNav() {
 						<ul className="mobileNavbar-fixed-links">
 							{navLinks.map((item) => (
 								<Link
-									href={item.to}
+									href={item.href}
 									key={item.title}
 									onClick={() => {
 										setToggle(!toggle);
