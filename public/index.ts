@@ -33,6 +33,7 @@ export { default as coverLogo } from './coverLogo.png';
 export { default as advantageRapper } from './advantageRapper.png';
 export { default as contactBanner } from './contactBanner.png';
 export { default as serviceDetail } from './serviceDetail.png';
+export { default as mobileGorilla } from './mobileGorilla.png';
 
 export { default as m } from './m.png';
 export { default as o } from './o.png';

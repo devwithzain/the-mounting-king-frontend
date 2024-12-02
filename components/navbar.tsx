@@ -74,7 +74,7 @@ export default function Navbar() {
 					</Link>
 				</div>
 			</motion.div>
-			<div className="hidden sm:block xm:block md:block">
+			<div className="sm:!flex xm:!flex md:!flex hidden">
 				<LeftSideHome />
 			</div>
 		</>

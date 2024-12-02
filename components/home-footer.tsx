@@ -105,8 +105,8 @@ export default function HomeFooter() {
 								Join our newsletter to stay up to date on features and releases.
 							</p>
 						</div>
-						<div className="w-full">
-							<form className="rounded-lg px-6 py-3 flex justify-between items-center xm:items-start sm:items-start bg-white gap-10 sm:px-2 xm:px-2 xm:py-1 sm:py-1 sm:flex-col xm:flex-col sm:gap-2 xm:gap-2">
+						<div className="xm:!w-full sm:!w-full">
+							<form className="w-full rounded-lg px-6 py-3 flex justify-between items-center xm:items-start sm:items-start bg-white gap-10 sm:px-2 xm:px-2 xm:py-1 sm:py-1 sm:flex-col xm:flex-col sm:gap-2 xm:gap-2">
 								<div className="flex items-center gap-3">
 									<Image
 										src={emailIcon}
@@ -288,7 +288,7 @@ export default function HomeFooter() {
 						</div>
 					</div>
 				</div>
-				<div className="absolute top-1/4 left-10 hidden xl:block">
+				<div className="absolute top-1/4 left-10 sm:hidden xm:hidden">
 					<Image
 						src={crown}
 						alt="crown"

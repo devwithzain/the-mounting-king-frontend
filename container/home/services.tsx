@@ -6,6 +6,7 @@ import {
 	bracket,
 	tree,
 	gorillaHanging,
+	mobileGorilla,
 } from "@/public";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -25,8 +26,8 @@ export default function HomeServices() {
 	};
 	return (
 		<div className="w-full padding-y relative -mt-10 mb-20">
-			<div className="w-full flex flex-col gap-20">
-				<div className="w-full flex flex-col gap-20 relative padding-x">
+			<div className="w-full flex flex-col gap-20 xm:gap-10 sm:gap-10">
+				<div className="w-full flex flex-col gap-20 relative padding-x sm:gap-10 xm:gap-10">
 					<div className="w-full flex justify-center items-center flex-col gap-3">
 						<AnimatedText
 							text="Advantage of"
@@ -35,13 +36,13 @@ export default function HomeServices() {
 						<div className="w-fit bg-[url('/advantageRapper.png')] bg-center bg-no-repeat bg-cover">
 							<AnimatedText
 								text="Our Mounting King Service"
-								className="text-white text-center font-HyperspaceRace heading font-bold leading-tight capitalize"
+								className="text-white text-center font-HyperspaceRace text-[80px] lg:text-[70px] md:text-[50px] sm:text-[30px] xm:text-[30px] font-bold leading-tight capitalize"
 							/>
 						</div>
 					</div>
-					<div className="w-full flex items-center justify-center flex-col gap-20 relative">
-						<div className="absolute -left-60 h-[500px] blur-[120px] bg-gradient-to-b from-[#007DFE] via-[#2f84da] to-[#007DFE] rounded-full w-[500px] overflow-hidden" />
-						<div className="w-full flex justify-between gap-20 z-50">
+					<div className="w-full flex items-center justify-center flex-col gap-20 relative xm:flex-col sm:flex-col">
+						<div className="absolute -left-60 h-[500px] blur-[120px] bg-gradient-to-b from-[#007DFE] via-[#2f84da] to-[#007DFE] rounded-full w-[500px] overflow-hidden xm:hidden sm:hidden" />
+						<div className="w-full flex justify-between gap-20 z-50 xm:flex-col sm:flex-col xm:gap-10 sm:gap-10">
 							<motion.div
 								initial={{ scale: 0 }}
 								whileInView={{ scale: 1 }}
@@ -133,8 +134,8 @@ export default function HomeServices() {
 						</div>
 					</div>
 				</div>
-				<div className="w-full flex justify-between gap-20 relative padding-x">
-					<div className="flex-1 flex flex-col gap-10">
+				<div className="w-full flex justify-between gap-20 relative padding-x xm:flex-col sm:flex-col sm:gap-10 xm:gap-10">
+					<div className="flex-1 flex flex-col gap-10 sm:gap-5 xm:gap-5">
 						<div>
 							<AnimatedText
 								text="Bracket"
@@ -207,7 +208,7 @@ export default function HomeServices() {
 						)}
 					</motion.div>
 				</div>
-				<div className="w-full relative">
+				<div className="w-full relative xm:hidden sm:hidden">
 					<motion.div
 						initial={{ opacity: 0, scale: 0.5 }}
 						whileInView={{ opacity: 1, scale: 1 }}
@@ -224,8 +225,8 @@ export default function HomeServices() {
 							className="w-full object-cover"
 						/>
 					</motion.div>
-					<div className="w-full flex justify-between gap-10 padding-x">
-						<div className="w-1/2 flex flex-col gap-6 -mt-60 lg:-mt-40 md:-mt-32">
+					<div className="w-full flex justify-between gap-10 padding-x xm:flex-col-reverse sm:flex-col-reverse">
+						<div className="w-1/2  xm:w-full sm:w-full flex flex-col gap-6 -mt-60 lg:-mt-40 md:-mt-32">
 							<div className="text-[#F99A03] font-HyperspaceRace text-[35px] font-black leading-tight capitalize">
 								<TextMask>{["About Us"]}</TextMask>
 							</div>
@@ -254,7 +255,7 @@ export default function HomeServices() {
 								/>
 							</div>
 						</div>
-						<div className="flex w-1/2">
+						<div className="flex w-1/2 h-full bg-blue-300 xm:w-full sm:w-full">
 							<div className="absolute top-80 md:top-60">
 								<motion.div
 									initial={{ opacity: 0, scale: 0.5 }}
@@ -272,8 +273,56 @@ export default function HomeServices() {
 										className="w-full h-full object-cover"
 									/>
 								</motion.div>
-								<div className="w-[600px] h-[92px] absolute right-0 -bottom-10 rounded-[600px] opacity-40 bg-[radial-gradient(53.92%_67.81%_at_50%_50%,#414141_0%,rgba(255,255,255,0)_100%)] blur-[15px]" />
+								<div className="w-[600px] h-[92px] absolute right-0 -bottom-10 rounded-[600px] opacity-40 bg-[radial-gradient(53.92%_67.81%_at_50%_50%,#414141_0%,rgba(255,255,255,0)_100%)] blur-[15px] xm:hidden sm:hidden" />
 							</div>
+						</div>
+					</div>
+				</div>
+				<div className="w-full relative xm:!flex sm:!flex hidden flex-col-reverse gap-10 padding-y">
+					<div className="w-full">
+						<motion.div
+							initial={{ opacity: 0, scale: 0.5 }}
+							whileInView={{ opacity: 1, scale: 1 }}
+							viewport={{ once: true }}
+							transition={{
+								duration: 0.5,
+								delay: 0.5,
+								ease: "easeInOut",
+							}}>
+							<Image
+								alt="mobileGorilla"
+								src={mobileGorilla}
+								className="w-full object-cover"
+							/>
+						</motion.div>
+					</div>
+					<div className="w-full flex flex-col gap-3 padding-x">
+						<div className="text-[#F99A03] font-HyperspaceRace text-[35px] font-black leading-tight capitalize">
+							<TextMask>{["About Us"]}</TextMask>
+						</div>
+						<AnimatedText
+							text="Tell us What You"
+							className="text-white text-center font-HyperspaceRace heading font-bold leading-tight capitalize"
+						/>
+						<AnimatedText
+							text="Are Looking For"
+							className="text-white text-center font-HyperspaceRace heading font-bold leading-tight -mt-5 capitalize"
+						/>
+						<div className="text-white font-Monstrate paragraph leading-loose">
+							<TextMask>
+								{[
+									"Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for lorem ipsum will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
+								]}
+							</TextMask>
+						</div>
+						<div className="w-fit flex items-center justify-between bg-[#F99A03] cursor-pointer rounded-lg group">
+							<Button
+								bgcolor="#212121"
+								href="/contact-us"
+								title="Fill the form"
+								className="bg-white text-black"
+								style={{ color: "#fff" }}
+							/>
 						</div>
 					</div>
 				</div>

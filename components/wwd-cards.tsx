@@ -37,7 +37,7 @@ export default function Card() {
 		<>
 			<div
 				ref={container1}
-				className="h-auto flex items-center justify-center sticky top-1/4 w-full xm:top-[10%] sm:top-[10%]">
+				className="h-auto flex items-center justify-center sticky top-1/4 w-full xm:top-[10%] sm:top-[10%] sm:hidden xm:hidden">
 				<motion.div
 					className="w-full flex justify-between rounded-[30px] relative -top-[45%] h-fit items-center transform origin-top xm:flex-col sm:flex-col"
 					style={{
@@ -48,13 +48,13 @@ export default function Card() {
 							<h1 className="text-[#F99A03] font-HyperspaceRace text-[35px] font-black leading-tight capitalize">
 								<TextMask>{["Services We Offer"]}</TextMask>
 							</h1>
-							<div className=" w-full flex items-center gap-3">
+							<div className="w-full flex items-center gap-3">
 								<AnimatedText
 									text="Several"
 									className="text-white font-HyperspaceRace heading font-black leading-none flex overflow-hidden -mt-4"
 								/>
 								<span
-									className={`w-fit flex items-center text-white font-HyperspaceRace heading font-black leading-tight`}>
+									className={`w-fit flex items-center text-white font-HyperspaceRace heading font-black leading-normal xm:mt-3 sm:mt-3`}>
 									{"opportunities".split(" ").map((word, index) => (
 										<motion.p
 											initial={{ y: "100%" }}
@@ -78,7 +78,7 @@ export default function Card() {
 							/>
 						</div>
 						<div className="flex flex-col gap-6 relative z-50">
-							<div className="w-[80%] text-white font-Monstrate paragraph leading-loose">
+							<div className="w-[80%] text-white font-Monstrate paragraph leading-loose sm:w-full xm:w-full">
 								<TextMask>
 									{[
 										"Lorem ipsum dolor sit amet consectetur. Arcu nec scelerisque sagittis quis egestas sed fasfe consectet ursit amet consectetur, Arcu nec scelerisque sagittis fasdfas Arcu scelerisq ueerisque sagittis  afse quis egestas...",
@@ -133,7 +133,7 @@ export default function Card() {
 			</div>
 			<div
 				ref={container2}
-				className="h-auto flex items-center justify-center sticky top-1/4 xm:top-[10%] sm:top-[10%] w-full">
+				className="h-auto flex items-center justify-center sticky top-1/4 xm:top-[10%] sm:top-[10%] w-full sm:hidden xm:hidden">
 				<motion.div
 					style={{
 						top: `calc(2vh + ${2 * 25}px)`,
@@ -176,7 +176,7 @@ export default function Card() {
 			</div>
 			<div
 				ref={container3}
-				className="h-auto flex items-center justify-center sticky top-1/4 xm:top-[10%] sm:top-[10%] w-full">
+				className="h-auto flex items-center justify-center sticky top-1/4 xm:top-[10%] sm:top-[10%] w-full sm:hidden xm:hidden">
 				<motion.div
 					style={{
 						top: `calc(8vh + ${3 * 25}px)`,
@@ -215,6 +215,99 @@ export default function Card() {
 							</div>
 						</div>
 					</motion.div>
+				</motion.div>
+			</div>
+			{/* asd */}
+			<div className="w-full sm:!flex xm:!flex hidden flex-col gap-4">
+				<div className="w-full flex flex-col gap-8 relative">
+					<div>
+						<h1 className="text-[#F99A03] font-HyperspaceRace text-[30px] mb-4 font-black leading-tight capitalize">
+							<TextMask>{["Services We Offer"]}</TextMask>
+						</h1>
+						<div className="w-full flex items-center gap-3">
+							<AnimatedText
+								text="Several"
+								className="text-black font-HyperspaceRace heading font-black leading-tight flex overflow-hidden -mt-4"
+							/>
+							<span
+								className={`w-fit flex items-center text-black font-HyperspaceRace heading font-black leading-tight xm:mt-3 sm:mt-3`}>
+								{"opportunities".split(" ").map((word, index) => (
+									<motion.p
+										initial={{ y: "100%" }}
+										whileInView={{ y: 0 }}
+										transition={{
+											delay: index * 0.08,
+											duration: 1,
+											ease: [0.4, 0, 0.2, 1],
+										}}
+										viewport={{ once: true }}
+										key={index}
+										className="inline-block whitespace-nowrap bg-[url('/textRapper.png')] bg-center bg-no-repeat w-full bg-cover -mt-5">
+										{word}
+									</motion.p>
+								))}
+							</span>
+						</div>
+						<AnimatedText
+							text="are waiting for you"
+							className="text-black font-HyperspaceRace heading font-black leading-tight flex overflow-hidden"
+						/>
+					</div>
+					<div className="flex flex-col gap-6 relative z-50">
+						<div className="w-full text-black font-Monstrate paragraph leading-loose">
+							<TextMask>
+								{[
+									"Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for lorem ipsum will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
+								]}
+							</TextMask>
+						</div>
+					</div>
+				</div>
+				<motion.div
+					className="w-full h-full flex items-center flex-col gap-4"
+					style={{ scale: imageScale1 }}>
+					{[serviceImg1, serviceImg2, serviceImg3].map((item, i) => (
+						<div
+							className="w-full relative"
+							key={i}>
+							<Image
+								src={item}
+								alt="serviceImg"
+								width={1000}
+								height={1000}
+								className="w-full object-cover h-full"
+							/>
+							<div className="absolute top-0 left-0 z-50 w-full h-full flex items-center justify-center gap-4 p-5">
+								<div className="flex flex-col gap-3">
+									<h1 className="text-[#F99A03] font-HyperspaceRace text-[30px] font-black leading-tight capitalize text-center">
+										TV brackets wall mounts
+									</h1>
+									<p className="text-white font-Monstrate paragraph leading-tight text-center">
+										Lorem ipsum dolor sit amet consectetur. <br /> Arcu nec
+										scelerisque sagittis quis egestas sed
+									</p>
+								</div>
+								<Link
+									href="/services"
+									className="absolute right-5 bottom-5 flex items-center justify-center w-16 h-16 p-4 bg-white/20 rounded-full hover:rotate-[-45deg] transition-all duration-300 ease-in-out ">
+									<GoArrowUpRight
+										size={30}
+										strokeWidth={1}
+										className="text-white rotate-45"
+									/>
+								</Link>
+							</div>
+						</div>
+					))}
+					<div className="w-fit flex items-center justify-between bg-[#F99A03] cursor-pointer rounded-lg group">
+						<Button
+							bgcolor="#212121"
+							href="/services"
+							title="all services"
+							className="bg-white text-black absolute z-50"
+							style={{ color: "#fff" }}
+						/>
+					</div>
 				</motion.div>
 			</div>
 		</>

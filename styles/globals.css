@@ -33,7 +33,7 @@ body {
 		@apply text-[px] lg:text-[px] md:text-[px] sm:text-[px] xm:text-[px];
 	}
 	.paragraph {
-		@apply text-[18px] lg:text-[16px] md:text-[15px] sm:text-[14px] xm:text-[14px];
+		@apply text-[18px] lg:text-[17px] md:text-[16px] sm:text-[16px] xm:text-[16px];
 	}
 	.subParagraph {
 		@apply text-[px] lg:text-[px] md:text-[px] sm:text-[px] xm:text-[px];

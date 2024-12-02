@@ -306,7 +306,7 @@ export default function Footer() {
 						</div>
 					</div>
 				</div>
-				<div className="absolute top-1/4 left-10 hidden xl:block">
+				<div className="absolute top-1/4 left-10 sm:hidden xm:hidden">
 					<Image
 						src={crown}
 						alt="crown"

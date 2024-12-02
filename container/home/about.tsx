@@ -7,7 +7,7 @@ import { AnimatedText, Button, LogoTicker, TextMask } from "@/components";
 
 export default function AboutServices() {
 	return (
-		<div className="w-full padding-y relative mt-60 flex flex-col gap-40">
+		<div className="w-full padding-y relative mt-60 flex flex-col gap-40 xm:mt-20 sm:mt-20 sm:gap-20 xm:gap-20">
 			<div className="absolute -top-80 -left-80 lg:-top-40 lg:-left-40">
 				<Image
 					src={"/serviceGorila.png"}
@@ -18,11 +18,11 @@ export default function AboutServices() {
 				/>
 			</div>
 			<Whatwedo />
-			<div className="w-full flex items-center gap-10 justify-start padding-x">
+			<div className="w-full flex items-center gap-10 justify-start padding-x xm:flex-col-reverse sm:flex-col-reverse">
 				<div className="h-[750px] overflow-hidden [mask-image:linear-gradient(to_top,transparent,black_25%,black_75%,transparent)]">
 					<LogoTicker />
 				</div>
-				<div className="w-1/2 flex flex-col gap-8 relative z-50">
+				<div className="w-1/2 flex flex-col gap-8 relative z-50 xm:w-full sm:w-full">
 					<div className="absolute -top-20 -right-60 hidden xl:block">
 						<Image
 							alt="aboutCrownR"
@@ -53,14 +53,14 @@ export default function AboutServices() {
 										}}
 										viewport={{ once: true }}
 										key={index}
-										className="inline-block whitespace-nowrap bg-[url('/textRapper.png')] bg-right bg-no-repeat -mt-4 w-full bg-cover">
+										className="inline-block whitespace-nowrap bg-[url('/textRapper.png')] bg-right bg-no-repeat -mt-4 xm:mt-0 sm:mt-0 w-full bg-cover">
 										{word}
 									</motion.p>
 								))}
 							</span>
 						</h1>
 					</div>
-					<div className="absolute top-12 -right-[70%] lg:right-0 md:-right-1/2 md:w-[350px] md:-top-1/2 h-[400px] blur-[120px] bg-gradient-to-b from-[#007DFE] via-[#2f84da] to-[#007DFE] rounded-full w-[500px] overflow-hidden md:hidden" />
+					<div className="absolute top-12 -right-[70%] lg:right-0 md:-right-1/2 md:w-[350px] md:-top-1/2 h-[400px] blur-[120px] bg-gradient-to-b from-[#007DFE] via-[#2f84da] to-[#007DFE] rounded-full w-[500px] overflow-hidden md:hidden xm:hidden sm:hidden" />
 					<div className="flex flex-col gap-6 relative z-50">
 						<div className="text-white font-Monstrate paragraph leading-loose">
 							<TextMask>
