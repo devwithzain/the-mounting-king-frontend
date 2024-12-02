@@ -123,7 +123,7 @@ export default function Services() {
 					<div className="w-fit flex items-center justify-between bg-[#F99A03] cursor-pointer rounded-lg group">
 						<Button
 							bgcolor="#212121"
-							href="/contact"
+							href="/contact-us"
 							title="book now"
 							className="bg-white text-black"
 							style={{ color: "#fff" }}
