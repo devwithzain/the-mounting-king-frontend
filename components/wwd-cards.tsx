@@ -279,17 +279,18 @@ export default function Card() {
 							/>
 							<div className="absolute top-0 left-0 z-50 w-full h-full flex items-center justify-center gap-4 p-5">
 								<div className="flex flex-col gap-3">
-									<h1 className="text-[#F99A03] font-HyperspaceRace text-[30px] font-black leading-tight capitalize text-center">
+									<h1 className="text-[#F99A03] font-HyperspaceRace text-[30px] font-black leading-tight capitalize text-center sm:text-[24px] xm:text-[24px]">
 										TV brackets wall mounts
 									</h1>
 									<p className="text-white font-Monstrate paragraph leading-tight text-center">
-										Lorem ipsum dolor sit amet consectetur. <br /> Arcu nec
-										scelerisque sagittis quis egestas sed
+										Lorem ipsum dolor sit amet consectetur.{" "}
+										<br className="sm:hidden xm:hidden" /> Arcu nec scelerisque
+										sagittis quis egestas sed
 									</p>
 								</div>
 								<Link
 									href="/services"
-									className="absolute right-5 bottom-5 flex items-center justify-center w-16 h-16 p-4 bg-white/20 rounded-full hover:rotate-[-45deg] transition-all duration-300 ease-in-out ">
+									className="absolute right-5 bottom-5 flex items-center justify-center w-16 h-16 p-4 bg-white/20 rounded-full hover:rotate-[-45deg] transition-all duration-300 ease-in-out sm:w-10 xm:w-10 sm:h-10 xm:h-10 sm:right-2 xm:right-2 sm:bottom-2 xm:bottom-2">
 									<GoArrowUpRight
 										size={30}
 										strokeWidth={1}

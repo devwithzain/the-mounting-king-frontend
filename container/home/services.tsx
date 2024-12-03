@@ -28,7 +28,7 @@ export default function HomeServices() {
 		<div className="w-full padding-y relative -mt-10 mb-20">
 			<div className="w-full flex flex-col gap-20 xm:gap-10 sm:gap-10">
 				<div className="w-full flex flex-col gap-20 relative padding-x sm:gap-10 xm:gap-10">
-					<div className="w-full flex justify-center items-center flex-col gap-3">
+					<div className="w-full flex justify-center items-center flex-col gap-3 sm:items-start xm:items-start">
 						<AnimatedText
 							text="Advantage of"
 							className="text-white text-center font-HyperspaceRace heading font-bold leading-tight capitalize"
@@ -296,18 +296,38 @@ export default function HomeServices() {
 							/>
 						</motion.div>
 					</div>
-					<div className="w-full flex flex-col gap-3 padding-x">
+					<div className="w-full flex flex-col gap-3 padding-x relative z-[1000]">
 						<div className="text-[#F99A03] font-HyperspaceRace text-[35px] font-black leading-tight capitalize">
 							<TextMask>{["About Us"]}</TextMask>
 						</div>
-						<AnimatedText
-							text="Tell us What You"
-							className="text-white text-center font-HyperspaceRace heading font-bold leading-tight capitalize"
-						/>
-						<AnimatedText
-							text="Are Looking For"
-							className="text-white text-center font-HyperspaceRace heading font-bold leading-tight -mt-5 capitalize"
-						/>
+						<span
+							className={`w-fit flex overflow-hidden text-white font-HyperspaceRace heading font-black leading-tight capitalize`}>
+							<motion.p
+								initial={{ y: "100%" }}
+								whileInView={{ y: 0 }}
+								transition={{
+									duration: 1,
+									ease: [0.4, 0, 0.2, 1],
+								}}
+								viewport={{ once: true }}
+								className="inline-block whitespace-nowrap bg-[url('/contactBanner.png')] bg-center bg-no-repeat w-full bg-cover mr-2">
+								<TextMask>{["Tell us What You"]}</TextMask>
+							</motion.p>
+						</span>
+						<span
+							className={`w-fit flex overflow-hidden text-white font-HyperspaceRace heading font-black leading-tight capitalize`}>
+							<motion.p
+								initial={{ y: "100%" }}
+								whileInView={{ y: 0 }}
+								transition={{
+									duration: 1,
+									ease: [0.4, 0, 0.2, 1],
+								}}
+								viewport={{ once: true }}
+								className="inline-block whitespace-nowrap bg-[url('/contactBanner.png')] bg-center bg-no-repeat w-full bg-cover mr-2">
+								<TextMask>{["Are Looking For"]}</TextMask>
+							</motion.p>
+						</span>
 						<div className="text-white font-Monstrate paragraph leading-loose">
 							<TextMask>
 								{[

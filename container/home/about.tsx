@@ -3,7 +3,7 @@ import Image from "next/image";
 import { aboutCrownR } from "@/public";
 import { motion } from "framer-motion";
 import Whatwedo from "@/components/whatwedo";
-import { AnimatedText, Button, LogoTicker, TextMask } from "@/components";
+import { AnimatedText, Button, ScrollReveal, TextMask } from "@/components";
 
 export default function AboutServices() {
 	return (
@@ -19,9 +19,7 @@ export default function AboutServices() {
 			</div>
 			<Whatwedo />
 			<div className="w-full flex items-center gap-10 justify-start padding-x xm:flex-col-reverse sm:flex-col-reverse">
-				<div className="h-[750px] overflow-hidden [mask-image:linear-gradient(to_top,transparent,black_25%,black_75%,transparent)]">
-					<LogoTicker />
-				</div>
+				<ScrollReveal />
 				<div className="w-1/2 flex flex-col gap-8 relative z-50 xm:w-full sm:w-full">
 					<div className="absolute -top-20 -right-60 hidden xl:block">
 						<Image

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function ContactHero() {
 	return (
-		<div className="w-full h-screen flex items-center relative justify-center bg-[url('/heroBackground.png')] bg-cover bg-center bg-no-repeat">
+		<div className="w-full h-screen flex items-center relative justify-center bg-[url('/heroBackground.png')] bg-cover bg-center bg-no-repeat sm:h-[70vh] xm:h-[70vh]">
 			<div className="absolute -right-24 top-28 h-[500px] blur-[150px] bg-gradient-to-b from-[#007DFE] via-[#c092df] to-[#007DFE] rounded-full w-[500px] overflow-hidden xm:hidden sm:hidden" />
 			<div className="flex flex-col gap-5">
 				<AnimatedText

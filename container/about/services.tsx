@@ -120,26 +120,26 @@ export default function AboutUs() {
 								About Us
 							</h1>
 							<AnimatedText
-								className="text-white font-HyperspaceRace heading font-black leading-tight uppercase"
+								className="text-white sm:text-black xm:text-black font-HyperspaceRace heading font-black leading-tight uppercase"
 								text="The Mounting"
 							/>
 							<AnimatedText
-								className="text-white font-HyperspaceRace heading font-black leading-tight uppercase"
+								className="text-white sm:text-black xm:text-black font-HyperspaceRace heading font-black leading-tight uppercase"
 								text="King"
 							/>
 						</div>
 						<div className="absolute top-12 -right-full h-[500px] blur-[120px] bg-gradient-to-b from-[#007DFE] via-[#2f84da] to-[#007DFE] rounded-full w-[500px] xm:hidden sm:hidden md:hidden" />
 						<div className="flex flex-col gap-6 relative z-50">
-							<p className="text-white font-Monstrate text-[18px] leading-loose">
+							<p className="text-white sm:text-black xm:text-black font-Monstrate text-[18px] leading-loose">
 								It is a long established fact that a reader will be distracted
 								by the readable content of a page when looking at its layout.
 							</p>
-							<p className="text-white font-Monstrate text-[18px] leading-loose">
+							<p className="text-white sm:text-black xm:text-black font-Monstrate text-[18px] leading-loose">
 								The point of using Lorem Ipsum is that it has a more-or-less
 								normal distribution of letters, as opposed to using Content
 								here, content here, making it look like readable English.
 							</p>
-							<p className="text-white font-Monstrate text-[18px] leading-loose">
+							<p className="text-white sm:text-black xm:text-black font-Monstrate text-[18px] leading-loose">
 								Many desktop publishing packages and web page editors now use
 								Lorem Ipsum as their default model text, and a search for lorem
 								ipsum will uncover many web sites still in their infancy.
@@ -159,7 +159,7 @@ export default function AboutUs() {
 						height={300}
 					/>
 				</div>
-				<div className="w-full flex justify-center items-center flex-col">
+				<div className="w-full flex justify-center items-center flex-col sm:items-start xm:items-start">
 					<AnimatedText
 						text="Advantage of"
 						className="text-white text-center font-HyperspaceRace heading font-bold leading-tight capitalize"

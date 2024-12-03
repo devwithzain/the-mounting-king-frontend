@@ -10,6 +10,7 @@ export { default as Button } from './button';
 export { default as Cloud } from './cloud';
 export { default as HomeFooter } from './home-footer';
 export { default as LogoTicker } from './logo-ticker';
+export { default as ScrollReveal } from './scroll-reveal';
 
 export { default as FormOne } from './step-forms/form-one';
 export { default as FormTwo } from './step-forms/form-two';

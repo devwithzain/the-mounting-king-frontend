@@ -5,7 +5,7 @@ import { AnimatedText } from "@/components";
 
 export default function AboutHero() {
 	return (
-		<div className="w-full h-screen flex items-center relative justify-center">
+		<div className="w-full h-screen flex items-center relative justify-center sm:h-[70vh] xm:h-[70vh]">
 			<div className="flex flex-col gap-5">
 				<div className="absolute -right-[350px] -translate-y-1/2 top-1/2 h-[500px] blur-[120px] bg-gradient-to-b from-[#007DFE] via-[#c092df] to-[#007DFE] rounded-full w-[500px] xm:hidden sm:hidden" />
 				<AnimatedText

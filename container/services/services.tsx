@@ -16,19 +16,19 @@ export default function Services() {
 	return (
 		<div className="w-full py-80 relative sm:py-10 xm:py-10 md:py-20">
 			<div className="w-full padding-x padding-y">
-				<div className="w-full flex justify-center items-center flex-col">
+				<div className="w-full flex justify-center items-center flex-col xm:items-start sm:items-start">
 					<AnimatedText
 						text="Advantage of"
-						className="text-white text-center font-HyperspaceRace heading font-bold leading-tight capitalize"
+						className="text-white sm:text-black xm:text-black text-center font-HyperspaceRace heading font-bold leading-tight capitalize"
 					/>
 					<div className="w-fit bg-[url('/advantageRapper.png')] bg-center bg-no-repeat bg-cover">
 						<AnimatedText
 							text="Our Mounting King Service"
-							className="text-white text-center font-HyperspaceRace text-[80px] lg:text-[70px] md:text-[50px] sm:text-[30px] xm:text-[28px] font-bold leading-tight capitalize sm:!mr-0"
+							className="text-white sm:text-black xm:text-black text-center font-HyperspaceRace text-[80px] lg:text-[70px] md:text-[50px] sm:text-[30px] xm:text-[28px] font-bold leading-tight capitalize sm:!mr-0"
 						/>
 					</div>
 				</div>
-				<div className="w-full flex items-center justify-center flex-col gap-20 relative sm:gap-10 xm:gap-10">
+				<div className="w-full flex items-center justify-center flex-col gap-20 relative sm:gap-10 xm:gap-10 mt-10">
 					<div className="absolute -left-60 h-[500px] blur-[120px] bg-gradient-to-b from-[#007DFE] via-[#2f84da] to-[#007DFE] rounded-full w-[500px] overflow-hidden xm:hidden sm:hidden md:hidden" />
 					<div className="w-full flex justify-between gap-20 z-50 sm:flex-col xm:flex-col xm:gap-10 sm:gap-10">
 						<motion.div
@@ -49,10 +49,10 @@ export default function Services() {
 									height={60}
 								/>
 								<div className="w-full flex flex-col gap-3">
-									<h1 className="text-white group-hover:text-black text-[30px] font-bold leading-tight capitalize">
+									<h1 className="text-white sm:text-black xm:text-black group-hover:text-black text-[30px] font-bold leading-tight capitalize">
 										High Market <br /> Value
 									</h1>
-									<p className="text-white font-Monstrate paragraph group-hover:text-black leading-tight capitalize">
+									<p className="text-white sm:text-black xm:text-black font-Monstrate paragraph group-hover:text-black leading-tight capitalize">
 										Lorem Ipsum is simply dummy text of the printing and
 										typesetting industry. Lorem Ipsum has been the industrys
 										standard dummy text ever
@@ -78,11 +78,11 @@ export default function Services() {
 									height={60}
 								/>
 								<div className="w-full flex flex-col gap-3">
-									<h1 className="text-white group-hover:text-black text-[30px] font-bold leading-tight capitalize">
+									<h1 className="text-white sm:text-black xm:text-black group-hover:text-black text-[30px] font-bold leading-tight capitalize">
 										Save Time <br />
 										and Resources
 									</h1>
-									<p className="text-white font-Monstrate paragraph group-hover:text-black leading-tight capitalize">
+									<p className="text-white sm:text-black xm:text-black font-Monstrate paragraph group-hover:text-black leading-tight capitalize">
 										Lorem Ipsum is simply dummy text of the printing and
 										typesetting industry. Lorem Ipsum has been the industrys
 										standard dummy text ever
@@ -108,10 +108,10 @@ export default function Services() {
 									height={60}
 								/>
 								<div className="w-full flex flex-col gap-3">
-									<h1 className="text-white group-hover:text-black text-[30px] font-bold leading-tight capitalize">
+									<h1 className="text-white sm:text-black xm:text-black group-hover:text-black text-[30px] font-bold leading-tight capitalize">
 										Gain Your <br /> Advantage
 									</h1>
-									<p className="text-white font-Monstrate paragraph group-hover:text-black leading-tight capitalize">
+									<p className="text-white sm:text-black xm:text-black font-Monstrate paragraph group-hover:text-black leading-tight capitalize">
 										Lorem Ipsum is simply dummy text of the printing and
 										typesetting industry. Lorem Ipsum has been the industrys
 										standard dummy text ever
@@ -130,7 +130,7 @@ export default function Services() {
 						/>
 					</div>
 				</div>
-				<div className="w-full flex flex-col gap-20 mt-20 relative">
+				<div className="w-full flex flex-col gap-20 mt-20 relative sm:gap-10 xm:gap-10 xm:mt-7 sm:mt-7">
 					<div>
 						<AnimatedText
 							className="text-white text-center font-HyperspaceRace heading font-black leading-tight capitalize"
