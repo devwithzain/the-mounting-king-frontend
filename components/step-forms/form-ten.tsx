@@ -22,6 +22,7 @@ export default function FormTen() {
 	const [selectedDate, setSelectedDate] = useState<{
 		day: string;
 		date: string;
+		time: string;
 	} | null>(() => {
 		const storedDate = localStorage.getItem("selectedDate");
 		return storedDate ? JSON.parse(storedDate) : null;
@@ -179,7 +180,7 @@ export default function FormTen() {
 										<div className="flex items-center gap-2 py-2">
 											<p className="text-black font-Monstrate text-[18px]">
 												Appointment Date: {selectedDate.day},{" "}
-												{selectedDate.date}
+												{selectedDate.date}, {selectedDate.time},
 											</p>
 										</div>
 									)}

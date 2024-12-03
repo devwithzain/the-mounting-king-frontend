@@ -23,6 +23,7 @@ export default function FormTwo({
 	const [selectedDate, setSelectedDate] = useState<{
 		day: string;
 		date: string;
+		time?: string; // added time property here
 	} | null>(() => {
 		const storedDate = localStorage.getItem("selectedDate");
 		return storedDate ? JSON.parse(storedDate) : null;
@@ -53,10 +54,19 @@ export default function FormTwo({
 		}
 		setCalendarDates(dates);
 	}, []);
+
 	const handleDateSelection = (day: string, date: string) => {
-		const selected = { day, date };
+		const selected = { day, date, time: selectedDate?.time || "" };
 		setSelectedDate(selected);
 		localStorage.setItem("selectedDate", JSON.stringify(selected));
+	};
+
+	const handleTimeSelection = (time: string) => {
+		if (selectedDate) {
+			const updatedDate = { ...selectedDate, time };
+			setSelectedDate(updatedDate);
+			localStorage.setItem("selectedDate", JSON.stringify(updatedDate));
+		}
 	};
 
 	// Calculate total price and time
@@ -145,48 +155,42 @@ export default function FormTwo({
 						</div>
 						<div className="w-full flex gap-5 justify-between items-center p-5">
 							<div className="w-full flex flex-col gap-3">
-								<div className="rounded-lg border border-black p-5">
-									<h1 className="text-black font-Monstrate text-center text-[18px] leading-normal capitalize">
-										11 AM - 12 PM
-									</h1>
-								</div>
-								<div className="rounded-lg border border-black p-5">
-									<h1 className="text-black font-Monstrate text-center text-[18px] leading-normal capitalize">
-										1 PM - 2 PM
-									</h1>
-								</div>
-								<div className="rounded-lg border border-black p-5">
-									<h1 className="text-black font-Monstrate text-center text-[18px] leading-normal capitalize">
-										3 PM - 4 PM
-									</h1>
-								</div>
-								<div className="rounded-lg border border-black p-5">
-									<h1 className="text-black font-Monstrate text-center text-[18px] leading-normal capitalize">
-										5 PM - 6 PM
-									</h1>
-								</div>
+								{[
+									"11 AM - 12 PM",
+									"01 PM - 02 PM",
+									"03 PM - 04 PM",
+									"05 PM - 06 PM",
+								].map((time, i) => (
+									<div
+										className={`rounded-lg border border-black p-5 cursor-pointer ${
+											selectedDate?.time === time ? "bg-[#F99A03]" : ""
+										}`}
+										key={i}
+										onClick={() => handleTimeSelection(time)}>
+										<h1 className="text-black font-Monstrate text-center text-[18px] leading-normal capitalize">
+											{time}
+										</h1>
+									</div>
+								))}
 							</div>
 							<div className="w-full flex flex-col gap-3">
-								<div className="rounded-lg border border-black p-5">
-									<h1 className="text-black font-Monstrate text-center text-[18px] leading-normal capitalize">
-										12 PM - 1 PM
-									</h1>
-								</div>
-								<div className="rounded-lg border border-black p-5">
-									<h1 className="text-black font-Monstrate text-center text-[18px] leading-normal capitalize">
-										1 PM - 2 PM
-									</h1>
-								</div>
-								<div className="rounded-lg border border-black p-5">
-									<h1 className="text-black font-Monstrate text-center text-[18px] leading-normal capitalize">
-										4 PM - 5 PM
-									</h1>
-								</div>
-								<div className="rounded-lg border border-black p-5">
-									<h1 className="text-black font-Monstrate text-center text-[18px] leading-normal capitalize">
-										6 PM - 7 PM
-									</h1>
-								</div>
+								{[
+									"12 pM - 01 PM",
+									"02 PM - 03 PM",
+									"04 PM - 05 PM",
+									"06 PM - 07 PM",
+								].map((time, i) => (
+									<div
+										className={`rounded-lg border border-black p-5 cursor-pointer ${
+											selectedDate?.time === time ? "bg-[#F99A03]" : ""
+										}`}
+										key={i}
+										onClick={() => handleTimeSelection(time)}>
+										<h1 className="text-black font-Monstrate text-center text-[18px] leading-normal capitalize">
+											{time}
+										</h1>
+									</div>
+								))}
 							</div>
 						</div>
 					</div>
