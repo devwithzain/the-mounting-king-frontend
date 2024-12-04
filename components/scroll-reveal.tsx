@@ -39,7 +39,7 @@ export default function ScrollReveal() {
 										alt="sda"
 										width={300}
 										height={300}
-										className="w-[300px] object-cover"
+										className="w-[300px] lg:w-[200px] md:w-[180px] object-cover"
 									/>
 								</motion.div>
 							</div>
@@ -57,7 +57,7 @@ export default function ScrollReveal() {
 											alt="sda"
 											width={300}
 											height={300}
-											className="w-[300px] object-cover"
+											className="w-[300px] lg:w-[200px] md:w-[180px] object-cover"
 										/>
 									</motion.div>
 								</div>

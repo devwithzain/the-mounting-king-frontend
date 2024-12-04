@@ -113,8 +113,9 @@ export default function Card() {
 										TV brackets wall mounts
 									</h1>
 									<p className="text-white font-Monstrate text-[18px] leading-tight text-center">
-										Lorem ipsum dolor sit amet consectetur. <br /> Arcu nec
-										scelerisque sagittis quis egestas sed
+										Lorem ipsum dolor sit amet consectetur.{" "}
+										<br className="sm:hidden xm:hidden md:hidden lg:hidden" />{" "}
+										Arcu nec scelerisque sagittis quis egestas sed
 									</p>
 								</div>
 								<Link
@@ -156,8 +157,9 @@ export default function Card() {
 										TV brackets wall mounts
 									</h1>
 									<p className="text-white font-Monstrate text-[18px] leading-tight text-center">
-										Lorem ipsum dolor sit amet consectetur. <br /> Arcu nec
-										scelerisque sagittis quis egestas sed
+										Lorem ipsum dolor sit amet consectetur.{" "}
+										<br className="sm:hidden xm:hidden md:hidden lg:hidden" />{" "}
+										Arcu nec scelerisque sagittis quis egestas sed
 									</p>
 								</div>
 								<Link
@@ -199,8 +201,9 @@ export default function Card() {
 										TV brackets wall mounts
 									</h1>
 									<p className="text-white font-Monstrate text-[18px] leading-tight text-center">
-										Lorem ipsum dolor sit amet consectetur. <br /> Arcu nec
-										scelerisque sagittis quis egestas sed
+										Lorem ipsum dolor sit amet consectetur.{" "}
+										<br className="sm:hidden xm:hidden  md:hidden lg:hidden" />{" "}
+										Arcu nec scelerisque sagittis quis egestas sed
 									</p>
 								</div>
 								<Link
@@ -284,8 +287,8 @@ export default function Card() {
 									</h1>
 									<p className="text-white font-Monstrate paragraph leading-tight text-center">
 										Lorem ipsum dolor sit amet consectetur.{" "}
-										<br className="sm:hidden xm:hidden" /> Arcu nec scelerisque
-										sagittis quis egestas sed
+										<br className="sm:hidden xm:hidden md:hidden lg:hidden" />{" "}
+										Arcu nec scelerisque sagittis quis egestas sed
 									</p>
 								</div>
 								<Link
