@@ -1,3 +1,5 @@
+import { tv } from "@/public";
+
 export const navLinks = [
    {
       id: 1,
@@ -16,11 +18,16 @@ export const navLinks = [
    },
    {
       id: 4,
+      title: "Products",
+      href: "/products",
+   },
+   {
+      id: 5,
       title: "Request A Demo",
       href: "/request-a-demo",
    },
    {
-      id: 5,
+      id: 6,
       title: "Contact Us",
       href: "/contact-us",
    },
@@ -181,5 +188,95 @@ export const formSevenItems = [
    },
    {
       size: "In-Wall Concealing Through Brick Fireplace $1,500", price: 150, time: 60
+   },
+];
+
+export const productsItems = [
+   {
+      id: 1,
+      img: tv,
+      isOnSale: true,
+      saleText: "SALE",
+      title: "Product Title 1",
+      description:
+         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae ante vel eros fermentum faucibus sit amet euismod lorem.",
+      price: "$19.99",
+      href: "product-title-1",
+   },
+   {
+      id: 2,
+      img: tv,
+      isOnSale: false,
+      title: "Product Title 2",
+      description:
+         "Curabitur nec lacus et sapien scelerisque ultricies vel in augue. Donec aliquam convallis diam sit amet cursus.",
+      price: "$29.99",
+      href: "product-title-2",
+   },
+   {
+      id: 3,
+      img: tv,
+      isOnSale: true,
+      saleText: "HOT DEAL",
+      title: "Product Title 3",
+      description:
+         "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+      price: "$15.99",
+      href: "product-title-3",
+   },
+   {
+      id: 4,
+      img: tv,
+      isOnSale: true,
+      saleText: "HOT DEAL",
+      title: "Product Title 4",
+      description:
+         "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+      price: "$15.99",
+      href: "product-title-4",
+   },
+   {
+      id: 5,
+      img: tv,
+      isOnSale: true,
+      saleText: "HOT DEAL",
+      title: "Product Title 5",
+      description:
+         "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+      price: "$15.99",
+      href: "product-title-5",
+   },
+   {
+      id: 6,
+      img: tv,
+      isOnSale: true,
+      saleText: "HOT DEAL",
+      title: "Product Title 6",
+      description:
+         "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+      price: "$15.99",
+      href: "product-title-6",
+   },
+   {
+      id: 7,
+      img: tv,
+      isOnSale: true,
+      saleText: "HOT DEAL",
+      title: "Product Title 7",
+      description:
+         "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+      price: "$15.99",
+      href: "product-title-7",
+   },
+   {
+      id: 8,
+      img: tv,
+      isOnSale: true,
+      saleText: "HOT DEAL",
+      title: "Product Title 8",
+      description:
+         "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+      price: "$15.99",
+      href: "product-title-8",
    },
 ];

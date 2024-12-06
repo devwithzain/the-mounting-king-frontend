@@ -32,12 +32,14 @@ export default function ContactForm() {
 				toast.success(response.data.success);
 				router.push("/checkout");
 			}
+			console.log(data);
 		} catch (err) {
 			if (axios.isAxiosError(err) && err.response) {
 				toast.error(err.response.data.message);
 			} else {
 				toast.error("An error occurred");
 			}
+			console.log(err);
 		}
 	};
 

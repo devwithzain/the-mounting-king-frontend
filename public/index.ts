@@ -36,6 +36,7 @@ export { default as serviceDetail } from './serviceDetail.png';
 export { default as mobileGorilla } from './mobileGorilla.png';
 export { default as the } from './the.png';
 export { default as king } from './king.png';
+export { default as tv } from './tv.jpg';
 
 export { default as m } from './m.png';
 export { default as o } from './o.png';

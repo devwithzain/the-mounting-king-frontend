@@ -8,3 +8,7 @@ export { default as HomeServices } from './home/services';
 export { default as AboutServices } from './about/services';
 export { default as ServiceDetailHero } from './serviceDetail/hero';
 export { default as ServiceDetailInfo } from './serviceDetail/info';
+export { default as ProductDetailHero } from './productDetail/hero';
+export { default as ProductDetailInfo } from './productDetail/info';
+export { default as ProductsHero } from './products/hero';
+export { default as Products } from './products/products';

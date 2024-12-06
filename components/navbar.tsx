@@ -8,6 +8,7 @@ import { TpositionProps } from "@/types";
 import { useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import LeftSideHome from "./left-side-menu/LeftSideHome";
+import { FaCartShopping } from "react-icons/fa6";
 
 export default function Navbar() {
 	const pathname = usePathname();
@@ -46,7 +47,9 @@ export default function Navbar() {
 					<Tab
 						setPosition={setPosition}
 						href="/services"
-						isActive={pathname === "/services"}>
+						isActive={
+							pathname === "/services" || pathname === "/service-detail"
+						}>
 						Services
 					</Tab>
 					<Tab
@@ -57,6 +60,14 @@ export default function Navbar() {
 					</Tab>
 					<Tab
 						setPosition={setPosition}
+						href="/products"
+						isActive={
+							pathname === "/products" || pathname === "/product-detail"
+						}>
+						Products
+					</Tab>
+					<Tab
+						setPosition={setPosition}
 						href="/request-a-demo"
 						isActive={pathname === "/request-a-demo"}>
 						Request A Demo
@@ -64,7 +75,12 @@ export default function Navbar() {
 
 					<Cursor position={position} />
 				</ul>
-				<div>
+				<div className="flex items-center gap-2">
+					<Link
+						href="/cart"
+						className="bg-[#F99A03] px-4 py-2 rounded-lg text-white">
+						<FaCartShopping size={30} />
+					</Link>
 					<Link
 						className={`bg-[#F99A03] btn transition-all duration-300 ease-in-out text-white px-6 py-3 rounded-lg text-[20px] font-Monstrate leading-tight tracking-tight ${
 							pathname === "/contact-us" ? "text-[#F99A03]" : "text-black"
@@ -80,7 +96,6 @@ export default function Navbar() {
 		</>
 	);
 }
-
 const Tab = ({
 	children,
 	href,

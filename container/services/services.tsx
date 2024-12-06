@@ -158,7 +158,7 @@ export default function Services() {
 										{item.description}
 									</h1>
 									<Link
-										href={`/service-detail/${item.href}`}
+										href={`/services/service-detail/${item.href}`}
 										className="w-fit group transition-all duration-500 ease-in-out cursor-pointer">
 										<div className="px-4 py-6 group-hover:bg-[#F99A03] rounded-full bg-white/10 flex items-center justify-center gap-4 transition-all duration-500 ease-in-out">
 											<Image
