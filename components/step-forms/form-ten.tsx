@@ -84,6 +84,11 @@ export default function FormTen() {
 				localStorage.removeItem("selectedItems");
 				localStorage.removeItem("selectedDate");
 				localStorage.removeItem("formAddress");
+				localStorage.removeItem("selectedValue3");
+				localStorage.removeItem("selectedValue4");
+				localStorage.removeItem("selectedValue5");
+				localStorage.removeItem("selectedValue6");
+				localStorage.removeItem("selectedValue7");
 				router.push("/checkout");
 			}
 			setIsSubmitting(false);

@@ -12,6 +12,11 @@ export default function FormSeven({
 	onSubmits7: (event: React.FormEvent<HTMLFormElement>) => void;
 	backBtn: () => void;
 }) {
+	const [selectedValue7, setSelectedValue] = useState<number>(() => {
+		const storedValue = localStorage.getItem("selectedValue7");
+		return storedValue ? JSON.parse(storedValue) : 0;
+	});
+
 	const [selectedItems, setSelectedItems] = useState<
 		Record<string, { quantity: number; price: number; time: number }>
 	>(() => {
@@ -44,6 +49,9 @@ export default function FormSeven({
 			// Save to session storage
 			localStorage.setItem("selectedItems", JSON.stringify(updatedItems));
 
+			const newSelectedValue = setSelectedValue(selectedValue7 + 1);
+			localStorage.setItem("selectedValue7", JSON.stringify(newSelectedValue));
+
 			return updatedItems;
 		});
 	};
@@ -72,6 +80,9 @@ export default function FormSeven({
 
 			localStorage.setItem("selectedItems", JSON.stringify(updatedItems));
 
+			const newSelectedValue = setSelectedValue(selectedValue7 - 1);
+			localStorage.setItem("selectedValue7", JSON.stringify(newSelectedValue));
+
 			return updatedItems;
 		});
 	};
@@ -84,6 +95,10 @@ export default function FormSeven({
 		(sum, item) => sum + item.time,
 		0,
 	);
+	useEffect(() => {
+		// Sync localStorage with selectedValue
+		localStorage.setItem("selectedValue7", JSON.stringify(selectedValue7));
+	}, [selectedValue7]);
 
 	return (
 		<div className="w-full flex items-center justify-center bg-white padding-y padding-x rounded-lg z-[999]">
@@ -145,7 +160,13 @@ export default function FormSeven({
 							className="text-black border border-black px-6 py-4 rounded-lg text-[20px] font-Monstrate leading-tight tracking-tight">
 							Back
 						</button>
-						<button className="bg-[#F99A03] text-white px-6 py-4 rounded-lg text-[20px] font-Monstrate leading-tight tracking-tight">
+						<button
+							disabled={selectedValue7 === 0}
+							className={`px-6 py-4 rounded-lg text-[20px] font-Monstrate leading-tight tracking-tight ${
+								selectedValue7 == 0
+									? "text-black bg-gray-200 cursor-not-allowed"
+									: "bg-[#F99A03] text-white"
+							}`}>
 							Continue
 						</button>
 					</form>

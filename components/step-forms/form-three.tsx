@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { GoClock } from "react-icons/go";
 import { formThreeItems } from "@/constants";
 import { CiCircleMinus, CiCirclePlus } from "react-icons/ci";
@@ -11,7 +11,13 @@ export default function FormThree({
 	onSubmits3: (event: React.FormEvent<HTMLFormElement>) => void;
 	backBtn: () => void;
 }) {
-	// Initialize selected items from session storage
+	// Initialize selectedValue from localStorage or default to 0
+	const [selectedValue3, setSelectedValue] = useState<number>(() => {
+		const storedValue = localStorage.getItem("selectedValue3");
+		return storedValue ? JSON.parse(storedValue) : 0;
+	});
+
+	// Initialize selected items from localStorage
 	const [selectedItems, setSelectedItems] = useState<
 		Record<string, { quantity: number; price: number; time: number }>
 	>(() => {
@@ -32,9 +38,11 @@ export default function FormThree({
 					: { quantity: 1, price, time },
 			};
 
-			// Save to session storage
-			localStorage.setItem("selectedItems", JSON.stringify(updatedItems));
+			// Update total selectedValue in localStorage
+			const newSelectedValue = setSelectedValue(selectedValue3 + 1);
+			localStorage.setItem("selectedValue3", JSON.stringify(newSelectedValue));
 
+			localStorage.setItem("selectedItems", JSON.stringify(updatedItems));
 			return updatedItems;
 		});
 	};
@@ -61,13 +69,16 @@ export default function FormThree({
 				};
 			}
 
-			// Save to session storage
-			localStorage.setItem("selectedItems", JSON.stringify(updatedItems));
+			// Update total selectedValue in localStorage
+			const newSelectedValue = setSelectedValue(selectedValue3 - 1);
+			localStorage.setItem("selectedValue3", JSON.stringify(newSelectedValue));
 
+			localStorage.setItem("selectedItems", JSON.stringify(updatedItems));
 			return updatedItems;
 		});
 	};
 
+	// Calculate total price and time
 	const totalPrice = Object.values(selectedItems).reduce(
 		(sum, item) => sum + item.price,
 		0,
@@ -76,6 +87,11 @@ export default function FormThree({
 		(sum, item) => sum + item.time,
 		0,
 	);
+
+	useEffect(() => {
+		// Sync localStorage with selectedValue
+		localStorage.setItem("selectedValue3", JSON.stringify(selectedValue3));
+	}, [selectedValue3]);
 
 	return (
 		<div className="w-full flex items-center justify-center bg-white padding-y padding-x rounded-lg z-[999]">
@@ -137,7 +153,13 @@ export default function FormThree({
 							className="text-black border border-black px-6 py-4 rounded-lg text-[20px] font-Monstrate leading-tight tracking-tight">
 							Back
 						</button>
-						<button className="bg-[#F99A03] text-white px-6 py-4 rounded-lg text-[20px] font-Monstrate leading-tight tracking-tight">
+						<button
+							disabled={selectedValue3 === 0}
+							className={`px-6 py-4 rounded-lg text-[20px] font-Monstrate leading-tight tracking-tight ${
+								selectedValue3 == 0
+									? "text-black bg-gray-200 cursor-not-allowed"
+									: "bg-[#F99A03] text-white"
+							}`}>
 							Continue
 						</button>
 					</form>
