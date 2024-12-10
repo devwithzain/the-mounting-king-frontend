@@ -52,7 +52,7 @@ export default function ProductDetailHero() {
 						<Link
 							className={`w-full bg-[#F99A03] btn text-center transition-all duration-300 ease-in-out text-white px-6 py-3 rounded-lg text-[20px] font-Monstrate leading-tight tracking-tight`}
 							href="/cart">
-							Add to Cart
+							Checkout
 						</Link>
 					</div>
 				</div>

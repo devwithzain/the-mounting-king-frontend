@@ -2,21 +2,38 @@ import Link from "next/link";
 import Image from "next/image";
 import { AnimatedText } from "@/components";
 import { productsItems } from "@/constants";
+import { FaRegHeart } from "react-icons/fa6";
+import { FaShoppingCart } from "react-icons/fa";
 
 export default function ProductDetailInfo() {
 	return (
 		<div className="w-full flex flex-col gap-10 padding-x padding-y my-40 xm:my-10 sm:my-10">
 			<div>
 				<AnimatedText
-					className="flex text-white font-HyperspaceRace heading font-black leading-tight uppercase overflow-hidden"
+					className="flex text-white font-HyperspaceRace heading font-black leading-tight overflow-hidden"
 					text="Related Products"
 				/>
 			</div>
 			<div className="w-full grid grid-cols-4 md:grid-cols-2 sm:grid-cols-1 xm:grid-cols-1 gap-14 mb-20">
 				{productsItems.map((product) => (
-					<div
+					<Link
+						href={`/products/product-detail/${product.href}`}
 						key={product.id}
-						className="bg-white rounded-lg overflow-hidden shadow-lg ring-4 ring-red-500 ring-opacity-40 hover:shadow-lg cursor-pointer flex justify-between flex-col">
+						className="bg-white relative rounded-lg overflow-hidden shadow-lg ring-4 ring-red-500 ring-opacity-40 hover:shadow-lg cursor-pointer flex flex-col group">
+						<div className="w-full absolute z-50 -top-full group-hover:top-3 transition-all duration-300 ease-in-out">
+							<div className="w-full flex items-center justify-between px-4 py-2">
+								<Link href="/cart">
+									<FaShoppingCart
+										size={25}
+										className="text-black"
+									/>
+								</Link>
+								<FaRegHeart
+									size={25}
+									className="text-black"
+								/>
+							</div>
+						</div>
 						<div className="w-full relative flex items-center justify-center">
 							<Image
 								width={400}
@@ -25,14 +42,9 @@ export default function ProductDetailInfo() {
 								src={product.img}
 								alt={product.title}
 							/>
-							<div className="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25" />
-							{product.isOnSale && (
-								<div className="absolute top-0 right-0 bg-red-500 text-white px-2 py-1 m-2 rounded-md text-sm font-medium">
-									{product.saleText}
-								</div>
-							)}
+							<div className="group-hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25" />
 						</div>
-						<div className="p-4 w-full flex flex-col justify-between gap-4">
+						<div className="p-4 w-full h-full flex flex-col justify-between gap-4">
 							<h3 className="text-lg font-Monstrate leading-tight font-bold">
 								{product.title}
 							</h3>
@@ -50,7 +62,7 @@ export default function ProductDetailInfo() {
 								</Link>
 							</div>
 						</div>
-					</div>
+					</Link>
 				))}
 			</div>
 		</div>

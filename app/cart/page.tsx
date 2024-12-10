@@ -17,7 +17,7 @@ export default function AboutPage() {
 	}, []);
 	return (
 		<div className="w-full flex gap-5 justify-between padding-x shadow-md min-h-screen bg-[url('/heroBackground.png')] bg-center bg-no-repeat bg-cover overflow-x-hidden pt-40">
-			<div className="w-full sm:w-3/4 py-10">
+			<div className="w-full sm:w-3/4 py-10 border-black border-r-2 pr-5 h-fit">
 				<div className="flex justify-between border-b pb-4 items-center">
 					<h1 className="font-bold font-Monstrate text-[30px] leading-tight text-black">
 						Shopping Cart
@@ -110,7 +110,9 @@ export default function AboutPage() {
 			<div
 				id="summary"
 				className="w-full sm:w-1/4 md:w-1/2 py-10">
-				<h1 className="font-semibold text-2xl border-b pb-8">Order Summary</h1>
+				<h1 className="font-semibold font-Monstrate text-[30px] leading-tight text-black border-b pb-4">
+					Order Summary
+				</h1>
 				<div className="flex justify-between mt-10 mb-5">
 					<span className="font-medium font-Monstrate text-[18px] leading-tight text-black">
 						Items 3
