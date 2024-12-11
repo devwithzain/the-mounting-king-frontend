@@ -3,9 +3,21 @@ import Lenis from "lenis";
 import Link from "next/link";
 import { tv } from "@/public";
 import Image from "next/image";
-import { useEffect } from "react";
+import { TuserProps } from "@/types";
+import { useEffect, useState } from "react";
+import { getToken } from "@/utils/get-token";
+import { getUserData } from "@/utils/currentUser";
 
-export default function AboutPage() {
+export default function CartPage() {
+	const token = getToken();
+	const [user, setUser] = useState<TuserProps>();
+	useEffect(() => {
+		const fetchUserData = async () => {
+			const userData = await getUserData(token);
+			setUser(userData);
+		};
+		fetchUserData();
+	});
 	useEffect(() => {
 		const lenis = new Lenis();
 		function raf(time: number) {
@@ -156,11 +168,19 @@ export default function AboutPage() {
 							$600
 						</span>
 					</div>
-					<Link
-						className={`w-full bg-[#F99A03] btn text-center transition-all duration-300 ease-in-out text-white px-6 py-3 rounded-lg text-[20px] font-Monstrate leading-tight tracking-tight`}
-						href="/checkout">
-						Checkout
-					</Link>
+					{user ? (
+						<Link
+							href="/checkout"
+							className="w-full bg-[#F99A03] btn text-center transition-all duration-300 ease-in-out text-white px-6 py-3 rounded-lg text-[20px] font-Monstrate leading-tight tracking-tight">
+							Checkout
+						</Link>
+					) : (
+						<Link
+							href="/login"
+							className="w-full bg-[#F99A03] btn text-center transition-all duration-300 ease-in-out text-white px-6 py-3 rounded-lg text-[20px] font-Monstrate leading-tight tracking-tight">
+							Checkout
+						</Link>
+					)}
 				</div>
 			</div>
 		</div>

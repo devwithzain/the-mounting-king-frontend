@@ -9,6 +9,7 @@ import { useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import LeftSideHome from "./left-side-menu/LeftSideHome";
 import { FaCartShopping } from "react-icons/fa6";
+import UserMenu from "./UserMenu";
 
 export default function Navbar() {
 	const pathname = usePathname();
@@ -88,6 +89,7 @@ export default function Navbar() {
 						href="/contact-us">
 						Contact Us
 					</Link>
+					<UserMenu />
 				</div>
 			</motion.div>
 			<div className="sm:!flex xm:!flex md:!flex hidden">

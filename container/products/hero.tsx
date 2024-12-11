@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import { heroCloud } from "@/public";
 import { AnimatedText } from "@/components";

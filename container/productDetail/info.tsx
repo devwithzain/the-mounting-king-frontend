@@ -1,11 +1,26 @@
 import Link from "next/link";
 import Image from "next/image";
+import { TproductsProps } from "@/types";
+import { useEffect, useState } from "react";
 import { AnimatedText } from "@/components";
-import { productsItems } from "@/constants";
 import { FaRegHeart } from "react-icons/fa6";
 import { FaShoppingCart } from "react-icons/fa";
+import getProducts from "@/actions/get-products";
 
 export default function ProductDetailInfo() {
+	const [products, setProducts] = useState([]);
+
+	useEffect(() => {
+		const fetchProducts = async () => {
+			try {
+				const response = await getProducts();
+				setProducts(response.data);
+			} catch (err) {
+				console.error("Error fetching products:", err);
+			}
+		};
+		fetchProducts();
+	}, []);
 	return (
 		<div className="w-full flex flex-col gap-10 padding-x padding-y my-40 xm:my-10 sm:my-10">
 			<div>
@@ -15,9 +30,9 @@ export default function ProductDetailInfo() {
 				/>
 			</div>
 			<div className="w-full grid grid-cols-4 md:grid-cols-2 sm:grid-cols-1 xm:grid-cols-1 gap-14 mb-20">
-				{productsItems.map((product) => (
+				{products.map((product: TproductsProps) => (
 					<Link
-						href={`/products/product-detail/${product.href}`}
+						href={`/products/product-detail/${product.title}`}
 						key={product.id}
 						className="bg-white relative rounded-lg overflow-hidden shadow-lg ring-4 ring-red-500 ring-opacity-40 hover:shadow-lg cursor-pointer flex flex-col group">
 						<div className="w-full absolute z-50 -top-full group-hover:top-3 transition-all duration-300 ease-in-out">
@@ -39,7 +54,7 @@ export default function ProductDetailInfo() {
 								width={400}
 								height={400}
 								className="w-full object-cover"
-								src={product.img}
+								src={`http://127.0.0.1:8000/storage/${product.image}`}
 								alt={product.title}
 							/>
 							<div className="group-hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25" />
@@ -49,15 +64,15 @@ export default function ProductDetailInfo() {
 								{product.title}
 							</h3>
 							<p className="text-lg font-Monstrate leading-tight font-medium">
-								{product.description}
+								{product.short_description}
 							</p>
 							<div className="flex items-center justify-between">
 								<span className="text-lg font-Monstrate leading-tight font-bold">
-									{product.price}
+									${product.price}
 								</span>
 								<Link
 									className={`w-fit bg-[#F99A03] btn text-center transition-all duration-300 ease-in-out text-white px-6 py-3 rounded-lg text-[20px] font-Monstrate leading-tight tracking-tight`}
-									href={`/products/product-detail/${product.href}`}>
+									href={`/products/product-detail/${product.title}`}>
 									View Detail
 								</Link>
 							</div>
