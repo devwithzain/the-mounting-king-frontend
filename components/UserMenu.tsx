@@ -2,20 +2,33 @@ import Link from "next/link";
 import Image from "next/image";
 import Cookies from "js-cookie";
 import toast from "react-hot-toast";
+import { TuserProps } from "@/types";
 import { motion } from "framer-motion";
 import { IconType } from "react-icons";
 import { placeholder } from "@/public";
-import { MdLogout } from "react-icons/md";
+import { getToken } from "@/utils/get-token";
 import { IoMdSettings } from "react-icons/io";
-import { Dispatch, SetStateAction, useState } from "react";
+import { getUserData } from "@/utils/currentUser";
+import { MdLogin, MdLogout } from "react-icons/md";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { actionIconVariants, itemVariants, wrapperVariants } from "@/motion";
 
 export default function StaggeredDropDown() {
+	const token = getToken();
 	const [open, setOpen] = useState(false);
+	const [user, setUser] = useState<TuserProps>();
 	const logOut = () => {
 		Cookies.remove("authToken");
 		toast.success("Logged out");
 	};
+
+	useEffect(() => {
+		const fetchUserData = async () => {
+			const userData = await getUserData(token);
+			setUser(userData);
+		};
+		fetchUserData();
+	});
 	return (
 		<div className="">
 			<motion.div
@@ -43,15 +56,25 @@ export default function StaggeredDropDown() {
 							text="Setting"
 						/>
 					</Link>
-					<button
-						type="button"
-						onClick={logOut}>
-						<Option
-							setOpen={setOpen}
-							Icon={MdLogout}
-							text="LogOut"
-						/>
-					</button>
+					{user ? (
+						<button
+							type="button"
+							onClick={logOut}>
+							<Option
+								setOpen={setOpen}
+								Icon={MdLogout}
+								text="LogOut"
+							/>
+						</button>
+					) : (
+						<Link href="/login">
+							<Option
+								setOpen={setOpen}
+								Icon={MdLogin}
+								text="LogIn"
+							/>
+						</Link>
+					)}
 				</motion.ul>
 			</motion.div>
 		</div>

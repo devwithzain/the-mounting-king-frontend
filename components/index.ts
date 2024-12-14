@@ -11,6 +11,7 @@ export { default as Cloud } from './cloud';
 export { default as HomeFooter } from './home-footer';
 export { default as LogoTicker } from './logo-ticker';
 export { default as ScrollReveal } from './scroll-reveal';
+export { default as ProductGallery } from './product-gallery';
 
 export { default as ProfileForm } from './profile-form';
 export { default as LoginForm } from './login-form';

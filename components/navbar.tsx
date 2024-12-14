@@ -1,23 +1,50 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
+import UserMenu from "./UserMenu";
 import { navLogo } from "@/public";
 import { motion } from "framer-motion";
 import { navVarients } from "@/motion";
 import { TpositionProps } from "@/types";
-import { useRef, useState } from "react";
+import { getToken } from "@/utils/get-token";
 import { usePathname } from "next/navigation";
+import { IoCartOutline } from "react-icons/io5";
+import { useEffect, useRef, useState } from "react";
 import LeftSideHome from "./left-side-menu/LeftSideHome";
-import { FaCartShopping } from "react-icons/fa6";
-import UserMenu from "./UserMenu";
 
 export default function Navbar() {
+	const token = getToken();
 	const pathname = usePathname();
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	const [cartItems, setCartItems] = useState<any[]>([]);
 	const [position, setPosition] = useState<TpositionProps>({
 		left: 0,
 		width: 0,
 		opacity: 0,
 	});
+	useEffect(() => {
+		const fetchCartItems = async () => {
+			try {
+				const response = await fetch(
+					`${process.env.NEXT_PUBLIC_API_URL}/cart`,
+					{
+						headers: {
+							Authorization: `Bearer ${token}`,
+						},
+					},
+				);
+				const data = await response.json();
+				setCartItems(data);
+			} catch (error: unknown) {
+				if (error instanceof Error) {
+					console.log(error.message);
+				} else {
+					console.log("An unknown error occurred");
+				}
+			}
+		};
+		fetchCartItems();
+	}, [token]);
 
 	return (
 		<>
@@ -79,8 +106,11 @@ export default function Navbar() {
 				<div className="flex items-center gap-2">
 					<Link
 						href="/cart"
-						className="bg-[#F99A03] px-4 py-2 rounded-lg text-white">
-						<FaCartShopping size={30} />
+						className="bg-[#F99A03] px-4 py-2 relative rounded-lg text-white">
+						<span className="absolute right-3 top-1 px-[5px] py-[2px] text-white font-Monstrate rounded-full bg-black text-[8px]">
+							{cartItems.length}
+						</span>
+						<IoCartOutline size={30} />
 					</Link>
 					<Link
 						className={`bg-[#F99A03] btn transition-all duration-300 ease-in-out text-white px-6 py-3 rounded-lg text-[20px] font-Monstrate leading-tight tracking-tight ${

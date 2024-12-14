@@ -16,26 +16,18 @@ import { profileFormSchema, TprofileFormData } from "@/types";
 export default function ProfileForm() {
 	const token = getToken();
 	const router = useRouter();
-	const [loading, setLoading] = useState(true);
 	const [imagePreview, setImagePreview] = useState<string | null>(null);
 	const [user, setUser] = useState<TuserProps>();
 	useEffect(() => {
 		const fetchUserData = async () => {
 			const userData = await getUserData(token);
 			setUser(userData);
-			setLoading(false);
 			if (!userData) {
 				router.push("/login");
 			}
 		};
 		fetchUserData();
 	});
-
-	const logOut = () => {
-		Cookies.remove("authToken");
-		toast.success("Logged out");
-		router.push("/login");
-	};
 
 	const deleteAccount = async () => {
 		await axios

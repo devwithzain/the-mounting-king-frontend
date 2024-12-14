@@ -1,11 +1,11 @@
 "use client";
+import Link from "next/link";
 import Navbar from "./Navbar";
+import Image from "next/image";
+import { navLogo } from "@/public";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { AnimatePresence } from "framer-motion";
-import Image from "next/image";
-import Link from "next/link";
-import { navLogo } from "@/public";
 
 export default function LeftSideHome() {
 	const pathname = usePathname();

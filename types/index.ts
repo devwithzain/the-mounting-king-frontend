@@ -50,13 +50,19 @@ export type TlogoMarqueeProps = {
    baseVelocity: number;
 };
 
+export type TuserProps = {
+   id: string;
+   name: string;
+   email: string;
+};
+
 export type TproductsProps = {
    id: string;
    title: string;
    price: string;
    description: string;
-   short_description: string;
-   image: string;
+   shortDescription: string;
+   images: any;
 };
 
 export type TpositionProps = {
