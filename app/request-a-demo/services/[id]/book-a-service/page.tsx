@@ -1,11 +1,12 @@
 "use client";
-import { FormOne } from "@/components";
 import { FormEvent, useState } from "react";
+import { FormEight, FormNine, FormTen } from "@/components";
 
-export default function Appointment() {
+export default function BookADate() {
 	const [step, setStep] = useState(1);
 
-	const handleNext = () => setStep((prev) => Math.min(prev + 1, 10));
+	const handleNext = () => setStep((prev) => Math.min(prev + 1, 3));
+	const handleBack = () => setStep((prev) => Math.max(prev - 1, 1));
 
 	const onSubmitHandler = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
@@ -15,7 +16,21 @@ export default function Appointment() {
 	const renderForm = () => {
 		switch (step) {
 			case 1:
-				return <FormOne onSubmits1={onSubmitHandler} />;
+				return (
+					<FormEight
+						onSubmits8={onSubmitHandler}
+						backBtn={handleBack}
+					/>
+				);
+			case 2:
+				return (
+					<FormNine
+						onSubmits9={onSubmitHandler}
+						backBtn={handleBack}
+					/>
+				);
+			case 3:
+				return <FormTen />;
 		}
 	};
 

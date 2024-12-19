@@ -2,11 +2,9 @@
 import axios from "axios";
 import toast from "react-hot-toast";
 import { GoClock } from "react-icons/go";
-import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function FormTen() {
-	const router = useRouter();
 	const [name, setName] = useState<string>("");
 	const [phone, setPhone] = useState<string>("");
 	const [email, setEmail] = useState<string>("");
@@ -62,6 +60,22 @@ export default function FormTen() {
 
 		setIsSubmitting(true);
 
+		const checkoutData = {
+			name,
+			phone,
+			email,
+			items: Object.entries(selectedItems).map(([key, value]) => ({
+				name: key,
+				quantity: value.quantity,
+				price: value.price,
+				time: value.time,
+			})),
+			totalPrice,
+			totalTime,
+			appointmentDate: selectedDate,
+			address: selectedAddress,
+		};
+
 		const requestData = {
 			name,
 			phone,
@@ -70,13 +84,27 @@ export default function FormTen() {
 			selectedDate,
 			selectedAddress,
 		};
+
 		try {
+			// First, post request to create the checkout session
 			const response = await axios.post(
-				`${process.env.NEXT_PUBLIC_API_URL}/contact`,
-				requestData,
+				`http://localhost:3000/api/form-checkout`,
+				checkoutData,
 			);
 
-			if (response.data.success) {
+			if (response.data.url) {
+				// Second, post request to send email to the user
+				const emailResponse = await axios.post(
+					`${process.env.NEXT_PUBLIC_API_URL}/contact`,
+					requestData,
+				);
+
+				if (emailResponse.data.success) {
+					toast.success("Email sent successfully!");
+				} else {
+					toast.error("Failed to send email.");
+				}
+
 				toast.success(response.data.success);
 				setName("");
 				setPhone("");
@@ -89,17 +117,23 @@ export default function FormTen() {
 				localStorage.removeItem("selectedValue5");
 				localStorage.removeItem("selectedValue6");
 				localStorage.removeItem("selectedValue7");
-				router.push("/checkout");
+
+				// Redirect to Stripe Checkout
+				window.location.href = response.data.url;
+			} else {
+				toast.error("Failed to create a checkout session");
 			}
-			setIsSubmitting(false);
 		} catch (err) {
 			if (axios.isAxiosError(err) && err.response) {
 				toast.error(err.response.data.message);
 			} else {
 				toast.error("An error occurred");
 			}
+		} finally {
+			setIsSubmitting(false);
 		}
 	};
+
 	const totalPrice = Object.values(selectedItems).reduce(
 		(sum, item) => sum + item.price,
 		0,

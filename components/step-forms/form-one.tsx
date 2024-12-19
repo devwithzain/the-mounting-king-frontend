@@ -1,17 +1,15 @@
 "use client";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { zipCodeItems } from "@/constants";
 
 export default function FormOne({
 	onSubmits1,
 }: {
 	onSubmits1: (event: React.FormEvent<HTMLFormElement>) => void;
 }) {
-	const codes = zipCodeItems.map((item) => item.zipCode);
+	const router = useRouter();
 	const [zipCode, setZipCode] = useState("");
-
-	const isValidZipCode = codes.includes(zipCode);
-
 	return (
 		<div className="w-full flex items-center justify-center bg-white padding-y padding-x rounded-lg z-[999]">
 			<div className="flex flex-col gap-8 items-center justify-center">
@@ -30,18 +28,28 @@ export default function FormOne({
 						onSubmit={onSubmits1}
 						className="w-fit bg-white gap-10 z-50 relative border border-black/20 rounded-lg shadow-xl">
 						<input
-							type="text"
+							type="number"
+							maxLength={5}
+							pattern="\d{5}"
 							required
 							value={zipCode}
-							onChange={(e) => setZipCode(e.target.value)}
+							onChange={(e) => {
+								if (e.target.value.length <= 5) {
+									setZipCode(e.target.value);
+								}
+							}}
 							className="rounded-lg px-6 py-3 text-[#0E0E30] font-Monstrate text-[20px] font-normal leading-tight tracking-tight placeholder:text-[#0E0E30] outline-none"
 							placeholder="Enter zip code"
 						/>
-						<button
-							disabled={!isValidZipCode}
-							className={`text-[#0E0E30] font-Monstrate text-[20px] font-normal leading-tight tracking-tight bg-[#F99A03] px-6 py-3 rounded-r-lg`}>
+						<Link
+							href="/request-a-demo/services"
+							className={`text-[#0E0E30] font-Monstrate text-[20px] font-normal leading-tight tracking-tight bg-[#F99A03] px-6 py-3 rounded-r-lg ${
+								zipCode.length < 5
+									? "bg-gray-200 cursor-not-allowed pointer-events-none"
+									: ""
+							}`}>
 							Submit
-						</button>
+						</Link>
 					</form>
 				</div>
 			</div>

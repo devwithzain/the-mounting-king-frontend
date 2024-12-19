@@ -79,14 +79,6 @@ model homeservice {
   updated_at  DateTime? @db.Timestamp(0)
 }
 
-model images {
-  id         BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
-  image      String    @db.VarChar(255)
-  product_id BigInt    @db.UnsignedBigInt
-  created_at DateTime? @db.Timestamp(0)
-  updated_at DateTime? @db.Timestamp(0)
-}
-
 model job_batches {
   id             String  @id @db.VarChar(255)
   name           String  @db.VarChar(255)
@@ -177,6 +169,63 @@ model users {
   created_at        DateTime?  @db.Timestamp(0)
   updated_at        DateTime?  @db.Timestamp(0)
   carts             carts[]
+}
+
+model request_hero {
+  id         BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
+  title      String    @db.VarChar(255)
+  created_at DateTime? @db.Timestamp(0)
+  updated_at DateTime? @db.Timestamp(0)
+}
+
+model request_services {
+  id                     BigInt                   @id @default(autoincrement()) @db.UnsignedBigInt
+  service_title          String                   @db.VarChar(255)
+  service_description    String                   @db.Text
+  created_at             DateTime?                @db.Timestamp(0)
+  updated_at             DateTime?                @db.Timestamp(0)
+  request_services_steps request_services_steps[]
+}
+
+model request_services_options {
+  id                        BigInt                 @id @default(autoincrement()) @db.UnsignedBigInt
+  request_services_steps_id BigInt                 @db.UnsignedBigInt
+  size                      String                 @db.VarChar(255)
+  time                      Int
+  price                     Decimal                @db.Decimal(10, 2)
+  created_at                DateTime?              @db.Timestamp(0)
+  updated_at                DateTime?              @db.Timestamp(0)
+  request_services_steps    request_services_steps @relation(fields: [request_services_steps_id], references: [id], onDelete: Cascade, onUpdate: Restrict, map: "request_services_options_request_services_steps_id_foreign")
+
+  @@index([request_services_steps_id], map: "request_services_options_request_services_steps_id_foreign")
+}
+
+model request_services_steps {
+  id                       BigInt                     @id @default(autoincrement()) @db.UnsignedBigInt
+  request_services_id      BigInt                     @db.UnsignedBigInt
+  step_title               String                     @db.VarChar(255)
+  step_description         String                     @db.Text
+  created_at               DateTime?                  @db.Timestamp(0)
+  updated_at               DateTime?                  @db.Timestamp(0)
+  request_services_options request_services_options[]
+  request_services         request_services           @relation(fields: [request_services_id], references: [id], onDelete: Cascade, onUpdate: Restrict, map: "request_services_steps_request_services_id_foreign")
+
+  @@index([request_services_id], map: "request_services_steps_request_services_id_foreign")
+}
+
+model service_hero {
+  id         BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
+  title      String    @db.VarChar(255)
+  created_at DateTime? @db.Timestamp(0)
+  updated_at DateTime? @db.Timestamp(0)
+}
+
+model services {
+  id          BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
+  title       String    @db.VarChar(255)
+  description String    @db.Text
+  created_at  DateTime? @db.Timestamp(0)
+  updated_at  DateTime? @db.Timestamp(0)
 }
 
 enum users_role {
