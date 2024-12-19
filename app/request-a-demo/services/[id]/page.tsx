@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { useState, useEffect } from "react";
 import { GoClock } from "react-icons/go";
 import { CiCircleMinus, CiCirclePlus } from "react-icons/ci";
-import getRequestServices from "@/actions/get-requestServices";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import getRequestService from "@/actions/get-requestService";
 
 export default function FormThree({
 	params,
@@ -54,6 +55,7 @@ export default function FormThree({
 			let updatedItems;
 
 			if (updatedQuantity <= 0) {
+				// eslint-disable-next-line @typescript-eslint/no-unused-vars
 				const { [size]: _, ...rest } = prev;
 				updatedItems = rest;
 			} else {
@@ -93,9 +95,9 @@ export default function FormThree({
 
 	useEffect(() => {
 		const fetchProducts = async () => {
-			const id = (await params).id;
 			try {
-				const response = await getRequestServices(id);
+				const { id } = await params;
+				const response = await getRequestService(id);
 				setData(Array.isArray(response.data) ? response.data : [response.data]);
 			} catch (err) {
 				console.error("Error fetching products:", err);
@@ -207,7 +209,9 @@ export default function FormThree({
 							</button>
 						) : (
 							<Link
-								href={`/request-a-demo/services/${params.id}/book-a-service`}
+								href={`/request-a-demo/services/${params.then(
+									(p) => p.id,
+								)}/book-a-service`}
 								className={`px-6 py-4 rounded-lg text-[20px] font-Monstrate leading-tight tracking-tight ${
 									isContinueDisabled
 										? "text-black bg-gray-200 cursor-not-allowed"

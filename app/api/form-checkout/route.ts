@@ -17,7 +17,7 @@ export async function POST(req: Request) {
    if (!items || items.length === 0) {
       return new NextResponse("No items in the request", { status: 400 });
    }
-
+   // eslint-disable-next-line @typescript-eslint/no-explicit-any
    const line_items = items.map((item: any) => ({
       quantity: item.quantity,
       price_data: {

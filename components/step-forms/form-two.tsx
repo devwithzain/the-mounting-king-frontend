@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { useEffect, useState } from "react";
 import getRequestServices from "@/actions/get-requestServices";
@@ -7,7 +8,7 @@ export default function FormTwo({
 }: {
 	onSubmits2: (event: React.FormEvent<HTMLFormElement>) => void;
 }) {
-	const [data, setData] = useState([]);
+	const [data, setData] = useState<any>([]);
 
 	useEffect(() => {
 		const fetchProducts = async () => {
@@ -34,7 +35,7 @@ export default function FormTwo({
 					you select your main TV option.
 				</p>
 				<div className="w-full flex gap-5 justify-between">
-					{data.map((service) => (
+					{data.map((service: any) => (
 						<form
 							onSubmit={onSubmits2}
 							key={service.id}

@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function FormOne({
@@ -8,7 +7,6 @@ export default function FormOne({
 }: {
 	onSubmits1: (event: React.FormEvent<HTMLFormElement>) => void;
 }) {
-	const router = useRouter();
 	const [zipCode, setZipCode] = useState("");
 	return (
 		<div className="w-full flex items-center justify-center bg-white padding-y padding-x rounded-lg z-[999]">

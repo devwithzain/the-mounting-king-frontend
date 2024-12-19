@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { useState, useEffect } from "react";
 import { GoClock } from "react-icons/go";
@@ -86,7 +88,7 @@ export default function FormThree({
 		0,
 	);
 
-	const [data, setData] = useState([]);
+	const [data, setData] = useState<any[]>([]);
 	const [currentStep, setCurrentStep] = useState(0); // Track the current step
 
 	useEffect(() => {

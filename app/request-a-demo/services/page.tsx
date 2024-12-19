@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import Lenis from "lenis";
 import { useEffect, useState } from "react";
@@ -16,7 +17,7 @@ export default function RequestADemoServicesPage() {
 		requestAnimationFrame(raf);
 	}, []);
 
-	const [data, setData] = useState([]);
+	const [data, setData] = useState<any>([]);
 
 	useEffect(() => {
 		const fetchProducts = async () => {
@@ -46,7 +47,7 @@ export default function RequestADemoServicesPage() {
 						</p>
 					</div>
 					<div className="w-full flex gap-5 justify-between">
-						{data.map((service) => (
+						{data.map((service: any) => (
 							<form
 								onSubmit={() => {}}
 								key={service.id}
