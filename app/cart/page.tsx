@@ -80,10 +80,38 @@ export default function CartPage() {
 		}
 	};
 
+	// const handleCheckout = async () => {
+	// 	try {
+	// 		const response = await axios.post(
+	// 			`${window.location.origin}/api/checkout`,
+	// 			{ userId: user?.id },
+	// 			{
+	// 				headers: {
+	// 					"Content-Type": "application/json",
+	// 					"Authorization": `Bearer ${token}`, // Optional if authentication is needed
+	// 				},
+	// 			},
+	// 		);
+
+	// 		if (response.status !== 200) {
+	// 			throw new Error(`HTTP error! status: ${response.status}`);
+	// 		}
+
+	// 		const data = response.data;
+	// 		if (data.url) {
+	// 			window.location.href = data.url; // Redirect to Stripe checkout
+	// 		} else {
+	// 			throw new Error("Checkout URL not received");
+	// 		}
+	// 	} catch (error) {
+	// 		console.error("Error during checkout:", error);
+	// 	}
+	// };
+
 	const handleCheckout = async () => {
 		try {
 			const response = await axios.post(
-				`${window.location.origin}/api/checkout`,
+				`${process.env.NEXT_PUBLIC_API_URL}/checkout`,
 				{ userId: user?.id },
 				{
 					headers: {
@@ -93,13 +121,8 @@ export default function CartPage() {
 				},
 			);
 
-			if (response.status !== 200) {
-				throw new Error(`HTTP error! status: ${response.status}`);
-			}
-
-			const data = response.data;
-			if (data.url) {
-				window.location.href = data.url; // Redirect to Stripe checkout
+			if (response.status === 200 && response.data.url) {
+				window.location.href = response.data.url; // Redirect to Stripe checkout
 			} else {
 				throw new Error("Checkout URL not received");
 			}

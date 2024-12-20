@@ -12,6 +12,11 @@ export default function FormThree({
 }: {
 	params: Promise<{ id: string }>;
 }) {
+	const [id, setId] = useState<string>();
+	const getId = async () => {
+		const id = (await params).id;
+		setId(id);
+	};
 	const [selectedValue3, setSelectedValue] = useState<number>(() => {
 		const storedValue = localStorage.getItem("selectedValue3");
 		return storedValue ? JSON.parse(storedValue) : 0;
@@ -104,6 +109,7 @@ export default function FormThree({
 			}
 		};
 		fetchProducts();
+		getId();
 	}, [params]);
 
 	const handleNextStep = () => {
@@ -209,9 +215,7 @@ export default function FormThree({
 							</button>
 						) : (
 							<Link
-								href={`/request-a-demo/services/${params.then(
-									(p) => p.id,
-								)}/book-a-service`}
+								href={`/request-a-demo/services/${id}/book-a-service`}
 								className={`px-6 py-4 rounded-lg text-[20px] font-Monstrate leading-tight tracking-tight ${
 									isContinueDisabled
 										? "text-black bg-gray-200 cursor-not-allowed"

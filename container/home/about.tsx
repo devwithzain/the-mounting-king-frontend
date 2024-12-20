@@ -18,7 +18,7 @@ export default function AboutServices() {
 				/>
 			</div>
 			<Whatwedo />
-			<div className="w-full flex items-center gap-10 justify-start padding-x xm:flex-col-reverse sm:flex-col-reverse">
+			<div className="w-full flex items-center gap-10 justify-start padding-x xm:flex-col-reverse sm:flex-col-reverse overflow-x-hidden">
 				<ScrollReveal />
 				<div className="w-1/2 flex flex-col gap-8 relative z-50 xm:w-full sm:w-full">
 					<div className="absolute -top-20 -right-60 hidden xl:block">
@@ -58,7 +58,7 @@ export default function AboutServices() {
 							</span>
 						</h1>
 					</div>
-					<div className="absolute top-12 -right-[70%] lg:right-0 md:-right-1/2 md:w-[350px] md:-top-1/2 h-[400px] blur-[120px] bg-gradient-to-b from-[#007DFE] via-[#2f84da] to-[#007DFE] rounded-full w-[500px] overflow-hidden md:hidden xm:hidden sm:hidden" />
+					<div className="absolute top-12 -right-[70%] lg:right-0 md:-right-1/2 md:w-[350px] md:-top-1/2 h-[400px] blur-[120px] bg-gradient-to-b from-[#007DFE] via-[#2f84da] to-[#007DFE] rounded-full w-[500px] !overflow-hidden md:hidden xm:hidden sm:hidden" />
 					<div className="flex flex-col gap-6 relative z-50">
 						<div className="text-white font-Monstrate paragraph leading-loose">
 							<TextMask>

@@ -88,7 +88,7 @@ export default function FormTen() {
 		try {
 			// First, post request to create the checkout session
 			const response = await axios.post(
-				`http://localhost:3000/api/form-checkout`,
+				`${process.env.NEXT_PUBLIC_API_URL}/formCheckout`,
 				checkoutData,
 			);
 

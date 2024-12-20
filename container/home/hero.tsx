@@ -86,7 +86,7 @@ export default function HomeHero() {
 									src={drackula}
 									width={500}
 									height={500}
-									className="w-[450px] object-cover md:w-[400px]"
+									className="w-[450px] lg:w-[420px] object-cover md:w-[400px]"
 								/>
 							</motion.div>
 							<motion.div
@@ -100,9 +100,9 @@ export default function HomeHero() {
 								<Image
 									alt="punch"
 									src={punch}
-									width={500}
-									height={500}
-									className="xl:w-full w-[350px]"
+									width={400}
+									height={400}
+									className="xl:w-[450px] w-[350px]"
 								/>
 							</motion.div>
 						</div>
@@ -202,7 +202,6 @@ export default function HomeHero() {
 					/>
 				</div>
 			</div>
-			{/* asd */}
 			<div className="w-full min-h-screen xm:!flex sm:!flex hidden">
 				<div className="w-full pt-40 h-full flex flex-col items-center justify-center gap-10 padding-x">
 					<div className="flex flex-col gap-5">
@@ -316,8 +315,8 @@ export default function HomeHero() {
 							<Image
 								alt="punch"
 								src={punch}
-								width={500}
-								height={500}
+								width={400}
+								height={400}
 								className="w-full"
 							/>
 						</motion.div>
