@@ -2,11 +2,9 @@
 	"name": "the-mounting-king-frontend",
 	"version": "0.1.0",
 	"private": true,
-	"type": "module",
 	"scripts": {
 		"dev": "next dev",
-		"build": "prisma db pull && prisma generate && next build",
-		"start": "NODE_ENV=production node server.js",
+		"build": "prisma generate && next build",
 		"lint": "next lint",
 		"postinstall": "prisma generate"
 	},
