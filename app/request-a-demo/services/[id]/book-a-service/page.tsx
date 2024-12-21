@@ -36,12 +36,12 @@ export default function BookADate() {
 
 	return (
 		<div
-			className="w-full min-h-screen py-80 padding-x flex items-center justify-center"
+			className="w-full min-h-screen padding-x padding-y flex items-center justify-center"
 			style={{
 				background:
 					"linear-gradient(0deg, rgba(106,155,190,1) 0%, rgba(0,73,124,1) 30%, rgba(0,73,124,1) 50%, rgba(0,73,124,1) 70%, rgba(106,155,190,1) 100%)",
 			}}>
-			<div className="flex items-center justify-center w-full h-full">
+			<div className="flex items-center justify-center w-full pt-20">
 				{renderForm()}
 			</div>
 		</div>

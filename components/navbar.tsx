@@ -97,7 +97,10 @@ export default function Navbar() {
 					<Tab
 						setPosition={setPosition}
 						href="/request-a-demo"
-						isActive={pathname === "/request-a-demo"}>
+						isActive={
+							pathname === "/request-a-demo" ||
+							pathname === "/request-a-demo/services"
+						}>
 						Request A Demo
 					</Tab>
 

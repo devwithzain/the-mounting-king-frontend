@@ -23,6 +23,10 @@ export default function ProductDetailHero(product: any) {
 	});
 
 	const addToCart = async (productId: string) => {
+		if (!user || !token) {
+			window.location.href = "/login";
+			return;
+		}
 		try {
 			const response = await axios.post(
 				`${process.env.NEXT_PUBLIC_API_URL}/cart`,

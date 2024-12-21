@@ -34,10 +34,10 @@ export const registerFormSchema = z.object({
 export const profileFormSchema = z.object({
    name: z.string().min(1, {
       message: "Name is required",
-   }),
+   }).optional(),
    email: z.string().email({
       message: "Email is required",
-   }),
+   }).optional(),
 });
 
 export type TloginFormData = z.infer<typeof loginFormSchema>;

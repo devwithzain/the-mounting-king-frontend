@@ -130,22 +130,27 @@ export default function FormThree({
 	const isContinueDisabled = Object.keys(selectedItems).length === 0;
 
 	return (
-		<div className="w-full flex items-center justify-center bg-white padding-y padding-x rounded-lg z-[999] mt-20">
-			<div className="w-full flex gap-8 justify-between">
+		<div
+			className="w-full min-h-screen flex items-center justify-center padding-y padding-x rounded-lg z-[999]"
+			style={{
+				background:
+					"linear-gradient(0deg, rgba(106,155,190,1) 0%, rgba(0,73,124,1) 30%, rgba(0,73,124,1) 50%, rgba(0,73,124,1) 70%, rgba(106,155,190,1) 100%)",
+			}}>
+			<div className="w-full flex gap-8 justify-between pt-20">
 				<div className="w-full flex flex-col gap-5">
 					{data.length > 0 && data[0]?.steps?.[currentStep] && (
 						<div className="flex flex-col gap-4">
-							<h1 className="text-black font-HyperspaceRace text-[45px] font-black leading-tight capitalize">
+							<h1 className="text-white font-HyperspaceRace text-[45px] font-black leading-tight capitalize">
 								{data[0].steps[currentStep].step_title}
 							</h1>
-							<p className="text-black font-Monstrate text-[22px]">
+							<p className="text-white font-Monstrate text-[22px]">
 								{data[0].steps[currentStep].step_description}
 							</p>
 							{data[0].steps[currentStep].options.map((option: any) => (
 								<div
 									key={option.id}
 									className="w-full bg-white gap-10 z-50 relative flex items-center justify-between border border-black rounded-lg px-6 py-3">
-									<div className="w-full rounded-lg text-[#0E0E30] font-Monstrate text-[16px] font-normal leading-tight tracking-tight placeholder:text-[#0E0E30] outline-none">
+									<div className="w-full rounded-lg text-[#0E0E30] font-Monstrate text-[17px] font-normal leading-tight tracking-tight placeholder:text-[#0E0E30] outline-none">
 										{option.size} ${option.price}
 									</div>
 									<div className="flex items-center gap-2">
@@ -202,7 +207,7 @@ export default function FormThree({
 						<button
 							type="button"
 							onClick={handlePreviousStep}
-							className="text-black border border-black px-6 py-4 rounded-lg text-[20px] font-Monstrate leading-tight tracking-tight">
+							className="text-white border border-white px-6 py-4 rounded-lg text-[20px] font-Monstrate leading-tight tracking-tight">
 							Back
 						</button>
 						{data[0]?.steps?.length > 0 &&
@@ -226,8 +231,8 @@ export default function FormThree({
 						)}
 					</form>
 				</div>
-				<div className="w-1/3 flex flex-col gap-3 border border-black rounded-lg p-5 h-fit">
-					<h1 className="text-black font-Monstrate font-semibold text-[28px] leading-tight inline-block">
+				<div className="w-1/3 flex flex-col gap-3 border border-white rounded-lg p-5 h-fit">
+					<h1 className="text-white font-Monstrate font-semibold text-[28px] leading-tight inline-block">
 						{data.length > 0 && data[0]?.service_title}
 					</h1>
 					{Object.keys(selectedItems).length > 0 && (
@@ -235,23 +240,26 @@ export default function FormThree({
 							{Object.entries(selectedItems).map(([size, item]) => (
 								<div
 									key={size}
-									className="flex justify-between py-2 border-b border-black">
-									<p className="text-black font-Monstrate text-[18px] leading-normal capitalize">
+									className="flex justify-between py-2 border-b border-white">
+									<p className="text-white font-Monstrate text-[18px] leading-normal capitalize">
 										{item.quantity}x {size}
 									</p>
 								</div>
 							))}
-							<div className="flex items-center gap-2 border-b border-black py-2">
-								<GoClock size={24} />
-								<p className="text-black font-Monstrate text-[18px] leading-normal capitalize">
+							<div className="flex items-center gap-2 border-b border-white py-2">
+								<GoClock
+									size={24}
+									className="text-white"
+								/>
+								<p className="text-white font-Monstrate text-[18px] leading-normal capitalize">
 									{Math.floor(totalTime / 60)} hr {totalTime % 60} min
 								</p>
 							</div>
 							<div className="flex justify-between items-center gap-5 pt-2">
-								<p className="text-black font-Monstrate text-[18px] leading-normal capitalize">
+								<p className="text-white font-Monstrate text-[18px] leading-normal capitalize">
 									Total
 								</p>
-								<p className="text-black font-Monstrate text-[18px] leading-normal capitalize">
+								<p className="text-white font-Monstrate text-[18px] leading-normal capitalize">
 									${totalPrice}
 								</p>
 							</div>
