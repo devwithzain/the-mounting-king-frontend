@@ -7,7 +7,6 @@ import { motion } from "framer-motion";
 import { IconType } from "react-icons";
 import { placeholder } from "@/public";
 import { getToken } from "@/utils/get-token";
-import { IoMdSettings } from "react-icons/io";
 import { getUserData } from "@/utils/currentUser";
 import { MdLogin, MdLogout } from "react-icons/md";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
@@ -49,13 +48,6 @@ export default function StaggeredDropDown() {
 					variants={wrapperVariants}
 					style={{ originY: "top", translateX: "-50%" }}
 					className="flex flex-col p-2 rounded-lg bg-[#F99A03] text-white shadow-xl absolute top-[120%] -left-full w-40 overflow-hidden">
-					<Link href="/profile">
-						<Option
-							setOpen={setOpen}
-							Icon={IoMdSettings}
-							text="Setting"
-						/>
-					</Link>
 					{user ? (
 						<button
 							type="button"
