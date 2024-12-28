@@ -87,7 +87,7 @@ export default function Products() {
 								width={400}
 								height={400}
 								className="w-full h-[300px] object-cover"
-								src={`http://127.0.0.1:8000/storage/${
+								src={`https://themountingking.com/backend/storage/${
 									JSON.parse(product.images)[0]
 								}`}
 								alt={product.title}

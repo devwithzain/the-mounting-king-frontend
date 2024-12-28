@@ -24,8 +24,8 @@ export default function ProductGallery({
 		}
 
 		return images.map((image: string) => ({
-			original: `http://127.0.0.1:8000/storage/${image}`,
-			thumbnail: `http://127.0.0.1:8000/storage/${image}`,
+			original: `https://themountingking.com/backend/storage/${image}`,
+			thumbnail: `https://themountingking.com/backend/storage/${image}`,
 		}));
 	};
 	return (

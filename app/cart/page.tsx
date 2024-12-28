@@ -156,7 +156,7 @@ export default function CartPage() {
 												<Image
 													width={600}
 													height={600}
-													src={`http://127.0.0.1:8000/storage/${
+													src={`https://themountingking.com/backend/storage/${
 														JSON.parse(item.product?.images)[0]
 													}`}
 													alt="Product Image"
