@@ -2,18 +2,15 @@ export { default as Navbar } from './navbar';
 export { default as TextMask } from './text-mask';
 export { default as AnimatedText } from './animated-text';
 export { default as Footer } from './footer';
-export { default as Marquee } from './marquee';
 export { default as LogoMarquee } from './logo-marquee';
 export { default as Appointment } from './appointment';
 export { default as Hero } from './hero';
 export { default as Button } from './button';
-export { default as Cloud } from './cloud';
 export { default as HomeFooter } from './home-footer';
 export { default as LogoTicker } from './logo-ticker';
 export { default as ScrollReveal } from './scroll-reveal';
 export { default as ProductGallery } from './product-gallery';
 
-export { default as ProfileForm } from './profile-form';
 export { default as LoginForm } from './login-form';
 export { default as RegisterForm } from './register-form';
 export { default as FormOne } from './step-forms/form-one';

@@ -59,7 +59,7 @@ export default function Products() {
 		}
 	};
 	return (
-		<div className="w-full py-80 relative padding-x xm:py-10 sm:py-10 md:py-20">
+		<div className="w-full z-50 py-80 relative padding-x xm:py-10 sm:py-10 md:py-20">
 			<div className="w-full grid grid-cols-4 md:grid-cols-2 sm:grid-cols-1 xm:grid-cols-1 gap-7">
 				{products.map((product: TproductsProps) => (
 					<div

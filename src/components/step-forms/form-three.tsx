@@ -117,7 +117,7 @@ export default function FormThree({
 	};
 
 	return (
-		<div className="w-full flex items-center justify-center bg-white padding-y padding-x rounded-lg z-[999]">
+		<div className="w-full flex items-center justify-center bg-white padding-y padding-x rounded-lg z-[999] mb-[200px] xm:mb-0 sm:mb-0">
 			<div className="w-full flex gap-8 justify-between">
 				<div className="w-full flex flex-col gap-5">
 					{data.map((step: any) => (

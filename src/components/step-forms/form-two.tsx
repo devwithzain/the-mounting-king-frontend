@@ -21,7 +21,7 @@ export default function FormTwo({
 	}, []);
 
 	return (
-		<div className="w-full flex items-center justify-center bg-white padding-y padding-x rounded-lg z-[999]">
+		<div className="w-full flex items-center justify-center bg-white padding-y padding-x rounded-lg z-[999] mb-[200px] sm:mb-0 xm:mb-0">
 			<div className="flex flex-col gap-8 items-center justify-center h-full">
 				<h1 className="text-black text-center font-HyperspaceRace heading font-black leading-tight capitalize">
 					Select Main Service

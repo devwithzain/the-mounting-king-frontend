@@ -162,6 +162,11 @@ export default function HomeFooter() {
 									className="text-white text-[16px] font-Monstrate leading-tight tracking-tight">
 									Request A Demo
 								</Link>
+								<Link
+									to="/contact-us"
+									className="text-white text-[16px] font-Monstrate leading-tight tracking-tight">
+									Contact Us
+								</Link>
 							</div>
 							<div className="flex flex-col gap-4">
 								<Link

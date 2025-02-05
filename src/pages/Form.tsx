@@ -127,7 +127,7 @@ export default function Form() {
 					background:
 						"linear-gradient(0deg, rgba(106,155,190,1) 0%, rgba(0,73,124,1) 30%, rgba(0,73,124,1) 50%, rgba(0,73,124,1) 70%, rgba(106,155,190,1) 100%)",
 				}}>
-				<div className="w-full flex gap-8 justify-between py-20">
+				<div className="w-full xm:flex-col-reverse sm:flex-col-reverse flex gap-8 justify-between py-20 mt-10 mb-60 xm:mb-0 sm:mb-0 relative z-[999]">
 					<div className="w-full flex flex-col gap-5">
 						{data.length > 0 && data[0]?.steps?.[currentStep] && (
 							<div className="flex flex-col gap-4">
@@ -222,7 +222,7 @@ export default function Form() {
 							)}
 						</form>
 					</div>
-					<div className="w-1/3 flex flex-col gap-3 border border-white rounded-lg p-5 h-fit">
+					<div className="w-1/3 flex flex-col gap-3 border border-white rounded-lg p-5 h-fit xm:w-full sm:w-full">
 						<h1 className="text-white font-Monstrate font-semibold text-[28px] leading-tight inline-block">
 							{data.length > 0 && data[0]?.service_title}
 						</h1>

@@ -22,7 +22,7 @@ export default function Hero() {
 					text="wall mounts"
 				/>
 			</div>
-			<div className="absolute w-full -bottom-40 md:-bottom-32 z-50">
+			<div className="absolute w-full -bottom-40 md:-bottom-32 z-50 xm:hidden sm:hidden">
 				<Badal />
 			</div>
 		</div>

@@ -122,7 +122,7 @@ export default function ProductDetailHero(product: any) {
 					</div>
 				</div>
 			</div>
-			<div className="w-full absolute left-0 -bottom-48 z-50 lg:-bottom-60 md:-bottom-40">
+			<div className="w-full absolute left-0 -bottom-48 z-50 lg:-bottom-60 md:-bottom-40 xm:hidden sm:hidden">
 				<Badal />
 			</div>
 		</div>

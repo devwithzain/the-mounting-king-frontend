@@ -5,7 +5,7 @@ import { advantage, marketValue, time } from "../assets/index.ts";
 
 export default function Advantage() {
 	return (
-		<div className="w-full flex flex-col gap-20 relative padding-x sm:gap-10 xm:gap-10 mb-80">
+		<div className="w-full flex flex-col gap-20 relative padding-x sm:gap-10 xm:gap-10">
 			<div className="w-full flex justify-center items-center flex-col gap-3 sm:items-start xm:items-start">
 				<AnimatedText
 					text="Advantage of Our"

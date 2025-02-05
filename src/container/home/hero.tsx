@@ -250,8 +250,9 @@ export default function HomeHero() {
 						</div>
 						<div className="w-full flex flex-col gap-3">
 							<p className="text-black font-Monstrate text-[20px]">
-								Lorem ipsum dolor sit amet consectetur. Arcu nec scelerisque
-								sagittis quis egestas sed consectetur.
+								Professional TV Mounting Services. Secure and Perfectly
+								Positioned. Enhance your viewing experience with our expert
+								installation and setup.
 							</p>
 							<Link
 								to="/about"

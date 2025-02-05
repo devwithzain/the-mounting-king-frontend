@@ -13,7 +13,7 @@ export default function AboutHero() {
 				/>
 			</div>
 			<div className="w-full absolute -bottom-60 z-50 xm:hidden sm:hidden">
-				<div className="w-full">
+				<div className="w-full xm:hidden sm:hidden">
 					<Badal />
 				</div>
 			</div>

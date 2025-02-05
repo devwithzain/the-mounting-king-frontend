@@ -1,6 +1,6 @@
-import { TRoundedProps } from "@/types";
 import gsap from "gsap";
-import { useEffect, useRef } from "react";
+import { TRoundedProps } from "../types/index.ts";
+import React, { useEffect, useRef } from "react";
 
 export default function Rounded({
 	children,

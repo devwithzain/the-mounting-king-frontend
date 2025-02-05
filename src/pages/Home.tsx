@@ -27,7 +27,7 @@ export default function Home() {
 			/>
 			<Navbar />
 			<HomeHero />
-			<div className="mb-40 w-full">
+			<div className="xl:mb-40  w-full xm:hidden sm:hidden">
 				<Badal />
 			</div>
 			<HomeAbout />

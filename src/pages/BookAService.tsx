@@ -41,12 +41,12 @@ export default function BookAService() {
 		<>
 			<Navbar />
 			<div
-				className="w-full min-h-screen padding-x padding-y flex items-center justify-center"
+				className="w-full min-h-[120vh] padding-x padding-y flex items-center justify-center pt-20 pb-60 xm:pb-20 sm:pb-20"
 				style={{
 					background:
 						"linear-gradient(0deg, rgba(106,155,190,1) 0%, rgba(0,73,124,1) 30%, rgba(0,73,124,1) 50%, rgba(0,73,124,1) 70%, rgba(106,155,190,1) 100%)",
 				}}>
-				<div className="flex items-center justify-center w-full py-24">
+				<div className="flex h-full items-center justify-center w-full py-24 xm:py-10 sm:py-10 xm:pt-28 sm:pt-28">
 					{renderForm()}
 				</div>
 			</div>

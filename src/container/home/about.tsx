@@ -58,7 +58,7 @@ export default function AboutHome() {
 						<div className="text-white font-Monstrate paragraph leading-loose">
 							<TextMask>
 								{[
-									"Welcome to The Mounting Man, your trusted partner for expert TV installation. With our team of skilled technicians, we ensure a seamless and hassle-free experience from start to finish. If you have any questions, Call or Text (000) 000-0000.",
+									"Welcome to The Mounting Man, your trusted partner for expert TV installation. With our team of skilled technicians, we ensure a seamless and hassle-free experience from start to finish.",
 								]}
 							</TextMask>
 						</div>

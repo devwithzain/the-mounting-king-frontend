@@ -37,7 +37,7 @@ export default function Form() {
 	};
 
 	return (
-		<div className="w-full py-80 relative padding-x xm:py-10 sm:py-10 md:py-20">
+		<div className="w-full relative padding-x xm:my-10 sm:my-10 md:my-20 my-80">
 			<div className="w-full h-full flex items-center justify-center">
 				<div className="w-full">
 					<div className="w-full flex justify-between gap-5 xm:flex-col sm:flex-col">
@@ -53,12 +53,13 @@ export default function Form() {
 								/>
 							</div>
 						</div>
-						<p className="w-1/2 text-white font-Monstrate text-[20px] leading-tight xm:w-full sm:w-full">
-							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos
-							repellat provident cupiditate voluptatum vel incidunt odio,
-							numquam totam illo reprehenderit ex nostrum fugiat inventore quae
-							fuga doloremque tempore veritatis expedita quaerat, eligendi ad
-							consequuntur enim.
+						<p className="w-1/2 text-white font-Monstrate text-[20px] leading-normal xm:w-full sm:w-full">
+							We provide professional TV mounting services to ensure your
+							television is securely and perfectly positioned. Whether you need
+							help with installation, mounting, or setup, our expert team is
+							here to assist you. Contact us today to schedule an appointment or
+							to learn more about our services. We look forward to helping you
+							enhance your viewing experience.
 						</p>
 					</div>
 					<form

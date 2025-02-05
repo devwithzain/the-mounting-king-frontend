@@ -77,9 +77,9 @@ export default function FormTwo({
 	);
 
 	return (
-		<div className="w-full flex items-center justify-center bg-white padding-y padding-x rounded-lg z-[999]">
+		<div className="w-full flex items-center justify-center bg-white padding-y padding-x rounded-lg z-[999] mb-[200px] xm:mb-0 sm:mb-0">
 			<div className="flex flex-col gap-8 items-center justify-center">
-				<div className="w-full flex justify-between gap-5">
+				<div className="w-full flex justify-between gap-5 xm:flex-col sm:flex-col">
 					<div className="flex-1 flex flex-col gap-5">
 						<h1 className="text-black font-HyperspaceRace text-[45px] font-black leading-tight capitalize">
 							Book a Date and Time Book your preferred date and time

@@ -8,8 +8,8 @@ import {
 	useVelocity,
 	useSpring,
 } from "framer-motion";
-import { useRef } from "react";
-import { TlogoMarqueeProps } from "@/types";
+import React, { useRef } from "react";
+import { TlogoMarqueeProps } from "../types/index.ts";
 
 export default function Marquee({
 	children,

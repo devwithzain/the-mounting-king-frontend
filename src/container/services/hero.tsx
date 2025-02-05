@@ -10,8 +10,10 @@ export default function ServicesHero() {
 					Services
 				</h1>
 			</div>
-			<div className="w-full absolute -bottom-40 z-50 lg:-bottom-60 md:-bottom-40">
-				<Badal />
+			<div className="w-full absolute -bottom-60 z-50 xm:hidden sm:hidden">
+				<div className="w-full xm:hidden sm:hidden">
+					<Badal />
+				</div>
 			</div>
 		</div>
 	);

@@ -27,7 +27,7 @@ body {
 		@apply py-[50px] lg:py-[40px] md:py-[30px] sm:py-[20px] xm:py-[20px];
 	}
 	.heading {
-		@apply text-[80px] lg:text-[70px] md:text-[50px] sm:text-[35px] xm:text-[35px];
+		@apply text-[70px] lg:text-[60px] md:text-[50px] sm:text-[35px] xm:text-[35px];
 	}
 	.subHeading {
 		@apply text-[px] lg:text-[px] md:text-[px] sm:text-[px] xm:text-[px];
@@ -213,10 +213,12 @@ body {
 .cloud-container {
 	position: relative;
 	width: 100%;
-	height: 500px;
+	min-height: 550px;
+	overflow: hidden;
 }
 
 .cloud-wrapper {
+	overflow-x: hidden;
 	position: absolute;
 	width: 200%;
 	display: flex;

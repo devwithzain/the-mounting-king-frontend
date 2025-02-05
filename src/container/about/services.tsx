@@ -8,7 +8,7 @@ import ScrollReveal from "../../components/scroll-reveal.tsx";
 
 export default function AboutServices() {
 	return (
-		<div className="w-full relative mt-80">
+		<div className="w-full relative xl:mt-80 mt-20">
 			<div className="w-full flex items-center gap-10 justify-start padding-x xm:flex-col-reverse sm:flex-col-reverse">
 				<ScrollReveal />
 				<div className="w-1/2 flex flex-col relative z-50 xm:w-full sm:w-full">
@@ -48,7 +48,7 @@ export default function AboutServices() {
 						<div className="text-white xm:text-black sm:text-black font-Monstrate paragraph leading-normal pt-3 font-medium">
 							<TextMask>
 								{[
-									"Welcome to The Mounting Man, your trusted partner for expert TV installation. With our team of skilled technicians, we ensure a seamless and hassle-free experience from start to finish. If you have any questions, Call or Text (000) 000-0000.",
+									"Welcome to The Mounting Man, your trusted partner for expert TV installation. With our team of skilled technicians, we ensure a seamless and hassle-free experience from start to finish.",
 								]}
 							</TextMask>
 						</div>
@@ -64,7 +64,9 @@ export default function AboutServices() {
 					</div>
 				</div>
 			</div>
-			<Advantage />
+			<div className="mb-80">
+				<Advantage />
+			</div>
 		</div>
 	);
 }

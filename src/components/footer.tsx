@@ -1,11 +1,3 @@
-import React from "react";
-import Marquee from "./marquee.tsx";
-import { Link } from "react-router-dom";
-import { TbWorld } from "react-icons/tb";
-import { BsTwitterX } from "react-icons/bs";
-import { MdOutlineEmail } from "react-icons/md";
-import { RiInstagramFill } from "react-icons/ri";
-import { FaFacebook, FaLinkedin, FaTiktok, FaYoutube } from "react-icons/fa";
 import {
 	crown,
 	emailIcon,
@@ -16,12 +8,20 @@ import {
 	the,
 	footerBackground,
 } from "../assets/index.ts";
+import React from "react";
 import Badal from "./badal.tsx";
+import Marquee from "./marquee.tsx";
+import { Link } from "react-router-dom";
+import { TbWorld } from "react-icons/tb";
+import { BsTwitterX } from "react-icons/bs";
+import { MdOutlineEmail } from "react-icons/md";
+import { RiInstagramFill } from "react-icons/ri";
+import { FaFacebook, FaLinkedin, FaTiktok, FaYoutube } from "react-icons/fa";
 
 export default function Footer() {
 	return (
 		<div className="w-full min-h-screen pb-5 relative pt-80 xm:!pt-10 sm:!pt-10 md:pt-16 lg:pt-20">
-			<div className="w-full absolute -top-80 z-50 lg:-top-60 md:-top-40">
+			<div className="w-full absolute -top-80 z-50 lg:-top-60 md:-top-40 xm:hidden sm:hidden">
 				<Badal />
 			</div>
 			<div className="absolute w-full top-0 left-0">
@@ -163,6 +163,11 @@ export default function Footer() {
 									to="/request-a-demo"
 									className="text-white text-[16px] font-Monstrate leading-tight tracking-tight">
 									Request A Demo
+								</Link>
+								<Link
+									to="/contact-us"
+									className="text-white text-[16px] font-Monstrate leading-tight tracking-tight">
+									Contact Us
 								</Link>
 							</div>
 							<div className="flex flex-col gap-4">

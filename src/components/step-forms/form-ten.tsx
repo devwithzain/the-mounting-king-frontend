@@ -143,15 +143,15 @@ export default function FormTen() {
 	);
 
 	return (
-		<div className="w-full flex items-center justify-center bg-white padding-y padding-x rounded-lg z-[999]">
+		<div className="w-full flex items-center justify-center bg-white padding-y padding-x rounded-lg z-[999] mb-[200px] xm:mb-0 sm:mb-0">
 			<div className="w-full flex flex-col gap-8 items-center justify-center">
-				<h1 className="text-black text-center font-HyperspaceRace text-[98px] font-black leading-tight capitalize">
+				<h1 className="text-black text-center font-HyperspaceRace heading font-black leading-tight capitalize">
 					Almost Done
 				</h1>
-				<p className="text-black font-Monstrate text-[18px] leading-normal capitalize">
+				<p className="text-black font-Monstrate paragraph leading-normal capitalize">
 					Enter your contact info to finalize your appointment.
 				</p>
-				<div className="w-full flex gap-5 justify-between">
+				<div className="w-full flex gap-5 justify-between xm:flex-col sm:flex-col">
 					<div className="w-full flex justify-center">
 						<form
 							onSubmit={handleSubmit}

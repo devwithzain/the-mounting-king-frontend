@@ -18,7 +18,7 @@ export default function Hero() {
 					text="Contact Us"
 				/>
 				<div className="w-full h-full absolute left-0 -bottom-60 z-50 lg:-bottom-60 md:-bottom-40 xm:hidden sm:hidden">
-					<div className="my-40 w-full">
+					<div className="my-40 w-full xm:hidden sm:hidden">
 						<Badal />
 					</div>
 				</div>
