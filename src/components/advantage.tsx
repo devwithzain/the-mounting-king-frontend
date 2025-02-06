@@ -9,16 +9,16 @@ export default function Advantage() {
 			<div className="w-full flex justify-center items-center flex-col gap-3 sm:items-start xm:items-start">
 				<AnimatedText
 					text="Advantage of Our"
-					className="text-white text-center font-HyperspaceRace heading font-bold leading-tight capitalize"
+					className="text-white xm:text-black sm:text-black text-center font-HyperspaceRace heading font-bold leading-tight capitalize"
 				/>
 				<AnimatedText
 					text="Mounting King Service"
-					className="text-white advantageRapper text-center font-HyperspaceRace text-[80px] lg:text-[70px] md:text-[50px] sm:text-[30px] xm:text-[30px] font-bold leading-normal capitalize"
+					className="text-white xm:text-black sm:text-black advantageRapper text-center font-HyperspaceRace text-[80px] lg:text-[70px] md:text-[50px] sm:text-[30px] xm:text-[30px] font-bold leading-normal capitalize"
 				/>
 			</div>
 			<div className="w-full flex items-center justify-center flex-col gap-20 relative xm:flex-col sm:flex-col">
 				<div className="absolute -left-60 h-[500px] blur-[120px] bg-gradient-to-b from-[#007DFE] via-[#2f84da] to-[#007DFE] rounded-full w-[500px] overflow-hidden xm:hidden sm:hidden" />
-				<div className="w-full flex justify-between gap-20 z-50 xm:flex-col sm:flex-col xm:gap-10 sm:gap-10">
+				<div className="w-full flex justify-between gap-10 z-50 xm:flex-col sm:flex-col">
 					<motion.div
 						initial={{ scale: 0 }}
 						whileInView={{ scale: 1 }}
@@ -37,10 +37,10 @@ export default function Advantage() {
 								height={60}
 							/>
 							<div className="w-full flex flex-col gap-3">
-								<h1 className="text-white group-hover:text-black text-[35px] font-bold leading-tight capitalize">
+								<h1 className="text-white xm:text-black sm:text-black group-hover:text-black text-[35px] font-bold leading-tight capitalize">
 									Over 3,000 TVs <br /> Mounted with Precision
 								</h1>
-								<p className="text-white font-Monstrate paragraph group-hover:text-black">
+								<p className="text-white xm:text-black sm:text-black font-Monstrate paragraph group-hover:text-black">
 									We are your trusted partner for safe, secure, and professional
 									mounting services. Our team is highly skilled, ensuring your
 									TV is mounted with utmost care and precision.
@@ -66,10 +66,10 @@ export default function Advantage() {
 								height={60}
 							/>
 							<div className="w-full flex flex-col gap-3">
-								<h1 className="text-white group-hover:text-black text-[35px] font-bold leading-tight capitalize">
+								<h1 className="text-white xm:text-black sm:text-black group-hover:text-black text-[35px] font-bold leading-tight capitalize">
 									Over 700 Samsung Frames Mounted with Expertise
 								</h1>
-								<p className="text-white font-Monstrate paragraph group-hover:text-black">
+								<p className="text-white xm:text-black sm:text-black font-Monstrate paragraph group-hover:text-black">
 									Trusted by hundreds of customers, we specialize in
 									professional Samsung Frame installations that combine
 									precision, care, and style to deliver a flawless setup every
@@ -96,10 +96,10 @@ export default function Advantage() {
 								height={60}
 							/>
 							<div className="w-full flex flex-col gap-3">
-								<h1 className="text-white group-hover:text-black text-[35px] font-bold leading-tight capitalize">
+								<h1 className="text-white xm:text-black sm:text-black group-hover:text-black text-[35px] font-bold leading-tight capitalize">
 									Gain Your <br /> Competitive Edge
 								</h1>
-								<p className="text-white font-Monstrate paragraph group-hover:text-black">
+								<p className="text-white xm:text-black sm:text-black font-Monstrate paragraph group-hover:text-black">
 									Unlock your potential with services designed to elevate your
 									performance and achieve unparalleled success. Our expertise
 									ensures you stay ahead in every aspect.

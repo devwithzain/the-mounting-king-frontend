@@ -108,7 +108,7 @@ export default function CartPage() {
 						Shopping Cart
 					</h1>
 				</div>
-				<div className="w-full flex justify-between gap-5 pt-10">
+				<div className="w-full flex justify-between gap-5 pt-10 mb-14">
 					<div className="w-full flex flex-col gap-5">
 						{cartItems.length === 0 ? (
 							<p className="font-Monstrate text-[25px] leading-tight text-black font-medium pb-2">

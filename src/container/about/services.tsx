@@ -48,7 +48,7 @@ export default function AboutServices() {
 						<div className="text-white xm:text-black sm:text-black font-Monstrate paragraph leading-normal pt-3 font-medium">
 							<TextMask>
 								{[
-									"Welcome to The Mounting Man, your trusted partner for expert TV installation. With our team of skilled technicians, we ensure a seamless and hassle-free experience from start to finish.",
+									"Welcome to The Mounting King, your trusted partner for expert TV installation. With our team of skilled technicians, we ensure a seamless and hassle-free experience from start to finish.",
 								]}
 							</TextMask>
 						</div>

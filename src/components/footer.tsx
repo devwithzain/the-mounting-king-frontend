@@ -21,7 +21,7 @@ import { FaFacebook, FaLinkedin, FaTiktok, FaYoutube } from "react-icons/fa";
 export default function Footer() {
 	return (
 		<div className="w-full min-h-screen pb-5 relative pt-80 xm:!pt-10 sm:!pt-10 md:pt-16 lg:pt-20">
-			<div className="w-full absolute -top-80 z-50 lg:-top-60 md:-top-40 xm:hidden sm:hidden">
+			<div className="w-full absolute -top-80 lg:-top-60 z-50  md:-top-40 xm:hidden sm:hidden">
 				<Badal />
 			</div>
 			<div className="absolute w-full top-0 left-0">

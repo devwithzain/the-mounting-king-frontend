@@ -27,9 +27,9 @@ export default function Card() {
 		offset: ["start end", "start start"],
 	});
 
-	const imageScale1 = useTransform(scrollYProgress1, [0, 1], [0.5, 0.8]);
-	const imageScale2 = useTransform(scrollYProgress2, [0, 1], [0.5, 0.8]);
-	const imageScale3 = useTransform(scrollYProgress3, [0, 1], [0.5, 0.8]);
+	const imageScale1 = useTransform(scrollYProgress1, [0, 1], [0.6, 0.85]);
+	const imageScale2 = useTransform(scrollYProgress2, [0, 1], [0.6, 0.85]);
+	const imageScale3 = useTransform(scrollYProgress3, [0, 1], [0.6, 0.85]);
 
 	return (
 		<>

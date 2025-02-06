@@ -57,7 +57,7 @@ export default function App() {
 					element={<Thankyou />}
 				/>
 				<Route
-					path="/services/service-detail/:title"
+					path="/services/service-detail/:id"
 					element={<ServicesDetail />}
 				/>
 				<Route

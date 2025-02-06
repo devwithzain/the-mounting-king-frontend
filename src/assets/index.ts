@@ -57,3 +57,5 @@ export { default as aboutBg } from './aboutBg.png';
 export { default as video } from './video.mp4';
 export { default as footerBackground } from './footerBackground.png';
 export { default as badalGif } from './badal.gif';
+export { default as mobile } from './mobile.jpg';
+export { default as home } from './home.jpg';

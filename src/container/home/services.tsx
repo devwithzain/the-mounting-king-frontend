@@ -41,7 +41,7 @@ export default function HomeServices() {
 						<div className="text-white font-Monstrate paragraph leading-normal">
 							<TextMask>
 								{[
-									"We provide high-quality brackets designed for reliability and durability, perfectly suited for your installation needs. Many desktop publishing packages and web page editors have adopted Lorem Ipsum as their default placeholder text, and while it remains a staple in design, various versions have emerged over the years—some accidental and others intentionally humorous.",
+									"The Mounting King provides high-quality brackets designed for reliability and durability, ensuring a secure installation for your TV. Our brackets are carefully selected to meet the highest standards, offering stability and support for a flawless viewing experience.",
 								]}
 							</TextMask>
 						</div>
@@ -101,7 +101,7 @@ export default function HomeServices() {
 							<div className="text-white font-Monstrate paragraph leading-loose">
 								<TextMask>
 									{[
-										"Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for lorem ipsum will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
+										"Looking for professional TV mounting services? We are here to help! Whether you need assistance with installation, mounting, or setup, our expert team is ready to provide you with top-notch service. Contact us today to discuss your needs and schedule an appointment.",
 									]}
 								</TextMask>
 							</div>
@@ -191,7 +191,7 @@ export default function HomeServices() {
 						<div className="text-white font-Monstrate paragraph leading-loose">
 							<TextMask>
 								{[
-									"Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for lorem ipsum will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
+									"Looking for professional TV mounting services? We are here to help! Whether you need assistance with installation, mounting, or setup, our expert team is ready to provide you with top-notch service. Contact us today to discuss your needs and schedule an appointment.",
 								]}
 							</TextMask>
 						</div>

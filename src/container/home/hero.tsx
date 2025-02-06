@@ -166,7 +166,7 @@ export default function HomeHero() {
 									click the book now button below.
 								</p>
 								<Link
-									to="/request-a-demo"
+									to="/contact-us"
 									className="text-[#F99A03] font-Monstrate text-[24px] font-normal leading-tight flex items-center gap-3 cursor-pointer relative z-50">
 									Book now{" "}
 									<svg

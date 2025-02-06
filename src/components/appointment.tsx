@@ -20,7 +20,7 @@ export default function Appointment() {
 					<div className="flex flex-col gap-5 items-center justify-center">
 						<div className="flex flex-col gap-2 items-center justify-center">
 							<h1 className="text-white text-center xm:text-left sm:text-left xm:w-full sm:w-full font-HyperspaceRace heading font-black leading-tight capitalize">
-								Book Appointment <br /> With The Mounting Man
+								Book Appointment <br /> With The Mounting King
 							</h1>
 							<p className="w-1/2 text-white text-center xm:text-left sm:text-left xm:w-full sm:w-full font-Monstrate text-[18px] leading-normal">
 								Enter Your Zip Code (You may also simply use this to get a

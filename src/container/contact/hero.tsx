@@ -5,7 +5,7 @@ import AnimatedText from "../../components/animated-text.tsx";
 
 export default function Hero() {
 	return (
-		<div className="w-full h-[70vh] flex items-center relative justify-center sm:h-[70vh] xm:h-[70vh]">
+		<div className="w-full h-[70vh] flex items-center relative justify-center xm:h-[50vh] sm:h-[50vh]">
 			<img
 				src={heroBackground}
 				alt="bg"

@@ -43,17 +43,17 @@ export default function Form() {
 					<div className="w-full flex justify-between gap-5 xm:flex-col sm:flex-col">
 						<div className="w-1/2 flex flex-col gap-4 xm:w-full sm:w-full">
 							<AnimatedText
-								className="text-white font-HyperspaceRace heading font-black leading-tight capitalize"
+								className="text-white sm:text-black xm:text-black font-HyperspaceRace heading font-black leading-tight capitalize"
 								text="Contact Us For"
 							/>
 							<div className="w-fit contactBanner">
 								<AnimatedText
 									text="More Info"
-									className="text-white text-center font-HyperspaceRace heading font-bold leading-tight capitalize -mt-4"
+									className="text-white sm:text-black xm:text-black text-center font-HyperspaceRace heading font-bold leading-tight capitalize -mt-4"
 								/>
 							</div>
 						</div>
-						<p className="w-1/2 text-white font-Monstrate text-[20px] leading-normal xm:w-full sm:w-full">
+						<p className="w-1/2 text-white sm:text-black xm:text-black font-Monstrate text-[20px] leading-normal xm:w-full sm:w-full">
 							We provide professional TV mounting services to ensure your
 							television is securely and perfectly positioned. Whether you need
 							help with installation, mounting, or setup, our expert team is

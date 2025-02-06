@@ -41,7 +41,7 @@ export default function BookAService() {
 		<>
 			<Navbar />
 			<div
-				className="w-full min-h-[120vh] padding-x padding-y flex items-center justify-center pt-20 pb-60 xm:pb-20 sm:pb-20"
+				className="w-full h-fit padding-x padding-y flex items-center justify-center pt-20 pb-60 xm:pb-20 sm:pb-20"
 				style={{
 					background:
 						"linear-gradient(0deg, rgba(106,155,190,1) 0%, rgba(0,73,124,1) 30%, rgba(0,73,124,1) 50%, rgba(0,73,124,1) 70%, rgba(106,155,190,1) 100%)",

@@ -3,7 +3,7 @@ import { heroCloud } from "../assets/index.ts";
 
 export default function Badal() {
 	return (
-		<div className="cloud-container">
+		<div className="cloud-container xl:h-[550px] lg:h-[500px] md:h-[350px]">
 			<div className="cloud-wrapper">
 				<img
 					src={heroCloud}

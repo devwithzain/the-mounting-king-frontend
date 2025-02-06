@@ -34,21 +34,17 @@ export default function AboutHome() {
 						<h1 className="text-[#F99A03] mb-5 font-HyperspaceRace text-[35px] font-black leading-tight capitalize">
 							<TextMask>{["About Us"]}</TextMask>
 						</h1>
-						<h1 className="relative z-50 flex flex-col">
+						<h1 className="relative z-50 flex flex-col mb-5">
 							<AnimatedText
-								text="We Mount All TV"
+								text="We Mount All TV of"
 								className="text-white font-HyperspaceRace heading font-black leading-tight flex capitalize overflow-hidden"
 							/>
 							<AnimatedText
-								text="of All Sizes Onto"
+								text="All Sizes Onto All Surfaces"
 								className="text-white font-HyperspaceRace heading font-black leading-tight flex capitalize overflow-hidden"
 							/>
 							<AnimatedText
-								text="All Surfaces Often"
-								className="text-white font-HyperspaceRace heading font-black leading-tight flex capitalize overflow-hidden"
-							/>
-							<AnimatedText
-								text="Same Day"
+								text="Often Same Day"
 								className="text-white font-HyperspaceRace heading font-black leading-tight flex capitalize overflow-hidden"
 							/>
 						</h1>
@@ -58,7 +54,7 @@ export default function AboutHome() {
 						<div className="text-white font-Monstrate paragraph leading-loose">
 							<TextMask>
 								{[
-									"Welcome to The Mounting Man, your trusted partner for expert TV installation. With our team of skilled technicians, we ensure a seamless and hassle-free experience from start to finish.",
+									"Welcome to The Mounting King, your trusted partner for expert TV installation. With our team of skilled technicians, we ensure a seamless and hassle-free experience from start to finish.",
 								]}
 							</TextMask>
 						</div>

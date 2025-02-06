@@ -85,15 +85,14 @@ export default function FormTwo({
 							Book a Date and Time Book your preferred date and time
 						</h1>
 						<p className="text-black font-Monstrate text-[18px] leading-normal capitalize">
-							Lorem Ipsum is simply dummy text of the printing and typesetting
-							industry. Lorem Ipsum has been the industry s standard dummy text
-							ever since the 1500s, when an unknown printer took a galley of
-							type and scrambled it to make a type. Specimen book.
+							Choose a convenient date and time for our professional TV mounting
+							services. We offer flexible scheduling to fit your busy lifestyle.
+							Our expert team will ensure your TV is securely mounted and
+							perfectly positioned.
 						</p>
 						<p className="text-black font-Monstrate text-[18px] leading-normal capitalize">
-							It has survived not only five centuries, but also the leap into
-							electronic typesetting, remaining essentially unchanged. It was
-							popularised in the 1960s.
+							Contact us today to book your appointment and enhance your viewing
+							experience with our top-notch service.
 						</p>
 					</div>
 					<div className="flex-1 flex flex-col gap-5 border border-black rounded-lg p-5 justify-between">

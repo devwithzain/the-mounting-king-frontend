@@ -4,7 +4,7 @@ import AnimatedText from "../../components/animated-text.tsx";
 
 export default function AboutHero() {
 	return (
-		<div className="w-full h-[70vh] flex items-center relative justify-center sm:h-[70vh] xm:h-[70vh]">
+		<div className="w-full h-[70vh] flex items-center relative justify-center xm:h-[50vh] sm:h-[50vh]">
 			<div className="flex flex-col gap-5">
 				<div className="absolute -right-[350px] -translate-y-1/2 top-1/2 h-[500px] blur-[120px] bg-gradient-to-b from-[#007DFE] via-[#c092df] to-[#007DFE] rounded-full w-[500px] xm:hidden sm:hidden" />
 				<AnimatedText
