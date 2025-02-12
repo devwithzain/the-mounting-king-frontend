@@ -211,7 +211,7 @@ export default function Form() {
 								</button>
 							) : (
 								<Link
-									to={`/request-a-demo/services/${id}/book-a-service`}
+									to={`/book-now/services/${id}/book-a-service`}
 									className={`px-6 py-4 rounded-lg text-[20px] font-Monstrate leading-tight tracking-tight ${
 										isContinueDisabled
 											? "text-black bg-gray-200 cursor-not-allowed"

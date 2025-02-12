@@ -1,13 +1,13 @@
 import axios from "axios";
 import toast from "react-hot-toast";
 import { IoBagHandle } from "react-icons/io5";
+import Badal from "../../components/badal.tsx";
 import { TuserProps } from "../../types/index.ts";
 import React, { useEffect, useState } from "react";
 import { getToken } from "../../utils/get-token.ts";
+import { heroBackground } from "../../assets/index.ts";
 import { getUserData } from "../../utils/currentUser.ts";
-import { heroCloud, heroBackground } from "../../assets/index.ts";
 import ProductGallery from "../../components/product-gallery.tsx";
-import Badal from "../../components/badal.tsx";
 
 export default function ProductDetailHero(product: any) {
 	const token = getToken();

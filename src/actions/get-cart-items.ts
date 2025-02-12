@@ -1,4 +1,4 @@
-import { getToken } from "@/utils/get-token";
+import { getToken } from "../utils/get-token";
 
 const apiUrl = `https://themountingking.com/backend/api/cart`;
 const getCartItems = async () => {

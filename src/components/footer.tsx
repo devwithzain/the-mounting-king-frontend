@@ -160,9 +160,9 @@ export default function Footer() {
 									Products
 								</Link>
 								<Link
-									to="/request-a-demo"
+									to="/book-now"
 									className="text-white text-[16px] font-Monstrate leading-tight tracking-tight">
-									Request A Demo
+									Book Now
 								</Link>
 								<Link
 									to="/contact-us"
@@ -265,9 +265,9 @@ export default function Footer() {
 									Products
 								</Link>
 								<Link
-									to="/request-a-demo"
+									to="/book-now"
 									className="text-white text-[16px] font-Monstrate leading-tight tracking-tight">
-									Request A Demo
+									Book Now
 								</Link>
 								<Link
 									to="/contact-us"

@@ -65,7 +65,7 @@ export default function RequestADemoServices() {
 										</p>
 									</div>
 									<Link
-										to={`/request-a-demo/services/${service.id}`}
+										to={`/book-now/services/${service.id}`}
 										className="w-full text-[#0E0E30] font-Monstrate text-[20px] font-normal leading-normal tracking-tight bg-[#F99A03] px-6 py-3 rounded-lg">
 										Book
 									</Link>

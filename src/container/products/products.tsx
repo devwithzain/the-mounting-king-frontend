@@ -1,18 +1,21 @@
 import axios from "axios";
 import toast from "react-hot-toast";
-import { Link } from "react-router-dom";
 import { FaRegHeart } from "react-icons/fa6";
 import { FaShoppingCart } from "react-icons/fa";
 import React, { useEffect, useState } from "react";
 import { getToken } from "../../utils/get-token.ts";
 import getProducts from "../../actions/get-products.ts";
 import { getUserData } from "../../utils/currentUser.ts";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { TproductsProps, TuserProps } from "../../types/index.ts";
 
 export default function Products() {
 	const token = getToken();
-	const [user, setUser] = useState<TuserProps>();
+	const navigate = useNavigate();
+	const location = useLocation();
 	const [products, setProducts] = useState([]);
+	const [user, setUser] = useState<TuserProps>();
+
 	useEffect(() => {
 		const fetchUserData = async () => {
 			const userData = await getUserData(token);
@@ -20,6 +23,7 @@ export default function Products() {
 		};
 		fetchUserData();
 	});
+
 	useEffect(() => {
 		const fetchProducts = async () => {
 			try {
@@ -31,33 +35,35 @@ export default function Products() {
 		};
 		fetchProducts();
 	}, []);
+
 	const addToCart = async (productId: string) => {
-		if (!user || !token) {
-			window.location.href = "/login";
-			return;
-		}
-		try {
-			const response = await axios.post(
-				`https://themountingking.com/backend/api/cart`,
-				{
-					user_id: user?.id,
-					product_id: productId,
-				},
-				{
-					headers: {
-						Authorization: `Bearer ${token}`,
+		if (!token) {
+			navigate("/login", { state: { from: location.pathname } }); // Redirect to login
+		} else {
+			try {
+				const response = await axios.post(
+					`https://themountingking.com/backend/api/cart`,
+					{
+						user_id: user?.id,
+						product_id: productId,
 					},
-				},
-			);
-			toast.success(response.data.success);
-		} catch (error: unknown) {
-			if (error instanceof Error) {
-				toast.error(error.message);
-			} else {
-				toast.error("An unknown error occurred");
+					{
+						headers: {
+							Authorization: `Bearer ${token}`,
+						},
+					},
+				);
+				toast.success(response.data.success);
+			} catch (error: unknown) {
+				if (error instanceof Error) {
+					toast.error(error.message);
+				} else {
+					toast.error("An unknown error occurred");
+				}
 			}
 		}
 	};
+
 	return (
 		<div className="w-full z-50 py-80 relative padding-x xm:py-10 sm:py-10 md:py-20">
 			<div className="w-full grid grid-cols-4 md:grid-cols-2 sm:grid-cols-1 xm:grid-cols-1 gap-7">

@@ -22,7 +22,7 @@ export const navLinks = [
    {
       id: 5,
       title: "Request A Demo",
-      href: "/request-a-demo",
+      href: "/book-now",
    },
    {
       id: 6,

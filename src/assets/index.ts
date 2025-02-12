@@ -17,7 +17,7 @@ export { default as placeholder } from './placeholder.png';
 export { default as arrowRight } from './arrowRight.svg';
 export { default as ServiceBackground } from './serviceBackground.png';
 export { default as aboutOne } from './1.png';
-export { default as imgOne } from './img.png';
+export { default as imgOne } from './img.webp';
 export { default as aboutTwo } from './2.png';
 export { default as aboutThree } from './3.png';
 export { default as aboutFour } from './4.png';

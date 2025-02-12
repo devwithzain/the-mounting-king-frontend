@@ -4,6 +4,7 @@ import { TuserProps } from "../types/index.ts";
 import { getToken } from "../utils/get-token.ts";
 import React, { useEffect, useState } from "react";
 import { getUserData } from "../utils/currentUser.ts";
+import toast from "react-hot-toast";
 
 export default function CartPage() {
 	const token = getToken();
@@ -174,8 +175,13 @@ export default function CartPage() {
 								</span>
 							</div>
 							<button
+								disabled={cartItems.length === 0}
 								onClick={handleCheckout}
-								className="w-full bg-[#F99A03] btn text-center transition-all duration-300 ease-in-out text-white px-6 py-3 text-[20px] rounded-full font-Monstrate leading-tight tracking-tight">
+								className={`w-full text-center transition-all duration-300 ease-in-out px-6 py-3 text-[20px] rounded-full font-Monstrate leading-tight tracking-tight ${
+									cartItems.length === 0
+										? "cursor-not-allowed bg-gray-600 text-white"
+										: " bg-[#F99A03]"
+								}`}>
 								Checkout
 							</button>
 						</div>

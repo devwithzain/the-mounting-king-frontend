@@ -2,6 +2,7 @@ import React from "react";
 import App from "./App.tsx";
 import "./styles/globals.css";
 import ReactDOM from "react-dom/client";
+import ScrollToTop from "./components/scroll-to-top.tsx";
 import ToastProvider from "./provider/toast-provider.tsx";
 import { BrowserRouter as Router } from "react-router-dom";
 
@@ -11,6 +12,7 @@ if (rootElement) {
 	root.render(
 		<React.StrictMode>
 			<Router>
+				<ScrollToTop />
 				<ToastProvider />
 				<App />
 			</Router>

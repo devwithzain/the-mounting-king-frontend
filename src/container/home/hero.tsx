@@ -19,7 +19,7 @@ import {
 export default function HomeHero() {
 	return (
 		<>
-			<div className="w-full h-[100vh] flex items-center relative justify-center xm:hidden sm:hidden">
+			<div className="w-full h-screen flex items-center relative justify-center xm:hidden sm:hidden">
 				<div className="w-full h-screen mt-10 absolute top-0 left-0 flex items-center justify-center flex-col">
 					<div className="absolute right-24 top-28 h-[500px] blur-[150px] bg-gradient-to-b from-[#007DFE] via-[#c092df] to-[#007DFE] rounded-full w-[500px] overflow-hidden" />
 					<div className="w-full py-5 z-50 padding-x">
@@ -166,7 +166,7 @@ export default function HomeHero() {
 									click the book now button below.
 								</p>
 								<Link
-									to="/contact-us"
+									to="/book-now"
 									className="text-[#F99A03] font-Monstrate text-[24px] font-normal leading-tight flex items-center gap-3 cursor-pointer relative z-50">
 									Book now{" "}
 									<svg

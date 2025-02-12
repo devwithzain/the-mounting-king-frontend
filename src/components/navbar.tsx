@@ -82,22 +82,21 @@ export default function Navbar() {
 						isActive={pathname === "/about"}>
 						About
 					</Tab>
-					{/* <Tab
+					<Tab
 						setPosition={setPosition}
 						to="/products"
 						isActive={
 							pathname === "/products" || pathname === "/product-detail"
 						}>
 						Products
-					</Tab> */}
+					</Tab>
 					<Tab
 						setPosition={setPosition}
-						to="/request-a-demo"
+						to="/book-now"
 						isActive={
-							pathname === "/request-a-demo" ||
-							pathname === "/request-a-demo/services"
+							pathname === "/book-now" || pathname === "/book-now/services"
 						}>
-						Request A Demo
+						Book Now
 					</Tab>
 
 					<Cursor position={position} />
@@ -127,6 +126,7 @@ export default function Navbar() {
 		</>
 	);
 }
+
 const Tab = ({
 	children,
 	to,

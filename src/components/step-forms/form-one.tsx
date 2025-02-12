@@ -40,7 +40,7 @@ export default function FormOne({
 							placeholder="Enter zip code"
 						/>
 						<button
-							onClick={() => navigate("/request-a-demo/services")}
+							onClick={() => navigate("/book-now/services")}
 							className={`text-[#0E0E30] font-Monstrate text-[20px] font-normal leading-tight tracking-tight bg-[#F99A03] px-6 py-3 rounded-r-lg ${
 								zipCode.length < 5
 									? "bg-gray-200 cursor-not-allowed pointer-events-none"

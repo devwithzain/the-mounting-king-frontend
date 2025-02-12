@@ -6,7 +6,7 @@ export default function Appointment() {
 	const [zipCode, setZipCode] = useState("");
 	const onSubmits = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		navigate("/request-a-demo/services");
+		navigate("/book-now/services");
 	};
 	return (
 		<div

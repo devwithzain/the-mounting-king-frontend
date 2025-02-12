@@ -65,19 +65,19 @@ export default function App() {
 					element={<ProductDetail />}
 				/>
 				<Route
-					path="/request-a-demo"
+					path="/book-now"
 					element={<RequestADemo />}
 				/>
 				<Route
-					path="/request-a-demo/services"
+					path="/book-now/services"
 					element={<RequestADemoServices />}
 				/>
 				<Route
-					path="/request-a-demo/services/:id"
+					path="/book-now/services/:id"
 					element={<Form />}
 				/>
 				<Route
-					path="/request-a-demo/services/:id/book-a-service"
+					path="/book-now/services/:id/book-a-service"
 					element={<BookAService />}
 				/>
 			</Routes>
