@@ -64,19 +64,19 @@ export default function RegisterForm() {
 			initial={{ y: "115%" }}
 			animate={{ y: "0%" }}
 			transition={{ duration: 1, ease: "easeInOut" }}
-			className="w-[50%] h-[70vh] bg-[#201F41] rounded-xl">
-			<div className="w-full h-full flex justify-between items-center">
+			className="w-[50%] h-[70vh] bg-[#201F41] rounded-xl py-5">
+			<div className="w-full h-full flex justify-between items-center pl-5">
 				<div className="w-1/2 h-full pointer-events-none">
 					<img
 						src={imgOne}
 						alt="fromImage"
-						className="w-full h-full object-cover rounded-l-xl"
+						className="w-full h-full object-cover rounded-xl"
 					/>
 				</div>
 				<div className="w-1/2 flex items-center justify-center">
 					<div className="w-full px-10 flex justify-center flex-col gap-8">
 						<div className="flex flex-col gap-4">
-							<h1 className="text-[40px] text-white font-medium leading-tight tracking-tight font-Monstrate">
+							<h1 className="text-[40px] text-white font-bold leading-tight tracking-tight font-Monstrate">
 								Create an account
 							</h1>
 							<div className="flex items-center gap-2">

@@ -255,3 +255,17 @@ body {
 .cloud4 {
 	animation: animCloud 80s linear infinite;
 }
+
+.formBg {
+	background-image: url("../assets/formBg.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.sliderBg {
+	background-image: url("../assets/heroBackground.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}

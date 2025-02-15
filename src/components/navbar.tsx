@@ -82,14 +82,14 @@ export default function Navbar() {
 						isActive={pathname === "/about"}>
 						About
 					</Tab>
-					<Tab
+					{/* <Tab
 						setPosition={setPosition}
 						to="/products"
 						isActive={
 							pathname === "/products" || pathname === "/product-detail"
 						}>
 						Products
-					</Tab>
+					</Tab> */}
 					<Tab
 						setPosition={setPosition}
 						to="/book-now"

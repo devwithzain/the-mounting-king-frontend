@@ -1,10 +1,10 @@
+import { useParams } from "react-router-dom";
 import Button from "../../components/button.tsx";
 import React, { useEffect, useState } from "react";
+import { aboutCrownR } from "../../assets/index.ts";
 import getService from "../../actions/get-service.ts";
 import Advantage from "../../components/advantage.tsx";
 import AnimatedText from "../../components/animated-text.tsx";
-import { aboutCrownR } from "../../assets/index.ts";
-import { useParams } from "react-router-dom";
 
 export default function ServiceDetailInfo() {
 	const { id } = useParams();
@@ -27,7 +27,7 @@ export default function ServiceDetailInfo() {
 	}, [id]);
 
 	return (
-		<div className="w-full padding-x relative padding-y flex flex-col gap-40 my-40 xm:gap-10 sm:gap-10 xm:my-10 sm:my-10 pt-10">
+		<div className="w-full padding-x relative padding-y flex flex-col gap-40 my-80 xm:gap-10 sm:gap-10 xm:my-10 sm:my-10 pt-10">
 			<div className="w-full flex justify-between gap-10 relative xm:flex-col sm:flex-col mt-20">
 				<div className="w-1/2 xm:w-full sm:w-full">
 					<img

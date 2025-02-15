@@ -54,13 +54,13 @@ export default function LoginForm() {
 			initial={{ y: "115%" }}
 			animate={{ y: "0%" }}
 			transition={{ duration: 1, ease: "easeInOut" }}
-			className="w-[50%] h-[70vh] bg-[#201F41] rounded-xl">
-			<div className="w-full h-full flex justify-between items-center">
+			className="w-[50%] bg-[#201F41] rounded-xl py-5">
+			<div className="w-full h-full flex justify-between items-center pl-5">
 				<div className="w-1/2 h-full pointer-events-none">
 					<img
 						src={imgOne}
 						alt="fromImage"
-						className="w-full h-full object-cover rounded-l-xl"
+						className="w-full h-full object-cover rounded-xl"
 					/>
 				</div>
 				<div className="w-1/2 flex items-center justify-center">

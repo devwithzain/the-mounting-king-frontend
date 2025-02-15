@@ -1,12 +1,12 @@
 import Lenis from "lenis";
 import { bg } from "../assets/index.ts";
 import React, { useEffect } from "react";
+import Badal from "../components/badal.tsx";
+import Slider from "../components/slider.tsx";
 import Navbar from "../components/navbar.tsx";
-import HomeHero from "../container/home/hero.tsx";
 import HomeAbout from "../container/home/about.tsx";
 import HomeFooter from "../components/home-footer.tsx";
 import HomeServices from "../container/home/services.tsx";
-import Badal from "../components/badal.tsx";
 
 export default function Home() {
 	useEffect(() => {
@@ -26,7 +26,7 @@ export default function Home() {
 				className="w-full h-full object-cover absolute top-0 left-0 z-0"
 			/>
 			<Navbar />
-			<HomeHero />
+			<Slider />
 			<div className="xl:mb-40  w-full xm:hidden sm:hidden">
 				<Badal />
 			</div>

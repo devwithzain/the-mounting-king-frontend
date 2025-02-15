@@ -259,11 +259,11 @@ export default function Footer() {
 									className="text-white text-[16px] font-Monstrate leading-tight tracking-tight">
 									About
 								</Link>
-								<Link
+								{/* <Link
 									to="/products"
 									className="text-white text-[16px] font-Monstrate leading-tight tracking-tight">
 									Products
-								</Link>
+								</Link> */}
 								<Link
 									to="/book-now"
 									className="text-white text-[16px] font-Monstrate leading-tight tracking-tight">
@@ -277,7 +277,8 @@ export default function Footer() {
 							</div>
 							<div className="">
 								<p className="text-white text-[16px] font-Monstrate leading-tight tracking-tight">
-									© 2025 All Rights Reserved
+									©{new Date().getFullYear()} copyright@themountingking.com -
+									All Rights Reserved.
 								</p>
 							</div>
 						</div>
