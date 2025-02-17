@@ -91,6 +91,7 @@ export type TButtonProps = {
 export type TRoundedProps = {
    children: React.ReactNode;
    className?: string;
+   style?: any;
    backgroundColor: string;
 };
 

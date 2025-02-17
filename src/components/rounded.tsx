@@ -5,6 +5,7 @@ import React, { useEffect, useRef } from "react";
 export default function Rounded({
 	children,
 	className,
+	style,
 	backgroundColor,
 	...attributes
 }: TRoundedProps) {
@@ -39,6 +40,7 @@ export default function Rounded({
 
 	return (
 		<div
+			style={style}
 			className={`rounded-lg relative flex items-center justify-center overflow-hidden ${className}`}
 			onMouseEnter={() => {
 				manageMouseEnter();

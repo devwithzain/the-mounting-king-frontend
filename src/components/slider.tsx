@@ -3,6 +3,7 @@ import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import TextMask from "./text-mask.tsx";
 import { Link } from "react-router-dom";
+import Button from "../components/button.tsx";
 import AnimatedText from "./animated-text.tsx";
 import HomeHero from "../container/home/hero.tsx";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -89,13 +90,14 @@ export default function Slider() {
 												]}
 											</TextMask>
 										</div>
-										<div className="w-full flex items-center justify-between bg-[#F99A03] cursor-pointer rounded-[100px] group flex-col animate-bounce mt-8">
+										<div className="w-full flex items-center justify-between bg-[#F99A03] cursor-pointer rounded-[100px] group flex-col animate-bounce mt-8 xm:hidden sm:hidden">
 											<Link
 												className="w-full text-lg uppercase font-normal font-Monstrate rounded-[100px]"
 												to="/book-now">
 												<Rounded
 													className={`rounded-[100px] flex flex-col relative w-full`}
-													backgroundColor="#212121">
+													backgroundColor="#212121"
+													style={{ borderRadius: "100px" }}>
 													<p className="text-white text-xl group-hover:text-white z-[9999] absolute top-3">
 														Click here to
 													</p>
@@ -125,6 +127,15 @@ export default function Slider() {
 												</Rounded>
 											</Link>
 										</div>
+										<div className="w-fit  items-center justify-between bg-[#F99A03] cursor-pointer rounded-lg group hidden sm:flex xm:flex">
+											<Button
+												bgcolor="#212121"
+												to="/book-now"
+												title="book now"
+												className="bg-white text-black"
+												style={{ color: "#fff" }}
+											/>
+										</div>
 									</div>
 									<Link
 										to="/book-now"
@@ -139,7 +150,7 @@ export default function Slider() {
 							</div>
 						</SwiperSlide>
 						<SwiperSlide>
-							<div className="w-full min-h-screen flex items-center justify-center gap-20 md:items-end lg:items-end md:pb-14 lg:pb-14 xm:pt-28 sm:pt-28">
+							<div className="w-full min-h-screen flex items-center justify-center gap-20 md:items-end lg:items-end md:pb-14 lg:pb-10 xm:pt-28 sm:pt-28">
 								<div className="xm:flex-col sm:flex-col container gap-10 mx-auto flex items-center justify-between">
 									<div className="w-1/2 flex flex-col gap-2 xl:gap-5 xm:w-full sm:w-full">
 										<div className="flex items-center gap-2">
@@ -182,13 +193,14 @@ export default function Slider() {
 												]}
 											</TextMask>
 										</div>
-										<div className="w-full flex items-center justify-between bg-[#F99A03] cursor-pointer rounded-[100px] group flex-col animate-bounce mt-8">
+										<div className="w-full flex items-center justify-between bg-[#F99A03] cursor-pointer rounded-[100px] group flex-col animate-bounce mt-8 xm:hidden sm:hidden">
 											<Link
 												className="w-full text-lg uppercase font-normal font-Monstrate rounded-[100px]"
 												to="/book-now">
 												<Rounded
 													className={`rounded-[100px] flex flex-col relative w-full`}
-													backgroundColor="#212121">
+													backgroundColor="#212121"
+													style={{ borderRadius: "100px" }}>
 													<p className="text-white text-xl group-hover:text-white z-[9999] absolute top-3">
 														Click here to
 													</p>
@@ -217,6 +229,15 @@ export default function Slider() {
 													</p>
 												</Rounded>
 											</Link>
+										</div>
+										<div className="w-fit  items-center justify-between bg-[#F99A03] cursor-pointer rounded-lg group hidden sm:flex xm:flex">
+											<Button
+												bgcolor="#212121"
+												to="/book-now"
+												title="book now"
+												className="bg-white text-black"
+												style={{ color: "#fff" }}
+											/>
 										</div>
 									</div>
 									<Link

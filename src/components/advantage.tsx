@@ -29,7 +29,7 @@ export default function Advantage() {
 						}}
 						viewport={{ once: true }}
 						className="w-full group">
-						<div className="w-full z-10 flex flex-col justify-between gap-4 group-hover:bg-white px-6 py-10 relative cursor-pointer overflow-hidden rounded-2xl transition-all duration-500 transform hover:scale-105 hover:shadow-2xl">
+						<div className="w-full min-h-[400px] z-10 flex flex-col justify-between gap-4 group-hover:bg-white px-6 py-10 relative cursor-pointer overflow-hidden rounded-2xl transition-all duration-500 transform hover:scale-105 hover:shadow-2xl">
 							<img
 								src={marketValue}
 								alt="marketValueImg"
@@ -58,7 +58,7 @@ export default function Advantage() {
 						}}
 						viewport={{ once: true }}
 						className="w-full group">
-						<div className="w-full z-10 flex flex-col gap-4 group-hover:bg-white px-6 py-10 relative cursor-pointer overflow-hidden rounded-2xl transition-all duration-500 transform hover:scale-105 hover:shadow-2xl">
+						<div className="w-full min-h-[400px] z-10 flex flex-col gap-4 group-hover:bg-white px-6 py-10 relative cursor-pointer overflow-hidden rounded-2xl transition-all duration-500 transform hover:scale-105 hover:shadow-2xl">
 							<img
 								src={time}
 								alt="timeImg"
@@ -88,7 +88,7 @@ export default function Advantage() {
 						}}
 						viewport={{ once: true }}
 						className="w-full group">
-						<div className="w-full z-10 flex flex-col gap-4 group-hover:bg-white px-6 py-10 relative cursor-pointer overflow-hidden rounded-2xl transition-all duration-500 transform hover:scale-105 hover:shadow-2xl">
+						<div className="w-full min-h-[400px] z-10 flex flex-col gap-4 group-hover:bg-white px-6 py-10 relative cursor-pointer overflow-hidden rounded-2xl transition-all duration-500 transform hover:scale-105 hover:shadow-2xl">
 							<img
 								src={advantage}
 								alt="advantageImg"
