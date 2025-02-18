@@ -23,7 +23,7 @@ export default function FormTwo({
 	return (
 		<div className="w-full flex items-center justify-center bg-white padding-y padding-x rounded-lg z-[999] mb-[200px] sm:mb-0 xm:mb-0">
 			<div className="flex flex-col gap-8 items-center justify-center h-full">
-				<h1 className="text-black text-center font-HyperspaceRace heading font-black leading-tight capitalize">
+				<h1 className="text-black text-center font-Monstrate heading font-black leading-tight capitalize">
 					Select Main Service
 				</h1>
 				<p className="text-black text-center font-Monstrate text-[18px] leading-normal">
@@ -39,7 +39,7 @@ export default function FormTwo({
 							key={service.id}
 							className="w-full bg-white gap-7 z-50 relative flex flex-col py-10 border border-black/5 shadow-xl rounded-lg px-5 justify-between">
 							<div className="flex flex-col gap-3">
-								<h1 className="text-black font-HyperspaceRace text-[22px] font-black leading-tight capitalize">
+								<h1 className="text-black font-Monstrate text-[22px] font-black leading-tight capitalize">
 									{service.service_title}
 								</h1>
 								<p className="text-black font-Monstrate text-[16px] leading-normal">

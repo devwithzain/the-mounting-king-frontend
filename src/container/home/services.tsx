@@ -14,14 +14,18 @@ export default function HomeServices() {
 				<Advantage />
 				<div className="w-full flex justify-between gap-20 relative padding-x xm:flex-col sm:flex-col sm:gap-10 xm:gap-10">
 					<div className="flex-1 flex flex-col gap-10 sm:gap-5 xm:gap-5">
-						<div>
+						<div className="flex flex-col gap-2">
 							<AnimatedText
-								text="Bracket"
+								text="Watch Our Work"
+								className="text-white text-center font-HyperspaceRace heading font-bold leading-tight capitalize"
+							/>
+							<AnimatedText
+								text="in Action Mounting King"
 								className="text-white text-center font-HyperspaceRace heading font-bold leading-tight capitalize"
 							/>
 							<span
 								className={`w-fit textRapper flex text-white font-HyperspaceRace heading font-black leading-normal capitalize`}>
-								{"Supplied".split(" ").map((word, index) => (
+								{"TV Mounting".split(" ").map((word, index) => (
 									<motion.p
 										initial={{ y: "100%" }}
 										whileInView={{ y: 0 }}
@@ -41,7 +45,7 @@ export default function HomeServices() {
 						<div className="text-white font-Monstrate paragraph leading-normal">
 							<TextMask>
 								{[
-									"The Mounting King provides high-quality brackets designed for reliability and durability, ensuring a secure installation for your TV. Our brackets are carefully selected to meet the highest standards, offering stability and support for a flawless viewing experience.",
+									"Experience hassle-free, professional TV mounting with Mounting King! Watch our video to see how we deliver seamless installations, secure mounts, and a clean, polished look for any space.",
 								]}
 							</TextMask>
 						</div>

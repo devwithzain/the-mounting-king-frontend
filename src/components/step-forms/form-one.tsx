@@ -12,7 +12,7 @@ export default function FormOne({
 		<div className="w-fit flex items-center justify-center bg-white padding-y padding-x rounded-lg z-[999]">
 			<div className="flex flex-col gap-8 items-center justify-center">
 				<div className="flex flex-col gap-5 items-center justify-center">
-					<h1 className="text-black text-center font-HyperspaceRace heading font-black leading-[100px] capitalize">
+					<h1 className="text-black text-center font-Monstrate heading font-black leading-[100px] capitalize">
 						Book Appointment <br /> With The Mounting Man
 					</h1>
 					<p className="w-1/2 text-black text-center font-Monstrate text-[18px] leading-normal">

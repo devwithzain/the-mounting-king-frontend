@@ -81,7 +81,7 @@ export default function FormTwo({
 			<div className="flex flex-col gap-8 items-center justify-center">
 				<div className="w-full flex justify-between gap-5 xm:flex-col sm:flex-col">
 					<div className="flex-1 flex flex-col gap-5">
-						<h1 className="text-black font-HyperspaceRace text-[45px] font-black leading-tight capitalize">
+						<h1 className="text-black font-Monstrate text-[45px] font-black leading-tight capitalize">
 							Book a Date and Time Book your preferred date and time
 						</h1>
 						<p className="text-black font-Monstrate text-[18px] leading-normal capitalize">
@@ -96,7 +96,7 @@ export default function FormTwo({
 						</p>
 					</div>
 					<div className="flex-1 flex flex-col gap-5 border border-black rounded-lg p-5 justify-between">
-						<h1 className="text-black font-HyperspaceRace text-[28px] font-black leading-tight capitalize">
+						<h1 className="text-black font-Monstrate text-[28px] font-black leading-tight capitalize">
 							Mount 1 Or More TVs Normal TV Onto Any Surface.
 						</h1>
 						{Object.keys(selectedItems).length > 0 && (

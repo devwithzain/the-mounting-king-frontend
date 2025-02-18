@@ -145,7 +145,7 @@ export default function FormTen() {
 	return (
 		<div className="w-full flex items-center justify-center bg-white padding-y padding-x rounded-lg z-[999] mb-[200px] xm:mb-0 sm:mb-0">
 			<div className="w-full flex flex-col gap-8 items-center justify-center">
-				<h1 className="text-black text-center font-HyperspaceRace heading font-black leading-tight capitalize">
+				<h1 className="text-black text-center font-Monstrate heading font-black leading-tight capitalize">
 					Almost Done
 				</h1>
 				<p className="text-black font-Monstrate paragraph leading-normal capitalize">
@@ -200,7 +200,7 @@ export default function FormTen() {
 					</div>
 					<div className="w-full">
 						<div className="flex flex-col gap-5 border border-black rounded-lg p-5">
-							<h1 className="text-black font-HyperspaceRace text-[28px] font-black leading-tight capitalize">
+							<h1 className="text-black font-Monstrate text-[28px] font-black leading-tight capitalize">
 								Mount 1 Or More TVs <br /> Normal TV Onto Any <br /> Surface.
 							</h1>
 							{Object.keys(selectedItems).length > 0 && (

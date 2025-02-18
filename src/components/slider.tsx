@@ -22,7 +22,7 @@ export default function Slider() {
 	return (
 		<div
 			id="transformation"
-			className="w-full relative">
+			className="w-full relative overflow-hidden">
 			<div className="absolute -right-10 top-40 h-[500px] blur-[150px] bg-gradient-to-b from-[#007DFE] via-[#c092df] to-[#007DFE] rounded-full w-[500px] overflow-hidden xm:hidden sm:hidden" />
 			<div className="absolute left-10 top-40 hidden xl:block">
 				<img
@@ -33,7 +33,7 @@ export default function Slider() {
 				/>
 			</div>
 			<div className="w-full h-full items-center flex justify-center">
-				<div className="w-full p-5 overflow-hidden">
+				<div className="w-full overflow-hidden">
 					<Swiper
 						modules={[Navigation, Autoplay]}
 						loop
@@ -44,11 +44,13 @@ export default function Slider() {
 						spaceBetween={30}
 						onSwiper={(swiper) => (swiperRef.current = swiper)}>
 						<SwiperSlide>
-							<HomeHero />
+							<div className="padding-x">
+								<HomeHero />
+							</div>
 						</SwiperSlide>
 						<SwiperSlide>
-							<div className="w-full min-h-screen flex items-center justify-center gap-20 md:items-end lg:items-end md:pb-14 lg:pb-14 xm:pt-28 sm:pt-28">
-								<div className="xm:flex-col sm:flex-col container gap-10 mx-auto flex items-center justify-between">
+							<div className="w-full min-h-screen flex items-center lg:items-end lg:pb-10 justify-center gap-20  xm:pt-28 sm:pt-28 padding-x">
+								<div className="xm:flex-col sm:flex-col container gap-10 mx-auto flex items-center justify-between md:mt-20 lg:mt-20">
 									<div className="w-1/2 flex flex-col gap-2 xl:gap-5 xm:w-full sm:w-full">
 										<div className="flex items-center gap-2">
 											<AnimatedText
@@ -81,16 +83,16 @@ export default function Slider() {
 										<div className="text-[#1F1F3D] font-Monstrate paragraph leading-normal flex flex-col gap-3">
 											<TextMask>
 												{[
-													"Mounting your TV has never been easier! With our expert installation, you get a sleek, secure setup that enhances your space without the hassle. We handle everything—from precise positioning to cable management—so you can sit back and enjoy a clutter-free entertainment area.",
+													"Mounting your TV has never been easier! With our expert installation, you get a sleek, secure setup that enhances your space without the hassle.",
 												]}
 											</TextMask>
 											<TextMask>
 												{[
-													"Whether it's a fixed, tilt, or swivel mount, we ensure a perfect fit for your home or office. Our professional team guarantees a quick, damage-free installation, giving you the best viewing experience with minimal effort.",
+													"Our professional team guarantees a quick, damage-free installation, giving you the best viewing experience with minimal effort.",
 												]}
 											</TextMask>
 										</div>
-										<div className="w-full flex items-center justify-between bg-[#F99A03] cursor-pointer rounded-[100px] group flex-col animate-bounce mt-8 xm:hidden sm:hidden">
+										<div className="w-full flex items-center justify-between bg-[#F99A03] cursor-pointer rounded-[100px] group flex-col animate-bounce mt-8 xm:hidden sm:hidden md:hidden">
 											<Link
 												className="w-full text-lg uppercase font-normal font-Monstrate rounded-[100px]"
 												to="/book-now">
@@ -127,7 +129,7 @@ export default function Slider() {
 												</Rounded>
 											</Link>
 										</div>
-										<div className="w-fit  items-center justify-between bg-[#F99A03] cursor-pointer rounded-lg group hidden sm:flex xm:flex">
+										<div className="w-fit  items-center justify-between bg-[#F99A03] cursor-pointer rounded-lg group hidden sm:flex xm:flex md:flex">
 											<Button
 												bgcolor="#212121"
 												to="/book-now"
@@ -150,8 +152,8 @@ export default function Slider() {
 							</div>
 						</SwiperSlide>
 						<SwiperSlide>
-							<div className="w-full min-h-screen flex items-center justify-center gap-20 md:items-end lg:items-end md:pb-14 lg:pb-10 xm:pt-28 sm:pt-28">
-								<div className="xm:flex-col sm:flex-col container gap-10 mx-auto flex items-center justify-between">
+							<div className="w-full min-h-screen flex items-center lg:items-end lg:pb-10 justify-center gap-20  xm:pt-28 sm:pt-28 padding-x">
+								<div className="xm:flex-col sm:flex-col container gap-10 mx-auto flex items-center justify-between md:mt-20 lg:mt-20">
 									<div className="w-1/2 flex flex-col gap-2 xl:gap-5 xm:w-full sm:w-full">
 										<div className="flex items-center gap-2">
 											<AnimatedText
@@ -184,16 +186,16 @@ export default function Slider() {
 										<div className="text-[#1F1F3D] font-Monstrate paragraph leading-normal flex flex-col gap-3">
 											<TextMask>
 												{[
-													"Mounting your TV has never been easier! With our expert installation, you get a sleek, secure setup that enhances your space without the hassle. We handle everything—from precise positioning to cable management—so you can sit back and enjoy a clutter-free entertainment area.",
+													"Mounting your TV has never been easier! With our expert installation, you get a sleek, secure setup that enhances your space without the hassle.",
 												]}
 											</TextMask>
 											<TextMask>
 												{[
-													"Whether it’s a fixed, tilt, or swivel mount, we ensure a perfect fit for your home or office. Our professional team guarantees a quick, damage-free installation, giving you the best viewing experience with minimal effort.",
+													"Our professional team guarantees a quick, damage-free installation, giving you the best viewing experience with minimal effort.",
 												]}
 											</TextMask>
 										</div>
-										<div className="w-full flex items-center justify-between bg-[#F99A03] cursor-pointer rounded-[100px] group flex-col animate-bounce mt-8 xm:hidden sm:hidden">
+										<div className="w-full flex items-center justify-between bg-[#F99A03] cursor-pointer rounded-[100px] group flex-col animate-bounce mt-8 xm:hidden sm:hidden md:hidden">
 											<Link
 												className="w-full text-lg uppercase font-normal font-Monstrate rounded-[100px]"
 												to="/book-now">
@@ -230,7 +232,7 @@ export default function Slider() {
 												</Rounded>
 											</Link>
 										</div>
-										<div className="w-fit  items-center justify-between bg-[#F99A03] cursor-pointer rounded-lg group hidden sm:flex xm:flex">
+										<div className="w-fit  items-center justify-between bg-[#F99A03] cursor-pointer rounded-lg group hidden sm:flex xm:flex md:flex">
 											<Button
 												bgcolor="#212121"
 												to="/book-now"

@@ -24,7 +24,7 @@ export default function FormNine({
 	return (
 		<div className="w-[70%] xm:w-full sm:w-full flex items-center justify-center bg-white padding-y padding-x rounded-lg z-[999] mb-[200px] xm:mb-0 sm:mb-0">
 			<div className="flex flex-col gap-8 items-center justify-center xm:items-start sm:items-start">
-				<h1 className="text-black text-center xm:text-left sm:text-left font-HyperspaceRace heading leading-none font-black capitalize">
+				<h1 className="text-black text-center xm:text-left sm:text-left font-Monstrate heading leading-none font-black capitalize">
 					Enter Address Where <br /> Service Will Be Provided
 				</h1>
 				<div className="w-full flex items-center justify-center xm:justify-start sm:justify-start">
@@ -34,6 +34,7 @@ export default function FormNine({
 						<div className="w-full flex items-center justify-center gap-4 xm:flex-col sm:flex-col">
 							<input
 								type="text"
+								required
 								className="rounded-lg px-6 py-3 text-[#0E0E30] font-Monstrate text-[18px] font-normal leading-tight tracking-tight placeholder:text-[#0E0E30] outline-none border border-black xm:w-full sm:w-full"
 								placeholder="Address"
 								value={address}
@@ -41,6 +42,7 @@ export default function FormNine({
 							/>
 							<input
 								type="text"
+								required
 								className="rounded-lg px-6 py-3 text-[#0E0E30] font-Monstrate text-[18px] font-normal leading-tight tracking-tight placeholder:text-[#0E0E30] outline-none border border-black xm:w-full sm:w-full"
 								placeholder="Apt, Unit, Floor"
 								value={aptUnitFloor}

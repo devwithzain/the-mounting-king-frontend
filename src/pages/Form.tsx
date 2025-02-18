@@ -131,7 +131,7 @@ export default function Form() {
 					<div className="w-full flex flex-col gap-5">
 						{data.length > 0 && data[0]?.steps?.[currentStep] && (
 							<div className="flex flex-col gap-4">
-								<h1 className="text-white font-HyperspaceRace text-[45px] font-black leading-tight capitalize">
+								<h1 className="text-white font-Monstrate text-[45px] font-black leading-tight capitalize">
 									{data[0].steps[currentStep].step_title}
 								</h1>
 								<p className="text-white font-Monstrate text-[22px]">

@@ -41,7 +41,7 @@ export default function RequestADemoServices() {
 					}}>
 					<div className="flex items-center text-center xm:text-left sm:text-left flex-col gap-8 justify-center mb-60 lg:mb-60 mt-10 xm:mb-10 sm:mb-10">
 						<div className="w-1/2 flex flex-col gap-3 xm:w-full sm:w-full xm:mt-20 sm:mt-20">
-							<h1 className="text-white font-HyperspaceRace heading font-black leading-tight capitalize">
+							<h1 className="text-white font-Monstrate heading font-black leading-tight capitalize">
 								Main Services
 							</h1>
 							<p className="text-white font-Monstrate paragraph leading-normal">
@@ -57,7 +57,7 @@ export default function RequestADemoServices() {
 									key={service.id}
 									className="w-full bg-[#1f1f3d] gap-7 z-50 relative flex flex-col border border-black/5 shadow-xl rounded-lg p-5 justify-between">
 									<div className="flex flex-col gap-3">
-										<h1 className="text-white font-HyperspaceRace text-[22px] font-black leading-normal capitalize">
+										<h1 className="text-white font-Monstrate text-[22px] font-black leading-normal capitalize">
 											{service.service_title}
 										</h1>
 										<p className="text-white font-Monstrate text-[16px] leading-normal">

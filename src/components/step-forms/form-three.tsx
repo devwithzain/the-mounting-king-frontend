@@ -126,7 +126,7 @@ export default function FormThree({
 								<div
 									key={step.id}
 									className="flex flex-col gap-4">
-									<h1 className="text-black font-HyperspaceRace text-[45px] font-black leading-tight capitalize">
+									<h1 className="text-black font-Monstrate text-[45px] font-black leading-tight capitalize">
 										{step.step_title}
 									</h1>
 									<p className="text-black font-Monstrate text-[22px]">

@@ -24,7 +24,7 @@ export default function VideoModal() {
 				<div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 z-50">
 					<div className="relative w-11/12 max-w-2xl bg-white overflow-hidden">
 						<button
-							className="absolute top-1 right-2 text-white z-50 text-4xl"
+							className="absolute top-1 right-2 text-[#DB932C] z-50 text-4xl"
 							onClick={closeVideoModal}>
 							&times;
 						</button>

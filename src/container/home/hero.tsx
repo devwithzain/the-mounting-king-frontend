@@ -23,7 +23,7 @@ export default function HomeHero() {
 		<>
 			<div className="w-full h-screen flex items-center relative justify-center xm:hidden sm:hidden">
 				<div className="w-full h-screen mt-10 absolute top-0 left-0 flex items-center justify-center flex-col">
-					<div className="w-full py-5 z-50 padding-x">
+					<div className="w-full py-5 z-50">
 						<div className="w-full flex items-end justify-end overflow-hidden">
 							<motion.div
 								initial={{ y: "100%" }}
@@ -149,7 +149,7 @@ export default function HomeHero() {
 									We offer same day tv mounting service. To book an appoinment
 									click the book now button below.
 								</p>
-								<div className="w-full flex items-center justify-between bg-[#F99A03] cursor-pointer rounded-[100px] group flex-col animate-bounce mt-8">
+								<div className="w-full flex items-center justify-between bg-[#F99A03] cursor-pointer rounded-[100px] group flex-col animate-bounce mt-8 xm:hidden sm:hidden md:hidden">
 									<Link
 										className="w-full text-lg uppercase font-normal font-Monstrate rounded-[100px]"
 										to="/book-now">
@@ -185,6 +185,15 @@ export default function HomeHero() {
 											</p>
 										</Rounded>
 									</Link>
+								</div>
+								<div className="w-fit  items-center justify-between bg-[#F99A03] cursor-pointer rounded-lg group hidden  md:flex">
+									<Button
+										bgcolor="#212121"
+										to="/book-now"
+										title="book now"
+										className="bg-white text-black"
+										style={{ color: "#fff" }}
+									/>
 								</div>
 							</div>
 						</div>

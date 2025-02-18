@@ -19,7 +19,7 @@ export default function AboutHome() {
 				/>
 			</div>
 			<Whatwedo />
-			<div className="w-full flex gap-10 justify-start items-center padding-x xm:flex-col-reverse sm:flex-col-reverse">
+			<div className="w-full flex gap-10 justify-start items-center padding-x xm:flex-col-reverse sm:flex-col-reverse overflow-hidden">
 				<ScrollReveal />
 				<div className="w-1/2 flex flex-col relative z-50 xm:w-full sm:w-full">
 					<div className="absolute top-10 -right-60 hidden xl:block">
