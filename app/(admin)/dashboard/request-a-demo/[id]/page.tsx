@@ -2,7 +2,7 @@ import RequestADemoForm from "../components/request-a-demo-form";
 
 export async function generateStaticParams() {
 	const res = await fetch(
-		"https://themountingking.com/backend/api/requestServices",
+		"https://api.themountingking.com/api/requestServices",
 		{
 			cache: "no-store",
 		},

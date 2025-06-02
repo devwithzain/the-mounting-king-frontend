@@ -88,14 +88,14 @@ export default function FormTen() {
 		try {
 			// First, post request to create the checkout session
 			const response = await axios.post(
-				`https://themountingking.com/backend/api/formCheckout`,
+				`https://api.themountingking.com/api/formCheckout`,
 				checkoutData,
 			);
 
 			if (response.data.url) {
 				// Second, post request to send email to the user
 				const emailResponse = await axios.post(
-					`https://themountingking.com/backend/api/contact`,
+					`https://api.themountingking.com/api/contact`,
 					requestData,
 				);
 

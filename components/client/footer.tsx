@@ -110,6 +110,9 @@ export default function Footer() {
 								<Image
 									src={footerLogo}
 									alt="footerLogo"
+									className="w-[200px] object-cover xm:w-[150px] sm:w-[150px] md:w-[160px] lg:w-[180px]"
+									width={200}
+									height={200}
 								/>
 							</div>
 							<div className="flex flex-col gap-5">

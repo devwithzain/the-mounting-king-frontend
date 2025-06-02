@@ -1,17 +1,19 @@
-import "@/styles/globals.css";
-import { Navbar } from "@/components/client";
+"use client";
+import { usePathname } from "next/navigation";
+import { Footer, HomeFooter, Navbar } from "@/components/client";
 
-export default function RootLayout({
+export default function ClientLayout({
 	children,
 }: {
 	children: React.ReactNode;
 }) {
+	const pathName = usePathname();
+
 	return (
-		<html lang="en">
-			<body>
-				<Navbar />
-				{children}
-			</body>
-		</html>
+		<>
+			<Navbar />
+			{children}
+			{pathName === "/" ? <HomeFooter /> : <Footer />}
+		</>
 	);
 }

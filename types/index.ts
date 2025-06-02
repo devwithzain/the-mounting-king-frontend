@@ -25,18 +25,6 @@ export type TuserProps = {
    updated_at: Date | null;
 };
 
-export type TproductsColumnProps = {
-   id: bigint;
-   title: string;
-   price: string;
-   color: string;
-   size: string;
-   description: string;
-   shortDescription: string;
-   images: string[];
-   created_at: string;
-};
-
 export type ThooksProps = {
    isOpen: boolean;
    onOpen: () => void;
@@ -58,7 +46,7 @@ export type TlogoMarqueeProps = {
 export type TRoundedProps = {
    children: React.ReactNode;
    className?: string;
-   style?: any;
+   style?: React.CSSProperties;
    backgroundColor: string;
 };
 
@@ -84,7 +72,7 @@ export type TservicesColumnProps = {
    short_description: string;
    description: string;
    image: string;
-   created_at: string;
+   created_at: Date | null;
 };
 
 export type TemployeesColumnProps = {
@@ -94,14 +82,14 @@ export type TemployeesColumnProps = {
    address: string;
    phone_number: string;
    state: string;
-   created_at: string;
+   created_at: Date | null;
 };
 
 export type TRequestServicesColumnProps = {
    id: bigint;
    service_title: string;
    service_description: string;
-   created_at: string;
+   created_at: Date | null;
    steps: {
       step_title: string;
       step_description: string;

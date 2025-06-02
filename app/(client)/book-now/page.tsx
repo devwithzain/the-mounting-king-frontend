@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Metadata } from "next";
 import { heroBackground } from "@/public";
-import { Appointment, Footer } from "@/components/client";
+import { Appointment } from "@/components/client";
 
 export const metadata: Metadata = {
 	title: "Request A TV Mounting Demo | See Our Experts in Action",
@@ -19,7 +19,6 @@ export default function BookNowPage() {
 					className="w-full h-full object-cover absolute top-0 left-0 z-0"
 				/>
 				<Appointment />
-				<Footer />
 			</div>
 		</>
 	);

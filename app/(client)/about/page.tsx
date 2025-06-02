@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { Metadata } from "next";
 import { aboutBg } from "@/public";
-import { Footer } from "@/components/client";
 import { AboutHero, AboutServices } from "@/container";
 
 export const metadata: Metadata = {
@@ -20,7 +19,6 @@ export default function About() {
 				/>
 				<AboutHero />
 				<AboutServices />
-				<Footer />
 			</div>
 		</>
 	);

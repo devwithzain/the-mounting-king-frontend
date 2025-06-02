@@ -74,7 +74,7 @@ export default function EmployeeForm({
 		try {
 			if (initialData) {
 				await axios.post(
-					`https://themountingking.com/backend/api/employee/${employeeId}`,
+					`https://api.themountingking.com/api/employee/${employeeId}`,
 					data,
 					{
 						headers: {
@@ -83,10 +83,7 @@ export default function EmployeeForm({
 					},
 				);
 			} else {
-				await axios.post(
-					`https://themountingking.com/backend/api/employee`,
-					data,
-				);
+				await axios.post(`https://api.themountingking.com/api/employee`, data);
 			}
 			toast.success(toastMessage);
 			router.push(`/dashboard/employees`);
@@ -100,7 +97,7 @@ export default function EmployeeForm({
 	const onDelete = async () => {
 		try {
 			await axios.delete(
-				`https://themountingking.com/backend/api/employee/${employeeId}`,
+				`https://api.themountingking.com/api/employee/${employeeId}`,
 			);
 			toast.success("Employee deleted");
 			router.push(`/dashboard/employees`);

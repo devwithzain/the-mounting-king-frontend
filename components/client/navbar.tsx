@@ -9,13 +9,13 @@ import { LeftSideHome, UserMenu } from "@/components/client";
 
 export default function Navbar() {
 	const token = getToken("authToken");
-	const [cartItems, setCartItems] = useState<any[]>([]);
+	const [cartItems, setCartItems] = useState([]);
 
 	useEffect(() => {
 		const fetchCartItems = async () => {
 			try {
 				const response = await fetch(
-					`https://themountingking.com/backend/api/cart`,
+					`https://api.themountingking.com/api/cart`,
 					{
 						headers: {
 							Authorization: `Bearer ${token}`,

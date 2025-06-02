@@ -6,7 +6,7 @@ import { arrowRight } from "@/public";
 import { useForm } from "react-hook-form";
 import { AnimatedText } from "@/components/client";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { stepsFormSchema, TstepsFormData } from "@/types";
+import { stepsFormSchema, TstepsFormData } from "@/schemas";
 
 export default function Form() {
 	const form = useForm<TstepsFormData>({
@@ -22,7 +22,7 @@ export default function Form() {
 	const onSubmits = async (data: TstepsFormData) => {
 		try {
 			const response = await axios.post(
-				`https://themountingking.com/backend/api/contact-us`,
+				`https://api.themountingking.com/api/contact-us`,
 				data,
 			);
 			if (response.data.success) {

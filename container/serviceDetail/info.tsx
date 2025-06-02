@@ -1,37 +1,20 @@
 "use client";
 import Image from "next/image";
 import { aboutCrownR } from "@/public";
-import { useParams } from "next/navigation";
-import { useEffect, useState } from "react";
-import getService from "@/actions/get-service";
+import { TservicesColumnProps } from "@/types";
 import { Advantage, AnimatedText, RoundButton } from "@/components/client";
 
-export default function ServiceDetailInfo() {
-	const { id } = useParams();
-	const [service, setService] = useState(null);
-
-	useEffect(() => {
-		const fetchProducts = async () => {
-			try {
-				if (id && typeof id === "string") {
-					const response = await getService(id);
-					setService(response.data);
-				} else {
-					console.error("Service ID is undefined");
-				}
-			} catch (err) {
-				console.error("Error fetching products:", err);
-			}
-		};
-		fetchProducts();
-	}, [id]);
-
+export default function ServiceDetailInfo({
+	service,
+}: {
+	service: TservicesColumnProps;
+}) {
 	return (
 		<div className="w-full padding-x relative padding-y flex flex-col gap-40 my-80 xm:gap-10 sm:gap-10 xm:my-10 sm:my-10 pt-10">
 			<div className="w-full flex justify-between gap-10 relative xm:flex-col sm:flex-col mt-20">
 				<div className="w-1/2 xm:w-full sm:w-full">
 					<Image
-						src={`https://themountingking.com/backend/public/${service?.image}`}
+						src={`https://api.themountingking.com/public/${service?.image}`}
 						alt="serviceDetail"
 						className="w-full object-cover h-full"
 						width={1000}

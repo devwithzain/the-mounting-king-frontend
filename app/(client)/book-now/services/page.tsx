@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { Metadata } from "next";
 import { heroBackground } from "@/public";
-import { Footer } from "@/components/client";
 import { RequestServices } from "@/container";
 
 export const metadata: Metadata = {
@@ -20,7 +19,6 @@ export default function BookNowPage() {
 					className="w-full h-full object-cover absolute top-0 left-0 z-0"
 				/>
 				<RequestServices />
-				<Footer />
 			</div>
 		</>
 	);

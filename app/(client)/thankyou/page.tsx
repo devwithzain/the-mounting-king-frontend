@@ -2,7 +2,6 @@ import Image from "next/image";
 import { Metadata } from "next";
 import { ThankYou } from "@/container";
 import { heroBackground } from "@/public";
-import { Footer } from "@/components/client";
 
 export const metadata: Metadata = {
 	title: "ThankYou - The Mounting King",
@@ -18,7 +17,6 @@ export default function ThankYouPage() {
 				className="w-full h-full object-cover absolute top-0 left-0 -z-10"
 			/>
 			<ThankYou />
-			<Footer />
 		</div>
 	);
 }

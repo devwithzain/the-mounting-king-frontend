@@ -1,6 +1,5 @@
 import { bg } from "@/public";
 import Image from "next/image";
-import { HomeFooter } from "@/components/client";
 import { HomeAbout, HomeHero, HomeServices } from "@/container";
 
 export default function Home() {
@@ -14,7 +13,6 @@ export default function Home() {
 			<HomeHero />
 			<HomeAbout />
 			<HomeServices />
-			<HomeFooter />
 		</div>
 	);
 }

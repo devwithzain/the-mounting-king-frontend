@@ -36,17 +36,6 @@ export const registerFormSchema = z.object({
    path: ["confirmPassword"],
 });
 
-export const productsColumnSchema = z.object({
-   title: z.string(),
-   price: z.string(),
-   color: z.string(),
-   size: z.string(),
-   category: z.string(),
-   shortDescription: z.string(),
-   description: z.string(),
-   image: z.any(z.any()),
-});
-
 export const servicesColumnSchema = z.object({
    title: z.string(),
    short_description: z.string(),
@@ -54,7 +43,14 @@ export const servicesColumnSchema = z.object({
    image: z.any().nullable(),
 });
 
+export const userProfileSchema = z.object({
+   name: z.string(),
+   email: z.string(),
+   image: z.any().nullable(),
+});
+
 export const employeesColumnSchema = z.object({
+   id: z.bigint(),
    name: z.string(),
    email: z.string(),
    address: z.string(),
@@ -80,9 +76,10 @@ export const requestServicesFormSchema = z.object({
    ),
 });
 
+export type TstepsFormData = z.infer<typeof stepsFormSchema>;
 export type TloginFormData = z.infer<typeof loginFormSchema>;
+export type TUserProfileProps = z.infer<typeof userProfileSchema>;
 export type TregisterFormData = z.infer<typeof registerFormSchema>;
 export type TservicesColumnProps = z.infer<typeof servicesColumnSchema>;
-export type TproductsColumnProps = z.infer<typeof productsColumnSchema>;
 export type TemployeesColumnSchema = z.infer<typeof employeesColumnSchema>;
 export type TrequestServiceFormData = z.infer<typeof requestServicesFormSchema>;

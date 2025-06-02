@@ -152,11 +152,6 @@ export default function HomeFooter() {
 									className="text-white text-[16px] font-Monstrate leading-tight tracking-tight">
 									About
 								</Link>
-								{/* <Link
-									href="/products"
-									className="text-white text-[16px] font-Monstrate leading-tight tracking-tight">
-									Products
-								</Link> */}
 								<Link
 									href="/book-now"
 									className="text-white text-[16px] font-Monstrate leading-tight tracking-tight">

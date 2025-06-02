@@ -20,16 +20,12 @@ export default function RootLayout({
 		requestAnimationFrame(raf);
 	}, []);
 	return (
-		<>
-			<html
-				lang="en"
-				suppressHydrationWarning>
-				<body>
-					<AuthModal />
-					<ToastProvider />
-					{children}
-				</body>
-			</html>
-		</>
+		<html lang="en">
+			<body>
+				<AuthModal />
+				<ToastProvider />
+				{children}
+			</body>
+		</html>
 	);
 }

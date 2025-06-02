@@ -18,23 +18,19 @@ import { useRouter } from "next/navigation";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Heading from "@/components/admin/heading";
-import { getUserData } from "@/lib/current-user";
 import { Separator } from "@/components/ui/separator";
 import { zodResolver } from "@hookform/resolvers/zod";
-import AlertModal from "@/components/admin/alert-modal";
-import { userProfileSchema, TUserProfileProps } from "@/schemas";
+import { TUserProfileProps, userProfileSchema } from "@/schemas";
+import { getUserData } from "@/lib/current-user";
 
 export default function Account() {
 	const router = useRouter();
-	const [open, setOpen] = useState(false);
 	const token = getToken("adminAuthToken");
-	const [image, setImage] = useState<string>("");
-	const [imageError, setImageError] = useState<string>("");
-	const [user, setUser] = useState<TuserProps | null>(null);
+	const [admin, setAdmin] = useState<TuserProps>();
 
 	const form = useForm<TUserProfileProps>({
 		resolver: zodResolver(userProfileSchema),
-		defaultValues: {
+		defaultValues: admin || {
 			name: "",
 			email: "",
 			image: "",
@@ -43,23 +39,33 @@ export default function Account() {
 
 	const {
 		formState: { isSubmitting },
-		reset,
 	} = form;
 
 	useEffect(() => {
 		const fetchUserData = async () => {
-			try {
-				if (token) {
-					const userData = await getUserData(token);
-					setUser(userData);
-					reset(userData);
-				}
-			} catch (err) {
-				console.error("Error fetching user data:", err);
-			}
+			const userData = await getUserData(token);
+			form.reset({
+				name: userData.name,
+				email: userData.email,
+				image: userData.image,
+			});
+			setAdmin(userData);
 		};
 		fetchUserData();
-	}, [token, reset]);
+	}, [form, token]);
+
+	const [image, setImage] = useState<string>("");
+	const [imageUrl, setImageUrl] = useState<string>("");
+	const [imageError, setImageError] = useState<string>("");
+	const [previewImage, setPreviewImage] = useState<string | null>(null);
+
+	useEffect(() => {
+		if (admin?.image) {
+			const imageUrl = `https://api.themountingking.com/storage/${admin.image}`;
+			setImageUrl(imageUrl);
+			setPreviewImage(imageUrl);
+		}
+	}, [admin]);
 
 	const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setImageError("");
@@ -88,12 +94,13 @@ export default function Account() {
 		const reader = new FileReader();
 		reader.onload = () => {
 			const base64 = reader.result as string;
+			setPreviewImage(base64);
 			setImage(base64);
 		};
 		reader.readAsDataURL(file);
 	};
 
-	const initialData = user;
+	const initialData = admin;
 	const toastMessage = initialData && "Profile updated.";
 
 	const onSubmits = async (data: TUserProfileProps) => {
@@ -105,13 +112,13 @@ export default function Account() {
 				}
 			});
 
-			if (image) {
+			if (image && image.startsWith("data:")) {
 				const blob = dataURLtoBlob(image);
 				formData.append("image", blob, "profile-image.png");
 			}
 
 			await axios.post(
-				`https://themountingking.com/backend/api/profile/update/${user?.id}`,
+				`https://api.themountingking.com/api/profile/update/${admin?.id}`,
 				formData,
 				{
 					headers: {
@@ -122,12 +129,21 @@ export default function Account() {
 				},
 			);
 			toast.success(toastMessage);
+			router.refresh();
 		} catch (error) {
-			console.error(error);
-			toast.error("Something went wrong");
+			if (axios.isAxiosError(error) && error.response) {
+				console.error(error.response);
+				if (error.response.data.messages.email) {
+					toast.error(error.response.data.messages.email[0]);
+				} else {
+					toast.error(error.response.data.messages.error);
+				}
+			} else {
+				console.error(error);
+				toast.error("An unexpected error occurred");
+			}
 		}
 	};
-
 	const dataURLtoBlob = (dataURL: string): Blob => {
 		const byteString = atob(dataURL.split(",")[1]);
 		const mimeString = dataURL.split(",")[0].split(":")[1].split(";")[0];
@@ -139,30 +155,8 @@ export default function Account() {
 		return new Blob([ab], { type: mimeString });
 	};
 
-	const onDelete = async () => {
-		try {
-			await axios.delete(
-				`https://themountingking.com/backend/api/user/${user?.id}`,
-			);
-			router.push(`/dashboard/profile`);
-			router.refresh();
-			toast.success("Profile deleted");
-		} catch (error) {
-			console.error(error);
-			toast.error("Something went wrong");
-		} finally {
-			setOpen(false);
-		}
-	};
-
 	return (
 		<>
-			<AlertModal
-				isOpen={open}
-				loading={isSubmitting}
-				onClose={() => setOpen(false)}
-				onConfirm={onDelete}
-			/>
 			<div className="flex items-center justify-between px-5 py-2">
 				<Heading
 					title="Settings"
@@ -231,15 +225,17 @@ export default function Account() {
 							</FormItem>
 						)}
 					/>
-					{image && (
-						<Image
-							src={image}
-							alt="Profile Preview"
-							style={{ objectFit: "cover", width: "100px", height: "100px" }}
-							width={100}
-							height={100}
-						/>
-					)}
+					<div className="flex items-center gap-2">
+						{(previewImage || imageUrl) && (
+							<Image
+								src={previewImage || imageUrl}
+								alt="Profile"
+								className="w-40 h-40 object-cover"
+								width={160}
+								height={160}
+							/>
+						)}
+					</div>
 					<Button
 						disabled={isSubmitting}
 						type="submit">

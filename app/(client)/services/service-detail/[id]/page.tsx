@@ -1,15 +1,26 @@
 import Image from "next/image";
 import { Metadata } from "next";
 import { aboutBg } from "@/public";
-import { Footer } from "@/components/client";
+import { prismadb } from "@/lib/prismadb";
 import { ServiceDetailHero, ServiceDetailInfo } from "@/container";
 
 export const metadata: Metadata = {
-	title: "Services - The Mounting King",
-	description: "Services - The Mounting King",
+	title: "Service Detail | The Mounting King",
+	description: "Service Detail | The Mounting King",
 };
 
-export default function ServiceDetailPage() {
+export default async function ServiceDetailPage({
+	params,
+}: {
+	params: Promise<{ id: bigint }>;
+}) {
+	const { id } = await params;
+	const service = await prismadb.services.findUnique({
+		where: {
+			id: id,
+		},
+	});
+
 	return (
 		<div className="w-full h-full relative overflow-x-hidden">
 			<Image
@@ -17,9 +28,8 @@ export default function ServiceDetailPage() {
 				alt="bg"
 				className="w-full h-full object-cover absolute top-0 left-0 z-0"
 			/>
-			<ServiceDetailHero />
-			<ServiceDetailInfo />
-			<Footer />
+			<ServiceDetailHero service={service} />
+			<ServiceDetailInfo service={service} />
 		</div>
 	);
 }

@@ -2,7 +2,6 @@
 import Link from "next/link";
 import { GoClock } from "react-icons/go";
 import { useState, useEffect } from "react";
-import { Footer, Navbar } from "@/components/client";
 import { useParams, useRouter } from "next/navigation";
 import getRequestService from "@/actions/get-requestService";
 import { CiCircleMinus, CiCirclePlus } from "react-icons/ci";
@@ -84,7 +83,7 @@ export default function Form() {
 		0,
 	);
 
-	const [data, setData] = useState<any[]>([]);
+	const [data, setData] = useState([]);
 	const [currentStep, setCurrentStep] = useState(0);
 
 	const router = useRouter();
@@ -119,7 +118,6 @@ export default function Form() {
 
 	return (
 		<>
-			<Navbar />
 			<div
 				className="w-full min-h-screen flex items-center justify-center padding-y padding-x rounded-lg z-[999]"
 				style={{
@@ -136,7 +134,7 @@ export default function Form() {
 								<p className="text-white font-Monstrate text-[22px]">
 									{data[0].steps[currentStep].step_description}
 								</p>
-								{data[0].steps[currentStep].options.map((option: any) => (
+								{data[0].steps[currentStep].options.map((option) => (
 									<div
 										key={option.id}
 										className="w-full bg-white gap-10 z-50 relative flex items-center justify-between border border-black rounded-lg px-6 py-3">
@@ -258,7 +256,6 @@ export default function Form() {
 					</div>
 				</div>
 			</div>
-			<Footer />
 		</>
 	);
 }

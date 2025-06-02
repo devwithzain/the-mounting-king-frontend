@@ -1,7 +1,7 @@
 import EmployeeForm from "../components/employee-form";
 
 export async function generateStaticParams() {
-	const res = await fetch("https://themountingking.com/backend/api/employees", {
+	const res = await fetch("https://api.themountingking.com/api/employees", {
 		cache: "no-store",
 	});
 	const { data } = await res.json();

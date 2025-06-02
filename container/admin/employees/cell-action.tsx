@@ -20,7 +20,9 @@ export default function CellAction({ data }: { data: TemployeesColumnProps }) {
 
 	const onDelete = async () => {
 		try {
-			await axios.delete(`http://127.0.0.1:8000/api/employee/${data.id}`);
+			await axios.delete(
+				`https://api.themountingking.com/api/employee/${data.id}`,
+			);
 			toast.success("Content deleted.");
 			router.refresh();
 		} catch (error) {

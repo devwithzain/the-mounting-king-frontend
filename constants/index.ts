@@ -4,7 +4,6 @@ import {
    Command,
    GalleryVerticalEnd,
    House,
-   SquareChartGantt,
    Cog,
    UsersRound,
    Contact,
@@ -45,11 +44,6 @@ export const sideBarItem = {
          icon: Cog,
       },
       {
-         title: "Products",
-         url: "/dashboard/products",
-         icon: SquareChartGantt,
-      },
-      {
          title: "Request A Demo Page",
          url: "/dashboard/request-a-demo",
          icon: BookOpenCheck,
@@ -66,7 +60,6 @@ export const sideBarItem = {
       },
    ],
 };
-
 
 export const navLinks = [
    {

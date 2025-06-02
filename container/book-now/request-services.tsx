@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Footer, Navbar } from "@/components/client";
+import { TRequestServicesColumnProps } from "@/types";
 import getRequestServices from "@/actions/get-requestServices";
 
 export default function RequestServices() {
@@ -21,7 +21,6 @@ export default function RequestServices() {
 
 	return (
 		<>
-			<Navbar />
 			<div className="overflow-x-hidden">
 				<div
 					className="w-full min-h-[150vh] xm:h-auto sm:h-auto flex justify-center items-center bg-white padding-y padding-x rounded-lg z-[999]"
@@ -42,7 +41,7 @@ export default function RequestServices() {
 							</p>
 						</div>
 						<div className="w-full flex gap-5 justify-between  sm:flex-col xm:flex-col">
-							{data.map((service: any) => (
+							{data.map((service: TRequestServicesColumnProps) => (
 								<div
 									key={service.id}
 									className="w-full bg-[#1f1f3d] gap-7 z-50 relative flex flex-col border border-black/5 shadow-xl rounded-lg p-5 justify-between">
@@ -64,7 +63,6 @@ export default function RequestServices() {
 						</div>
 					</div>
 				</div>
-				<Footer />
 			</div>
 		</>
 	);

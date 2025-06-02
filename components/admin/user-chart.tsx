@@ -46,6 +46,7 @@ export function UserChart<TData, TValue>({
 			columnFilters,
 		},
 	});
+
 	return (
 		<>
 			<CardHeader className="flex flex-col items-stretch space-y-0 p-0 sm:flex-row border rounded-t-xl">
