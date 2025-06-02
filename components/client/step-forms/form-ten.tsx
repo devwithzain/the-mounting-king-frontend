@@ -50,6 +50,27 @@ export default function FormTen() {
 		}
 	}, []);
 
+	// Calculate totals
+	const totalPrice = Object.values(selectedItems).reduce(
+		(sum, item) => sum + item.price,
+		0,
+	);
+	const totalTime = Object.values(selectedItems).reduce(
+		(sum, item) => sum + item.time,
+		0,
+	);
+
+	// Save contact form data to localStorage whenever state changes
+	useEffect(() => {
+		const contactFormData = {
+			name,
+			phone,
+			email,
+			totalPrice,
+		};
+		localStorage.setItem("contactForm", JSON.stringify(contactFormData));
+	}, [name, phone, email, totalPrice]);
+
 	const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 
@@ -80,6 +101,7 @@ export default function FormTen() {
 			name,
 			phone,
 			email,
+			totalPrice,
 			selectedItems,
 			selectedDate,
 			selectedAddress,
@@ -91,6 +113,13 @@ export default function FormTen() {
 				`https://api.themountingking.com/api/formCheckout`,
 				checkoutData,
 			);
+
+			await axios.post(`https://api.themountingking.com/api/booking`, {
+				name,
+				phone,
+				email,
+				totalPrice,
+			});
 
 			if (response.data.url) {
 				// Second, post request to send email to the user
@@ -112,6 +141,7 @@ export default function FormTen() {
 				localStorage.removeItem("selectedItems");
 				localStorage.removeItem("selectedDate");
 				localStorage.removeItem("formAddress");
+				localStorage.removeItem("contactForm");
 				localStorage.removeItem("selectedValue3");
 				localStorage.removeItem("selectedValue4");
 				localStorage.removeItem("selectedValue5");
@@ -133,15 +163,6 @@ export default function FormTen() {
 			setIsSubmitting(false);
 		}
 	};
-
-	const totalPrice = Object.values(selectedItems).reduce(
-		(sum, item) => sum + item.price,
-		0,
-	);
-	const totalTime = Object.values(selectedItems).reduce(
-		(sum, item) => sum + item.time,
-		0,
-	);
 
 	return (
 		<div className="w-full flex items-center justify-center bg-white padding-y padding-x rounded-lg z-[999] mb-[200px] xm:mb-0 sm:mb-0">

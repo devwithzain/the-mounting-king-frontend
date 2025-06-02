@@ -75,6 +75,15 @@ export type TservicesColumnProps = {
    created_at: Date | null;
 };
 
+export type TbookingsProps = {
+   id: bigint;
+   name: string;
+   email: string;
+   phone: string;
+   totalPrice: number | any;
+   created_at: Date | null;
+};
+
 export type TemployeesColumnProps = {
    id: bigint;
    name: string;
@@ -99,4 +108,9 @@ export type TRequestServicesColumnProps = {
          price: number;
       }[];
    }[];
+};
+
+export type TgraphData = {
+   name: string;
+   total: number;
 };

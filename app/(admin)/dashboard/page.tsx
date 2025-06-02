@@ -8,23 +8,16 @@ export const metadata: Metadata = {
 };
 
 export default async function DashboardPage() {
-	const users = await prismadb.users.findMany({
-		where: {
-			role: {
-				not: "admin",
-			},
-		},
-	});
+	const bookings = await prismadb.bookings.findMany();
 
-	const formatedUsers = users.map((user) => ({
-		id: user.id,
-		name: user.name,
-		email: user.email,
-		role: user.role,
-		image: user.image,
-		created_at: user.created_at,
-		updated_at: user.updated_at,
+	const formatedBookings = bookings.map((booking) => ({
+		id: booking.id,
+		name: booking.name,
+		email: booking.email,
+		phone: booking.phone,
+		totalPrice: booking.totalPrice,
+		created_at: booking.created_at,
 	}));
 
-	return <Dashboard data={formatedUsers} />;
+	return <Dashboard bookings={formatedBookings} />;
 }

@@ -163,6 +163,16 @@ model employees {
   updated_at   DateTime? @db.Timestamp(0)
 }
 
+model bookings {
+  id         BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
+  name       String    @db.VarChar(255)
+  email      String    @db.VarChar(255)
+  phone      String    @db.VarChar(255)
+  totalPrice Decimal   @default(0.00) @db.Decimal(10, 2)
+  created_at DateTime? @db.Timestamp(0)
+  updated_at DateTime? @db.Timestamp(0)
+}
+
 enum users_role {
   admin
   user

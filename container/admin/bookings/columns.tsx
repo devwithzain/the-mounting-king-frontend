@@ -24,11 +24,15 @@ export const columns: ColumnDef<TbookingsProps>[] = [
 	},
 	{
 		accessorKey: "phone",
-		header: "Phone",
+		header: "Phone Number",
 	},
 	{
 		accessorKey: "totalPrice",
 		header: "Price",
+	},
+	{
+		accessorKey: "created_at",
+		header: "Date",
 	},
 	{
 		id: "actions",

@@ -7,6 +7,7 @@ import {
    Cog,
    UsersRound,
    Contact,
+   Book,
 } from "lucide-react";
 
 export const sideBarItem = {
@@ -49,14 +50,19 @@ export const sideBarItem = {
          icon: BookOpenCheck,
       },
       {
-         title: "Users",
-         url: "/dashboard/users",
-         icon: UsersRound,
-      },
-      {
          title: "Employees",
          url: "/dashboard/employees",
          icon: Contact,
+      },
+      {
+         title: "Bookings",
+         url: "/dashboard/bookings",
+         icon: Book,
+      },
+      {
+         title: "Users",
+         url: "/dashboard/users",
+         icon: UsersRound,
       },
    ],
 };
