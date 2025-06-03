@@ -57,7 +57,7 @@ export default function TotalRevenue() {
 	// ✅ Calculate total revenue from totalPrice field
 	const totalRevenue = useMemo(() => {
 		const total = sales.reduce((acc, sale) => {
-			const price = parseFloat(sale.totalPrice || "0");
+			const price = sale.totalPrice;
 			return acc + price;
 		}, 0);
 

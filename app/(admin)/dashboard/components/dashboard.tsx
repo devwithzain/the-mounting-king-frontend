@@ -4,7 +4,7 @@ import TotalRevenue from "@/components/admin/revenue";
 import { Overview } from "@/components/admin/overview";
 import TotalBookings from "@/components/admin/bookings";
 import TotalEmployee from "@/components/admin/employee";
-import { columns } from "@/container/admin/user/columns";
+import { columns } from "@/container/admin/bookings/columns";
 import { getGraphRevenue } from "@/actions/get-graph-revenue";
 import { CustomersChart } from "@/components/admin/customer-chart";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";

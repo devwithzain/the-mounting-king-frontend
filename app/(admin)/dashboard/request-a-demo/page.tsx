@@ -21,7 +21,7 @@ export default async function RequestADemoPage() {
 		id: reqService.id,
 		service_title: reqService.service_title,
 		service_description: reqService.service_description,
-		steps: reqService.request_services_steps.map((step) => ({
+		request_services_steps: reqService.request_services_steps.map((step) => ({
 			step_title: step.step_title,
 			step_description: step.step_description,
 		})),

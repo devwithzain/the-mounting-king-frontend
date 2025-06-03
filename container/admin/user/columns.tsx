@@ -1,10 +1,10 @@
+import { TuserProps } from "@/types";
 import CellAction from "./cell-action";
-import { TbookingsProps } from "@/types";
 import { ArrowUpDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ColumnDef } from "@tanstack/react-table";
 
-export const columns: ColumnDef<TbookingsProps>[] = [
+export const columns: ColumnDef<TuserProps>[] = [
 	{
 		accessorKey: "name",
 		header: ({ column }) => {
@@ -23,12 +23,8 @@ export const columns: ColumnDef<TbookingsProps>[] = [
 		header: "Email",
 	},
 	{
-		accessorKey: "phone",
-		header: "Phone",
-	},
-	{
-		accessorKey: "totalPrice",
-		header: "Price",
+		accessorKey: "role",
+		header: "Role",
 	},
 	{
 		id: "actions",

@@ -80,7 +80,7 @@ export type TbookingsProps = {
    name: string;
    email: string;
    phone: string;
-   totalPrice: number | any;
+   totalPrice: number;
    created_at: Date | null;
 };
 
@@ -99,14 +99,9 @@ export type TRequestServicesColumnProps = {
    service_title: string;
    service_description: string;
    created_at: Date | null;
-   steps: {
+   request_services_steps: {
       step_title: string;
       step_description: string;
-      options: {
-         size: string;
-         time: number;
-         price: number;
-      }[];
    }[];
 };
 

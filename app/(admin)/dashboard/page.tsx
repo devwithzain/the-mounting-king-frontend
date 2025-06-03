@@ -15,7 +15,7 @@ export default async function DashboardPage() {
 		name: booking.name,
 		email: booking.email,
 		phone: booking.phone,
-		totalPrice: booking.totalPrice,
+		totalPrice: Number(booking.totalPrice),
 		created_at: booking.created_at,
 	}));
 

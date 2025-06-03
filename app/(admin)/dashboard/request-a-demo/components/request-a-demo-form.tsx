@@ -56,7 +56,7 @@ export default function RequestADemoPageForm({
 				id: requestServices.id,
 				service_title: requestServices.service_title,
 				service_description: requestServices.service_description,
-				steps: requestServices.steps,
+				steps: requestServices.request_services_steps,
 				created_at: format(
 					requestServices.created_at ?? new Date(),
 					"MMMM do, yyyy",
@@ -90,7 +90,7 @@ export default function RequestADemoPageForm({
 			form.reset({
 				service_title: requestServices.service_title,
 				service_description: requestServices.service_description,
-				steps: requestServices.steps,
+				steps: requestServices.request_services_steps,
 			});
 		}
 	}, [form, requestServices, form.reset]);
