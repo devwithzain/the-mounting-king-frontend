@@ -50,7 +50,6 @@ export default function FormTen() {
 		}
 	}, []);
 
-	// Calculate totals
 	const totalPrice = Object.values(selectedItems).reduce(
 		(sum, item) => sum + item.price,
 		0,
@@ -60,7 +59,6 @@ export default function FormTen() {
 		0,
 	);
 
-	// Save contact form data to localStorage whenever state changes
 	useEffect(() => {
 		const contactFormData = {
 			name,
@@ -108,7 +106,6 @@ export default function FormTen() {
 		};
 
 		try {
-			// First, post request to create the checkout session
 			const response = await axios.post(
 				`https://api.themountingking.com/api/formCheckout`,
 				checkoutData,
@@ -122,7 +119,6 @@ export default function FormTen() {
 			});
 
 			if (response.data.url) {
-				// Second, post request to send email to the user
 				const emailResponse = await axios.post(
 					`https://api.themountingking.com/api/contact`,
 					requestData,
@@ -148,7 +144,6 @@ export default function FormTen() {
 				localStorage.removeItem("selectedValue6");
 				localStorage.removeItem("selectedValue7");
 
-				// Redirect to Stripe Checkout
 				window.location.href = response.data.url;
 			} else {
 				toast.error("Failed to create a checkout session");
