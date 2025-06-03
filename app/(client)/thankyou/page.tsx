@@ -1,11 +1,12 @@
 import Image from "next/image";
 import { Metadata } from "next";
+import { Suspense } from "react";
 import { ThankYou } from "@/container";
 import { heroBackground } from "@/public";
 
 export const metadata: Metadata = {
-	title: "ThankYou - The Mounting King",
-	description: "ThankYou - The Mounting King",
+	title: "Thank You | The Mounting King",
+	description: "Thank You | The Mounting King",
 };
 
 export default function ThankYouPage() {
@@ -16,7 +17,14 @@ export default function ThankYouPage() {
 				alt="bg"
 				className="w-full h-full object-cover absolute top-0 left-0 -z-10"
 			/>
-			<ThankYou />
+			<Suspense
+				fallback={
+					<div className="w-full h-full flex items-center justify-center">
+						Loading...
+					</div>
+				}>
+				<ThankYou />
+			</Suspense>
 		</div>
 	);
 }

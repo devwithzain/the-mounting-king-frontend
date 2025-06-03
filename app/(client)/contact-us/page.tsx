@@ -4,8 +4,9 @@ import { aboutBg } from "@/public";
 import { ContactForm, ContactHero } from "@/container";
 
 export const metadata: Metadata = {
-	title: "Contact Us - The Mounting King",
-	description: "Contact Us - The Mounting King",
+	title: "Get in Touch | Expert TV Mounting Services by The Mounting King",
+	description:
+		"Need TV mounting services? Contact The Mounting King for expert installation and support. Get in touch today for a seamless TV mounting experience!",
 };
 
 export default function ContactPage() {

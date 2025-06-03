@@ -1,12 +1,13 @@
 import Image from "next/image";
 import { Metadata } from "next";
 import { aboutBg } from "@/public";
-import { ServiceHero, ServicesServices } from "@/container";
 import { prismadb } from "@/lib/prismadb";
+import { ServiceHero, ServicesServices } from "@/container";
 
 export const metadata: Metadata = {
-	title: "Services | The Mounting King",
-	description: "Services | The Mounting King",
+	title: "Expert TV Mounting Services | Secure & Hassle-Free Installation",
+	description:
+		"Explore our professional TV mounting services for homes & businesses. Safe and hassle-free installation by experts. ",
 };
 
 export default async function Services() {

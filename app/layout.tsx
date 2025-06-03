@@ -1,24 +1,19 @@
-"use client";
-import Lenis from "lenis";
 import "@/styles/globals.css";
-import { useEffect } from "react";
+import { Metadata } from "next";
 import AuthModal from "@/components/auth/auth-model";
 import ToastProvider from "@/providers/toast-provider";
+
+export const metadata: Metadata = {
+	title: "Affordable TV Mounting Services for Your Home Today",
+	description:
+		"Experience seamless TV mounting services with our professionals. Satisfaction is guaranteed! Get your perfect setup today!",
+};
 
 export default function RootLayout({
 	children,
 }: {
 	children: React.ReactNode;
 }) {
-	useEffect(() => {
-		const lenis = new Lenis();
-		function raf(time: number) {
-			lenis.raf(time);
-			requestAnimationFrame(raf);
-		}
-
-		requestAnimationFrame(raf);
-	}, []);
 	return (
 		<html lang="en">
 			<body>
