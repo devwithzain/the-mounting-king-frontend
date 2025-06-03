@@ -51,7 +51,7 @@ export default function UserMenu() {
 							src={
 								(user &&
 									user.image &&
-									`https://mysticmarguerite.com/new/backend/storage/${user.image}`) ||
+									`https://api.themountingking.com/storage/${user.image}`) ||
 								placeholder
 							}
 							alt="user"
@@ -65,7 +65,7 @@ export default function UserMenu() {
 					initial={wrapperVariants.closed}
 					variants={wrapperVariants}
 					style={{ originY: "top", translateX: "-50%" }}
-					className="flex flex-col p-2 rounded-lg bg-[#7a74ef] text-white shadow-xl absolute top-[120%] -left-full w-40 overflow-hidden">
+					className="flex flex-col p-2 rounded-lg bg-[#F99A03] text-white shadow-xl absolute top-[120%] -left-full w-40 overflow-hidden">
 					{user ? (
 						<>
 							<button

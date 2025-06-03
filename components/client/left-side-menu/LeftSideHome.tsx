@@ -23,7 +23,7 @@ export default function LeftSideHome() {
 					<div
 						className={`w-[50%] h-[2px] bg-white absolute ${
 							!isActive && "top-[45%]"
-						} transform -translate-x-1/2 -translate-y-1/2`}
+						} transform left-1/4 -translate-y-1/2`}
 						style={{
 							transform: isActive ? "rotate(45deg)" : "none",
 							transition: "transform 0.3s",
@@ -32,7 +32,7 @@ export default function LeftSideHome() {
 					<div
 						className={`w-[50%] h-[2px] bg-white absolute ${
 							!isActive && "top-[55%]"
-						} transform -translate-x-1/2 -translate-y-1/2`}
+						} transform left-1/4 -translate-y-1/2`}
 						style={{
 							transform: isActive ? "rotate(-45deg)" : "none",
 							transition: "transform 0.3s",
