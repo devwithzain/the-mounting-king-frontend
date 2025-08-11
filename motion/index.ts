@@ -1,4 +1,6 @@
-export const animation = {
+import type { Variants } from "framer-motion";
+
+export const animation: Variants = {
    initial: { y: "100%" },
    enter: () => ({
       y: "0",
@@ -10,7 +12,7 @@ export const animation = {
    }),
 };
 
-export const wrapperVariants = {
+export const wrapperVariants: Variants = {
    open: {
       scaleY: 1,
       transition: {
@@ -27,7 +29,7 @@ export const wrapperVariants = {
    },
 };
 
-export const iconVariants = {
+export const iconVariants: Variants = {
    open: {
       opacity: 1,
       y: 0,
@@ -44,12 +46,12 @@ export const iconVariants = {
    },
 };
 
-export const actionIconVariants = {
+export const actionIconVariants: Variants = {
    open: { scale: 1, y: 0 },
    closed: { scale: 0, y: -7 },
 };
 
-export const menuSlide = {
+export const menuSlide: Variants = {
    initial: { x: "calc(100% + 100px)" },
    enter: { x: "0", transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } },
    exit: {
@@ -58,19 +60,19 @@ export const menuSlide = {
    },
 };
 
-export const slide = {
+export const slide: Variants = {
    initial: { x: 80 },
-   enter: (i: number) => ({
+   enter: (i) => ({
       x: 0,
       transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 0.05 * i },
    }),
-   exit: (i: number) => ({
+   exit: (i) => ({
       x: 80,
       transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 0.05 * i },
    }),
 };
 
-export const scale = {
+export const scale: Variants = {
    open: { scale: 1, transition: { duration: 0.3 } },
    closed: { scale: 0, transition: { duration: 0.4 } },
 };
@@ -85,7 +87,7 @@ if (typeof window !== "undefined") {
       } Q100 ${window.innerHeight / 2} 100 0`;
 }
 
-export const curve = {
+export const curve: Variants = {
    initial: {
       d: initialPath,
    },

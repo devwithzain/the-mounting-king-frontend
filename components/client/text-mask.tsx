@@ -19,7 +19,7 @@ export default function TextMask({ children }: { children: string[] }) {
 						custom={index}
 						variants={animation}
 						initial="initial"
-						animate={inView ? "enter" : ""}>
+						animate={inView ? "enter" : false}>
 						{phrase}
 					</motion.p>
 				</div>
