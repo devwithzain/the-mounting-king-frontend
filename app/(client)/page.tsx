@@ -1,3 +1,4 @@
+"use client";
 import { bg } from "@/public";
 import Image from "next/image";
 import { HomeAbout, HomeHero, HomeServices } from "@/container";
