@@ -35,7 +35,7 @@ export default function LoginForm({ onClose }: { onClose: () => void }) {
 
 	const onSubmits = async (data: TloginFormData) => {
 		await axios
-			.post(`https://api.themountingking.com/api/login`, data)
+			.post(`https://themountingking.com/backend/api/login`, data)
 			.then((response) => {
 				if (response?.data?.success) {
 					if (response.data.user.role == "user") {

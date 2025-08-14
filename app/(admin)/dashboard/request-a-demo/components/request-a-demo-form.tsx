@@ -120,12 +120,12 @@ export default function RequestADemoPageForm({
 
 			if (requestId) {
 				await axios.post(
-					`https://api.themountingking.com/api/requestService/${requestId}`,
+					`https://themountingking.com/backend/api/requestService/${requestId}`,
 					formattedData,
 				);
 			} else {
 				await axios.post(
-					`https://api.themountingking.com/api/requestService`,
+					`https://themountingking.com/backend/api/requestService`,
 					formattedData,
 				);
 			}
@@ -142,7 +142,7 @@ export default function RequestADemoPageForm({
 		try {
 			if (requestId) {
 				await axios.delete(
-					`https://api.themountingking.com/api/requestService/${requestId}`,
+					`https://themountingking.com/backend/api/requestService/${requestId}`,
 				);
 				router.push(`/dashboard/request-a-demo`);
 				router.refresh();

@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const getUserData = async (token: string | undefined | null) => {
    try {
-      const response = await axios.get(`https://api.themountingking.com/api/profile`, {
+      const response = await axios.get(`https://themountingking.com/backend/api/profile`, {
          headers: {
             Authorization: `Bearer ${token}`,
          },

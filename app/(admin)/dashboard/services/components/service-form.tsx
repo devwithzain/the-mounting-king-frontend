@@ -156,7 +156,7 @@ export default function ServiceForm({
 		try {
 			if (initialData) {
 				await axios.post(
-					`https://api.themountingking.com/api/service/${serviceId}`,
+					`https://themountingking.com/backend/api/service/${serviceId}`,
 					formData,
 					{
 						headers: { "Content-Type": "multipart/form-data" },
@@ -164,7 +164,7 @@ export default function ServiceForm({
 				);
 			} else {
 				await axios.post(
-					`https://api.themountingking.com/api/service`,
+					`https://themountingking.com/backend/api/service`,
 					formData,
 				);
 			}
@@ -180,7 +180,7 @@ export default function ServiceForm({
 	const onDelete = async () => {
 		try {
 			await axios.delete(
-				`https://api.themountingking.com/api/service/${serviceId}`,
+				`https://themountingking.com/backend/api/service/${serviceId}`,
 			);
 			toast.success("Service deleted");
 			router.push(`/dashboard/services`);
@@ -304,7 +304,7 @@ export default function ServiceForm({
 					) : (
 						image && (
 							<Image
-								src={`https://api.themountingking.com/storage/${image}`}
+								src={`https://themountingking.com/backend/storage/${image}`}
 								alt="Preview"
 								className="w-60 h-60 object-cover"
 								width={240}

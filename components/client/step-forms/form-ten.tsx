@@ -107,11 +107,11 @@ export default function FormTen() {
 
 		try {
 			const response = await axios.post(
-				`https://api.themountingking.com/api/formCheckout`,
+				`https://themountingking.com/backend/api/formCheckout`,
 				checkoutData,
 			);
 
-			await axios.post(`https://api.themountingking.com/api/booking`, {
+			await axios.post(`https://themountingking.com/backend/api/booking`, {
 				name,
 				phone,
 				email,
@@ -120,7 +120,7 @@ export default function FormTen() {
 
 			if (response.data.url) {
 				const emailResponse = await axios.post(
-					`https://api.themountingking.com/api/contact`,
+					`https://themountingking.com/backend/api/contact`,
 					requestData,
 				);
 

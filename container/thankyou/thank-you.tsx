@@ -14,7 +14,7 @@ export default function ThankYou() {
 		if (success === "1") {
 			const clearCart = async () => {
 				try {
-					await axios.delete(`https://api.themountingking.com/api/cart`, {
+					await axios.delete(`https://themountingking.com/backend/api/cart`, {
 						headers: {
 							Authorization: `Bearer ${token}`,
 						},

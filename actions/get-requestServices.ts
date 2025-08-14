@@ -1,4 +1,4 @@
-const apiUrl = `https://api.themountingking.com/api/requestServices`;
+const apiUrl = `https://themountingking.com/backend/api/requestServices`;
 const getRequestServices = async () => {
    const response = await fetch(apiUrl);
    return response.json();

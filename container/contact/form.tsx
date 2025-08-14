@@ -22,7 +22,7 @@ export default function Form() {
 	const onSubmits = async (data: TstepsFormData) => {
 		try {
 			const response = await axios.post(
-				`https://api.themountingking.com/api/contact-us`,
+				`https://themountingking.com/backend/api/contact-us`,
 				data,
 			);
 			if (response.data.success) {

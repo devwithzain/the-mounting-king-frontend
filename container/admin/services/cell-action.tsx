@@ -22,7 +22,7 @@ export default function CellAction({ data }: { data: TservicesColumnProps }) {
 	const onDelete = async () => {
 		try {
 			await axios.delete(
-				`https://api.themountingking.com/api/service/${data.id}`,
+				`https://themountingking.com/backend/api/service/${data.id}`,
 			);
 			toast.success("Content deleted.");
 			router.refresh();

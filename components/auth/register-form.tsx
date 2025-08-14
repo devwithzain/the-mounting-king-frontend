@@ -45,7 +45,7 @@ export default function RegisterForm({ onClose }: { onClose: () => void }) {
 			return;
 		}
 		await axios
-			.post(`https://api.themountingking.com/api/register`, data)
+			.post(`https://themountingking.com/backend/api/register`, data)
 			.then((response) => {
 				if (response?.data?.success) {
 					toast.success(response.data.success);

@@ -14,7 +14,7 @@ export default function ServiceDetailInfo({
 			<div className="w-full flex justify-between gap-10 relative xm:flex-col sm:flex-col mt-20">
 				<div className="w-1/2 xm:w-full sm:w-full">
 					<Image
-						src={`https://api.themountingking.com/public/${service?.image}`}
+						src={`https://themountingking.com/backend/public/${service?.image}`}
 						alt="serviceDetail"
 						className="w-full object-cover h-full"
 						width={1000}
