@@ -1,21 +1,5 @@
 import RequestADemoForm from "../components/request-a-demo-form";
 
-export async function generateStaticParams() {
-	const res = await fetch(
-		"https://api.themountingking.com/api/requestServices",
-		{
-			cache: "no-store",
-		},
-	);
-	const { data } = await res.json();
-
-	const dynamicRoutes = data.map((service: any) => ({
-		id: service.id.toString(),
-	}));
-
-	return [...dynamicRoutes, { id: "new" }];
-}
-
 export default async function RequestADemoFormPage({
 	params,
 }: {

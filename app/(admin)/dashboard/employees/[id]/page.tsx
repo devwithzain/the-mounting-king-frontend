@@ -1,18 +1,5 @@
 import EmployeeForm from "../components/employee-form";
 
-export async function generateStaticParams() {
-	const res = await fetch("https://api.themountingking.com/api/employees", {
-		cache: "no-store",
-	});
-	const { data } = await res.json();
-
-	const dynamicRoutes = data.map((employee: any) => ({
-		id: employee.id.toString(),
-	}));
-
-	return [...dynamicRoutes, { id: "new" }];
-}
-
 export default async function EmployeeFormPage({
 	params,
 }: {
