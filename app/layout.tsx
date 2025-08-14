@@ -4,7 +4,7 @@ import AuthModal from "@/components/auth/auth-model";
 import ToastProvider from "@/providers/toast-provider";
 
 export const metadata: Metadata = {
-	title: "Affordable TV Mounting Services for Your Home Today",
+	title: "Affordables TV Mounting Services for Your Home Today",
 	description:
 		"Experience seamless TV mounting services with our professionals. Satisfaction is guaranteed! Get your perfect setup today!",
 };
