@@ -1,4 +1,4 @@
-const apiUrl = `https://themountingking.com/backend/api/employees`;
+const apiUrl = `https://api.themountingking.com/api/employees`;
 
 const getEmployee = async (id: string) => {
    const response = await fetch(`${apiUrl}/${id}`);

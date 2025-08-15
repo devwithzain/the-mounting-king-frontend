@@ -21,7 +21,7 @@ export default function CellAction({ data }: { data: TuserProps }) {
 	const onDelete = async () => {
 		try {
 			await axios.delete(
-				`https://themountingking.com/backend/api/deleteUser/${data.id}`,
+				`https://api.themountingking.com/api/deleteUser/${data.id}`,
 			);
 			toast.success("User deleted.");
 			router.refresh();

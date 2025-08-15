@@ -1,7 +1,13 @@
-"use client";
 import { bg } from "@/public";
 import Image from "next/image";
+import { Metadata } from "next";
 import { HomeAbout, HomeHero, HomeServices } from "@/container";
+
+export const metadata: Metadata = {
+	title: "Affordables TV Mounting Services for Your Home Today",
+	description:
+		"Experience seamless TV mounting services with our professionals. Satisfaction is guaranteed! Get your perfect setup today!",
+};
 
 export default function Home() {
 	return (

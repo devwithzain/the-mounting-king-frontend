@@ -51,7 +51,7 @@ export default function UserMenu() {
 							src={
 								(user &&
 									user.image &&
-									`https://themountingking.com/backend/storage/${user.image}`) ||
+									`https://api.themountingking.com/storage/${user.image}`) ||
 								placeholder
 							}
 							alt="user"

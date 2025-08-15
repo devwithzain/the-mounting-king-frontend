@@ -61,7 +61,7 @@ export default function Account() {
 
 	useEffect(() => {
 		if (admin?.image) {
-			const imageUrl = `https://themountingking.com/backend/storage/${admin.image}`;
+			const imageUrl = `https://api.themountingking.com/storage/${admin.image}`;
 			setImageUrl(imageUrl);
 			setPreviewImage(imageUrl);
 		}
@@ -118,7 +118,7 @@ export default function Account() {
 			}
 
 			await axios.post(
-				`https://themountingking.com/backend/api/profile/update/${admin?.id}`,
+				`https://api.themountingking.com/api/profile/update/${admin?.id}`,
 				formData,
 				{
 					headers: {
