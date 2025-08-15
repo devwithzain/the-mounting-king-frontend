@@ -1,19 +1,32 @@
 "use client";
 import { Plus } from "lucide-react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { TservicesColumnProps } from "@/types";
 import { Button } from "@/components/ui/button";
+import getServices from "@/actions/get-services";
 import Heading from "@/components/admin/heading";
 import { Separator } from "@/components/ui/separator";
 import { DataTable } from "@/components/ui/data-table";
 import { columns } from "@/container/admin/services/columns";
 
-export default function ServicesListings({
-	data,
-}: {
-	data: TservicesColumnProps[];
-}) {
+export default function ServicesListings() {
 	const router = useRouter();
+	const [data, setData] = useState<TservicesColumnProps[]>([]);
+
+	useEffect(() => {
+		const fetchProducts = async () => {
+			try {
+				const response = await getServices();
+				setData(response.data);
+			} catch (err) {
+				console.error("Error fetching products:", err);
+			}
+		};
+
+		fetchProducts();
+	});
+
 	return (
 		<div className="flex flex-1 flex-col gap-4 p-4 pt-0">
 			<div className="flex items-center justify-between">

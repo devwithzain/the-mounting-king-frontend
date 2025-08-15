@@ -83,7 +83,23 @@ export default function Form() {
 		0,
 	);
 
-	const [data, setData] = useState([]);
+	type StepOption = {
+		id: string;
+		size: string;
+		price: string;
+		time: number;
+	};
+	type Step = {
+		step_title: string;
+		step_description: string;
+		options: StepOption[];
+	};
+	type ServiceData = {
+		service_title: string;
+		steps: Step[];
+	};
+
+	const [data, setData] = useState<ServiceData[]>([]);
 	const [currentStep, setCurrentStep] = useState(0);
 
 	const router = useRouter();

@@ -1,15 +1,28 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { TservicesColumnProps } from "@/types";
+import getServices from "@/actions/get-services";
 import { aboutCrownL, arrowRight } from "@/public";
 import { Advantage, AnimatedText } from "@/components/client";
 
-export default function Services({
-	services,
-}: {
-	services: TservicesColumnProps[];
-}) {
+export default function Services() {
+	const [services, setServices] = useState<TservicesColumnProps[]>([]);
+
+	useEffect(() => {
+		const fetchProducts = async () => {
+			try {
+				const response = await getServices();
+				setServices(response.data);
+			} catch (err) {
+				console.error("Error fetching products:", err);
+			}
+		};
+
+		fetchProducts();
+	});
+
 	return (
 		<div className="w-full py-60 relative sm:py-10 xm:py-10 md:py-20">
 			<div className="w-full padding-x padding-y">

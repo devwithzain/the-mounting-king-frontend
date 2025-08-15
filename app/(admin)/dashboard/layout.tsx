@@ -1,3 +1,4 @@
+"use client";
 import Navbar from "@/components/admin/navbar";
 import ToastProvider from "@/providers/toast-provider";
 import { AppSidebar } from "@/components/admin/app-sidebar";

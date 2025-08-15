@@ -1,14 +1,27 @@
 "use client";
 import Image from "next/image";
 import { aboutCrownR } from "@/public";
+import { useEffect, useState } from "react";
+import getService from "@/actions/get-service";
 import { TservicesColumnProps } from "@/types";
 import { Advantage, AnimatedText, RoundButton } from "@/components/client";
 
-export default function ServiceDetailInfo({
-	service,
-}: {
-	service: TservicesColumnProps;
-}) {
+export default function ServiceDetailInfo({ id }: { id: string }) {
+	const [service, setService] = useState<TservicesColumnProps>();
+
+	useEffect(() => {
+		const fetchProducts = async () => {
+			try {
+				const response = await getService(id);
+				setService(response.data);
+			} catch (err) {
+				console.error("Error fetching products:", err);
+			}
+		};
+
+		fetchProducts();
+	}, [id]);
+
 	return (
 		<div className="w-full padding-x relative padding-y flex flex-col gap-40 my-80 xm:gap-10 sm:gap-10 xm:my-10 sm:my-10 pt-10">
 			<div className="w-full flex justify-between gap-10 relative xm:flex-col sm:flex-col mt-20">

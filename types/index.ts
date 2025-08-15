@@ -67,11 +67,11 @@ export type TheadingProps = {
 };
 
 export type TservicesColumnProps = {
-   id: bigint;
-   title: string;
-   short_description: string;
-   description: string;
-   image: string;
+   id: bigint | null;
+   title: string | null;
+   short_description: string | null;
+   description: string | null;
+   image: string | null;
    created_at: Date | null;
 };
 
@@ -88,7 +88,7 @@ export type TemployeesColumnProps = {
    id: bigint;
    name: string;
    email: string;
-   address: string;
+   address: string | null;
    phone_number: string;
    state: string;
    created_at: Date | null;

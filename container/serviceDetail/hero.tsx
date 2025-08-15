@@ -1,7 +1,25 @@
+"use client";
+import { useEffect, useState } from "react";
 import { TservicesColumnProps } from "@/types";
 import { AnimatedText, Badal } from "@/components/client";
+import getService from "@/actions/get-service";
 
-export default function Hero({ service }: { service: TservicesColumnProps }) {
+export default function Hero({ id }: { id: string }) {
+	const [service, setService] = useState<TservicesColumnProps>();
+
+	useEffect(() => {
+		const fetchProducts = async () => {
+			try {
+				const response = await getService(id);
+				setService(response.data);
+			} catch (err) {
+				console.error("Error fetching products:", err);
+			}
+		};
+
+		fetchProducts();
+	}, [id]);
+
 	return (
 		<div className="w-full h-[70vh] flex items-center relative justify-center xm:h-[50vh] sm:h-[50vh]">
 			<div className="absolute -right-24 top-28 h-[500px] blur-[150px] bg-gradient-to-b from-[#007DFE] via-[#c092df] to-[#007DFE] rounded-full w-[500px] overflow-hidden" />

@@ -5,7 +5,7 @@ export default function AnimatedText({
 	text,
 	className,
 }: {
-	text: string;
+	text: string | null | undefined;
 	className: string;
 }) {
 	const displayText = typeof text === "string" ? text : "";

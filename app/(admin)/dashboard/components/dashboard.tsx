@@ -1,5 +1,7 @@
 "use client";
 import { TbookingsProps } from "@/types";
+import { useEffect, useState } from "react";
+import getBookings from "@/actions/get-bookings";
 import TotalRevenue from "@/components/admin/revenue";
 import { Overview } from "@/components/admin/overview";
 import TotalBookings from "@/components/admin/bookings";
@@ -9,12 +11,23 @@ import { getGraphRevenue } from "@/actions/get-graph-revenue";
 import { CustomersChart } from "@/components/admin/customer-chart";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-export default function Dashboard({
-	bookings,
-}: {
-	bookings: TbookingsProps[];
-}) {
+export default function Dashboard() {
+	const [bookings, setBookings] = useState<TbookingsProps[]>([]);
+
+	useEffect(() => {
+		const fetchBookings = async () => {
+			try {
+				const response = await getBookings();
+				setBookings(response.data);
+			} catch (err) {
+				console.error("Error fetching bookings:", err);
+			}
+		};
+		fetchBookings();
+	}, []);
+
 	const graphData = getGraphRevenue(bookings);
+
 	return (
 		<div className="flex flex-1 flex-col gap-4 p-4 pt-0 h-full justify-between">
 			<div className="grid auto-rows-min gap-4 grid-cols-3">

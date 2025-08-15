@@ -100,9 +100,6 @@ export default function Account() {
 		reader.readAsDataURL(file);
 	};
 
-	const initialData = admin;
-	const toastMessage = initialData && "Profile updated.";
-
 	const onSubmits = async (data: TUserProfileProps) => {
 		try {
 			const formData = new FormData();
@@ -128,7 +125,7 @@ export default function Account() {
 					},
 				},
 			);
-			toast.success(toastMessage);
+			toast.success("Profile updated");
 			router.refresh();
 		} catch (error) {
 			if (axios.isAxiosError(error) && error.response) {

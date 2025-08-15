@@ -1,3 +1,4 @@
+"use client";
 import { TModalProps } from "@/types";
 
 export default function Modal({ isOpen, body }: TModalProps) {

@@ -1,7 +1,5 @@
-import Image from "next/image";
 import { Metadata } from "next";
-import { heroBackground } from "@/public";
-import { Appointment } from "@/components/client";
+import { Appointment, Badal } from "@/components/client";
 
 export const metadata: Metadata = {
 	title: "Request A TV Mounting Demo | See Our Experts in Action",
@@ -12,13 +10,9 @@ export const metadata: Metadata = {
 export default function BookNowPage() {
 	return (
 		<>
-			<div className="w-full h-full relative overflow-x-hidden">
-				<Image
-					src={heroBackground}
-					alt="bg"
-					className="w-full h-full object-cover absolute top-0 left-0 z-0"
-				/>
-				<Appointment />
+			<Appointment />
+			<div className="py-10">
+				<Badal />
 			</div>
 		</>
 	);

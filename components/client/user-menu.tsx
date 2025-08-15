@@ -62,7 +62,7 @@ export default function UserMenu() {
 					</motion.span>
 				</button>
 				<motion.ul
-					initial={closed}
+					initial={"closed"}
 					variants={wrapperVariants}
 					style={{ originY: "top", translateX: "-50%" }}
 					className="flex flex-col p-2 rounded-lg bg-[#F99A03] text-white shadow-xl absolute top-[120%] -left-full w-40 overflow-hidden">
